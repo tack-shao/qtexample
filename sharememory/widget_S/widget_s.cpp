@@ -34,4 +34,8 @@ void Widget_S::on_pushButton_clicked()
     shareMemory.unlock();//将shareMemory解锁
     shareMemory.detach();//将shareMemeory与该进程分离
     ui->label->setPixmap(pixMap);
+
+    uint32_t width  = pixMap.width();
+    uint32_t height = pixMap.height();
+    ui->label->resize(width, height);
 }

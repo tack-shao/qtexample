@@ -30,6 +30,9 @@ void Widget1::on_pushButton_clicked()
     QPixmap pixMap;
     pixMap.load(filename);
     ui->label->setPixmap(pixMap);
+    uint32_t width  = pixMap.width();
+    uint32_t height = pixMap.height();
+    ui->label->resize(width, height);
 
     QBuffer buffer;
     QDataStream out(&buffer);
