@@ -1,0 +1,14 @@
+INPUT(
+./../../CalendarWidget/tmp/main.o
+./../../CalendarWidget/tmp/calendarwidget.o
+./../../CalendarWidget/tmp/date.o
+./../../CalendarWidget/tmp/database.o
+./../../CalendarWidget/tmp/event.o
+./../../CalendarWidget/tmp/inputdialog.o
+./../../CalendarWidget/tmp/moc_calendarwidget.o
+./../../CalendarWidget/tmp/moc_date.o
+./../../CalendarWidget/tmp/moc_database.o
+./../../CalendarWidget/tmp/moc_event.o
+./../../CalendarWidget/tmp/moc_inputdialog.o
+./../../CalendarWidget/tmp/qrc_images.o
+);
