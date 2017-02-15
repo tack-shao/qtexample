@@ -68,7 +68,7 @@ static uint32_t index_TimeInfo = 0;
 
 map<uint32_t, T_timerecord> mapTimeRecord2;
 map<uint32_t, T_timerecord>::iterator mapTR2It;
-vector<string>::iterator vecTimeIt;
+vector<string>::iterator vecstrIt;
 
 
 void printtimerecord2()
@@ -78,9 +78,9 @@ void printtimerecord2()
         cout << "ID:" << mapTR2It->first ;
         T_timerecord &tTimeR = mapTR2It->second;
         cout << ", Val:" ;
-        for(vecTimeIt = tTimeR.vecTime.begin(); vecTimeIt != tTimeR.vecTime.end(); vecTimeIt++)
+        for(vecstrIt = tTimeR.vecTime.begin(); vecstrIt != tTimeR.vecTime.end(); vecstrIt++)
         {
-            cout  <<  *vecTimeIt << "  ";
+            cout  <<  *vecstrIt << "  ";
         }
         cout << endl;
     }
