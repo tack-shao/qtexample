@@ -37,6 +37,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <time.h>
+#include <sys/time.h>
+
 
 using namespace std;
 
@@ -53,17 +56,18 @@ typedef struct GLOBAL_PORT
 class sort
 
 {
-
 public:
-
     bool operator() (GLOBAL_PORT const &_A, GLOBAL_PORT const &_B) const
-
     {
-
-        if(memcmp(_A.data, _B.data, sizeof(GLOBAL_PORT)) < 0)
-            return true;
+//        if(memcmp(_A.data, _B.data, sizeof(GLOBAL_PORT)) < 0)
+//            return true;
+        uint32_t lp = 0;
+        for(lp = 0;  lp < ARRAYSIZE(_A.data); lp++)
+        {
+            if (_A.data[lp] < _B.data[lp])
+                return true;
+        }
         return false;
-
     }
 
 };
@@ -83,6 +87,7 @@ void print_GLOBAL_PORT(GLOBAL_PORT tport)
 
 int main()
 {
+    srand(time(NULL));
     map<GLOBAL_PORT, string, sort> mapPort;
     cout<<"三种插入方式："<<endl;
 
