@@ -223,6 +223,25 @@ public:
         m_pTable = NULL;
         m_nLen = m_nFree = 0;
     }
+    //显示哈希表（）
+    void show()
+    {
+        printf("No hash1    hash2     hash3    valueaddr\n");
+        //循环调用析构函数
+        for (INT_PTR i=m_nLen-1; i>-1; --i)
+        {
+            if (m_pTable[i].hash1)
+            {
+                printf("%-03u 0x%-08x 0x%-08x 0x%-08x 0x%-08x (data)\n",
+                       i, m_pTable[i].hash1,m_pTable[i].hash2,m_pTable[i].hash3, &m_pTable[i].value);
+            }
+            else
+            {
+                printf("%-03u 0x%-08x 0x%-08x 0x%-08x 0x%-08x \n",
+                       i, m_pTable[i].hash1,m_pTable[i].hash2,m_pTable[i].hash3, &m_pTable[i].value);
+            }
+        }
+    }
     //获取有效对象数量
     inline size_t count() const { return m_nLen - m_nFree; }
 protected:
