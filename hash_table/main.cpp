@@ -269,6 +269,18 @@ void print_T_HashInfo(T_HashInfo *pInfo)
     printf("sampleport[123]   :    %p   \n", pInfo->sampleport  );
     printf("bigdata2[4001024] :    %p   \n", pInfo->bigdata2);
 
+    printf("Struct T_HashInfo info following ===== [pInfo->]\n");
+    printf("bigdata3[300*1024] :    %p   \n", pInfo->bigdata3  );
+    printf("dwaddr             :    %p   \n", pInfo->dwaddr    );
+    printf("seq                :    %p   \n", pInfo->seq       );
+    printf("buf[187]           :    %p   \n", pInfo->buf       );
+    printf("tax                :    %p   \n", pInfo->tax       );
+    printf("bigdata[300*1024]  :    %p   \n", pInfo->bigdata   );
+    printf("test               :    %p   \n", pInfo->test      );
+    printf("samplenum          :    %p   \n", pInfo->samplenum );
+    printf("sampleport[123]    :    %p   \n", pInfo->sampleport);
+    printf("bigdata2[400*1024] :    %p   \n", pInfo->bigdata2  );
+
 
 }
 
