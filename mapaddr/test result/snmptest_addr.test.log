@@ -1,0 +1,4213 @@
+[BEGIN] 2017/4/30 4:55:11
+[root@localhost mapaddr]# kill 3886
+[root@localhost mapaddr]# kill -9 3886
+bash: kill: (3886) - No such process
+[1]+  Terminated              ./mapaddr
+[root@localhost mapaddr]# 
+[root@localhost mapaddr]# ./mapaddr  &
+[1] 3904
+[root@localhost mapaddr]# updateitem, create data, key:0
+updateitem, create data, key:0x1
+updateitem, create data, key:0x2
+updateitem, create data, key:0x3
+updateitem, create data, key:0x4
+updateitem, create data, key:0x5
+updateitem, create data, key:0x6
+updateitem, create data, key:0x7
+updateitem, create data, key:0x8
+updateitem, create data, key:0x9
+updateitem, create data, key:0xa
+updateitem, create data, key:0xb
+updateitem, create data, key:0xc
+updateitem, create data, key:0xd
+updateitem, create data, key:0xe
+updateitem, create data, key:0xf
+updateitem, create data, key:0x10
+updateitem, create data, key:0x11
+updateitem, create data, key:0x12
+updateitem, create data, key:0x13
+updateitem, create data, key:0x14
+updateitem, create data, key:0x15
+updateitem, create data, key:0x16
+updateitem, create data, key:0x17
+updateitem, create data, key:0x18
+updateitem, create data, key:0x19
+updateitem, create data, key:0x1a
+updateitem, create data, key:0x1b
+updateitem, create data, key:0x1c
+updateitem, create data, key:0x1d
+updateitem, create data, key:0x1e
+updateitem, create data, key:0x1f
+updateitem, create data, key:0x20
+updateitem, create data, key:0x21
+updateitem, create data, key:0x22
+updateitem, create data, key:0x23
+updateitem, create data, key:0x24
+updateitem, create data, key:0x25
+updateitem, create data, key:0x26
+updateitem, create data, key:0x27
+updateitem, create data, key:0x28
+updateitem, create data, key:0x29
+updateitem, create data, key:0x2a
+updateitem, create data, key:0x2b
+updateitem, create data, key:0x2c
+updateitem, create data, key:0x2d
+updateitem, create data, key:0x2e
+updateitem, create data, key:0x2f
+updateitem, create data, key:0x30
+updateitem, create data, key:0x31
+updateitem, create data, key:0x32
+updateitem, create data, key:0x33
+updateitem, create data, key:0x34
+updateitem, create data, key:0x35
+updateitem, create data, key:0x36
+updateitem, create data, key:0x37
+updateitem, create data, key:0x38
+updateitem, create data, key:0x39
+updateitem, create data, key:0x3a
+updateitem, create data, key:0x3b
+updateitem, create data, key:0x3c
+updateitem, create data, key:0x3d
+updateitem, create data, key:0x3e
+updateitem, create data, key:0x3f
+updateitem, create data, key:0x40
+updateitem, create data, key:0x41
+updateitem, create data, key:0x42
+updateitem, create data, key:0x43
+updateitem, create data, key:0x44
+updateitem, create data, key:0x45
+updateitem, create data, key:0x46
+updateitem, create data, key:0x47
+updateitem, create data, key:0x48
+updateitem, create data, key:0x49
+updateitem, create data, key:0x4a
+updateitem, create data, key:0x4b
+updateitem, create data, key:0x4c
+updateitem, create data, key:0x4d
+updateitem, create data, key:0x4e
+updateitem, create data, key:0x4f
+updateitem, create data, key:0x50
+updateitem, create data, key:0x51
+updateitem, create data, key:0x52
+updateitem, create data, key:0x53
+updateitem, create data, key:0x54
+updateitem, create data, key:0x55
+updateitem, create data, key:0x56
+updateitem, create data, key:0x57
+updateitem, create data, key:0x58
+updateitem, create data, key:0x59
+updateitem, create data, key:0x5a
+updateitem, create data, key:0x5b
+updateitem, create data, key:0x5c
+updateitem, create data, key:0x5d
+updateitem, create data, key:0x5e
+updateitem, create data, key:0x5f
+updateitem, create data, key:0x60
+updateitem, create data, key:0x61
+updateitem, create data, key:0x62
+updateitem, create data, key:0x63
+printf info, key:0, valueaddr:0xb766f008
+printf info, key:0x1, valueaddr:0x9112030
+printf info, key:0x2, valueaddr:0x915d058
+printf info, key:0x3, valueaddr:0x91a8080
+printf info, key:0x4, valueaddr:0x91f30a8
+printf info, key:0x5, valueaddr:0x923e0d0
+printf info, key:0x6, valueaddr:0x92890f8
+printf info, key:0x7, valueaddr:0x92d4120
+printf info, key:0x8, valueaddr:0x931f148
+printf info, key:0x9, valueaddr:0x936a170
+printf info, key:0xa, valueaddr:0x93b5198
+printf info, key:0xb, valueaddr:0x94001c0
+printf info, key:0xc, valueaddr:0x944b1e8
+printf info, key:0xd, valueaddr:0x9496210
+printf info, key:0xe, valueaddr:0x94e1238
+printf info, key:0xf, valueaddr:0x952c260
+printf info, key:0x10, valueaddr:0x9577288
+printf info, key:0x11, valueaddr:0x95c22b0
+printf info, key:0x12, valueaddr:0x960d2d8
+printf info, key:0x13, valueaddr:0x9658300
+printf info, key:0x14, valueaddr:0x96a3328
+printf info, key:0x15, valueaddr:0x96ee350
+printf info, key:0x16, valueaddr:0x9739378
+printf info, key:0x17, valueaddr:0x97843a0
+printf info, key:0x18, valueaddr:0x97cf3c8
+printf info, key:0x19, valueaddr:0x981a3f0
+printf info, key:0x1a, valueaddr:0x9865418
+printf info, key:0x1b, valueaddr:0x98b0440
+printf info, key:0x1c, valueaddr:0x98fb468
+printf info, key:0x1d, valueaddr:0x9946490
+printf info, key:0x1e, valueaddr:0x99914b8
+printf info, key:0x1f, valueaddr:0x99dc4e0
+printf info, key:0x20, valueaddr:0x9a27508
+printf info, key:0x21, valueaddr:0x9a72530
+printf info, key:0x22, valueaddr:0x9abd558
+printf info, key:0x23, valueaddr:0x9b08580
+printf info, key:0x24, valueaddr:0x9b535a8
+printf info, key:0x25, valueaddr:0x9b9e5d0
+printf info, key:0x26, valueaddr:0x9be95f8
+printf info, key:0x27, valueaddr:0x9c34620
+printf info, key:0x28, valueaddr:0x9c7f648
+printf info, key:0x29, valueaddr:0x9cca670
+printf info, key:0x2a, valueaddr:0x9d15698
+printf info, key:0x2b, valueaddr:0x9d606c0
+printf info, key:0x2c, valueaddr:0x9dab6e8
+printf info, key:0x2d, valueaddr:0x9df6710
+printf info, key:0x2e, valueaddr:0x9e41738
+printf info, key:0x2f, valueaddr:0x9e8c760
+printf info, key:0x30, valueaddr:0x9ed7788
+printf info, key:0x31, valueaddr:0x9f227b0
+printf info, key:0x32, valueaddr:0x9f6d7d8
+printf info, key:0x33, valueaddr:0x9fb8800
+printf info, key:0x34, valueaddr:0xa003828
+printf info, key:0x35, valueaddr:0xa04e850
+printf info, key:0x36, valueaddr:0xa099878
+printf info, key:0x37, valueaddr:0xa0e48a0
+printf info, key:0x38, valueaddr:0xa12f8c8
+printf info, key:0x39, valueaddr:0xa17a8f0
+printf info, key:0x3a, valueaddr:0xa1c5918
+printf info, key:0x3b, valueaddr:0xa210940
+printf info, key:0x3c, valueaddr:0xa25b968
+printf info, key:0x3d, valueaddr:0xa2a6990
+printf info, key:0x3e, valueaddr:0xa2f19b8
+printf info, key:0x3f, valueaddr:0xa33c9e0
+printf info, key:0x40, valueaddr:0xa387a08
+printf info, key:0x41, valueaddr:0xa3d2a30
+printf info, key:0x42, valueaddr:0xa41da58
+printf info, key:0x43, valueaddr:0xa468a80
+printf info, key:0x44, valueaddr:0xa4b3aa8
+printf info, key:0x45, valueaddr:0xa4fead0
+printf info, key:0x46, valueaddr:0xa549af8
+printf info, key:0x47, valueaddr:0xa594b20
+printf info, key:0x48, valueaddr:0xa5dfb48
+printf info, key:0x49, valueaddr:0xa62ab70
+printf info, key:0x4a, valueaddr:0xa675b98
+printf info, key:0x4b, valueaddr:0xa6c0bc0
+printf info, key:0x4c, valueaddr:0xa70bbe8
+printf info, key:0x4d, valueaddr:0xa756c10
+printf info, key:0x4e, valueaddr:0xa7a1c38
+printf info, key:0x4f, valueaddr:0xa7ecc60
+printf info, key:0x50, valueaddr:0xa837c88
+printf info, key:0x51, valueaddr:0xa882cb0
+printf info, key:0x52, valueaddr:0xa8cdcd8
+printf info, key:0x53, valueaddr:0xa918d00
+printf info, key:0x54, valueaddr:0xa963d28
+printf info, key:0x55, valueaddr:0xa9aed50
+printf info, key:0x56, valueaddr:0xa9f9d78
+printf info, key:0x57, valueaddr:0xaa44da0
+printf info, key:0x58, valueaddr:0xaa8fdc8
+printf info, key:0x59, valueaddr:0xaadadf0
+printf info, key:0x5a, valueaddr:0xab25e18
+printf info, key:0x5b, valueaddr:0xab70e40
+printf info, key:0x5c, valueaddr:0xabbbe68
+printf info, key:0x5d, valueaddr:0xac06e90
+printf info, key:0x5e, valueaddr:0xac51eb8
+printf info, key:0x5f, valueaddr:0xac9cee0
+printf info, key:0x60, valueaddr:0xace7f08
+printf info, key:0x61, valueaddr:0xad32f30
+printf info, key:0x62, valueaddr:0xad7df58
+printf info, key:0x63, valueaddr:0xadc8f80
+
+[root@localhost mapaddr]# kill 3904
+[root@localhost mapaddr]# kill -9 3904
+bash: kill: (3904) - No such process
+[1]+  Terminated              ./mapaddr
+[root@localhost mapaddr]# 
+[root@localhost mapaddr]# 
+[root@localhost mapaddr]# make
+mkdir -p ./tmp
+ [CXX]   (tmp/./main.o)
+ g++ -w -fPIC -g -pipe   -pipe -O0 -g -Wall -W -D_REENTRANT   -Iinclude -Iinclude/freetype  -c main.cpp -o tmp/./main.o
+ [LD]    (mapaddr)
+now file is /home/weilaidb/test/mapaddr
+g++  -o mapaddr  ./tmp/./main.o -lpthread -lzmq   
+current path is mapaddr
+cp -f mapaddr ../exelibtest
+mkdir -p ../exelibtest
+[root@localhost mapaddr]# ./mapaddr  &
+[1] 3946
+[root@localhost mapaddr]# updateitem, create data, key:0, malloc addr:0xb7751008
+updateitem, create data, key:0x1, malloc addr:0x82b1030
+updateitem, create data, key:0x2, malloc addr:0x82fc058
+updateitem, create data, key:0x3, malloc addr:0x8347080
+updateitem, create data, key:0x4, malloc addr:0x83920a8
+updateitem, create data, key:0x5, malloc addr:0x83dd0d0
+updateitem, create data, key:0x6, malloc addr:0x84280f8
+updateitem, create data, key:0x7, malloc addr:0x8473120
+updateitem, create data, key:0x8, malloc addr:0x84be148
+updateitem, create data, key:0x9, malloc addr:0x8509170
+updateitem, create data, key:0xa, malloc addr:0x8554198
+updateitem, create data, key:0xb, malloc addr:0x859f1c0
+updateitem, create data, key:0xc, malloc addr:0x85ea1e8
+updateitem, create data, key:0xd, malloc addr:0x8635210
+updateitem, create data, key:0xe, malloc addr:0x8680238
+updateitem, create data, key:0xf, malloc addr:0x86cb260
+updateitem, create data, key:0x10, malloc addr:0x8716288
+updateitem, create data, key:0x11, malloc addr:0x87612b0
+updateitem, create data, key:0x12, malloc addr:0x87ac2d8
+updateitem, create data, key:0x13, malloc addr:0x87f7300
+updateitem, create data, key:0x14, malloc addr:0x8842328
+updateitem, create data, key:0x15, malloc addr:0x888d350
+updateitem, create data, key:0x16, malloc addr:0x88d8378
+updateitem, create data, key:0x17, malloc addr:0x89233a0
+updateitem, create data, key:0x18, malloc addr:0x896e3c8
+updateitem, create data, key:0x19, malloc addr:0x89b93f0
+updateitem, create data, key:0x1a, malloc addr:0x8a04418
+updateitem, create data, key:0x1b, malloc addr:0x8a4f440
+updateitem, create data, key:0x1c, malloc addr:0x8a9a468
+updateitem, create data, key:0x1d, malloc addr:0x8ae5490
+updateitem, create data, key:0x1e, malloc addr:0x8b304b8
+updateitem, create data, key:0x1f, malloc addr:0x8b7b4e0
+updateitem, create data, key:0x20, malloc addr:0x8bc6508
+updateitem, create data, key:0x21, malloc addr:0x8c11530
+updateitem, create data, key:0x22, malloc addr:0x8c5c558
+updateitem, create data, key:0x23, malloc addr:0x8ca7580
+updateitem, create data, key:0x24, malloc addr:0x8cf25a8
+updateitem, create data, key:0x25, malloc addr:0x8d3d5d0
+updateitem, create data, key:0x26, malloc addr:0x8d885f8
+updateitem, create data, key:0x27, malloc addr:0x8dd3620
+updateitem, create data, key:0x28, malloc addr:0x8e1e648
+updateitem, create data, key:0x29, malloc addr:0x8e69670
+updateitem, create data, key:0x2a, malloc addr:0x8eb4698
+updateitem, create data, key:0x2b, malloc addr:0x8eff6c0
+updateitem, create data, key:0x2c, malloc addr:0x8f4a6e8
+updateitem, create data, key:0x2d, malloc addr:0x8f95710
+updateitem, create data, key:0x2e, malloc addr:0x8fe0738
+updateitem, create data, key:0x2f, malloc addr:0x902b760
+updateitem, create data, key:0x30, malloc addr:0x9076788
+updateitem, create data, key:0x31, malloc addr:0x90c17b0
+updateitem, create data, key:0x32, malloc addr:0x910c7d8
+updateitem, create data, key:0x33, malloc addr:0x9157800
+updateitem, create data, key:0x34, malloc addr:0x91a2828
+updateitem, create data, key:0x35, malloc addr:0x91ed850
+updateitem, create data, key:0x36, malloc addr:0x9238878
+updateitem, create data, key:0x37, malloc addr:0x92838a0
+updateitem, create data, key:0x38, malloc addr:0x92ce8c8
+updateitem, create data, key:0x39, malloc addr:0x93198f0
+updateitem, create data, key:0x3a, malloc addr:0x9364918
+updateitem, create data, key:0x3b, malloc addr:0x93af940
+updateitem, create data, key:0x3c, malloc addr:0x93fa968
+updateitem, create data, key:0x3d, malloc addr:0x9445990
+updateitem, create data, key:0x3e, malloc addr:0x94909b8
+updateitem, create data, key:0x3f, malloc addr:0x94db9e0
+updateitem, create data, key:0x40, malloc addr:0x9526a08
+updateitem, create data, key:0x41, malloc addr:0x9571a30
+updateitem, create data, key:0x42, malloc addr:0x95bca58
+updateitem, create data, key:0x43, malloc addr:0x9607a80
+updateitem, create data, key:0x44, malloc addr:0x9652aa8
+updateitem, create data, key:0x45, malloc addr:0x969dad0
+updateitem, create data, key:0x46, malloc addr:0x96e8af8
+updateitem, create data, key:0x47, malloc addr:0x9733b20
+updateitem, create data, key:0x48, malloc addr:0x977eb48
+updateitem, create data, key:0x49, malloc addr:0x97c9b70
+updateitem, create data, key:0x4a, malloc addr:0x9814b98
+updateitem, create data, key:0x4b, malloc addr:0x985fbc0
+updateitem, create data, key:0x4c, malloc addr:0x98aabe8
+updateitem, create data, key:0x4d, malloc addr:0x98f5c10
+updateitem, create data, key:0x4e, malloc addr:0x9940c38
+updateitem, create data, key:0x4f, malloc addr:0x998bc60
+updateitem, create data, key:0x50, malloc addr:0x99d6c88
+updateitem, create data, key:0x51, malloc addr:0x9a21cb0
+updateitem, create data, key:0x52, malloc addr:0x9a6ccd8
+updateitem, create data, key:0x53, malloc addr:0x9ab7d00
+updateitem, create data, key:0x54, malloc addr:0x9b02d28
+updateitem, create data, key:0x55, malloc addr:0x9b4dd50
+updateitem, create data, key:0x56, malloc addr:0x9b98d78
+updateitem, create data, key:0x57, malloc addr:0x9be3da0
+updateitem, create data, key:0x58, malloc addr:0x9c2edc8
+updateitem, create data, key:0x59, malloc addr:0x9c79df0
+updateitem, create data, key:0x5a, malloc addr:0x9cc4e18
+updateitem, create data, key:0x5b, malloc addr:0x9d0fe40
+updateitem, create data, key:0x5c, malloc addr:0x9d5ae68
+updateitem, create data, key:0x5d, malloc addr:0x9da5e90
+updateitem, create data, key:0x5e, malloc addr:0x9df0eb8
+updateitem, create data, key:0x5f, malloc addr:0x9e3bee0
+updateitem, create data, key:0x60, malloc addr:0x9e86f08
+updateitem, create data, key:0x61, malloc addr:0x9ed1f30
+updateitem, create data, key:0x62, malloc addr:0x9f1cf58
+updateitem, create data, key:0x63, malloc addr:0x9f67f80
+printf info, key:0, valueaddr:0xb7751008
+printf info, key:0x1, valueaddr:0x82b1030
+printf info, key:0x2, valueaddr:0x82fc058
+printf info, key:0x3, valueaddr:0x8347080
+printf info, key:0x4, valueaddr:0x83920a8
+printf info, key:0x5, valueaddr:0x83dd0d0
+printf info, key:0x6, valueaddr:0x84280f8
+printf info, key:0x7, valueaddr:0x8473120
+printf info, key:0x8, valueaddr:0x84be148
+printf info, key:0x9, valueaddr:0x8509170
+printf info, key:0xa, valueaddr:0x8554198
+printf info, key:0xb, valueaddr:0x859f1c0
+printf info, key:0xc, valueaddr:0x85ea1e8
+printf info, key:0xd, valueaddr:0x8635210
+printf info, key:0xe, valueaddr:0x8680238
+printf info, key:0xf, valueaddr:0x86cb260
+printf info, key:0x10, valueaddr:0x8716288
+printf info, key:0x11, valueaddr:0x87612b0
+printf info, key:0x12, valueaddr:0x87ac2d8
+printf info, key:0x13, valueaddr:0x87f7300
+printf info, key:0x14, valueaddr:0x8842328
+printf info, key:0x15, valueaddr:0x888d350
+printf info, key:0x16, valueaddr:0x88d8378
+printf info, key:0x17, valueaddr:0x89233a0
+printf info, key:0x18, valueaddr:0x896e3c8
+printf info, key:0x19, valueaddr:0x89b93f0
+printf info, key:0x1a, valueaddr:0x8a04418
+printf info, key:0x1b, valueaddr:0x8a4f440
+printf info, key:0x1c, valueaddr:0x8a9a468
+printf info, key:0x1d, valueaddr:0x8ae5490
+printf info, key:0x1e, valueaddr:0x8b304b8
+printf info, key:0x1f, valueaddr:0x8b7b4e0
+printf info, key:0x20, valueaddr:0x8bc6508
+printf info, key:0x21, valueaddr:0x8c11530
+printf info, key:0x22, valueaddr:0x8c5c558
+printf info, key:0x23, valueaddr:0x8ca7580
+printf info, key:0x24, valueaddr:0x8cf25a8
+printf info, key:0x25, valueaddr:0x8d3d5d0
+printf info, key:0x26, valueaddr:0x8d885f8
+printf info, key:0x27, valueaddr:0x8dd3620
+printf info, key:0x28, valueaddr:0x8e1e648
+printf info, key:0x29, valueaddr:0x8e69670
+printf info, key:0x2a, valueaddr:0x8eb4698
+printf info, key:0x2b, valueaddr:0x8eff6c0
+printf info, key:0x2c, valueaddr:0x8f4a6e8
+printf info, key:0x2d, valueaddr:0x8f95710
+printf info, key:0x2e, valueaddr:0x8fe0738
+printf info, key:0x2f, valueaddr:0x902b760
+printf info, key:0x30, valueaddr:0x9076788
+printf info, key:0x31, valueaddr:0x90c17b0
+printf info, key:0x32, valueaddr:0x910c7d8
+printf info, key:0x33, valueaddr:0x9157800
+printf info, key:0x34, valueaddr:0x91a2828
+printf info, key:0x35, valueaddr:0x91ed850
+printf info, key:0x36, valueaddr:0x9238878
+printf info, key:0x37, valueaddr:0x92838a0
+printf info, key:0x38, valueaddr:0x92ce8c8
+printf info, key:0x39, valueaddr:0x93198f0
+printf info, key:0x3a, valueaddr:0x9364918
+printf info, key:0x3b, valueaddr:0x93af940
+printf info, key:0x3c, valueaddr:0x93fa968
+printf info, key:0x3d, valueaddr:0x9445990
+printf info, key:0x3e, valueaddr:0x94909b8
+printf info, key:0x3f, valueaddr:0x94db9e0
+printf info, key:0x40, valueaddr:0x9526a08
+printf info, key:0x41, valueaddr:0x9571a30
+printf info, key:0x42, valueaddr:0x95bca58
+printf info, key:0x43, valueaddr:0x9607a80
+printf info, key:0x44, valueaddr:0x9652aa8
+printf info, key:0x45, valueaddr:0x969dad0
+printf info, key:0x46, valueaddr:0x96e8af8
+printf info, key:0x47, valueaddr:0x9733b20
+printf info, key:0x48, valueaddr:0x977eb48
+printf info, key:0x49, valueaddr:0x97c9b70
+printf info, key:0x4a, valueaddr:0x9814b98
+printf info, key:0x4b, valueaddr:0x985fbc0
+printf info, key:0x4c, valueaddr:0x98aabe8
+printf info, key:0x4d, valueaddr:0x98f5c10
+printf info, key:0x4e, valueaddr:0x9940c38
+printf info, key:0x4f, valueaddr:0x998bc60
+printf info, key:0x50, valueaddr:0x99d6c88
+printf info, key:0x51, valueaddr:0x9a21cb0
+printf info, key:0x52, valueaddr:0x9a6ccd8
+printf info, key:0x53, valueaddr:0x9ab7d00
+printf info, key:0x54, valueaddr:0x9b02d28
+printf info, key:0x55, valueaddr:0x9b4dd50
+printf info, key:0x56, valueaddr:0x9b98d78
+printf info, key:0x57, valueaddr:0x9be3da0
+printf info, key:0x58, valueaddr:0x9c2edc8
+printf info, key:0x59, valueaddr:0x9c79df0
+printf info, key:0x5a, valueaddr:0x9cc4e18
+printf info, key:0x5b, valueaddr:0x9d0fe40
+printf info, key:0x5c, valueaddr:0x9d5ae68
+printf info, key:0x5d, valueaddr:0x9da5e90
+printf info, key:0x5e, valueaddr:0x9df0eb8
+printf info, key:0x5f, valueaddr:0x9e3bee0
+printf info, key:0x60, valueaddr:0x9e86f08
+printf info, key:0x61, valueaddr:0x9ed1f30
+printf info, key:0x62, valueaddr:0x9f1cf58
+printf info, key:0x63, valueaddr:0x9f67f80
+
+[root@localhost mapaddr]# kill -9 3946
+[root@localhost mapaddr]# kill -9 3946
+bash: kill: (3946) - No such process
+[1]+  Killed                  ./mapaddr
+[root@localhost mapaddr]# kill -9 3946
+bash: kill: (3946) - No such process
+[root@localhost mapaddr]# kill -9 3946
+bash: kill: (3946) - No such process
+[root@localhost mapaddr]# make
+mkdir -p ./tmp
+ [CXX]   (tmp/./main.o)
+ g++ -w -fPIC -g -pipe   -pipe -O0 -g -Wall -W -D_REENTRANT   -Iinclude -Iinclude/freetype  -c main.cpp -o tmp/./main.o
+ [LD]    (mapaddr)
+now file is /home/weilaidb/test/mapaddr
+g++  -o mapaddr  ./tmp/./main.o -lpthread -lzmq   
+current path is mapaddr
+cp -f mapaddr ../exelibtest
+mkdir -p ../exelibtest
+[root@localhost mapaddr]# ./mapaddr  &
+[1] 3993
+[root@localhost mapaddr]# updateitem, create data, key:0, malloc addr:0xb7688008
+updateitem, create data, key:0x1, malloc addr:0x99de030
+updateitem, create data, key:0x2, malloc addr:0x9a29058
+updateitem, create data, key:0x3, malloc addr:0x9a74080
+updateitem, create data, key:0x4, malloc addr:0x9abf0a8
+updateitem, create data, key:0x5, malloc addr:0x9b0a0d0
+updateitem, create data, key:0x6, malloc addr:0x9b550f8
+updateitem, create data, key:0x7, malloc addr:0x9ba0120
+updateitem, create data, key:0x8, malloc addr:0x9beb148
+updateitem, create data, key:0x9, malloc addr:0x9c36170
+updateitem, create data, key:0xa, malloc addr:0x9c81198
+updateitem, create data, key:0xb, malloc addr:0x9ccc1c0
+updateitem, create data, key:0xc, malloc addr:0x9d171e8
+updateitem, create data, key:0xd, malloc addr:0x9d62210
+updateitem, create data, key:0xe, malloc addr:0x9dad238
+updateitem, create data, key:0xf, malloc addr:0x9df8260
+updateitem, create data, key:0x10, malloc addr:0x9e43288
+updateitem, create data, key:0x11, malloc addr:0x9e8e2b0
+updateitem, create data, key:0x12, malloc addr:0x9ed92d8
+updateitem, create data, key:0x13, malloc addr:0x9f24300
+updateitem, create data, key:0x14, malloc addr:0x9f6f328
+updateitem, create data, key:0x15, malloc addr:0x9fba350
+updateitem, create data, key:0x16, malloc addr:0xa005378
+updateitem, create data, key:0x17, malloc addr:0xa0503a0
+updateitem, create data, key:0x18, malloc addr:0xa09b3c8
+updateitem, create data, key:0x19, malloc addr:0xa0e63f0
+updateitem, create data, key:0x1a, malloc addr:0xa131418
+updateitem, create data, key:0x1b, malloc addr:0xa17c440
+updateitem, create data, key:0x1c, malloc addr:0xa1c7468
+updateitem, create data, key:0x1d, malloc addr:0xa212490
+updateitem, create data, key:0x1e, malloc addr:0xa25d4b8
+updateitem, create data, key:0x1f, malloc addr:0xa2a84e0
+updateitem, create data, key:0x20, malloc addr:0xa2f3508
+updateitem, create data, key:0x21, malloc addr:0xa33e530
+updateitem, create data, key:0x22, malloc addr:0xa389558
+updateitem, create data, key:0x23, malloc addr:0xa3d4580
+updateitem, create data, key:0x24, malloc addr:0xa41f5a8
+updateitem, create data, key:0x25, malloc addr:0xa46a5d0
+updateitem, create data, key:0x26, malloc addr:0xa4b55f8
+updateitem, create data, key:0x27, malloc addr:0xa500620
+updateitem, create data, key:0x28, malloc addr:0xa54b648
+updateitem, create data, key:0x29, malloc addr:0xa596670
+updateitem, create data, key:0x2a, malloc addr:0xa5e1698
+updateitem, create data, key:0x2b, malloc addr:0xa62c6c0
+updateitem, create data, key:0x2c, malloc addr:0xa6776e8
+updateitem, create data, key:0x2d, malloc addr:0xa6c2710
+updateitem, create data, key:0x2e, malloc addr:0xa70d738
+updateitem, create data, key:0x2f, malloc addr:0xa758760
+updateitem, create data, key:0x30, malloc addr:0xa7a3788
+updateitem, create data, key:0x31, malloc addr:0xa7ee7b0
+updateitem, create data, key:0x32, malloc addr:0xa8397d8
+updateitem, create data, key:0x33, malloc addr:0xa884800
+updateitem, create data, key:0x34, malloc addr:0xa8cf828
+updateitem, create data, key:0x35, malloc addr:0xa91a850
+updateitem, create data, key:0x36, malloc addr:0xa965878
+updateitem, create data, key:0x37, malloc addr:0xa9b08a0
+updateitem, create data, key:0x38, malloc addr:0xa9fb8c8
+updateitem, create data, key:0x39, malloc addr:0xaa468f0
+updateitem, create data, key:0x3a, malloc addr:0xaa91918
+updateitem, create data, key:0x3b, malloc addr:0xaadc940
+updateitem, create data, key:0x3c, malloc addr:0xab27968
+updateitem, create data, key:0x3d, malloc addr:0xab72990
+updateitem, create data, key:0x3e, malloc addr:0xabbd9b8
+updateitem, create data, key:0x3f, malloc addr:0xac089e0
+updateitem, create data, key:0x40, malloc addr:0xac53a08
+updateitem, create data, key:0x41, malloc addr:0xac9ea30
+updateitem, create data, key:0x42, malloc addr:0xace9a58
+updateitem, create data, key:0x43, malloc addr:0xad34a80
+updateitem, create data, key:0x44, malloc addr:0xad7faa8
+updateitem, create data, key:0x45, malloc addr:0xadcaad0
+updateitem, create data, key:0x46, malloc addr:0xae15af8
+updateitem, create data, key:0x47, malloc addr:0xae60b20
+updateitem, create data, key:0x48, malloc addr:0xaeabb48
+updateitem, create data, key:0x49, malloc addr:0xaef6b70
+updateitem, create data, key:0x4a, malloc addr:0xaf41b98
+updateitem, create data, key:0x4b, malloc addr:0xaf8cbc0
+updateitem, create data, key:0x4c, malloc addr:0xafd7be8
+updateitem, create data, key:0x4d, malloc addr:0xb022c10
+updateitem, create data, key:0x4e, malloc addr:0xb06dc38
+updateitem, create data, key:0x4f, malloc addr:0xb0b8c60
+updateitem, create data, key:0x50, malloc addr:0xb103c88
+updateitem, create data, key:0x51, malloc addr:0xb14ecb0
+updateitem, create data, key:0x52, malloc addr:0xb199cd8
+updateitem, create data, key:0x53, malloc addr:0xb1e4d00
+updateitem, create data, key:0x54, malloc addr:0xb22fd28
+updateitem, create data, key:0x55, malloc addr:0xb27ad50
+updateitem, create data, key:0x56, malloc addr:0xb2c5d78
+updateitem, create data, key:0x57, malloc addr:0xb310da0
+updateitem, create data, key:0x58, malloc addr:0xb35bdc8
+updateitem, create data, key:0x59, malloc addr:0xb3a6df0
+updateitem, create data, key:0x5a, malloc addr:0xb3f1e18
+updateitem, create data, key:0x5b, malloc addr:0xb43ce40
+updateitem, create data, key:0x5c, malloc addr:0xb487e68
+updateitem, create data, key:0x5d, malloc addr:0xb4d2e90
+updateitem, create data, key:0x5e, malloc addr:0xb51deb8
+updateitem, create data, key:0x5f, malloc addr:0xb568ee0
+updateitem, create data, key:0x60, malloc addr:0xb5b3f08
+updateitem, create data, key:0x61, malloc addr:0xb5fef30
+updateitem, create data, key:0x62, malloc addr:0xb649f58
+updateitem, create data, key:0x63, malloc addr:0xb694f80
+printf info, key:0, valueaddr:0xb7688008
+printf info, key:0x1, valueaddr:0x99de030
+printf info, key:0x2, valueaddr:0x9a29058
+printf info, key:0x3, valueaddr:0x9a74080
+printf info, key:0x4, valueaddr:0x9abf0a8
+printf info, key:0x5, valueaddr:0x9b0a0d0
+printf info, key:0x6, valueaddr:0x9b550f8
+printf info, key:0x7, valueaddr:0x9ba0120
+printf info, key:0x8, valueaddr:0x9beb148
+printf info, key:0x9, valueaddr:0x9c36170
+printf info, key:0xa, valueaddr:0x9c81198
+printf info, key:0xb, valueaddr:0x9ccc1c0
+printf info, key:0xc, valueaddr:0x9d171e8
+printf info, key:0xd, valueaddr:0x9d62210
+printf info, key:0xe, valueaddr:0x9dad238
+printf info, key:0xf, valueaddr:0x9df8260
+printf info, key:0x10, valueaddr:0x9e43288
+printf info, key:0x11, valueaddr:0x9e8e2b0
+printf info, key:0x12, valueaddr:0x9ed92d8
+printf info, key:0x13, valueaddr:0x9f24300
+printf info, key:0x14, valueaddr:0x9f6f328
+printf info, key:0x15, valueaddr:0x9fba350
+printf info, key:0x16, valueaddr:0xa005378
+printf info, key:0x17, valueaddr:0xa0503a0
+printf info, key:0x18, valueaddr:0xa09b3c8
+printf info, key:0x19, valueaddr:0xa0e63f0
+printf info, key:0x1a, valueaddr:0xa131418
+printf info, key:0x1b, valueaddr:0xa17c440
+printf info, key:0x1c, valueaddr:0xa1c7468
+printf info, key:0x1d, valueaddr:0xa212490
+printf info, key:0x1e, valueaddr:0xa25d4b8
+printf info, key:0x1f, valueaddr:0xa2a84e0
+printf info, key:0x20, valueaddr:0xa2f3508
+printf info, key:0x21, valueaddr:0xa33e530
+printf info, key:0x22, valueaddr:0xa389558
+printf info, key:0x23, valueaddr:0xa3d4580
+printf info, key:0x24, valueaddr:0xa41f5a8
+printf info, key:0x25, valueaddr:0xa46a5d0
+printf info, key:0x26, valueaddr:0xa4b55f8
+printf info, key:0x27, valueaddr:0xa500620
+printf info, key:0x28, valueaddr:0xa54b648
+printf info, key:0x29, valueaddr:0xa596670
+printf info, key:0x2a, valueaddr:0xa5e1698
+printf info, key:0x2b, valueaddr:0xa62c6c0
+printf info, key:0x2c, valueaddr:0xa6776e8
+printf info, key:0x2d, valueaddr:0xa6c2710
+printf info, key:0x2e, valueaddr:0xa70d738
+printf info, key:0x2f, valueaddr:0xa758760
+printf info, key:0x30, valueaddr:0xa7a3788
+printf info, key:0x31, valueaddr:0xa7ee7b0
+printf info, key:0x32, valueaddr:0xa8397d8
+printf info, key:0x33, valueaddr:0xa884800
+printf info, key:0x34, valueaddr:0xa8cf828
+printf info, key:0x35, valueaddr:0xa91a850
+printf info, key:0x36, valueaddr:0xa965878
+printf info, key:0x37, valueaddr:0xa9b08a0
+printf info, key:0x38, valueaddr:0xa9fb8c8
+printf info, key:0x39, valueaddr:0xaa468f0
+printf info, key:0x3a, valueaddr:0xaa91918
+printf info, key:0x3b, valueaddr:0xaadc940
+printf info, key:0x3c, valueaddr:0xab27968
+printf info, key:0x3d, valueaddr:0xab72990
+printf info, key:0x3e, valueaddr:0xabbd9b8
+printf info, key:0x3f, valueaddr:0xac089e0
+printf info, key:0x40, valueaddr:0xac53a08
+printf info, key:0x41, valueaddr:0xac9ea30
+printf info, key:0x42, valueaddr:0xace9a58
+printf info, key:0x43, valueaddr:0xad34a80
+printf info, key:0x44, valueaddr:0xad7faa8
+printf info, key:0x45, valueaddr:0xadcaad0
+printf info, key:0x46, valueaddr:0xae15af8
+printf info, key:0x47, valueaddr:0xae60b20
+printf info, key:0x48, valueaddr:0xaeabb48
+printf info, key:0x49, valueaddr:0xaef6b70
+printf info, key:0x4a, valueaddr:0xaf41b98
+printf info, key:0x4b, valueaddr:0xaf8cbc0
+printf info, key:0x4c, valueaddr:0xafd7be8
+printf info, key:0x4d, valueaddr:0xb022c10
+printf info, key:0x4e, valueaddr:0xb06dc38
+printf info, key:0x4f, valueaddr:0xb0b8c60
+printf info, key:0x50, valueaddr:0xb103c88
+printf info, key:0x51, valueaddr:0xb14ecb0
+printf info, key:0x52, valueaddr:0xb199cd8
+printf info, key:0x53, valueaddr:0xb1e4d00
+printf info, key:0x54, valueaddr:0xb22fd28
+printf info, key:0x55, valueaddr:0xb27ad50
+printf info, key:0x56, valueaddr:0xb2c5d78
+printf info, key:0x57, valueaddr:0xb310da0
+printf info, key:0x58, valueaddr:0xb35bdc8
+printf info, key:0x59, valueaddr:0xb3a6df0
+printf info, key:0x5a, valueaddr:0xb3f1e18
+printf info, key:0x5b, valueaddr:0xb43ce40
+printf info, key:0x5c, valueaddr:0xb487e68
+printf info, key:0x5d, valueaddr:0xb4d2e90
+printf info, key:0x5e, valueaddr:0xb51deb8
+printf info, key:0x5f, valueaddr:0xb568ee0
+printf info, key:0x60, valueaddr:0xb5b3f08
+printf info, key:0x61, valueaddr:0xb5fef30
+printf info, key:0x62, valueaddr:0xb649f58
+printf info, key:0x63, valueaddr:0xb694f80
+test malloc addr:0x9993028
+
+[root@localhost mapaddr]# kill 3993
+[root@localhost mapaddr]# kill 3993
+bash: kill: (3993) - No such process
+[1]+  Terminated              ./mapaddr
+[root@localhost mapaddr]# make
+mkdir -p ./tmp
+ [CXX]   (tmp/./main.o)
+ g++ -w -fPIC -g -pipe   -pipe -O0 -g -Wall -W -D_REENTRANT   -Iinclude -Iinclude/freetype  -c main.cpp -o tmp/./main.o
+ [LD]    (mapaddr)
+now file is /home/weilaidb/test/mapaddr
+g++  -o mapaddr  ./tmp/./main.o -lpthread -lzmq   
+current path is mapaddr
+cp -f mapaddr ../exelibtest
+mkdir -p ../exelibtest
+[root@localhost mapaddr]# ./mapaddr  &
+[1] 4050
+[root@localhost mapaddr]# org malloc addr:0xb7777008
+updateitem, create data, key:0, malloc addr:0xb772b008
+org malloc addr:0x938b028
+updateitem, create data, key:0x1, malloc addr:0x93d6030
+org malloc addr:0x938b028
+updateitem, create data, key:0x2, malloc addr:0x9421058
+org malloc addr:0x938b028
+updateitem, create data, key:0x3, malloc addr:0x946c080
+org malloc addr:0x938b028
+updateitem, create data, key:0x4, malloc addr:0x94b70a8
+org malloc addr:0x938b028
+updateitem, create data, key:0x5, malloc addr:0x95020d0
+org malloc addr:0x938b028
+updateitem, create data, key:0x6, malloc addr:0x954d0f8
+org malloc addr:0x938b028
+updateitem, create data, key:0x7, malloc addr:0x9598120
+org malloc addr:0x938b028
+updateitem, create data, key:0x8, malloc addr:0x95e3148
+org malloc addr:0x938b028
+updateitem, create data, key:0x9, malloc addr:0x962e170
+org malloc addr:0x938b028
+updateitem, create data, key:0xa, malloc addr:0x9679198
+org malloc addr:0x938b028
+updateitem, create data, key:0xb, malloc addr:0x96c41c0
+org malloc addr:0x938b028
+updateitem, create data, key:0xc, malloc addr:0x970f1e8
+org malloc addr:0x938b028
+updateitem, create data, key:0xd, malloc addr:0x975a210
+org malloc addr:0x938b028
+updateitem, create data, key:0xe, malloc addr:0x97a5238
+org malloc addr:0x938b028
+updateitem, create data, key:0xf, malloc addr:0x97f0260
+org malloc addr:0x938b028
+updateitem, create data, key:0x10, malloc addr:0x983b288
+org malloc addr:0x938b028
+updateitem, create data, key:0x11, malloc addr:0x98862b0
+org malloc addr:0x938b028
+updateitem, create data, key:0x12, malloc addr:0x98d12d8
+org malloc addr:0x938b028
+updateitem, create data, key:0x13, malloc addr:0x991c300
+org malloc addr:0x938b028
+updateitem, create data, key:0x14, malloc addr:0x9967328
+org malloc addr:0x938b028
+updateitem, create data, key:0x15, malloc addr:0x99b2350
+org malloc addr:0x938b028
+updateitem, create data, key:0x16, malloc addr:0x99fd378
+org malloc addr:0x938b028
+updateitem, create data, key:0x17, malloc addr:0x9a483a0
+org malloc addr:0x938b028
+updateitem, create data, key:0x18, malloc addr:0x9a933c8
+org malloc addr:0x938b028
+updateitem, create data, key:0x19, malloc addr:0x9ade3f0
+org malloc addr:0x938b028
+updateitem, create data, key:0x1a, malloc addr:0x9b29418
+org malloc addr:0x938b028
+updateitem, create data, key:0x1b, malloc addr:0x9b74440
+org malloc addr:0x938b028
+updateitem, create data, key:0x1c, malloc addr:0x9bbf468
+org malloc addr:0x938b028
+updateitem, create data, key:0x1d, malloc addr:0x9c0a490
+org malloc addr:0x938b028
+updateitem, create data, key:0x1e, malloc addr:0x9c554b8
+org malloc addr:0x938b028
+updateitem, create data, key:0x1f, malloc addr:0x9ca04e0
+org malloc addr:0x938b028
+updateitem, create data, key:0x20, malloc addr:0x9ceb508
+org malloc addr:0x938b028
+updateitem, create data, key:0x21, malloc addr:0x9d36530
+org malloc addr:0x938b028
+updateitem, create data, key:0x22, malloc addr:0x9d81558
+org malloc addr:0x938b028
+updateitem, create data, key:0x23, malloc addr:0x9dcc580
+org malloc addr:0x938b028
+updateitem, create data, key:0x24, malloc addr:0x9e175a8
+org malloc addr:0x938b028
+updateitem, create data, key:0x25, malloc addr:0x9e625d0
+org malloc addr:0x938b028
+updateitem, create data, key:0x26, malloc addr:0x9ead5f8
+org malloc addr:0x938b028
+updateitem, create data, key:0x27, malloc addr:0x9ef8620
+org malloc addr:0x938b028
+updateitem, create data, key:0x28, malloc addr:0x9f43648
+org malloc addr:0x938b028
+updateitem, create data, key:0x29, malloc addr:0x9f8e670
+org malloc addr:0x938b028
+updateitem, create data, key:0x2a, malloc addr:0x9fd9698
+org malloc addr:0x938b028
+updateitem, create data, key:0x2b, malloc addr:0xa0246c0
+org malloc addr:0x938b028
+updateitem, create data, key:0x2c, malloc addr:0xa06f6e8
+org malloc addr:0x938b028
+updateitem, create data, key:0x2d, malloc addr:0xa0ba710
+org malloc addr:0x938b028
+updateitem, create data, key:0x2e, malloc addr:0xa105738
+org malloc addr:0x938b028
+updateitem, create data, key:0x2f, malloc addr:0xa150760
+org malloc addr:0x938b028
+updateitem, create data, key:0x30, malloc addr:0xa19b788
+org malloc addr:0x938b028
+updateitem, create data, key:0x31, malloc addr:0xa1e67b0
+org malloc addr:0x938b028
+updateitem, create data, key:0x32, malloc addr:0xa2317d8
+org malloc addr:0x938b028
+updateitem, create data, key:0x33, malloc addr:0xa27c800
+org malloc addr:0x938b028
+updateitem, create data, key:0x34, malloc addr:0xa2c7828
+org malloc addr:0x938b028
+updateitem, create data, key:0x35, malloc addr:0xa312850
+org malloc addr:0x938b028
+updateitem, create data, key:0x36, malloc addr:0xa35d878
+org malloc addr:0x938b028
+updateitem, create data, key:0x37, malloc addr:0xa3a88a0
+org malloc addr:0x938b028
+updateitem, create data, key:0x38, malloc addr:0xa3f38c8
+org malloc addr:0x938b028
+updateitem, create data, key:0x39, malloc addr:0xa43e8f0
+org malloc addr:0x938b028
+updateitem, create data, key:0x3a, malloc addr:0xa489918
+org malloc addr:0x938b028
+updateitem, create data, key:0x3b, malloc addr:0xa4d4940
+org malloc addr:0x938b028
+updateitem, create data, key:0x3c, malloc addr:0xa51f968
+org malloc addr:0x938b028
+updateitem, create data, key:0x3d, malloc addr:0xa56a990
+org malloc addr:0x938b028
+updateitem, create data, key:0x3e, malloc addr:0xa5b59b8
+org malloc addr:0x938b028
+updateitem, create data, key:0x3f, malloc addr:0xa6009e0
+org malloc addr:0x938b028
+updateitem, create data, key:0x40, malloc addr:0xa64ba08
+org malloc addr:0x938b028
+updateitem, create data, key:0x41, malloc addr:0xa696a30
+org malloc addr:0x938b028
+updateitem, create data, key:0x42, malloc addr:0xa6e1a58
+org malloc addr:0x938b028
+updateitem, create data, key:0x43, malloc addr:0xa72ca80
+org malloc addr:0x938b028
+updateitem, create data, key:0x44, malloc addr:0xa777aa8
+org malloc addr:0x938b028
+updateitem, create data, key:0x45, malloc addr:0xa7c2ad0
+org malloc addr:0x938b028
+updateitem, create data, key:0x46, malloc addr:0xa80daf8
+org malloc addr:0x938b028
+updateitem, create data, key:0x47, malloc addr:0xa858b20
+org malloc addr:0x938b028
+updateitem, create data, key:0x48, malloc addr:0xa8a3b48
+org malloc addr:0x938b028
+updateitem, create data, key:0x49, malloc addr:0xa8eeb70
+org malloc addr:0x938b028
+updateitem, create data, key:0x4a, malloc addr:0xa939b98
+org malloc addr:0x938b028
+updateitem, create data, key:0x4b, malloc addr:0xa984bc0
+org malloc addr:0x938b028
+updateitem, create data, key:0x4c, malloc addr:0xa9cfbe8
+org malloc addr:0x938b028
+updateitem, create data, key:0x4d, malloc addr:0xaa1ac10
+org malloc addr:0x938b028
+updateitem, create data, key:0x4e, malloc addr:0xaa65c38
+org malloc addr:0x938b028
+updateitem, create data, key:0x4f, malloc addr:0xaab0c60
+org malloc addr:0x938b028
+updateitem, create data, key:0x50, malloc addr:0xaafbc88
+org malloc addr:0x938b028
+updateitem, create data, key:0x51, malloc addr:0xab46cb0
+org malloc addr:0x938b028
+updateitem, create data, key:0x52, malloc addr:0xab91cd8
+org malloc addr:0x938b028
+updateitem, create data, key:0x53, malloc addr:0xabdcd00
+org malloc addr:0x938b028
+updateitem, create data, key:0x54, malloc addr:0xac27d28
+org malloc addr:0x938b028
+updateitem, create data, key:0x55, malloc addr:0xac72d50
+org malloc addr:0x938b028
+updateitem, create data, key:0x56, malloc addr:0xacbdd78
+org malloc addr:0x938b028
+updateitem, create data, key:0x57, malloc addr:0xad08da0
+org malloc addr:0x938b028
+updateitem, create data, key:0x58, malloc addr:0xad53dc8
+org malloc addr:0x938b028
+updateitem, create data, key:0x59, malloc addr:0xad9edf0
+org malloc addr:0x938b028
+updateitem, create data, key:0x5a, malloc addr:0xade9e18
+org malloc addr:0x938b028
+updateitem, create data, key:0x5b, malloc addr:0xae34e40
+org malloc addr:0x938b028
+updateitem, create data, key:0x5c, malloc addr:0xae7fe68
+org malloc addr:0x938b028
+updateitem, create data, key:0x5d, malloc addr:0xaecae90
+org malloc addr:0x938b028
+updateitem, create data, key:0x5e, malloc addr:0xaf15eb8
+org malloc addr:0x938b028
+updateitem, create data, key:0x5f, malloc addr:0xaf60ee0
+org malloc addr:0x938b028
+updateitem, create data, key:0x60, malloc addr:0xafabf08
+org malloc addr:0x938b028
+updateitem, create data, key:0x61, malloc addr:0xaff6f30
+org malloc addr:0x938b028
+updateitem, create data, key:0x62, malloc addr:0xb041f58
+org malloc addr:0x938b028
+updateitem, create data, key:0x63, malloc addr:0xb08cf80
+printf info, key:0, valueaddr:0xb772b008
+printf info, key:0x1, valueaddr:0x93d6030
+printf info, key:0x2, valueaddr:0x9421058
+printf info, key:0x3, valueaddr:0x946c080
+printf info, key:0x4, valueaddr:0x94b70a8
+printf info, key:0x5, valueaddr:0x95020d0
+printf info, key:0x6, valueaddr:0x954d0f8
+printf info, key:0x7, valueaddr:0x9598120
+printf info, key:0x8, valueaddr:0x95e3148
+printf info, key:0x9, valueaddr:0x962e170
+printf info, key:0xa, valueaddr:0x9679198
+printf info, key:0xb, valueaddr:0x96c41c0
+printf info, key:0xc, valueaddr:0x970f1e8
+printf info, key:0xd, valueaddr:0x975a210
+printf info, key:0xe, valueaddr:0x97a5238
+printf info, key:0xf, valueaddr:0x97f0260
+printf info, key:0x10, valueaddr:0x983b288
+printf info, key:0x11, valueaddr:0x98862b0
+printf info, key:0x12, valueaddr:0x98d12d8
+printf info, key:0x13, valueaddr:0x991c300
+printf info, key:0x14, valueaddr:0x9967328
+printf info, key:0x15, valueaddr:0x99b2350
+printf info, key:0x16, valueaddr:0x99fd378
+printf info, key:0x17, valueaddr:0x9a483a0
+printf info, key:0x18, valueaddr:0x9a933c8
+printf info, key:0x19, valueaddr:0x9ade3f0
+printf info, key:0x1a, valueaddr:0x9b29418
+printf info, key:0x1b, valueaddr:0x9b74440
+printf info, key:0x1c, valueaddr:0x9bbf468
+printf info, key:0x1d, valueaddr:0x9c0a490
+printf info, key:0x1e, valueaddr:0x9c554b8
+printf info, key:0x1f, valueaddr:0x9ca04e0
+printf info, key:0x20, valueaddr:0x9ceb508
+printf info, key:0x21, valueaddr:0x9d36530
+printf info, key:0x22, valueaddr:0x9d81558
+printf info, key:0x23, valueaddr:0x9dcc580
+printf info, key:0x24, valueaddr:0x9e175a8
+printf info, key:0x25, valueaddr:0x9e625d0
+printf info, key:0x26, valueaddr:0x9ead5f8
+printf info, key:0x27, valueaddr:0x9ef8620
+printf info, key:0x28, valueaddr:0x9f43648
+printf info, key:0x29, valueaddr:0x9f8e670
+printf info, key:0x2a, valueaddr:0x9fd9698
+printf info, key:0x2b, valueaddr:0xa0246c0
+printf info, key:0x2c, valueaddr:0xa06f6e8
+printf info, key:0x2d, valueaddr:0xa0ba710
+printf info, key:0x2e, valueaddr:0xa105738
+printf info, key:0x2f, valueaddr:0xa150760
+printf info, key:0x30, valueaddr:0xa19b788
+printf info, key:0x31, valueaddr:0xa1e67b0
+printf info, key:0x32, valueaddr:0xa2317d8
+printf info, key:0x33, valueaddr:0xa27c800
+printf info, key:0x34, valueaddr:0xa2c7828
+printf info, key:0x35, valueaddr:0xa312850
+printf info, key:0x36, valueaddr:0xa35d878
+printf info, key:0x37, valueaddr:0xa3a88a0
+printf info, key:0x38, valueaddr:0xa3f38c8
+printf info, key:0x39, valueaddr:0xa43e8f0
+printf info, key:0x3a, valueaddr:0xa489918
+printf info, key:0x3b, valueaddr:0xa4d4940
+printf info, key:0x3c, valueaddr:0xa51f968
+printf info, key:0x3d, valueaddr:0xa56a990
+printf info, key:0x3e, valueaddr:0xa5b59b8
+printf info, key:0x3f, valueaddr:0xa6009e0
+printf info, key:0x40, valueaddr:0xa64ba08
+printf info, key:0x41, valueaddr:0xa696a30
+printf info, key:0x42, valueaddr:0xa6e1a58
+printf info, key:0x43, valueaddr:0xa72ca80
+printf info, key:0x44, valueaddr:0xa777aa8
+printf info, key:0x45, valueaddr:0xa7c2ad0
+printf info, key:0x46, valueaddr:0xa80daf8
+printf info, key:0x47, valueaddr:0xa858b20
+printf info, key:0x48, valueaddr:0xa8a3b48
+printf info, key:0x49, valueaddr:0xa8eeb70
+printf info, key:0x4a, valueaddr:0xa939b98
+printf info, key:0x4b, valueaddr:0xa984bc0
+printf info, key:0x4c, valueaddr:0xa9cfbe8
+printf info, key:0x4d, valueaddr:0xaa1ac10
+printf info, key:0x4e, valueaddr:0xaa65c38
+printf info, key:0x4f, valueaddr:0xaab0c60
+printf info, key:0x50, valueaddr:0xaafbc88
+printf info, key:0x51, valueaddr:0xab46cb0
+printf info, key:0x52, valueaddr:0xab91cd8
+printf info, key:0x53, valueaddr:0xabdcd00
+printf info, key:0x54, valueaddr:0xac27d28
+printf info, key:0x55, valueaddr:0xac72d50
+printf info, key:0x56, valueaddr:0xacbdd78
+printf info, key:0x57, valueaddr:0xad08da0
+printf info, key:0x58, valueaddr:0xad53dc8
+printf info, key:0x59, valueaddr:0xad9edf0
+printf info, key:0x5a, valueaddr:0xade9e18
+printf info, key:0x5b, valueaddr:0xae34e40
+printf info, key:0x5c, valueaddr:0xae7fe68
+printf info, key:0x5d, valueaddr:0xaecae90
+printf info, key:0x5e, valueaddr:0xaf15eb8
+printf info, key:0x5f, valueaddr:0xaf60ee0
+printf info, key:0x60, valueaddr:0xafabf08
+printf info, key:0x61, valueaddr:0xaff6f30
+printf info, key:0x62, valueaddr:0xb041f58
+printf info, key:0x63, valueaddr:0xb08cf80
+test malloc addr:0x938b028
+
+[root@localhost mapaddr]# cat /proc/4050/maps 
+007fb000-007fc000 r-xp 00000000 00:00 0          [vdso]
+008fc000-0095b000 r-xp 00000000 08:03 1311875    /usr/local/lib/libzmq.so.5.0.1
+0095b000-0095e000 rw-p 0005e000 08:03 1311875    /usr/local/lib/libzmq.so.5.0.1
+00b7e000-00b9c000 r-xp 00000000 08:03 13632480   /lib/ld-2.12.so
+00b9c000-00b9d000 r--p 0001e000 08:03 13632480   /lib/ld-2.12.so
+00b9d000-00b9e000 rw-p 0001f000 08:03 13632480   /lib/ld-2.12.so
+00ba0000-00d31000 r-xp 00000000 08:03 13632599   /lib/libc-2.12.so
+00d31000-00d32000 ---p 00191000 08:03 13632599   /lib/libc-2.12.so
+00d32000-00d34000 r--p 00191000 08:03 13632599   /lib/libc-2.12.so
+00d34000-00d35000 rw-p 00193000 08:03 13632599   /lib/libc-2.12.so
+00d35000-00d38000 rw-p 00000000 00:00 0 
+00d3a000-00d51000 r-xp 00000000 08:03 13632606   /lib/libpthread-2.12.so
+00d51000-00d52000 r--p 00016000 08:03 13632606   /lib/libpthread-2.12.so
+00d52000-00d53000 rw-p 00017000 08:03 13632606   /lib/libpthread-2.12.so
+00d53000-00d55000 rw-p 00000000 00:00 0 
+00d5e000-00d65000 r-xp 00000000 08:03 13632613   /lib/librt-2.12.so
+00d65000-00d66000 r--p 00006000 08:03 13632613   /lib/librt-2.12.so
+00d66000-00d67000 rw-p 00007000 08:03 13632613   /lib/librt-2.12.so
+00d69000-00d91000 r-xp 00000000 08:03 13632689   /lib/libm-2.12.so
+00d91000-00d92000 r--p 00027000 08:03 13632689   /lib/libm-2.12.so
+00d92000-00d93000 rw-p 00028000 08:03 13632689   /lib/libm-2.12.so
+06b1a000-06b37000 r-xp 00000000 08:03 13632691   /lib/libgcc_s-4.4.7-20120601.so.1
+06b37000-06b38000 rw-p 0001d000 08:03 13632691   /lib/libgcc_s-4.4.7-20120601.so.1
+06b41000-06c22000 r-xp 00000000 08:03 1319663    /usr/lib/libstdc++.so.6.0.13
+06c22000-06c26000 r--p 000e0000 08:03 1319663    /usr/lib/libstdc++.so.6.0.13
+06c26000-06c28000 rw-p 000e4000 08:03 1319663    /usr/lib/libstdc++.so.6.0.13
+06c28000-06c2e000 rw-p 00000000 00:00 0 
+08048000-0804b000 r-xp 00000000 08:03 27145381   /home/weilaidb/test/mapaddr/mapaddr
+0804b000-0804c000 rw-p 00002000 08:03 27145381   /home/weilaidb/test/mapaddr/mapaddr
+0938b000-0b0f8000 rw-p 00000000 00:00 0          [heap]
+b772b000-b7777000 rw-p 00000000 00:00 0 
+b77c3000-b77c7000 rw-p 00000000 00:00 0 
+b77d4000-b77d6000 rw-p 00000000 00:00 0 
+bfea9000-bfebe000 rw-p 00000000 00:00 0          [stack]
+[root@localhost mapaddr]# make
+mkdir -p ./tmp
+ [CXX]   (tmp/./main.o)
+ g++ -w -fPIC -g -pipe   -pipe -O0 -g -Wall -W -D_REENTRANT   -Iinclude -Iinclude/freetype  -c main.cpp -o tmp/./main.o
+main.cpp: In function ¡®void ClearItem(WORD32, T2&)¡¯:
+main.cpp:114: error: no matching function for call to ¡®RemoveItem(const unsigned int&)¡¯
+main.cpp: In function ¡®int main(int, char**)¡¯:
+main.cpp:168: error: no matching function for call to ¡®ClearItem(SNMP_PERF_MAP&)¡¯
+make: *** [tmp/./main.o] Error 1
+[root@localhost mapaddr]# make
+mkdir -p ./tmp
+ [CXX]   (tmp/./main.o)
+ g++ -w -fPIC -g -pipe   -pipe -O0 -g -Wall -W -D_REENTRANT   -Iinclude -Iinclude/freetype  -c main.cpp -o tmp/./main.o
+main.cpp: In function ¡®void ClearItem(WORD32, T2&)¡¯:
+main.cpp:114: error: no matching function for call to ¡®RemoveItem(const unsigned int&)¡¯
+main.cpp: In function ¡®int main(int, char**)¡¯:
+main.cpp:168: error: no matching function for call to ¡®ClearItem(int, SNMP_PERF_MAP&)¡¯
+make: *** [tmp/./main.o] Error 1
+[root@localhost mapaddr]# make
+mkdir -p ./tmp
+ [CXX]   (tmp/./main.o)
+ g++ -w -fPIC -g -pipe   -pipe -O0 -g -Wall -W -D_REENTRANT   -Iinclude -Iinclude/freetype  -c main.cpp -o tmp/./main.o
+main.cpp: In function ¡®void ClearItem(WORD32, T2&)¡¯:
+main.cpp:114: error: no matching function for call to ¡®RemoveItem(const unsigned int&)¡¯
+main.cpp: In function ¡®int main(int, char**)¡¯:
+main.cpp:168: error: no matching function for call to ¡®ClearItem(int, SNMP_PERF_MAP&)¡¯
+make: *** [tmp/./main.o] Error 1
+[root@localhost mapaddr]# 
+[root@localhost mapaddr]# 
+[root@localhost mapaddr]# make
+mkdir -p ./tmp
+ [CXX]   (tmp/./main.o)
+ g++ -w -fPIC -g -pipe   -pipe -O0 -g -Wall -W -D_REENTRANT   -Iinclude -Iinclude/freetype  -c main.cpp -o tmp/./main.o
+main.cpp: In function ¡®int main(int, char**)¡¯:
+main.cpp:168: error: no matching function for call to ¡®ClearItem(int, SNMP_PERF_MAP&)¡¯
+make: *** [tmp/./main.o] Error 1
+[root@localhost mapaddr]# 
+[root@localhost mapaddr]# 
+[root@localhost mapaddr]# make
+mkdir -p ./tmp
+ [CXX]   (tmp/./main.o)
+ g++ -w -fPIC -g -pipe   -pipe -O0 -g -Wall -W -D_REENTRANT   -Iinclude -Iinclude/freetype  -c main.cpp -o tmp/./main.o
+main.cpp: In function ¡®int main(int, char**)¡¯:
+main.cpp:168: error: no matching function for call to ¡®ClearItem(int, SNMP_PERF_MAP&)¡¯
+make: *** [tmp/./main.o] Error 1
+[root@localhost mapaddr]# 
+[root@localhost mapaddr]# 
+[root@localhost mapaddr]# make
+mkdir -p ./tmp
+ [CXX]   (tmp/./main.o)
+ g++ -w -fPIC -g -pipe   -pipe -O0 -g -Wall -W -D_REENTRANT   -Iinclude -Iinclude/freetype  -c main.cpp -o tmp/./main.o
+main.cpp: In function ¡®void ClearItem(WORD32, T2&) [with T2 = SNMP_PERF_MAP]¡¯:
+main.cpp:168:   instantiated from here
+::pair<const unsigned int, T_SNMP_TEST*> > >&)¡¯
+make: *** [tmp/./main.o] Error 1
+[root@localhost mapaddr]# make
+mkdir -p ./tmp
+ [CXX]   (tmp/./main.o)
+ g++ -w -fPIC -g -pipe   -pipe -O0 -g -Wall -W -D_REENTRANT   -Iinclude -Iinclude/freetype  -c main.cpp -o tmp/./main.o
+main.cpp: In function ¡®void ClearItem(WORD32, SNMP_PERF_MAP&)¡¯:
+ess<unsigned int>, std::allocator<std::pair<const unsigned int, T_SNMP_TEST*> > >&)¡¯
+make: *** [tmp/./main.o] Error 1
+[root@localhost mapaddr]# make
+mkdir -p ./tmp
+ [CXX]   (tmp/./main.o)
+ g++ -w -fPIC -g -pipe   -pipe -O0 -g -Wall -W -D_REENTRANT   -Iinclude -Iinclude/freetype  -c main.cpp -o tmp/./main.o
+main.cpp: In function ¡®void ClearItem(WORD32, T2&) [with T2 = SNMP_PERF_MAP]¡¯:
+main.cpp:167:   instantiated from here
+ess<unsigned int>, std::allocator<std::pair<const unsigned int, T_SNMP_TEST*> > >&)¡¯
+make: *** [tmp/./main.o] Error 1
+[root@localhost mapaddr]# make
+mkdir -p ./tmp
+ [CXX]   (tmp/./main.o)
+ g++ -w -fPIC -g -pipe   -pipe -O0 -g -Wall -W -D_REENTRANT   -Iinclude -Iinclude/freetype  -c main.cpp -o tmp/./main.o
+main.cpp: In function ¡®void ClearItem(WORD32, T2&)¡¯:
+main.cpp:110: error: declaration of ¡®WORD32 dwAddr¡¯ shadows a parameter
+main.cpp: In function ¡®void ClearItem(WORD32, T2&) [with T2 = SNMP_PERF_MAP]¡¯:
+main.cpp:168:   instantiated from here
+main.cpp:110: error: declaration of ¡®WORD32 dwAddr¡¯ shadows a parameter
+ int>, std::allocator<std::pair<const unsigned int, T_SNMP_TEST*> > >&)¡¯
+make: *** [tmp/./main.o] Error 1
+[root@localhost mapaddr]# 
+[root@localhost mapaddr]# 
+[root@localhost mapaddr]# make
+mkdir -p ./tmp
+ [CXX]   (tmp/./main.o)
+ g++ -w -fPIC -g -pipe   -pipe -O0 -g -Wall -W -D_REENTRANT   -Iinclude -Iinclude/freetype  -c main.cpp -o tmp/./main.o
+main.cpp: In function ¡®int main(int, char**)¡¯:
+main.cpp:168: error: no matching function for call to ¡®ClearItem(int, SNMP_PERF_MAP&)¡¯
+make: *** [tmp/./main.o] Error 1
+[root@localhost mapaddr]# make
+mkdir -p ./tmp
+ [CXX]   (tmp/./main.o)
+ g++ -w -fPIC -g -pipe   -pipe -O0 -g -Wall -W -D_REENTRANT   -Iinclude -Iinclude/freetype  -c main.cpp -o tmp/./main.o
+main.cpp: In function ¡®void ClearItem(T2&) [with T2 = SNMP_PERF_MAP]¡¯:
+main.cpp:168:   instantiated from here
+ int>, std::allocator<std::pair<const unsigned int, T_SNMP_TEST*> > >&)¡¯
+make: *** [tmp/./main.o] Error 1
+[root@localhost mapaddr]# make clean
+ Cleaning... 
+rm -f ./tmp/./main.o mapaddr
+[root@localhost mapaddr]# make
+mkdir -p ./tmp
+ [CXX]   (tmp/./main.o)
+ g++ -w -fPIC -g -pipe   -pipe -O0 -g -Wall -W -D_REENTRANT   -Iinclude -Iinclude/freetype  -c main.cpp -o tmp/./main.o
+main.cpp: In function ¡®void ClearItem(T2&) [with T2 = SNMP_PERF_MAP]¡¯:
+main.cpp:168:   instantiated from here
+ int>, std::allocator<std::pair<const unsigned int, T_SNMP_TEST*> > >&)¡¯
+make: *** [tmp/./main.o] Error 1
+[root@localhost mapaddr]# make
+mkdir -p ./tmp
+ [CXX]   (tmp/./main.o)
+ g++ -w -fPIC -g -pipe   -pipe -O0 -g -Wall -W -D_REENTRANT   -Iinclude -Iinclude/freetype  -c main.cpp -o tmp/./main.o
+main.cpp: In function ¡®void ClearItem(SNMP_PERF_MAP&)¡¯:
+ int>, std::allocator<std::pair<const unsigned int, T_SNMP_TEST*> > >&)¡¯
+make: *** [tmp/./main.o] Error 1
+[root@localhost mapaddr]# 
+[root@localhost mapaddr]# 
+[root@localhost mapaddr]# 
+[root@localhost mapaddr]# make
+mkdir -p ./tmp
+ [CXX]   (tmp/./main.o)
+ g++ -w -fPIC -g -pipe   -pipe -O0 -g -Wall -W -D_REENTRANT   -Iinclude -Iinclude/freetype  -c main.cpp -o tmp/./main.o
+ [LD]    (mapaddr)
+now file is /home/weilaidb/test/mapaddr
+g++  -o mapaddr  ./tmp/./main.o -lpthread -lzmq   
+current path is mapaddr
+cp -f mapaddr ../exelibtest
+mkdir -p ../exelibtest
+[root@localhost mapaddr]# 
+[root@localhost mapaddr]# 
+[root@localhost mapaddr]# 
+[root@localhost mapaddr]# make
+mkdir -p ./tmp
+ [LD]    (mapaddr)
+now file is /home/weilaidb/test/mapaddr
+g++  -o mapaddr  ./tmp/./main.o -lpthread -lzmq   
+current path is mapaddr
+cp -f mapaddr ../exelibtest
+mkdir -p ../exelibtest
+[root@localhost mapaddr]# 
+[root@localhost mapaddr]# 
+[root@localhost mapaddr]# ./mapaddr  &
+[2] 4329
+[root@localhost mapaddr]# org malloc addr:0xb76d6008
+updateitem, create data, key:0, malloc addr:0xb768a008
+org malloc addr:0x84ce028
+updateitem, create data, key:0x1, malloc addr:0x8519030
+org malloc addr:0x84ce028
+updateitem, create data, key:0x2, malloc addr:0x8564058
+org malloc addr:0x84ce028
+updateitem, create data, key:0x3, malloc addr:0x85af080
+org malloc addr:0x84ce028
+updateitem, create data, key:0x4, malloc addr:0x85fa0a8
+org malloc addr:0x84ce028
+updateitem, create data, key:0x5, malloc addr:0x86450d0
+org malloc addr:0x84ce028
+updateitem, create data, key:0x6, malloc addr:0x86900f8
+org malloc addr:0x84ce028
+updateitem, create data, key:0x7, malloc addr:0x86db120
+org malloc addr:0x84ce028
+updateitem, create data, key:0x8, malloc addr:0x8726148
+org malloc addr:0x84ce028
+updateitem, create data, key:0x9, malloc addr:0x8771170
+org malloc addr:0x84ce028
+updateitem, create data, key:0xa, malloc addr:0x87bc198
+org malloc addr:0x84ce028
+updateitem, create data, key:0xb, malloc addr:0x88071c0
+org malloc addr:0x84ce028
+updateitem, create data, key:0xc, malloc addr:0x88521e8
+org malloc addr:0x84ce028
+updateitem, create data, key:0xd, malloc addr:0x889d210
+org malloc addr:0x84ce028
+updateitem, create data, key:0xe, malloc addr:0x88e8238
+org malloc addr:0x84ce028
+updateitem, create data, key:0xf, malloc addr:0x8933260
+org malloc addr:0x84ce028
+updateitem, create data, key:0x10, malloc addr:0x897e288
+org malloc addr:0x84ce028
+updateitem, create data, key:0x11, malloc addr:0x89c92b0
+org malloc addr:0x84ce028
+updateitem, create data, key:0x12, malloc addr:0x8a142d8
+org malloc addr:0x84ce028
+updateitem, create data, key:0x13, malloc addr:0x8a5f300
+org malloc addr:0x84ce028
+updateitem, create data, key:0x14, malloc addr:0x8aaa328
+org malloc addr:0x84ce028
+updateitem, create data, key:0x15, malloc addr:0x8af5350
+org malloc addr:0x84ce028
+updateitem, create data, key:0x16, malloc addr:0x8b40378
+org malloc addr:0x84ce028
+updateitem, create data, key:0x17, malloc addr:0x8b8b3a0
+org malloc addr:0x84ce028
+updateitem, create data, key:0x18, malloc addr:0x8bd63c8
+org malloc addr:0x84ce028
+updateitem, create data, key:0x19, malloc addr:0x8c213f0
+org malloc addr:0x84ce028
+updateitem, create data, key:0x1a, malloc addr:0x8c6c418
+org malloc addr:0x84ce028
+updateitem, create data, key:0x1b, malloc addr:0x8cb7440
+org malloc addr:0x84ce028
+updateitem, create data, key:0x1c, malloc addr:0x8d02468
+org malloc addr:0x84ce028
+updateitem, create data, key:0x1d, malloc addr:0x8d4d490
+org malloc addr:0x84ce028
+updateitem, create data, key:0x1e, malloc addr:0x8d984b8
+org malloc addr:0x84ce028
+updateitem, create data, key:0x1f, malloc addr:0x8de34e0
+org malloc addr:0x84ce028
+updateitem, create data, key:0x20, malloc addr:0x8e2e508
+org malloc addr:0x84ce028
+updateitem, create data, key:0x21, malloc addr:0x8e79530
+org malloc addr:0x84ce028
+updateitem, create data, key:0x22, malloc addr:0x8ec4558
+org malloc addr:0x84ce028
+updateitem, create data, key:0x23, malloc addr:0x8f0f580
+org malloc addr:0x84ce028
+updateitem, create data, key:0x24, malloc addr:0x8f5a5a8
+org malloc addr:0x84ce028
+updateitem, create data, key:0x25, malloc addr:0x8fa55d0
+org malloc addr:0x84ce028
+updateitem, create data, key:0x26, malloc addr:0x8ff05f8
+org malloc addr:0x84ce028
+updateitem, create data, key:0x27, malloc addr:0x903b620
+org malloc addr:0x84ce028
+updateitem, create data, key:0x28, malloc addr:0x9086648
+org malloc addr:0x84ce028
+updateitem, create data, key:0x29, malloc addr:0x90d1670
+org malloc addr:0x84ce028
+updateitem, create data, key:0x2a, malloc addr:0x911c698
+org malloc addr:0x84ce028
+updateitem, create data, key:0x2b, malloc addr:0x91676c0
+org malloc addr:0x84ce028
+updateitem, create data, key:0x2c, malloc addr:0x91b26e8
+org malloc addr:0x84ce028
+updateitem, create data, key:0x2d, malloc addr:0x91fd710
+org malloc addr:0x84ce028
+updateitem, create data, key:0x2e, malloc addr:0x9248738
+org malloc addr:0x84ce028
+updateitem, create data, key:0x2f, malloc addr:0x9293760
+org malloc addr:0x84ce028
+updateitem, create data, key:0x30, malloc addr:0x92de788
+org malloc addr:0x84ce028
+updateitem, create data, key:0x31, malloc addr:0x93297b0
+org malloc addr:0x84ce028
+updateitem, create data, key:0x32, malloc addr:0x93747d8
+org malloc addr:0x84ce028
+updateitem, create data, key:0x33, malloc addr:0x93bf800
+org malloc addr:0x84ce028
+updateitem, create data, key:0x34, malloc addr:0x940a828
+org malloc addr:0x84ce028
+updateitem, create data, key:0x35, malloc addr:0x9455850
+org malloc addr:0x84ce028
+updateitem, create data, key:0x36, malloc addr:0x94a0878
+org malloc addr:0x84ce028
+updateitem, create data, key:0x37, malloc addr:0x94eb8a0
+org malloc addr:0x84ce028
+updateitem, create data, key:0x38, malloc addr:0x95368c8
+org malloc addr:0x84ce028
+updateitem, create data, key:0x39, malloc addr:0x95818f0
+org malloc addr:0x84ce028
+updateitem, create data, key:0x3a, malloc addr:0x95cc918
+org malloc addr:0x84ce028
+updateitem, create data, key:0x3b, malloc addr:0x9617940
+org malloc addr:0x84ce028
+updateitem, create data, key:0x3c, malloc addr:0x9662968
+org malloc addr:0x84ce028
+updateitem, create data, key:0x3d, malloc addr:0x96ad990
+org malloc addr:0x84ce028
+updateitem, create data, key:0x3e, malloc addr:0x96f89b8
+org malloc addr:0x84ce028
+updateitem, create data, key:0x3f, malloc addr:0x97439e0
+org malloc addr:0x84ce028
+updateitem, create data, key:0x40, malloc addr:0x978ea08
+org malloc addr:0x84ce028
+updateitem, create data, key:0x41, malloc addr:0x97d9a30
+org malloc addr:0x84ce028
+updateitem, create data, key:0x42, malloc addr:0x9824a58
+org malloc addr:0x84ce028
+updateitem, create data, key:0x43, malloc addr:0x986fa80
+org malloc addr:0x84ce028
+updateitem, create data, key:0x44, malloc addr:0x98baaa8
+org malloc addr:0x84ce028
+updateitem, create data, key:0x45, malloc addr:0x9905ad0
+org malloc addr:0x84ce028
+updateitem, create data, key:0x46, malloc addr:0x9950af8
+org malloc addr:0x84ce028
+updateitem, create data, key:0x47, malloc addr:0x999bb20
+org malloc addr:0x84ce028
+updateitem, create data, key:0x48, malloc addr:0x99e6b48
+org malloc addr:0x84ce028
+updateitem, create data, key:0x49, malloc addr:0x9a31b70
+org malloc addr:0x84ce028
+updateitem, create data, key:0x4a, malloc addr:0x9a7cb98
+org malloc addr:0x84ce028
+updateitem, create data, key:0x4b, malloc addr:0x9ac7bc0
+org malloc addr:0x84ce028
+updateitem, create data, key:0x4c, malloc addr:0x9b12be8
+org malloc addr:0x84ce028
+updateitem, create data, key:0x4d, malloc addr:0x9b5dc10
+org malloc addr:0x84ce028
+updateitem, create data, key:0x4e, malloc addr:0x9ba8c38
+org malloc addr:0x84ce028
+updateitem, create data, key:0x4f, malloc addr:0x9bf3c60
+org malloc addr:0x84ce028
+updateitem, create data, key:0x50, malloc addr:0x9c3ec88
+org malloc addr:0x84ce028
+updateitem, create data, key:0x51, malloc addr:0x9c89cb0
+org malloc addr:0x84ce028
+updateitem, create data, key:0x52, malloc addr:0x9cd4cd8
+org malloc addr:0x84ce028
+updateitem, create data, key:0x53, malloc addr:0x9d1fd00
+org malloc addr:0x84ce028
+updateitem, create data, key:0x54, malloc addr:0x9d6ad28
+org malloc addr:0x84ce028
+updateitem, create data, key:0x55, malloc addr:0x9db5d50
+org malloc addr:0x84ce028
+updateitem, create data, key:0x56, malloc addr:0x9e00d78
+org malloc addr:0x84ce028
+updateitem, create data, key:0x57, malloc addr:0x9e4bda0
+org malloc addr:0x84ce028
+updateitem, create data, key:0x58, malloc addr:0x9e96dc8
+org malloc addr:0x84ce028
+updateitem, create data, key:0x59, malloc addr:0x9ee1df0
+org malloc addr:0x84ce028
+updateitem, create data, key:0x5a, malloc addr:0x9f2ce18
+org malloc addr:0x84ce028
+updateitem, create data, key:0x5b, malloc addr:0x9f77e40
+org malloc addr:0x84ce028
+updateitem, create data, key:0x5c, malloc addr:0x9fc2e68
+org malloc addr:0x84ce028
+updateitem, create data, key:0x5d, malloc addr:0xa00de90
+org malloc addr:0x84ce028
+updateitem, create data, key:0x5e, malloc addr:0xa058eb8
+org malloc addr:0x84ce028
+updateitem, create data, key:0x5f, malloc addr:0xa0a3ee0
+org malloc addr:0x84ce028
+updateitem, create data, key:0x60, malloc addr:0xa0eef08
+org malloc addr:0x84ce028
+updateitem, create data, key:0x61, malloc addr:0xa139f30
+org malloc addr:0x84ce028
+updateitem, create data, key:0x62, malloc addr:0xa184f58
+org malloc addr:0x84ce028
+updateitem, create data, key:0x63, malloc addr:0xa1cff80
+org malloc addr:0x84ce028
+updateitem, create data, key:0x64, malloc addr:0xa21afa8
+org malloc addr:0x84ce028
+updateitem, create data, key:0x65, malloc addr:0xa265fd0
+org malloc addr:0x84ce028
+updateitem, create data, key:0x66, malloc addr:0xa2b0ff8
+org malloc addr:0x84ce028
+updateitem, create data, key:0x67, malloc addr:0xa2fc020
+org malloc addr:0x84ce028
+updateitem, create data, key:0x68, malloc addr:0xa347048
+org malloc addr:0x84ce028
+updateitem, create data, key:0x69, malloc addr:0xa392070
+org malloc addr:0x84ce028
+updateitem, create data, key:0x6a, malloc addr:0xa3dd098
+org malloc addr:0x84ce028
+updateitem, create data, key:0x6b, malloc addr:0xa4280c0
+org malloc addr:0x84ce028
+updateitem, create data, key:0x6c, malloc addr:0xa4730e8
+org malloc addr:0x84ce028
+updateitem, create data, key:0x6d, malloc addr:0xa4be110
+org malloc addr:0x84ce028
+updateitem, create data, key:0x6e, malloc addr:0xa509138
+org malloc addr:0x84ce028
+updateitem, create data, key:0x6f, malloc addr:0xa554160
+org malloc addr:0x84ce028
+updateitem, create data, key:0x70, malloc addr:0xa59f188
+org malloc addr:0x84ce028
+updateitem, create data, key:0x71, malloc addr:0xa5ea1b0
+org malloc addr:0x84ce028
+updateitem, create data, key:0x72, malloc addr:0xa6351d8
+org malloc addr:0x84ce028
+updateitem, create data, key:0x73, malloc addr:0xa680200
+org malloc addr:0x84ce028
+updateitem, create data, key:0x74, malloc addr:0xa6cb228
+org malloc addr:0x84ce028
+updateitem, create data, key:0x75, malloc addr:0xa716250
+org malloc addr:0x84ce028
+updateitem, create data, key:0x76, malloc addr:0xa761278
+org malloc addr:0x84ce028
+updateitem, create data, key:0x77, malloc addr:0xa7ac2a0
+org malloc addr:0x84ce028
+updateitem, create data, key:0x78, malloc addr:0xa7f72c8
+org malloc addr:0x84ce028
+updateitem, create data, key:0x79, malloc addr:0xa8422f0
+org malloc addr:0x84ce028
+updateitem, create data, key:0x7a, malloc addr:0xa88d318
+org malloc addr:0x84ce028
+updateitem, create data, key:0x7b, malloc addr:0xa8d8340
+org malloc addr:0x84ce028
+updateitem, create data, key:0x7c, malloc addr:0xa923368
+org malloc addr:0x84ce028
+updateitem, create data, key:0x7d, malloc addr:0xa96e390
+org malloc addr:0x84ce028
+updateitem, create data, key:0x7e, malloc addr:0xa9b93b8
+org malloc addr:0x84ce028
+updateitem, create data, key:0x7f, malloc addr:0xaa043e0
+org malloc addr:0x84ce028
+updateitem, create data, key:0x80, malloc addr:0xaa4f408
+org malloc addr:0x84ce028
+updateitem, create data, key:0x81, malloc addr:0xaa9a430
+org malloc addr:0x84ce028
+updateitem, create data, key:0x82, malloc addr:0xaae5458
+org malloc addr:0x84ce028
+updateitem, create data, key:0x83, malloc addr:0xab30480
+org malloc addr:0x84ce028
+updateitem, create data, key:0x84, malloc addr:0xab7b4a8
+org malloc addr:0x84ce028
+updateitem, create data, key:0x85, malloc addr:0xabc64d0
+org malloc addr:0x84ce028
+updateitem, create data, key:0x86, malloc addr:0xac114f8
+org malloc addr:0x84ce028
+updateitem, create data, key:0x87, malloc addr:0xac5c520
+org malloc addr:0x84ce028
+updateitem, create data, key:0x88, malloc addr:0xaca7548
+org malloc addr:0x84ce028
+updateitem, create data, key:0x89, malloc addr:0xacf2570
+org malloc addr:0x84ce028
+updateitem, create data, key:0x8a, malloc addr:0xad3d598
+org malloc addr:0x84ce028
+updateitem, create data, key:0x8b, malloc addr:0xad885c0
+org malloc addr:0x84ce028
+updateitem, create data, key:0x8c, malloc addr:0xadd35e8
+org malloc addr:0x84ce028
+updateitem, create data, key:0x8d, malloc addr:0xae1e610
+org malloc addr:0x84ce028
+updateitem, create data, key:0x8e, malloc addr:0xae69638
+org malloc addr:0x84ce028
+updateitem, create data, key:0x8f, malloc addr:0xaeb4660
+org malloc addr:0x84ce028
+updateitem, create data, key:0x90, malloc addr:0xaeff688
+org malloc addr:0x84ce028
+updateitem, create data, key:0x91, malloc addr:0xaf4a6b0
+org malloc addr:0x84ce028
+updateitem, create data, key:0x92, malloc addr:0xaf956d8
+org malloc addr:0x84ce028
+updateitem, create data, key:0x93, malloc addr:0xafe0700
+org malloc addr:0x84ce028
+updateitem, create data, key:0x94, malloc addr:0xb02b728
+org malloc addr:0x84ce028
+updateitem, create data, key:0x95, malloc addr:0xb076750
+org malloc addr:0x84ce028
+updateitem, create data, key:0x96, malloc addr:0xb0c1778
+org malloc addr:0x84ce028
+updateitem, create data, key:0x97, malloc addr:0xb10c7a0
+org malloc addr:0x84ce028
+updateitem, create data, key:0x98, malloc addr:0xb1577c8
+org malloc addr:0x84ce028
+updateitem, create data, key:0x99, malloc addr:0xb1a27f0
+org malloc addr:0x84ce028
+updateitem, create data, key:0x9a, malloc addr:0xb1ed818
+org malloc addr:0x84ce028
+updateitem, create data, key:0x9b, malloc addr:0xb238840
+org malloc addr:0x84ce028
+updateitem, create data, key:0x9c, malloc addr:0xb283868
+org malloc addr:0x84ce028
+updateitem, create data, key:0x9d, malloc addr:0xb2ce890
+org malloc addr:0x84ce028
+updateitem, create data, key:0x9e, malloc addr:0xb3198b8
+org malloc addr:0x84ce028
+updateitem, create data, key:0x9f, malloc addr:0xb3648e0
+org malloc addr:0x84ce028
+updateitem, create data, key:0xa0, malloc addr:0xb3af908
+org malloc addr:0x84ce028
+updateitem, create data, key:0xa1, malloc addr:0xb3fa930
+org malloc addr:0x84ce028
+updateitem, create data, key:0xa2, malloc addr:0xb445958
+org malloc addr:0x84ce028
+updateitem, create data, key:0xa3, malloc addr:0xb490980
+org malloc addr:0x84ce028
+updateitem, create data, key:0xa4, malloc addr:0xb4db9a8
+org malloc addr:0x84ce028
+updateitem, create data, key:0xa5, malloc addr:0xb5269d0
+org malloc addr:0x84ce028
+updateitem, create data, key:0xa6, malloc addr:0xb5719f8
+org malloc addr:0x84ce028
+updateitem, create data, key:0xa7, malloc addr:0xb5bca20
+org malloc addr:0x84ce028
+updateitem, create data, key:0xa8, malloc addr:0xb607a48
+org malloc addr:0x84ce028
+updateitem, create data, key:0xa9, malloc addr:0xb652a70
+org malloc addr:0x84ce028
+updateitem, create data, key:0xaa, malloc addr:0xb69da98
+org malloc addr:0x84ce028
+updateitem, create data, key:0xab, malloc addr:0xb6e8ac0
+org malloc addr:0x84ce028
+updateitem, create data, key:0xac, malloc addr:0xb733ae8
+org malloc addr:0x84ce028
+updateitem, create data, key:0xad, malloc addr:0xb77eb10
+org malloc addr:0x84ce028
+updateitem, create data, key:0xae, malloc addr:0xb7c9b38
+org malloc addr:0x84ce028
+updateitem, create data, key:0xaf, malloc addr:0xb814b60
+org malloc addr:0x84ce028
+updateitem, create data, key:0xb0, malloc addr:0xb85fb88
+org malloc addr:0x84ce028
+updateitem, create data, key:0xb1, malloc addr:0xb8aabb0
+org malloc addr:0x84ce028
+updateitem, create data, key:0xb2, malloc addr:0xb8f5bd8
+org malloc addr:0x84ce028
+updateitem, create data, key:0xb3, malloc addr:0xb940c00
+org malloc addr:0x84ce028
+updateitem, create data, key:0xb4, malloc addr:0xb98bc28
+org malloc addr:0x84ce028
+updateitem, create data, key:0xb5, malloc addr:0xb9d6c50
+org malloc addr:0x84ce028
+updateitem, create data, key:0xb6, malloc addr:0xba21c78
+org malloc addr:0x84ce028
+updateitem, create data, key:0xb7, malloc addr:0xba6cca0
+org malloc addr:0x84ce028
+updateitem, create data, key:0xb8, malloc addr:0xbab7cc8
+org malloc addr:0x84ce028
+updateitem, create data, key:0xb9, malloc addr:0xbb02cf0
+org malloc addr:0x84ce028
+updateitem, create data, key:0xba, malloc addr:0xbb4dd18
+org malloc addr:0x84ce028
+updateitem, create data, key:0xbb, malloc addr:0xbb98d40
+org malloc addr:0x84ce028
+updateitem, create data, key:0xbc, malloc addr:0xbbe3d68
+org malloc addr:0x84ce028
+updateitem, create data, key:0xbd, malloc addr:0xbc2ed90
+org malloc addr:0x84ce028
+updateitem, create data, key:0xbe, malloc addr:0xbc79db8
+org malloc addr:0x84ce028
+updateitem, create data, key:0xbf, malloc addr:0xbcc4de0
+org malloc addr:0x84ce028
+updateitem, create data, key:0xc0, malloc addr:0xbd0fe08
+org malloc addr:0x84ce028
+updateitem, create data, key:0xc1, malloc addr:0xbd5ae30
+org malloc addr:0x84ce028
+updateitem, create data, key:0xc2, malloc addr:0xbda5e58
+org malloc addr:0x84ce028
+updateitem, create data, key:0xc3, malloc addr:0xbdf0e80
+org malloc addr:0x84ce028
+updateitem, create data, key:0xc4, malloc addr:0xbe3bea8
+org malloc addr:0x84ce028
+updateitem, create data, key:0xc5, malloc addr:0xbe86ed0
+org malloc addr:0x84ce028
+updateitem, create data, key:0xc6, malloc addr:0xbed1ef8
+org malloc addr:0x84ce028
+updateitem, create data, key:0xc7, malloc addr:0xbf1cf20
+org malloc addr:0x84ce028
+updateitem, create data, key:0xc8, malloc addr:0xbf67f48
+org malloc addr:0x84ce028
+updateitem, create data, key:0xc9, malloc addr:0xbfb2f70
+org malloc addr:0x84ce028
+updateitem, create data, key:0xca, malloc addr:0xbffdf98
+org malloc addr:0x84ce028
+updateitem, create data, key:0xcb, malloc addr:0xc048fc0
+org malloc addr:0x84ce028
+updateitem, create data, key:0xcc, malloc addr:0xc093fe8
+org malloc addr:0x84ce028
+updateitem, create data, key:0xcd, malloc addr:0xc0df010
+org malloc addr:0x84ce028
+updateitem, create data, key:0xce, malloc addr:0xc12a038
+org malloc addr:0x84ce028
+updateitem, create data, key:0xcf, malloc addr:0xc175060
+org malloc addr:0x84ce028
+updateitem, create data, key:0xd0, malloc addr:0xc1c0088
+org malloc addr:0x84ce028
+updateitem, create data, key:0xd1, malloc addr:0xc20b0b0
+org malloc addr:0x84ce028
+updateitem, create data, key:0xd2, malloc addr:0xc2560d8
+org malloc addr:0x84ce028
+updateitem, create data, key:0xd3, malloc addr:0xc2a1100
+org malloc addr:0x84ce028
+updateitem, create data, key:0xd4, malloc addr:0xc2ec128
+org malloc addr:0x84ce028
+updateitem, create data, key:0xd5, malloc addr:0xc337150
+org malloc addr:0x84ce028
+updateitem, create data, key:0xd6, malloc addr:0xc382178
+org malloc addr:0x84ce028
+updateitem, create data, key:0xd7, malloc addr:0xc3cd1a0
+org malloc addr:0x84ce028
+updateitem, create data, key:0xd8, malloc addr:0xc4181c8
+org malloc addr:0x84ce028
+updateitem, create data, key:0xd9, malloc addr:0xc4631f0
+org malloc addr:0x84ce028
+updateitem, create data, key:0xda, malloc addr:0xc4ae218
+org malloc addr:0x84ce028
+updateitem, create data, key:0xdb, malloc addr:0xc4f9240
+org malloc addr:0x84ce028
+updateitem, create data, key:0xdc, malloc addr:0xc544268
+org malloc addr:0x84ce028
+updateitem, create data, key:0xdd, malloc addr:0xc58f290
+org malloc addr:0x84ce028
+updateitem, create data, key:0xde, malloc addr:0xc5da2b8
+org malloc addr:0x84ce028
+updateitem, create data, key:0xdf, malloc addr:0xc6252e0
+org malloc addr:0x84ce028
+updateitem, create data, key:0xe0, malloc addr:0xc670308
+org malloc addr:0x84ce028
+updateitem, create data, key:0xe1, malloc addr:0xc6bb330
+org malloc addr:0x84ce028
+updateitem, create data, key:0xe2, malloc addr:0xc706358
+org malloc addr:0x84ce028
+updateitem, create data, key:0xe3, malloc addr:0xc751380
+org malloc addr:0x84ce028
+updateitem, create data, key:0xe4, malloc addr:0xc79c3a8
+org malloc addr:0x84ce028
+updateitem, create data, key:0xe5, malloc addr:0xc7e73d0
+org malloc addr:0x84ce028
+updateitem, create data, key:0xe6, malloc addr:0xc8323f8
+org malloc addr:0x84ce028
+updateitem, create data, key:0xe7, malloc addr:0xc87d420
+org malloc addr:0x84ce028
+updateitem, create data, key:0xe8, malloc addr:0xc8c8448
+org malloc addr:0x84ce028
+updateitem, create data, key:0xe9, malloc addr:0xc913470
+org malloc addr:0x84ce028
+updateitem, create data, key:0xea, malloc addr:0xc95e498
+org malloc addr:0x84ce028
+updateitem, create data, key:0xeb, malloc addr:0xc9a94c0
+org malloc addr:0x84ce028
+updateitem, create data, key:0xec, malloc addr:0xc9f44e8
+org malloc addr:0x84ce028
+updateitem, create data, key:0xed, malloc addr:0xca3f510
+org malloc addr:0x84ce028
+updateitem, create data, key:0xee, malloc addr:0xca8a538
+org malloc addr:0x84ce028
+updateitem, create data, key:0xef, malloc addr:0xcad5560
+org malloc addr:0x84ce028
+updateitem, create data, key:0xf0, malloc addr:0xcb20588
+org malloc addr:0x84ce028
+updateitem, create data, key:0xf1, malloc addr:0xcb6b5b0
+org malloc addr:0x84ce028
+updateitem, create data, key:0xf2, malloc addr:0xcbb65d8
+org malloc addr:0x84ce028
+updateitem, create data, key:0xf3, malloc addr:0xcc01600
+org malloc addr:0x84ce028
+updateitem, create data, key:0xf4, malloc addr:0xcc4c628
+org malloc addr:0x84ce028
+updateitem, create data, key:0xf5, malloc addr:0xcc97650
+org malloc addr:0x84ce028
+updateitem, create data, key:0xf6, malloc addr:0xcce2678
+org malloc addr:0x84ce028
+updateitem, create data, key:0xf7, malloc addr:0xcd2d6a0
+org malloc addr:0x84ce028
+updateitem, create data, key:0xf8, malloc addr:0xcd786c8
+org malloc addr:0x84ce028
+updateitem, create data, key:0xf9, malloc addr:0xcdc36f0
+org malloc addr:0x84ce028
+updateitem, create data, key:0xfa, malloc addr:0xce0e718
+org malloc addr:0x84ce028
+updateitem, create data, key:0xfb, malloc addr:0xce59740
+org malloc addr:0x84ce028
+updateitem, create data, key:0xfc, malloc addr:0xcea4768
+org malloc addr:0x84ce028
+updateitem, create data, key:0xfd, malloc addr:0xceef790
+org malloc addr:0x84ce028
+updateitem, create data, key:0xfe, malloc addr:0xcf3a7b8
+org malloc addr:0x84ce028
+updateitem, create data, key:0xff, malloc addr:0xcf857e0
+org malloc addr:0x84ce028
+updateitem, create data, key:0x100, malloc addr:0xcfd0808
+org malloc addr:0x84ce028
+updateitem, create data, key:0x101, malloc addr:0xd01b830
+org malloc addr:0x84ce028
+updateitem, create data, key:0x102, malloc addr:0xd066858
+org malloc addr:0x84ce028
+updateitem, create data, key:0x103, malloc addr:0xd0b1880
+org malloc addr:0x84ce028
+updateitem, create data, key:0x104, malloc addr:0xd0fc8a8
+org malloc addr:0x84ce028
+updateitem, create data, key:0x105, malloc addr:0xd1478d0
+org malloc addr:0x84ce028
+updateitem, create data, key:0x106, malloc addr:0xd1928f8
+org malloc addr:0x84ce028
+updateitem, create data, key:0x107, malloc addr:0xd1dd920
+org malloc addr:0x84ce028
+updateitem, create data, key:0x108, malloc addr:0xd228948
+org malloc addr:0x84ce028
+updateitem, create data, key:0x109, malloc addr:0xd273970
+org malloc addr:0x84ce028
+updateitem, create data, key:0x10a, malloc addr:0xd2be998
+org malloc addr:0x84ce028
+updateitem, create data, key:0x10b, malloc addr:0xd3099c0
+org malloc addr:0x84ce028
+updateitem, create data, key:0x10c, malloc addr:0xd3549e8
+org malloc addr:0x84ce028
+updateitem, create data, key:0x10d, malloc addr:0xd39fa10
+org malloc addr:0x84ce028
+updateitem, create data, key:0x10e, malloc addr:0xd3eaa38
+org malloc addr:0x84ce028
+updateitem, create data, key:0x10f, malloc addr:0xd435a60
+org malloc addr:0x84ce028
+updateitem, create data, key:0x110, malloc addr:0xd480a88
+org malloc addr:0x84ce028
+updateitem, create data, key:0x111, malloc addr:0xd4cbab0
+org malloc addr:0x84ce028
+updateitem, create data, key:0x112, malloc addr:0xd516ad8
+org malloc addr:0x84ce028
+updateitem, create data, key:0x113, malloc addr:0xd561b00
+org malloc addr:0x84ce028
+updateitem, create data, key:0x114, malloc addr:0xd5acb28
+org malloc addr:0x84ce028
+updateitem, create data, key:0x115, malloc addr:0xd5f7b50
+org malloc addr:0x84ce028
+updateitem, create data, key:0x116, malloc addr:0xd642b78
+org malloc addr:0x84ce028
+updateitem, create data, key:0x117, malloc addr:0xd68dba0
+org malloc addr:0x84ce028
+updateitem, create data, key:0x118, malloc addr:0xd6d8bc8
+org malloc addr:0x84ce028
+updateitem, create data, key:0x119, malloc addr:0xd723bf0
+org malloc addr:0x84ce028
+updateitem, create data, key:0x11a, malloc addr:0xd76ec18
+org malloc addr:0x84ce028
+updateitem, create data, key:0x11b, malloc addr:0xd7b9c40
+org malloc addr:0x84ce028
+updateitem, create data, key:0x11c, malloc addr:0xd804c68
+org malloc addr:0x84ce028
+updateitem, create data, key:0x11d, malloc addr:0xd84fc90
+org malloc addr:0x84ce028
+updateitem, create data, key:0x11e, malloc addr:0xd89acb8
+org malloc addr:0x84ce028
+updateitem, create data, key:0x11f, malloc addr:0xd8e5ce0
+org malloc addr:0x84ce028
+updateitem, create data, key:0x120, malloc addr:0xd930d08
+org malloc addr:0x84ce028
+updateitem, create data, key:0x121, malloc addr:0xd97bd30
+org malloc addr:0x84ce028
+updateitem, create data, key:0x122, malloc addr:0xd9c6d58
+org malloc addr:0x84ce028
+updateitem, create data, key:0x123, malloc addr:0xda11d80
+org malloc addr:0x84ce028
+updateitem, create data, key:0x124, malloc addr:0xda5cda8
+org malloc addr:0x84ce028
+updateitem, create data, key:0x125, malloc addr:0xdaa7dd0
+org malloc addr:0x84ce028
+updateitem, create data, key:0x126, malloc addr:0xdaf2df8
+org malloc addr:0x84ce028
+updateitem, create data, key:0x127, malloc addr:0xdb3de20
+org malloc addr:0x84ce028
+updateitem, create data, key:0x128, malloc addr:0xdb88e48
+org malloc addr:0x84ce028
+updateitem, create data, key:0x129, malloc addr:0xdbd3e70
+org malloc addr:0x84ce028
+updateitem, create data, key:0x12a, malloc addr:0xdc1ee98
+org malloc addr:0x84ce028
+updateitem, create data, key:0x12b, malloc addr:0xdc69ec0
+org malloc addr:0x84ce028
+updateitem, create data, key:0x12c, malloc addr:0xdcb4ee8
+org malloc addr:0x84ce028
+updateitem, create data, key:0x12d, malloc addr:0xdcfff10
+org malloc addr:0x84ce028
+updateitem, create data, key:0x12e, malloc addr:0xdd4af38
+org malloc addr:0x84ce028
+updateitem, create data, key:0x12f, malloc addr:0xdd95f60
+org malloc addr:0x84ce028
+updateitem, create data, key:0x130, malloc addr:0xdde0f88
+org malloc addr:0x84ce028
+updateitem, create data, key:0x131, malloc addr:0xde2bfb0
+org malloc addr:0x84ce028
+updateitem, create data, key:0x132, malloc addr:0xde76fd8
+org malloc addr:0x84ce028
+updateitem, create data, key:0x133, malloc addr:0xdec2000
+org malloc addr:0x84ce028
+updateitem, create data, key:0x134, malloc addr:0xdf0d028
+org malloc addr:0x84ce028
+updateitem, create data, key:0x135, malloc addr:0xdf58050
+org malloc addr:0x84ce028
+updateitem, create data, key:0x136, malloc addr:0xdfa3078
+org malloc addr:0x84ce028
+updateitem, create data, key:0x137, malloc addr:0xdfee0a0
+org malloc addr:0x84ce028
+updateitem, create data, key:0x138, malloc addr:0xe0390c8
+org malloc addr:0x84ce028
+updateitem, create data, key:0x139, malloc addr:0xe0840f0
+org malloc addr:0x84ce028
+updateitem, create data, key:0x13a, malloc addr:0xe0cf118
+org malloc addr:0x84ce028
+updateitem, create data, key:0x13b, malloc addr:0xe11a140
+org malloc addr:0x84ce028
+updateitem, create data, key:0x13c, malloc addr:0xe165168
+org malloc addr:0x84ce028
+updateitem, create data, key:0x13d, malloc addr:0xe1b0190
+org malloc addr:0x84ce028
+updateitem, create data, key:0x13e, malloc addr:0xe1fb1b8
+org malloc addr:0x84ce028
+updateitem, create data, key:0x13f, malloc addr:0xe2461e0
+org malloc addr:0x84ce028
+updateitem, create data, key:0x140, malloc addr:0xe291208
+org malloc addr:0x84ce028
+updateitem, create data, key:0x141, malloc addr:0xe2dc230
+org malloc addr:0x84ce028
+updateitem, create data, key:0x142, malloc addr:0xe327258
+org malloc addr:0x84ce028
+updateitem, create data, key:0x143, malloc addr:0xe372280
+org malloc addr:0x84ce028
+updateitem, create data, key:0x144, malloc addr:0xe3bd2a8
+org malloc addr:0x84ce028
+updateitem, create data, key:0x145, malloc addr:0xe4082d0
+org malloc addr:0x84ce028
+updateitem, create data, key:0x146, malloc addr:0xe4532f8
+org malloc addr:0x84ce028
+updateitem, create data, key:0x147, malloc addr:0xe49e320
+org malloc addr:0x84ce028
+updateitem, create data, key:0x148, malloc addr:0xe4e9348
+org malloc addr:0x84ce028
+updateitem, create data, key:0x149, malloc addr:0xe534370
+org malloc addr:0x84ce028
+updateitem, create data, key:0x14a, malloc addr:0xe57f398
+org malloc addr:0x84ce028
+updateitem, create data, key:0x14b, malloc addr:0xe5ca3c0
+org malloc addr:0x84ce028
+updateitem, create data, key:0x14c, malloc addr:0xe6153e8
+org malloc addr:0x84ce028
+updateitem, create data, key:0x14d, malloc addr:0xe660410
+org malloc addr:0x84ce028
+updateitem, create data, key:0x14e, malloc addr:0xe6ab438
+org malloc addr:0x84ce028
+updateitem, create data, key:0x14f, malloc addr:0xe6f6460
+org malloc addr:0x84ce028
+updateitem, create data, key:0x150, malloc addr:0xe741488
+org malloc addr:0x84ce028
+updateitem, create data, key:0x151, malloc addr:0xe78c4b0
+org malloc addr:0x84ce028
+updateitem, create data, key:0x152, malloc addr:0xe7d74d8
+org malloc addr:0x84ce028
+updateitem, create data, key:0x153, malloc addr:0xe822500
+org malloc addr:0x84ce028
+updateitem, create data, key:0x154, malloc addr:0xe86d528
+org malloc addr:0x84ce028
+updateitem, create data, key:0x155, malloc addr:0xe8b8550
+org malloc addr:0x84ce028
+updateitem, create data, key:0x156, malloc addr:0xe903578
+org malloc addr:0x84ce028
+updateitem, create data, key:0x157, malloc addr:0xe94e5a0
+org malloc addr:0x84ce028
+updateitem, create data, key:0x158, malloc addr:0xe9995c8
+org malloc addr:0x84ce028
+updateitem, create data, key:0x159, malloc addr:0xe9e45f0
+org malloc addr:0x84ce028
+updateitem, create data, key:0x15a, malloc addr:0xea2f618
+org malloc addr:0x84ce028
+updateitem, create data, key:0x15b, malloc addr:0xea7a640
+org malloc addr:0x84ce028
+updateitem, create data, key:0x15c, malloc addr:0xeac5668
+org malloc addr:0x84ce028
+updateitem, create data, key:0x15d, malloc addr:0xeb10690
+org malloc addr:0x84ce028
+updateitem, create data, key:0x15e, malloc addr:0xeb5b6b8
+org malloc addr:0x84ce028
+updateitem, create data, key:0x15f, malloc addr:0xeba66e0
+org malloc addr:0x84ce028
+updateitem, create data, key:0x160, malloc addr:0xebf1708
+org malloc addr:0x84ce028
+updateitem, create data, key:0x161, malloc addr:0xec3c730
+org malloc addr:0x84ce028
+updateitem, create data, key:0x162, malloc addr:0xec87758
+org malloc addr:0x84ce028
+updateitem, create data, key:0x163, malloc addr:0xecd2780
+org malloc addr:0x84ce028
+updateitem, create data, key:0x164, malloc addr:0xed1d7a8
+org malloc addr:0x84ce028
+updateitem, create data, key:0x165, malloc addr:0xed687d0
+org malloc addr:0x84ce028
+updateitem, create data, key:0x166, malloc addr:0xedb37f8
+org malloc addr:0x84ce028
+updateitem, create data, key:0x167, malloc addr:0xedfe820
+org malloc addr:0x84ce028
+updateitem, create data, key:0x168, malloc addr:0xee49848
+org malloc addr:0x84ce028
+updateitem, create data, key:0x169, malloc addr:0xee94870
+org malloc addr:0x84ce028
+updateitem, create data, key:0x16a, malloc addr:0xeedf898
+org malloc addr:0x84ce028
+updateitem, create data, key:0x16b, malloc addr:0xef2a8c0
+org malloc addr:0x84ce028
+updateitem, create data, key:0x16c, malloc addr:0xef758e8
+org malloc addr:0x84ce028
+updateitem, create data, key:0x16d, malloc addr:0xefc0910
+org malloc addr:0x84ce028
+updateitem, create data, key:0x16e, malloc addr:0xf00b938
+org malloc addr:0x84ce028
+updateitem, create data, key:0x16f, malloc addr:0xf056960
+org malloc addr:0x84ce028
+updateitem, create data, key:0x170, malloc addr:0xf0a1988
+org malloc addr:0x84ce028
+updateitem, create data, key:0x171, malloc addr:0xf0ec9b0
+org malloc addr:0x84ce028
+updateitem, create data, key:0x172, malloc addr:0xf1379d8
+org malloc addr:0x84ce028
+updateitem, create data, key:0x173, malloc addr:0xf182a00
+org malloc addr:0x84ce028
+updateitem, create data, key:0x174, malloc addr:0xf1cda28
+org malloc addr:0x84ce028
+updateitem, create data, key:0x175, malloc addr:0xf218a50
+org malloc addr:0x84ce028
+updateitem, create data, key:0x176, malloc addr:0xf263a78
+org malloc addr:0x84ce028
+updateitem, create data, key:0x177, malloc addr:0xf2aeaa0
+org malloc addr:0x84ce028
+updateitem, create data, key:0x178, malloc addr:0xf2f9ac8
+org malloc addr:0x84ce028
+updateitem, create data, key:0x179, malloc addr:0xf344af0
+org malloc addr:0x84ce028
+updateitem, create data, key:0x17a, malloc addr:0xf38fb18
+org malloc addr:0x84ce028
+updateitem, create data, key:0x17b, malloc addr:0xf3dab40
+org malloc addr:0x84ce028
+updateitem, create data, key:0x17c, malloc addr:0xf425b68
+org malloc addr:0x84ce028
+updateitem, create data, key:0x17d, malloc addr:0xf470b90
+org malloc addr:0x84ce028
+updateitem, create data, key:0x17e, malloc addr:0xf4bbbb8
+org malloc addr:0x84ce028
+updateitem, create data, key:0x17f, malloc addr:0xf506be0
+org malloc addr:0x84ce028
+updateitem, create data, key:0x180, malloc addr:0xf551c08
+org malloc addr:0x84ce028
+updateitem, create data, key:0x181, malloc addr:0xf59cc30
+org malloc addr:0x84ce028
+updateitem, create data, key:0x182, malloc addr:0xf5e7c58
+org malloc addr:0x84ce028
+updateitem, create data, key:0x183, malloc addr:0xf632c80
+org malloc addr:0x84ce028
+updateitem, create data, key:0x184, malloc addr:0xf67dca8
+org malloc addr:0x84ce028
+updateitem, create data, key:0x185, malloc addr:0xf6c8cd0
+org malloc addr:0x84ce028
+updateitem, create data, key:0x186, malloc addr:0xf713cf8
+org malloc addr:0x84ce028
+updateitem, create data, key:0x187, malloc addr:0xf75ed20
+org malloc addr:0x84ce028
+updateitem, create data, key:0x188, malloc addr:0xf7a9d48
+org malloc addr:0x84ce028
+updateitem, create data, key:0x189, malloc addr:0xf7f4d70
+org malloc addr:0x84ce028
+updateitem, create data, key:0x18a, malloc addr:0xf83fd98
+org malloc addr:0x84ce028
+updateitem, create data, key:0x18b, malloc addr:0xf88adc0
+org malloc addr:0x84ce028
+updateitem, create data, key:0x18c, malloc addr:0xf8d5de8
+org malloc addr:0x84ce028
+updateitem, create data, key:0x18d, malloc addr:0xf920e10
+org malloc addr:0x84ce028
+updateitem, create data, key:0x18e, malloc addr:0xf96be38
+org malloc addr:0x84ce028
+updateitem, create data, key:0x18f, malloc addr:0xf9b6e60
+org malloc addr:0x84ce028
+updateitem, create data, key:0x190, malloc addr:0xfa01e88
+org malloc addr:0x84ce028
+updateitem, create data, key:0x191, malloc addr:0xfa4ceb0
+org malloc addr:0x84ce028
+updateitem, create data, key:0x192, malloc addr:0xfa97ed8
+org malloc addr:0x84ce028
+updateitem, create data, key:0x193, malloc addr:0xfae2f00
+org malloc addr:0x84ce028
+updateitem, create data, key:0x194, malloc addr:0xfb2df28
+org malloc addr:0x84ce028
+updateitem, create data, key:0x195, malloc addr:0xfb78f50
+org malloc addr:0x84ce028
+updateitem, create data, key:0x196, malloc addr:0xfbc3f78
+org malloc addr:0x84ce028
+updateitem, create data, key:0x197, malloc addr:0xfc0efa0
+org malloc addr:0x84ce028
+updateitem, create data, key:0x198, malloc addr:0xfc59fc8
+org malloc addr:0x84ce028
+updateitem, create data, key:0x199, malloc addr:0xfca4ff0
+org malloc addr:0x84ce028
+updateitem, create data, key:0x19a, malloc addr:0xfcf0018
+org malloc addr:0x84ce028
+updateitem, create data, key:0x19b, malloc addr:0xfd3b040
+org malloc addr:0x84ce028
+updateitem, create data, key:0x19c, malloc addr:0xfd86068
+org malloc addr:0x84ce028
+updateitem, create data, key:0x19d, malloc addr:0xfdd1090
+org malloc addr:0x84ce028
+updateitem, create data, key:0x19e, malloc addr:0xfe1c0b8
+org malloc addr:0x84ce028
+updateitem, create data, key:0x19f, malloc addr:0xfe670e0
+org malloc addr:0x84ce028
+updateitem, create data, key:0x1a0, malloc addr:0xfeb2108
+org malloc addr:0x84ce028
+updateitem, create data, key:0x1a1, malloc addr:0xfefd130
+org malloc addr:0x84ce028
+updateitem, create data, key:0x1a2, malloc addr:0xff48158
+org malloc addr:0x84ce028
+updateitem, create data, key:0x1a3, malloc addr:0xff93180
+org malloc addr:0x84ce028
+updateitem, create data, key:0x1a4, malloc addr:0xffde1a8
+org malloc addr:0x84ce028
+updateitem, create data, key:0x1a5, malloc addr:0x100291d0
+org malloc addr:0x84ce028
+updateitem, create data, key:0x1a6, malloc addr:0x100741f8
+org malloc addr:0x84ce028
+updateitem, create data, key:0x1a7, malloc addr:0x100bf220
+org malloc addr:0x84ce028
+updateitem, create data, key:0x1a8, malloc addr:0x1010a248
+org malloc addr:0x84ce028
+updateitem, create data, key:0x1a9, malloc addr:0x10155270
+org malloc addr:0x84ce028
+updateitem, create data, key:0x1aa, malloc addr:0x101a0298
+org malloc addr:0x84ce028
+updateitem, create data, key:0x1ab, malloc addr:0x101eb2c0
+org malloc addr:0x84ce028
+updateitem, create data, key:0x1ac, malloc addr:0x102362e8
+org malloc addr:0x84ce028
+updateitem, create data, key:0x1ad, malloc addr:0x10281310
+org malloc addr:0x84ce028
+updateitem, create data, key:0x1ae, malloc addr:0x102cc338
+org malloc addr:0x84ce028
+updateitem, create data, key:0x1af, malloc addr:0x10317360
+org malloc addr:0x84ce028
+updateitem, create data, key:0x1b0, malloc addr:0x10362388
+org malloc addr:0x84ce028
+updateitem, create data, key:0x1b1, malloc addr:0x103ad3b0
+org malloc addr:0x84ce028
+updateitem, create data, key:0x1b2, malloc addr:0x103f83d8
+org malloc addr:0x84ce028
+updateitem, create data, key:0x1b3, malloc addr:0x10443400
+org malloc addr:0x84ce028
+updateitem, create data, key:0x1b4, malloc addr:0x1048e428
+org malloc addr:0x84ce028
+updateitem, create data, key:0x1b5, malloc addr:0x104d9450
+org malloc addr:0x84ce028
+updateitem, create data, key:0x1b6, malloc addr:0x10524478
+org malloc addr:0x84ce028
+updateitem, create data, key:0x1b7, malloc addr:0x1056f4a0
+org malloc addr:0x84ce028
+updateitem, create data, key:0x1b8, malloc addr:0x105ba4c8
+org malloc addr:0x84ce028
+updateitem, create data, key:0x1b9, malloc addr:0x106054f0
+org malloc addr:0x84ce028
+updateitem, create data, key:0x1ba, malloc addr:0x10650518
+org malloc addr:0x84ce028
+updateitem, create data, key:0x1bb, malloc addr:0x1069b540
+org malloc addr:0x84ce028
+updateitem, create data, key:0x1bc, malloc addr:0x106e6568
+org malloc addr:0x84ce028
+updateitem, create data, key:0x1bd, malloc addr:0x10731590
+org malloc addr:0x84ce028
+updateitem, create data, key:0x1be, malloc addr:0x1077c5b8
+org malloc addr:0x84ce028
+updateitem, create data, key:0x1bf, malloc addr:0x107c75e0
+org malloc addr:0x84ce028
+updateitem, create data, key:0x1c0, malloc addr:0x10812608
+org malloc addr:0x84ce028
+updateitem, create data, key:0x1c1, malloc addr:0x1085d630
+org malloc addr:0x84ce028
+updateitem, create data, key:0x1c2, malloc addr:0x108a8658
+org malloc addr:0x84ce028
+updateitem, create data, key:0x1c3, malloc addr:0x108f3680
+org malloc addr:0x84ce028
+updateitem, create data, key:0x1c4, malloc addr:0x1093e6a8
+org malloc addr:0x84ce028
+updateitem, create data, key:0x1c5, malloc addr:0x109896d0
+org malloc addr:0x84ce028
+updateitem, create data, key:0x1c6, malloc addr:0x109d46f8
+org malloc addr:0x84ce028
+updateitem, create data, key:0x1c7, malloc addr:0x10a1f720
+org malloc addr:0x84ce028
+updateitem, create data, key:0x1c8, malloc addr:0x10a6a748
+org malloc addr:0x84ce028
+updateitem, create data, key:0x1c9, malloc addr:0x10ab5770
+org malloc addr:0x84ce028
+updateitem, create data, key:0x1ca, malloc addr:0x10b00798
+org malloc addr:0x84ce028
+updateitem, create data, key:0x1cb, malloc addr:0x10b4b7c0
+org malloc addr:0x84ce028
+updateitem, create data, key:0x1cc, malloc addr:0x10b967e8
+org malloc addr:0x84ce028
+updateitem, create data, key:0x1cd, malloc addr:0x10be1810
+org malloc addr:0x84ce028
+updateitem, create data, key:0x1ce, malloc addr:0x10c2c838
+org malloc addr:0x84ce028
+updateitem, create data, key:0x1cf, malloc addr:0x10c77860
+org malloc addr:0x84ce028
+updateitem, create data, key:0x1d0, malloc addr:0x10cc2888
+org malloc addr:0x84ce028
+updateitem, create data, key:0x1d1, malloc addr:0x10d0d8b0
+org malloc addr:0x84ce028
+updateitem, create data, key:0x1d2, malloc addr:0x10d588d8
+org malloc addr:0x84ce028
+updateitem, create data, key:0x1d3, malloc addr:0x10da3900
+org malloc addr:0x84ce028
+updateitem, create data, key:0x1d4, malloc addr:0x10dee928
+org malloc addr:0x84ce028
+updateitem, create data, key:0x1d5, malloc addr:0x10e39950
+org malloc addr:0x84ce028
+updateitem, create data, key:0x1d6, malloc addr:0x10e84978
+org malloc addr:0x84ce028
+updateitem, create data, key:0x1d7, malloc addr:0x10ecf9a0
+org malloc addr:0x84ce028
+updateitem, create data, key:0x1d8, malloc addr:0x10f1a9c8
+org malloc addr:0x84ce028
+updateitem, create data, key:0x1d9, malloc addr:0x10f659f0
+org malloc addr:0x84ce028
+updateitem, create data, key:0x1da, malloc addr:0x10fb0a18
+org malloc addr:0x84ce028
+updateitem, create data, key:0x1db, malloc addr:0x10ffba40
+org malloc addr:0x84ce028
+updateitem, create data, key:0x1dc, malloc addr:0x11046a68
+org malloc addr:0x84ce028
+updateitem, create data, key:0x1dd, malloc addr:0x11091a90
+org malloc addr:0x84ce028
+updateitem, create data, key:0x1de, malloc addr:0x110dcab8
+org malloc addr:0x84ce028
+updateitem, create data, key:0x1df, malloc addr:0x11127ae0
+org malloc addr:0x84ce028
+updateitem, create data, key:0x1e0, malloc addr:0x11172b08
+org malloc addr:0x84ce028
+updateitem, create data, key:0x1e1, malloc addr:0x111bdb30
+org malloc addr:0x84ce028
+updateitem, create data, key:0x1e2, malloc addr:0x11208b58
+org malloc addr:0x84ce028
+updateitem, create data, key:0x1e3, malloc addr:0x11253b80
+org malloc addr:0x84ce028
+updateitem, create data, key:0x1e4, malloc addr:0x1129eba8
+org malloc addr:0x84ce028
+updateitem, create data, key:0x1e5, malloc addr:0x112e9bd0
+org malloc addr:0x84ce028
+updateitem, create data, key:0x1e6, malloc addr:0x11334bf8
+org malloc addr:0x84ce028
+updateitem, create data, key:0x1e7, malloc addr:0x1137fc20
+org malloc addr:0x84ce028
+updateitem, create data, key:0x1e8, malloc addr:0x113cac48
+org malloc addr:0x84ce028
+updateitem, create data, key:0x1e9, malloc addr:0x11415c70
+org malloc addr:0x84ce028
+updateitem, create data, key:0x1ea, malloc addr:0x11460c98
+org malloc addr:0x84ce028
+updateitem, create data, key:0x1eb, malloc addr:0x114abcc0
+org malloc addr:0x84ce028
+updateitem, create data, key:0x1ec, malloc addr:0x114f6ce8
+org malloc addr:0x84ce028
+updateitem, create data, key:0x1ed, malloc addr:0x11541d10
+org malloc addr:0x84ce028
+updateitem, create data, key:0x1ee, malloc addr:0x1158cd38
+org malloc addr:0x84ce028
+updateitem, create data, key:0x1ef, malloc addr:0x115d7d60
+org malloc addr:0x84ce028
+updateitem, create data, key:0x1f0, malloc addr:0x11622d88
+org malloc addr:0x84ce028
+updateitem, create data, key:0x1f1, malloc addr:0x1166ddb0
+org malloc addr:0x84ce028
+updateitem, create data, key:0x1f2, malloc addr:0x116b8dd8
+org malloc addr:0x84ce028
+updateitem, create data, key:0x1f3, malloc addr:0x11703e00
+org malloc addr:0x84ce028
+updateitem, create data, key:0x1f4, malloc addr:0x1174ee28
+org malloc addr:0x84ce028
+updateitem, create data, key:0x1f5, malloc addr:0x11799e50
+org malloc addr:0x84ce028
+updateitem, create data, key:0x1f6, malloc addr:0x117e4e78
+org malloc addr:0x84ce028
+updateitem, create data, key:0x1f7, malloc addr:0x1182fea0
+org malloc addr:0x84ce028
+updateitem, create data, key:0x1f8, malloc addr:0x1187aec8
+org malloc addr:0x84ce028
+updateitem, create data, key:0x1f9, malloc addr:0x118c5ef0
+org malloc addr:0x84ce028
+updateitem, create data, key:0x1fa, malloc addr:0x11910f18
+org malloc addr:0x84ce028
+updateitem, create data, key:0x1fb, malloc addr:0x1195bf40
+org malloc addr:0x84ce028
+updateitem, create data, key:0x1fc, malloc addr:0x119a6f68
+org malloc addr:0x84ce028
+updateitem, create data, key:0x1fd, malloc addr:0x119f1f90
+org malloc addr:0x84ce028
+updateitem, create data, key:0x1fe, malloc addr:0x11a3cfb8
+org malloc addr:0x84ce028
+updateitem, create data, key:0x1ff, malloc addr:0x11a87fe0
+org malloc addr:0x84ce028
+updateitem, create data, key:0x200, malloc addr:0x11ad3008
+org malloc addr:0x84ce028
+updateitem, create data, key:0x201, malloc addr:0x11b1e030
+org malloc addr:0x84ce028
+updateitem, create data, key:0x202, malloc addr:0x11b69058
+org malloc addr:0x84ce028
+updateitem, create data, key:0x203, malloc addr:0x11bb4080
+org malloc addr:0x84ce028
+updateitem, create data, key:0x204, malloc addr:0x11bff0a8
+org malloc addr:0x84ce028
+updateitem, create data, key:0x205, malloc addr:0x11c4a0d0
+org malloc addr:0x84ce028
+updateitem, create data, key:0x206, malloc addr:0x11c950f8
+org malloc addr:0x84ce028
+updateitem, create data, key:0x207, malloc addr:0x11ce0120
+org malloc addr:0x84ce028
+updateitem, create data, key:0x208, malloc addr:0x11d2b148
+org malloc addr:0x84ce028
+updateitem, create data, key:0x209, malloc addr:0x11d76170
+org malloc addr:0x84ce028
+updateitem, create data, key:0x20a, malloc addr:0x11dc1198
+org malloc addr:0x84ce028
+updateitem, create data, key:0x20b, malloc addr:0x11e0c1c0
+org malloc addr:0x84ce028
+updateitem, create data, key:0x20c, malloc addr:0x11e571e8
+org malloc addr:0x84ce028
+updateitem, create data, key:0x20d, malloc addr:0x11ea2210
+org malloc addr:0x84ce028
+updateitem, create data, key:0x20e, malloc addr:0x11eed238
+org malloc addr:0x84ce028
+updateitem, create data, key:0x20f, malloc addr:0x11f38260
+org malloc addr:0x84ce028
+updateitem, create data, key:0x210, malloc addr:0x11f83288
+org malloc addr:0x84ce028
+updateitem, create data, key:0x211, malloc addr:0x11fce2b0
+org malloc addr:0x84ce028
+updateitem, create data, key:0x212, malloc addr:0x120192d8
+org malloc addr:0x84ce028
+updateitem, create data, key:0x213, malloc addr:0x12064300
+org malloc addr:0x84ce028
+updateitem, create data, key:0x214, malloc addr:0x120af328
+org malloc addr:0x84ce028
+updateitem, create data, key:0x215, malloc addr:0x120fa350
+org malloc addr:0x84ce028
+updateitem, create data, key:0x216, malloc addr:0x12145378
+org malloc addr:0x84ce028
+updateitem, create data, key:0x217, malloc addr:0x121903a0
+org malloc addr:0x84ce028
+updateitem, create data, key:0x218, malloc addr:0x121db3c8
+org malloc addr:0x84ce028
+updateitem, create data, key:0x219, malloc addr:0x122263f0
+org malloc addr:0x84ce028
+updateitem, create data, key:0x21a, malloc addr:0x12271418
+org malloc addr:0x84ce028
+updateitem, create data, key:0x21b, malloc addr:0x122bc440
+org malloc addr:0x84ce028
+updateitem, create data, key:0x21c, malloc addr:0x12307468
+org malloc addr:0x84ce028
+updateitem, create data, key:0x21d, malloc addr:0x12352490
+org malloc addr:0x84ce028
+updateitem, create data, key:0x21e, malloc addr:0x1239d4b8
+org malloc addr:0x84ce028
+updateitem, create data, key:0x21f, malloc addr:0x123e84e0
+org malloc addr:0x84ce028
+updateitem, create data, key:0x220, malloc addr:0x12433508
+org malloc addr:0x84ce028
+updateitem, create data, key:0x221, malloc addr:0x1247e530
+org malloc addr:0x84ce028
+updateitem, create data, key:0x222, malloc addr:0x124c9558
+org malloc addr:0x84ce028
+updateitem, create data, key:0x223, malloc addr:0x12514580
+org malloc addr:0x84ce028
+updateitem, create data, key:0x224, malloc addr:0x1255f5a8
+org malloc addr:0x84ce028
+updateitem, create data, key:0x225, malloc addr:0x125aa5d0
+org malloc addr:0x84ce028
+updateitem, create data, key:0x226, malloc addr:0x125f55f8
+org malloc addr:0x84ce028
+updateitem, create data, key:0x227, malloc addr:0x12640620
+org malloc addr:0x84ce028
+updateitem, create data, key:0x228, malloc addr:0x1268b648
+org malloc addr:0x84ce028
+updateitem, create data, key:0x229, malloc addr:0x126d6670
+org malloc addr:0x84ce028
+updateitem, create data, key:0x22a, malloc addr:0x12721698
+org malloc addr:0x84ce028
+updateitem, create data, key:0x22b, malloc addr:0x1276c6c0
+org malloc addr:0x84ce028
+updateitem, create data, key:0x22c, malloc addr:0x127b76e8
+org malloc addr:0x84ce028
+updateitem, create data, key:0x22d, malloc addr:0x12802710
+org malloc addr:0x84ce028
+updateitem, create data, key:0x22e, malloc addr:0x1284d738
+org malloc addr:0x84ce028
+updateitem, create data, key:0x22f, malloc addr:0x12898760
+org malloc addr:0x84ce028
+updateitem, create data, key:0x230, malloc addr:0x128e3788
+org malloc addr:0x84ce028
+updateitem, create data, key:0x231, malloc addr:0x1292e7b0
+org malloc addr:0x84ce028
+updateitem, create data, key:0x232, malloc addr:0x129797d8
+org malloc addr:0x84ce028
+updateitem, create data, key:0x233, malloc addr:0x129c4800
+org malloc addr:0x84ce028
+updateitem, create data, key:0x234, malloc addr:0x12a0f828
+org malloc addr:0x84ce028
+updateitem, create data, key:0x235, malloc addr:0x12a5a850
+org malloc addr:0x84ce028
+updateitem, create data, key:0x236, malloc addr:0x12aa5878
+org malloc addr:0x84ce028
+updateitem, create data, key:0x237, malloc addr:0x12af08a0
+org malloc addr:0x84ce028
+updateitem, create data, key:0x238, malloc addr:0x12b3b8c8
+org malloc addr:0x84ce028
+updateitem, create data, key:0x239, malloc addr:0x12b868f0
+org malloc addr:0x84ce028
+updateitem, create data, key:0x23a, malloc addr:0x12bd1918
+org malloc addr:0x84ce028
+updateitem, create data, key:0x23b, malloc addr:0x12c1c940
+org malloc addr:0x84ce028
+updateitem, create data, key:0x23c, malloc addr:0x12c67968
+org malloc addr:0x84ce028
+updateitem, create data, key:0x23d, malloc addr:0x12cb2990
+org malloc addr:0x84ce028
+updateitem, create data, key:0x23e, malloc addr:0x12cfd9b8
+org malloc addr:0x84ce028
+updateitem, create data, key:0x23f, malloc addr:0x12d489e0
+org malloc addr:0x84ce028
+updateitem, create data, key:0x240, malloc addr:0x12d93a08
+org malloc addr:0x84ce028
+updateitem, create data, key:0x241, malloc addr:0x12ddea30
+org malloc addr:0x84ce028
+updateitem, create data, key:0x242, malloc addr:0x12e29a58
+org malloc addr:0x84ce028
+updateitem, create data, key:0x243, malloc addr:0x12e74a80
+org malloc addr:0x84ce028
+updateitem, create data, key:0x244, malloc addr:0x12ebfaa8
+org malloc addr:0x84ce028
+updateitem, create data, key:0x245, malloc addr:0x12f0aad0
+org malloc addr:0x84ce028
+updateitem, create data, key:0x246, malloc addr:0x12f55af8
+org malloc addr:0x84ce028
+updateitem, create data, key:0x247, malloc addr:0x12fa0b20
+org malloc addr:0x84ce028
+updateitem, create data, key:0x248, malloc addr:0x12febb48
+org malloc addr:0x84ce028
+updateitem, create data, key:0x249, malloc addr:0x13036b70
+org malloc addr:0x84ce028
+updateitem, create data, key:0x24a, malloc addr:0x13081b98
+org malloc addr:0x84ce028
+updateitem, create data, key:0x24b, malloc addr:0x130ccbc0
+org malloc addr:0x84ce028
+updateitem, create data, key:0x24c, malloc addr:0x13117be8
+org malloc addr:0x84ce028
+updateitem, create data, key:0x24d, malloc addr:0x13162c10
+org malloc addr:0x84ce028
+updateitem, create data, key:0x24e, malloc addr:0x131adc38
+org malloc addr:0x84ce028
+updateitem, create data, key:0x24f, malloc addr:0x131f8c60
+org malloc addr:0x84ce028
+updateitem, create data, key:0x250, malloc addr:0x13243c88
+org malloc addr:0x84ce028
+updateitem, create data, key:0x251, malloc addr:0x1328ecb0
+org malloc addr:0x84ce028
+updateitem, create data, key:0x252, malloc addr:0x132d9cd8
+org malloc addr:0x84ce028
+updateitem, create data, key:0x253, malloc addr:0x13324d00
+org malloc addr:0x84ce028
+updateitem, create data, key:0x254, malloc addr:0x1336fd28
+org malloc addr:0x84ce028
+updateitem, create data, key:0x255, malloc addr:0x133bad50
+org malloc addr:0x84ce028
+updateitem, create data, key:0x256, malloc addr:0x13405d78
+org malloc addr:0x84ce028
+updateitem, create data, key:0x257, malloc addr:0x13450da0
+org malloc addr:0x84ce028
+updateitem, create data, key:0x258, malloc addr:0x1349bdc8
+org malloc addr:0x84ce028
+updateitem, create data, key:0x259, malloc addr:0x134e6df0
+org malloc addr:0x84ce028
+updateitem, create data, key:0x25a, malloc addr:0x13531e18
+org malloc addr:0x84ce028
+updateitem, create data, key:0x25b, malloc addr:0x1357ce40
+org malloc addr:0x84ce028
+updateitem, create data, key:0x25c, malloc addr:0x135c7e68
+org malloc addr:0x84ce028
+updateitem, create data, key:0x25d, malloc addr:0x13612e90
+org malloc addr:0x84ce028
+updateitem, create data, key:0x25e, malloc addr:0x1365deb8
+org malloc addr:0x84ce028
+updateitem, create data, key:0x25f, malloc addr:0x136a8ee0
+org malloc addr:0x84ce028
+updateitem, create data, key:0x260, malloc addr:0x136f3f08
+org malloc addr:0x84ce028
+updateitem, create data, key:0x261, malloc addr:0x1373ef30
+org malloc addr:0x84ce028
+updateitem, create data, key:0x262, malloc addr:0x13789f58
+org malloc addr:0x84ce028
+updateitem, create data, key:0x263, malloc addr:0x137d4f80
+org malloc addr:0x84ce028
+updateitem, create data, key:0x264, malloc addr:0x1381ffa8
+org malloc addr:0x84ce028
+updateitem, create data, key:0x265, malloc addr:0x1386afd0
+org malloc addr:0x84ce028
+updateitem, create data, key:0x266, malloc addr:0x138b5ff8
+org malloc addr:0x84ce028
+updateitem, create data, key:0x267, malloc addr:0x13901020
+org malloc addr:0x84ce028
+updateitem, create data, key:0x268, malloc addr:0x1394c048
+org malloc addr:0x84ce028
+updateitem, create data, key:0x269, malloc addr:0x13997070
+org malloc addr:0x84ce028
+updateitem, create data, key:0x26a, malloc addr:0x139e2098
+org malloc addr:0x84ce028
+updateitem, create data, key:0x26b, malloc addr:0x13a2d0c0
+org malloc addr:0x84ce028
+updateitem, create data, key:0x26c, malloc addr:0x13a780e8
+org malloc addr:0x84ce028
+updateitem, create data, key:0x26d, malloc addr:0x13ac3110
+org malloc addr:0x84ce028
+updateitem, create data, key:0x26e, malloc addr:0x13b0e138
+org malloc addr:0x84ce028
+updateitem, create data, key:0x26f, malloc addr:0x13b59160
+org malloc addr:0x84ce028
+updateitem, create data, key:0x270, malloc addr:0x13ba4188
+org malloc addr:0x84ce028
+updateitem, create data, key:0x271, malloc addr:0x13bef1b0
+org malloc addr:0x84ce028
+updateitem, create data, key:0x272, malloc addr:0x13c3a1d8
+org malloc addr:0x84ce028
+updateitem, create data, key:0x273, malloc addr:0x13c85200
+org malloc addr:0x84ce028
+updateitem, create data, key:0x274, malloc addr:0x13cd0228
+org malloc addr:0x84ce028
+updateitem, create data, key:0x275, malloc addr:0x13d1b250
+org malloc addr:0x84ce028
+updateitem, create data, key:0x276, malloc addr:0x13d66278
+org malloc addr:0x84ce028
+updateitem, create data, key:0x277, malloc addr:0x13db12a0
+org malloc addr:0x84ce028
+updateitem, create data, key:0x278, malloc addr:0x13dfc2c8
+org malloc addr:0x84ce028
+updateitem, create data, key:0x279, malloc addr:0x13e472f0
+org malloc addr:0x84ce028
+updateitem, create data, key:0x27a, malloc addr:0x13e92318
+org malloc addr:0x84ce028
+updateitem, create data, key:0x27b, malloc addr:0x13edd340
+org malloc addr:0x84ce028
+updateitem, create data, key:0x27c, malloc addr:0x13f28368
+org malloc addr:0x84ce028
+updateitem, create data, key:0x27d, malloc addr:0x13f73390
+org malloc addr:0x84ce028
+updateitem, create data, key:0x27e, malloc addr:0x13fbe3b8
+org malloc addr:0x84ce028
+updateitem, create data, key:0x27f, malloc addr:0x140093e0
+org malloc addr:0x84ce028
+updateitem, create data, key:0x280, malloc addr:0x14054408
+org malloc addr:0x84ce028
+updateitem, create data, key:0x281, malloc addr:0x1409f430
+org malloc addr:0x84ce028
+updateitem, create data, key:0x282, malloc addr:0x140ea458
+org malloc addr:0x84ce028
+updateitem, create data, key:0x283, malloc addr:0x14135480
+org malloc addr:0x84ce028
+updateitem, create data, key:0x284, malloc addr:0x141804a8
+org malloc addr:0x84ce028
+updateitem, create data, key:0x285, malloc addr:0x141cb4d0
+org malloc addr:0x84ce028
+updateitem, create data, key:0x286, malloc addr:0x142164f8
+org malloc addr:0x84ce028
+updateitem, create data, key:0x287, malloc addr:0x14261520
+org malloc addr:0x84ce028
+updateitem, create data, key:0x288, malloc addr:0x142ac548
+org malloc addr:0x84ce028
+updateitem, create data, key:0x289, malloc addr:0x142f7570
+org malloc addr:0x84ce028
+updateitem, create data, key:0x28a, malloc addr:0x14342598
+org malloc addr:0x84ce028
+updateitem, create data, key:0x28b, malloc addr:0x1438d5c0
+org malloc addr:0x84ce028
+updateitem, create data, key:0x28c, malloc addr:0x143d85e8
+org malloc addr:0x84ce028
+updateitem, create data, key:0x28d, malloc addr:0x14423610
+org malloc addr:0x84ce028
+updateitem, create data, key:0x28e, malloc addr:0x1446e638
+org malloc addr:0x84ce028
+updateitem, create data, key:0x28f, malloc addr:0x144b9660
+org malloc addr:0x84ce028
+updateitem, create data, key:0x290, malloc addr:0x14504688
+org malloc addr:0x84ce028
+updateitem, create data, key:0x291, malloc addr:0x1454f6b0
+org malloc addr:0x84ce028
+updateitem, create data, key:0x292, malloc addr:0x1459a6d8
+org malloc addr:0x84ce028
+updateitem, create data, key:0x293, malloc addr:0x145e5700
+org malloc addr:0x84ce028
+updateitem, create data, key:0x294, malloc addr:0x14630728
+org malloc addr:0x84ce028
+updateitem, create data, key:0x295, malloc addr:0x1467b750
+org malloc addr:0x84ce028
+updateitem, create data, key:0x296, malloc addr:0x146c6778
+org malloc addr:0x84ce028
+updateitem, create data, key:0x297, malloc addr:0x147117a0
+org malloc addr:0x84ce028
+updateitem, create data, key:0x298, malloc addr:0x1475c7c8
+org malloc addr:0x84ce028
+updateitem, create data, key:0x299, malloc addr:0x147a77f0
+org malloc addr:0x84ce028
+updateitem, create data, key:0x29a, malloc addr:0x147f2818
+org malloc addr:0x84ce028
+updateitem, create data, key:0x29b, malloc addr:0x1483d840
+org malloc addr:0x84ce028
+updateitem, create data, key:0x29c, malloc addr:0x14888868
+org malloc addr:0x84ce028
+updateitem, create data, key:0x29d, malloc addr:0x148d3890
+org malloc addr:0x84ce028
+updateitem, create data, key:0x29e, malloc addr:0x1491e8b8
+org malloc addr:0x84ce028
+updateitem, create data, key:0x29f, malloc addr:0x149698e0
+org malloc addr:0x84ce028
+updateitem, create data, key:0x2a0, malloc addr:0x149b4908
+org malloc addr:0x84ce028
+updateitem, create data, key:0x2a1, malloc addr:0x149ff930
+org malloc addr:0x84ce028
+updateitem, create data, key:0x2a2, malloc addr:0x14a4a958
+org malloc addr:0x84ce028
+updateitem, create data, key:0x2a3, malloc addr:0x14a95980
+org malloc addr:0x84ce028
+updateitem, create data, key:0x2a4, malloc addr:0x14ae09a8
+org malloc addr:0x84ce028
+updateitem, create data, key:0x2a5, malloc addr:0x14b2b9d0
+org malloc addr:0x84ce028
+updateitem, create data, key:0x2a6, malloc addr:0x14b769f8
+org malloc addr:0x84ce028
+updateitem, create data, key:0x2a7, malloc addr:0x14bc1a20
+org malloc addr:0x84ce028
+updateitem, create data, key:0x2a8, malloc addr:0x14c0ca48
+org malloc addr:0x84ce028
+updateitem, create data, key:0x2a9, malloc addr:0x14c57a70
+org malloc addr:0x84ce028
+updateitem, create data, key:0x2aa, malloc addr:0x14ca2a98
+org malloc addr:0x84ce028
+updateitem, create data, key:0x2ab, malloc addr:0x14cedac0
+org malloc addr:0x84ce028
+updateitem, create data, key:0x2ac, malloc addr:0x14d38ae8
+org malloc addr:0x84ce028
+updateitem, create data, key:0x2ad, malloc addr:0x14d83b10
+org malloc addr:0x84ce028
+updateitem, create data, key:0x2ae, malloc addr:0x14dceb38
+org malloc addr:0x84ce028
+updateitem, create data, key:0x2af, malloc addr:0x14e19b60
+org malloc addr:0x84ce028
+updateitem, create data, key:0x2b0, malloc addr:0x14e64b88
+org malloc addr:0x84ce028
+updateitem, create data, key:0x2b1, malloc addr:0x14eafbb0
+org malloc addr:0x84ce028
+updateitem, create data, key:0x2b2, malloc addr:0x14efabd8
+org malloc addr:0x84ce028
+updateitem, create data, key:0x2b3, malloc addr:0x14f45c00
+org malloc addr:0x84ce028
+updateitem, create data, key:0x2b4, malloc addr:0x14f90c28
+org malloc addr:0x84ce028
+updateitem, create data, key:0x2b5, malloc addr:0x14fdbc50
+org malloc addr:0x84ce028
+updateitem, create data, key:0x2b6, malloc addr:0x15026c78
+org malloc addr:0x84ce028
+updateitem, create data, key:0x2b7, malloc addr:0x15071ca0
+org malloc addr:0x84ce028
+updateitem, create data, key:0x2b8, malloc addr:0x150bccc8
+org malloc addr:0x84ce028
+updateitem, create data, key:0x2b9, malloc addr:0x15107cf0
+org malloc addr:0x84ce028
+updateitem, create data, key:0x2ba, malloc addr:0x15152d18
+org malloc addr:0x84ce028
+updateitem, create data, key:0x2bb, malloc addr:0x1519dd40
+org malloc addr:0x84ce028
+updateitem, create data, key:0x2bc, malloc addr:0x151e8d68
+org malloc addr:0x84ce028
+updateitem, create data, key:0x2bd, malloc addr:0x15233d90
+org malloc addr:0x84ce028
+updateitem, create data, key:0x2be, malloc addr:0x1527edb8
+org malloc addr:0x84ce028
+updateitem, create data, key:0x2bf, malloc addr:0x152c9de0
+org malloc addr:0x84ce028
+updateitem, create data, key:0x2c0, malloc addr:0x15314e08
+org malloc addr:0x84ce028
+updateitem, create data, key:0x2c1, malloc addr:0x1535fe30
+org malloc addr:0x84ce028
+updateitem, create data, key:0x2c2, malloc addr:0x153aae58
+org malloc addr:0x84ce028
+updateitem, create data, key:0x2c3, malloc addr:0x153f5e80
+org malloc addr:0x84ce028
+updateitem, create data, key:0x2c4, malloc addr:0x15440ea8
+org malloc addr:0x84ce028
+updateitem, create data, key:0x2c5, malloc addr:0x1548bed0
+org malloc addr:0x84ce028
+updateitem, create data, key:0x2c6, malloc addr:0x154d6ef8
+org malloc addr:0x84ce028
+updateitem, create data, key:0x2c7, malloc addr:0x15521f20
+org malloc addr:0x84ce028
+updateitem, create data, key:0x2c8, malloc addr:0x1556cf48
+org malloc addr:0x84ce028
+updateitem, create data, key:0x2c9, malloc addr:0x155b7f70
+org malloc addr:0x84ce028
+updateitem, create data, key:0x2ca, malloc addr:0x15602f98
+org malloc addr:0x84ce028
+updateitem, create data, key:0x2cb, malloc addr:0x1564dfc0
+org malloc addr:0x84ce028
+updateitem, create data, key:0x2cc, malloc addr:0x15698fe8
+org malloc addr:0x84ce028
+updateitem, create data, key:0x2cd, malloc addr:0x156e4010
+org malloc addr:0x84ce028
+updateitem, create data, key:0x2ce, malloc addr:0x1572f038
+org malloc addr:0x84ce028
+updateitem, create data, key:0x2cf, malloc addr:0x1577a060
+org malloc addr:0x84ce028
+updateitem, create data, key:0x2d0, malloc addr:0x157c5088
+org malloc addr:0x84ce028
+updateitem, create data, key:0x2d1, malloc addr:0x158100b0
+org malloc addr:0x84ce028
+updateitem, create data, key:0x2d2, malloc addr:0x1585b0d8
+org malloc addr:0x84ce028
+updateitem, create data, key:0x2d3, malloc addr:0x158a6100
+org malloc addr:0x84ce028
+updateitem, create data, key:0x2d4, malloc addr:0x158f1128
+org malloc addr:0x84ce028
+updateitem, create data, key:0x2d5, malloc addr:0x1593c150
+org malloc addr:0x84ce028
+updateitem, create data, key:0x2d6, malloc addr:0x15987178
+org malloc addr:0x84ce028
+updateitem, create data, key:0x2d7, malloc addr:0x159d21a0
+org malloc addr:0x84ce028
+updateitem, create data, key:0x2d8, malloc addr:0x15a1d1c8
+org malloc addr:0x84ce028
+updateitem, create data, key:0x2d9, malloc addr:0x15a681f0
+org malloc addr:0x84ce028
+updateitem, create data, key:0x2da, malloc addr:0x15ab3218
+org malloc addr:0x84ce028
+updateitem, create data, key:0x2db, malloc addr:0x15afe240
+org malloc addr:0x84ce028
+updateitem, create data, key:0x2dc, malloc addr:0x15b49268
+org malloc addr:0x84ce028
+updateitem, create data, key:0x2dd, malloc addr:0x15b94290
+org malloc addr:0x84ce028
+updateitem, create data, key:0x2de, malloc addr:0x15bdf2b8
+org malloc addr:0x84ce028
+updateitem, create data, key:0x2df, malloc addr:0x15c2a2e0
+org malloc addr:0x84ce028
+updateitem, create data, key:0x2e0, malloc addr:0x15c75308
+org malloc addr:0x84ce028
+updateitem, create data, key:0x2e1, malloc addr:0x15cc0330
+org malloc addr:0x84ce028
+updateitem, create data, key:0x2e2, malloc addr:0x15d0b358
+org malloc addr:0x84ce028
+updateitem, create data, key:0x2e3, malloc addr:0x15d56380
+org malloc addr:0x84ce028
+updateitem, create data, key:0x2e4, malloc addr:0x15da13a8
+org malloc addr:0x84ce028
+updateitem, create data, key:0x2e5, malloc addr:0x15dec3d0
+org malloc addr:0x84ce028
+updateitem, create data, key:0x2e6, malloc addr:0x15e373f8
+org malloc addr:0x84ce028
+updateitem, create data, key:0x2e7, malloc addr:0x15e82420
+org malloc addr:0x84ce028
+updateitem, create data, key:0x2e8, malloc addr:0x15ecd448
+org malloc addr:0x84ce028
+updateitem, create data, key:0x2e9, malloc addr:0x15f18470
+org malloc addr:0x84ce028
+updateitem, create data, key:0x2ea, malloc addr:0x15f63498
+org malloc addr:0x84ce028
+updateitem, create data, key:0x2eb, malloc addr:0x15fae4c0
+org malloc addr:0x84ce028
+updateitem, create data, key:0x2ec, malloc addr:0x15ff94e8
+org malloc addr:0x84ce028
+updateitem, create data, key:0x2ed, malloc addr:0x16044510
+org malloc addr:0x84ce028
+updateitem, create data, key:0x2ee, malloc addr:0x1608f538
+org malloc addr:0x84ce028
+updateitem, create data, key:0x2ef, malloc addr:0x160da560
+org malloc addr:0x84ce028
+updateitem, create data, key:0x2f0, malloc addr:0x16125588
+org malloc addr:0x84ce028
+updateitem, create data, key:0x2f1, malloc addr:0x161705b0
+org malloc addr:0x84ce028
+updateitem, create data, key:0x2f2, malloc addr:0x161bb5d8
+org malloc addr:0x84ce028
+updateitem, create data, key:0x2f3, malloc addr:0x16206600
+org malloc addr:0x84ce028
+updateitem, create data, key:0x2f4, malloc addr:0x16251628
+org malloc addr:0x84ce028
+updateitem, create data, key:0x2f5, malloc addr:0x1629c650
+org malloc addr:0x84ce028
+updateitem, create data, key:0x2f6, malloc addr:0x162e7678
+org malloc addr:0x84ce028
+updateitem, create data, key:0x2f7, malloc addr:0x163326a0
+org malloc addr:0x84ce028
+updateitem, create data, key:0x2f8, malloc addr:0x1637d6c8
+org malloc addr:0x84ce028
+updateitem, create data, key:0x2f9, malloc addr:0x163c86f0
+org malloc addr:0x84ce028
+updateitem, create data, key:0x2fa, malloc addr:0x16413718
+org malloc addr:0x84ce028
+updateitem, create data, key:0x2fb, malloc addr:0x1645e740
+org malloc addr:0x84ce028
+updateitem, create data, key:0x2fc, malloc addr:0x164a9768
+org malloc addr:0x84ce028
+updateitem, create data, key:0x2fd, malloc addr:0x164f4790
+org malloc addr:0x84ce028
+updateitem, create data, key:0x2fe, malloc addr:0x1653f7b8
+org malloc addr:0x84ce028
+updateitem, create data, key:0x2ff, malloc addr:0x1658a7e0
+org malloc addr:0x84ce028
+updateitem, create data, key:0x300, malloc addr:0x165d5808
+org malloc addr:0x84ce028
+updateitem, create data, key:0x301, malloc addr:0x16620830
+org malloc addr:0x84ce028
+updateitem, create data, key:0x302, malloc addr:0x1666b858
+org malloc addr:0x84ce028
+updateitem, create data, key:0x303, malloc addr:0x166b6880
+org malloc addr:0x84ce028
+updateitem, create data, key:0x304, malloc addr:0x167018a8
+org malloc addr:0x84ce028
+updateitem, create data, key:0x305, malloc addr:0x1674c8d0
+org malloc addr:0x84ce028
+updateitem, create data, key:0x306, malloc addr:0x167978f8
+org malloc addr:0x84ce028
+updateitem, create data, key:0x307, malloc addr:0x167e2920
+org malloc addr:0x84ce028
+updateitem, create data, key:0x308, malloc addr:0x1682d948
+org malloc addr:0x84ce028
+updateitem, create data, key:0x309, malloc addr:0x16878970
+org malloc addr:0x84ce028
+updateitem, create data, key:0x30a, malloc addr:0x168c3998
+org malloc addr:0x84ce028
+updateitem, create data, key:0x30b, malloc addr:0x1690e9c0
+org malloc addr:0x84ce028
+updateitem, create data, key:0x30c, malloc addr:0x169599e8
+org malloc addr:0x84ce028
+updateitem, create data, key:0x30d, malloc addr:0x169a4a10
+org malloc addr:0x84ce028
+updateitem, create data, key:0x30e, malloc addr:0x169efa38
+org malloc addr:0x84ce028
+updateitem, create data, key:0x30f, malloc addr:0x16a3aa60
+org malloc addr:0x84ce028
+updateitem, create data, key:0x310, malloc addr:0x16a85a88
+org malloc addr:0x84ce028
+updateitem, create data, key:0x311, malloc addr:0x16ad0ab0
+org malloc addr:0x84ce028
+updateitem, create data, key:0x312, malloc addr:0x16b1bad8
+org malloc addr:0x84ce028
+updateitem, create data, key:0x313, malloc addr:0x16b66b00
+org malloc addr:0x84ce028
+updateitem, create data, key:0x314, malloc addr:0x16bb1b28
+org malloc addr:0x84ce028
+updateitem, create data, key:0x315, malloc addr:0x16bfcb50
+org malloc addr:0x84ce028
+updateitem, create data, key:0x316, malloc addr:0x16c47b78
+org malloc addr:0x84ce028
+updateitem, create data, key:0x317, malloc addr:0x16c92ba0
+org malloc addr:0x84ce028
+updateitem, create data, key:0x318, malloc addr:0x16cddbc8
+org malloc addr:0x84ce028
+updateitem, create data, key:0x319, malloc addr:0x16d28bf0
+org malloc addr:0x84ce028
+updateitem, create data, key:0x31a, malloc addr:0x16d73c18
+org malloc addr:0x84ce028
+updateitem, create data, key:0x31b, malloc addr:0x16dbec40
+org malloc addr:0x84ce028
+updateitem, create data, key:0x31c, malloc addr:0x16e09c68
+org malloc addr:0x84ce028
+updateitem, create data, key:0x31d, malloc addr:0x16e54c90
+org malloc addr:0x84ce028
+updateitem, create data, key:0x31e, malloc addr:0x16e9fcb8
+org malloc addr:0x84ce028
+updateitem, create data, key:0x31f, malloc addr:0x16eeace0
+org malloc addr:0x84ce028
+updateitem, create data, key:0x320, malloc addr:0x16f35d08
+org malloc addr:0x84ce028
+updateitem, create data, key:0x321, malloc addr:0x16f80d30
+org malloc addr:0x84ce028
+updateitem, create data, key:0x322, malloc addr:0x16fcbd58
+org malloc addr:0x84ce028
+updateitem, create data, key:0x323, malloc addr:0x17016d80
+org malloc addr:0x84ce028
+updateitem, create data, key:0x324, malloc addr:0x17061da8
+org malloc addr:0x84ce028
+updateitem, create data, key:0x325, malloc addr:0x170acdd0
+org malloc addr:0x84ce028
+updateitem, create data, key:0x326, malloc addr:0x170f7df8
+org malloc addr:0x84ce028
+updateitem, create data, key:0x327, malloc addr:0x17142e20
+org malloc addr:0x84ce028
+updateitem, create data, key:0x328, malloc addr:0x1718de48
+org malloc addr:0x84ce028
+updateitem, create data, key:0x329, malloc addr:0x171d8e70
+org malloc addr:0x84ce028
+updateitem, create data, key:0x32a, malloc addr:0x17223e98
+org malloc addr:0x84ce028
+updateitem, create data, key:0x32b, malloc addr:0x1726eec0
+org malloc addr:0x84ce028
+updateitem, create data, key:0x32c, malloc addr:0x172b9ee8
+org malloc addr:0x84ce028
+updateitem, create data, key:0x32d, malloc addr:0x17304f10
+org malloc addr:0x84ce028
+updateitem, create data, key:0x32e, malloc addr:0x1734ff38
+org malloc addr:0x84ce028
+updateitem, create data, key:0x32f, malloc addr:0x1739af60
+org malloc addr:0x84ce028
+updateitem, create data, key:0x330, malloc addr:0x173e5f88
+org malloc addr:0x84ce028
+updateitem, create data, key:0x331, malloc addr:0x17430fb0
+org malloc addr:0x84ce028
+updateitem, create data, key:0x332, malloc addr:0x1747bfd8
+org malloc addr:0x84ce028
+updateitem, create data, key:0x333, malloc addr:0x174c7000
+org malloc addr:0x84ce028
+updateitem, create data, key:0x334, malloc addr:0x17512028
+org malloc addr:0x84ce028
+updateitem, create data, key:0x335, malloc addr:0x1755d050
+org malloc addr:0x84ce028
+updateitem, create data, key:0x336, malloc addr:0x175a8078
+org malloc addr:0x84ce028
+updateitem, create data, key:0x337, malloc addr:0x175f30a0
+org malloc addr:0x84ce028
+updateitem, create data, key:0x338, malloc addr:0x1763e0c8
+org malloc addr:0x84ce028
+updateitem, create data, key:0x339, malloc addr:0x176890f0
+org malloc addr:0x84ce028
+updateitem, create data, key:0x33a, malloc addr:0x176d4118
+org malloc addr:0x84ce028
+updateitem, create data, key:0x33b, malloc addr:0x1771f140
+org malloc addr:0x84ce028
+updateitem, create data, key:0x33c, malloc addr:0x1776a168
+org malloc addr:0x84ce028
+updateitem, create data, key:0x33d, malloc addr:0x177b5190
+org malloc addr:0x84ce028
+updateitem, create data, key:0x33e, malloc addr:0x178001b8
+org malloc addr:0x84ce028
+updateitem, create data, key:0x33f, malloc addr:0x1784b1e0
+org malloc addr:0x84ce028
+updateitem, create data, key:0x340, malloc addr:0x17896208
+org malloc addr:0x84ce028
+updateitem, create data, key:0x341, malloc addr:0x178e1230
+org malloc addr:0x84ce028
+updateitem, create data, key:0x342, malloc addr:0x1792c258
+org malloc addr:0x84ce028
+updateitem, create data, key:0x343, malloc addr:0x17977280
+org malloc addr:0x84ce028
+updateitem, create data, key:0x344, malloc addr:0x179c22a8
+org malloc addr:0x84ce028
+updateitem, create data, key:0x345, malloc addr:0x17a0d2d0
+org malloc addr:0x84ce028
+updateitem, create data, key:0x346, malloc addr:0x17a582f8
+org malloc addr:0x84ce028
+updateitem, create data, key:0x347, malloc addr:0x17aa3320
+org malloc addr:0x84ce028
+updateitem, create data, key:0x348, malloc addr:0x17aee348
+org malloc addr:0x84ce028
+updateitem, create data, key:0x349, malloc addr:0x17b39370
+org malloc addr:0x84ce028
+updateitem, create data, key:0x34a, malloc addr:0x17b84398
+org malloc addr:0x84ce028
+updateitem, create data, key:0x34b, malloc addr:0x17bcf3c0
+org malloc addr:0x84ce028
+updateitem, create data, key:0x34c, malloc addr:0x17c1a3e8
+org malloc addr:0x84ce028
+updateitem, create data, key:0x34d, malloc addr:0x17c65410
+org malloc addr:0x84ce028
+updateitem, create data, key:0x34e, malloc addr:0x17cb0438
+org malloc addr:0x84ce028
+updateitem, create data, key:0x34f, malloc addr:0x17cfb460
+org malloc addr:0x84ce028
+updateitem, create data, key:0x350, malloc addr:0x17d46488
+org malloc addr:0x84ce028
+updateitem, create data, key:0x351, malloc addr:0x17d914b0
+org malloc addr:0x84ce028
+updateitem, create data, key:0x352, malloc addr:0x17ddc4d8
+org malloc addr:0x84ce028
+updateitem, create data, key:0x353, malloc addr:0x17e27500
+org malloc addr:0x84ce028
+updateitem, create data, key:0x354, malloc addr:0x17e72528
+org malloc addr:0x84ce028
+updateitem, create data, key:0x355, malloc addr:0x17ebd550
+org malloc addr:0x84ce028
+updateitem, create data, key:0x356, malloc addr:0x17f08578
+org malloc addr:0x84ce028
+updateitem, create data, key:0x357, malloc addr:0x17f535a0
+org malloc addr:0x84ce028
+updateitem, create data, key:0x358, malloc addr:0x17f9e5c8
+org malloc addr:0x84ce028
+updateitem, create data, key:0x359, malloc addr:0x17fe95f0
+org malloc addr:0x84ce028
+updateitem, create data, key:0x35a, malloc addr:0x18034618
+org malloc addr:0x84ce028
+updateitem, create data, key:0x35b, malloc addr:0x1807f640
+org malloc addr:0x84ce028
+updateitem, create data, key:0x35c, malloc addr:0x180ca668
+org malloc addr:0x84ce028
+updateitem, create data, key:0x35d, malloc addr:0x18115690
+org malloc addr:0x84ce028
+updateitem, create data, key:0x35e, malloc addr:0x181606b8
+org malloc addr:0x84ce028
+updateitem, create data, key:0x35f, malloc addr:0x181ab6e0
+org malloc addr:0x84ce028
+updateitem, create data, key:0x360, malloc addr:0x181f6708
+org malloc addr:0x84ce028
+updateitem, create data, key:0x361, malloc addr:0x18241730
+org malloc addr:0x84ce028
+updateitem, create data, key:0x362, malloc addr:0x1828c758
+org malloc addr:0x84ce028
+updateitem, create data, key:0x363, malloc addr:0x182d7780
+org malloc addr:0x84ce028
+updateitem, create data, key:0x364, malloc addr:0x183227a8
+org malloc addr:0x84ce028
+updateitem, create data, key:0x365, malloc addr:0x1836d7d0
+org malloc addr:0x84ce028
+updateitem, create data, key:0x366, malloc addr:0x183b87f8
+org malloc addr:0x84ce028
+updateitem, create data, key:0x367, malloc addr:0x18403820
+org malloc addr:0x84ce028
+updateitem, create data, key:0x368, malloc addr:0x1844e848
+org malloc addr:0x84ce028
+updateitem, create data, key:0x369, malloc addr:0x18499870
+org malloc addr:0x84ce028
+updateitem, create data, key:0x36a, malloc addr:0x184e4898
+org malloc addr:0x84ce028
+updateitem, create data, key:0x36b, malloc addr:0x1852f8c0
+org malloc addr:0x84ce028
+updateitem, create data, key:0x36c, malloc addr:0x1857a8e8
+org malloc addr:0x84ce028
+updateitem, create data, key:0x36d, malloc addr:0x185c5910
+org malloc addr:0x84ce028
+updateitem, create data, key:0x36e, malloc addr:0x18610938
+org malloc addr:0x84ce028
+updateitem, create data, key:0x36f, malloc addr:0x1865b960
+org malloc addr:0x84ce028
+updateitem, create data, key:0x370, malloc addr:0x186a6988
+org malloc addr:0x84ce028
+updateitem, create data, key:0x371, malloc addr:0x186f19b0
+org malloc addr:0x84ce028
+updateitem, create data, key:0x372, malloc addr:0x1873c9d8
+org malloc addr:0x84ce028
+updateitem, create data, key:0x373, malloc addr:0x18787a00
+org malloc addr:0x84ce028
+updateitem, create data, key:0x374, malloc addr:0x187d2a28
+org malloc addr:0x84ce028
+updateitem, create data, key:0x375, malloc addr:0x1881da50
+org malloc addr:0x84ce028
+updateitem, create data, key:0x376, malloc addr:0x18868a78
+org malloc addr:0x84ce028
+updateitem, create data, key:0x377, malloc addr:0x188b3aa0
+org malloc addr:0x84ce028
+updateitem, create data, key:0x378, malloc addr:0x188feac8
+org malloc addr:0x84ce028
+updateitem, create data, key:0x379, malloc addr:0x18949af0
+org malloc addr:0x84ce028
+updateitem, create data, key:0x37a, malloc addr:0x18994b18
+org malloc addr:0x84ce028
+updateitem, create data, key:0x37b, malloc addr:0x189dfb40
+org malloc addr:0x84ce028
+updateitem, create data, key:0x37c, malloc addr:0x18a2ab68
+org malloc addr:0x84ce028
+updateitem, create data, key:0x37d, malloc addr:0x18a75b90
+org malloc addr:0x84ce028
+updateitem, create data, key:0x37e, malloc addr:0x18ac0bb8
+org malloc addr:0x84ce028
+updateitem, create data, key:0x37f, malloc addr:0x18b0bbe0
+org malloc addr:0x84ce028
+updateitem, create data, key:0x380, malloc addr:0x18b56c08
+org malloc addr:0x84ce028
+updateitem, create data, key:0x381, malloc addr:0x18ba1c30
+org malloc addr:0x84ce028
+updateitem, create data, key:0x382, malloc addr:0x18becc58
+org malloc addr:0x84ce028
+updateitem, create data, key:0x383, malloc addr:0x18c37c80
+org malloc addr:0x84ce028
+updateitem, create data, key:0x384, malloc addr:0x18c82ca8
+org malloc addr:0x84ce028
+updateitem, create data, key:0x385, malloc addr:0x18ccdcd0
+org malloc addr:0x84ce028
+updateitem, create data, key:0x386, malloc addr:0x18d18cf8
+org malloc addr:0x84ce028
+updateitem, create data, key:0x387, malloc addr:0x18d63d20
+org malloc addr:0x84ce028
+updateitem, create data, key:0x388, malloc addr:0x18daed48
+org malloc addr:0x84ce028
+updateitem, create data, key:0x389, malloc addr:0x18df9d70
+org malloc addr:0x84ce028
+updateitem, create data, key:0x38a, malloc addr:0x18e44d98
+org malloc addr:0x84ce028
+updateitem, create data, key:0x38b, malloc addr:0x18e8fdc0
+org malloc addr:0x84ce028
+updateitem, create data, key:0x38c, malloc addr:0x18edade8
+org malloc addr:0x84ce028
+updateitem, create data, key:0x38d, malloc addr:0x18f25e10
+org malloc addr:0x84ce028
+updateitem, create data, key:0x38e, malloc addr:0x18f70e38
+org malloc addr:0x84ce028
+updateitem, create data, key:0x38f, malloc addr:0x18fbbe60
+org malloc addr:0x84ce028
+updateitem, create data, key:0x390, malloc addr:0x19006e88
+org malloc addr:0x84ce028
+updateitem, create data, key:0x391, malloc addr:0x19051eb0
+org malloc addr:0x84ce028
+updateitem, create data, key:0x392, malloc addr:0x1909ced8
+org malloc addr:0x84ce028
+updateitem, create data, key:0x393, malloc addr:0x190e7f00
+org malloc addr:0x84ce028
+updateitem, create data, key:0x394, malloc addr:0x19132f28
+org malloc addr:0x84ce028
+updateitem, create data, key:0x395, malloc addr:0x1917df50
+org malloc addr:0x84ce028
+updateitem, create data, key:0x396, malloc addr:0x191c8f78
+org malloc addr:0x84ce028
+updateitem, create data, key:0x397, malloc addr:0x19213fa0
+org malloc addr:0x84ce028
+updateitem, create data, key:0x398, malloc addr:0x1925efc8
+org malloc addr:0x84ce028
+updateitem, create data, key:0x399, malloc addr:0x192a9ff0
+org malloc addr:0x84ce028
+updateitem, create data, key:0x39a, malloc addr:0x192f5018
+org malloc addr:0x84ce028
+updateitem, create data, key:0x39b, malloc addr:0x19340040
+org malloc addr:0x84ce028
+updateitem, create data, key:0x39c, malloc addr:0x1938b068
+org malloc addr:0x84ce028
+updateitem, create data, key:0x39d, malloc addr:0x193d6090
+org malloc addr:0x84ce028
+updateitem, create data, key:0x39e, malloc addr:0x194210b8
+org malloc addr:0x84ce028
+updateitem, create data, key:0x39f, malloc addr:0x1946c0e0
+org malloc addr:0x84ce028
+updateitem, create data, key:0x3a0, malloc addr:0x194b7108
+org malloc addr:0x84ce028
+updateitem, create data, key:0x3a1, malloc addr:0x19502130
+org malloc addr:0x84ce028
+updateitem, create data, key:0x3a2, malloc addr:0x1954d158
+org malloc addr:0x84ce028
+updateitem, create data, key:0x3a3, malloc addr:0x19598180
+org malloc addr:0x84ce028
+updateitem, create data, key:0x3a4, malloc addr:0x195e31a8
+org malloc addr:0x84ce028
+updateitem, create data, key:0x3a5, malloc addr:0x1962e1d0
+org malloc addr:0x84ce028
+updateitem, create data, key:0x3a6, malloc addr:0x196791f8
+org malloc addr:0x84ce028
+updateitem, create data, key:0x3a7, malloc addr:0x196c4220
+org malloc addr:0x84ce028
+updateitem, create data, key:0x3a8, malloc addr:0x1970f248
+org malloc addr:0x84ce028
+updateitem, create data, key:0x3a9, malloc addr:0x1975a270
+org malloc addr:0x84ce028
+updateitem, create data, key:0x3aa, malloc addr:0x197a5298
+org malloc addr:0x84ce028
+updateitem, create data, key:0x3ab, malloc addr:0x197f02c0
+org malloc addr:0x84ce028
+updateitem, create data, key:0x3ac, malloc addr:0x1983b2e8
+org malloc addr:0x84ce028
+updateitem, create data, key:0x3ad, malloc addr:0x19886310
+org malloc addr:0x84ce028
+updateitem, create data, key:0x3ae, malloc addr:0x198d1338
+org malloc addr:0x84ce028
+updateitem, create data, key:0x3af, malloc addr:0x1991c360
+org malloc addr:0x84ce028
+updateitem, create data, key:0x3b0, malloc addr:0x19967388
+org malloc addr:0x84ce028
+updateitem, create data, key:0x3b1, malloc addr:0x199b23b0
+org malloc addr:0x84ce028
+updateitem, create data, key:0x3b2, malloc addr:0x199fd3d8
+org malloc addr:0x84ce028
+updateitem, create data, key:0x3b3, malloc addr:0x19a48400
+org malloc addr:0x84ce028
+updateitem, create data, key:0x3b4, malloc addr:0x19a93428
+org malloc addr:0x84ce028
+updateitem, create data, key:0x3b5, malloc addr:0x19ade450
+org malloc addr:0x84ce028
+updateitem, create data, key:0x3b6, malloc addr:0x19b29478
+org malloc addr:0x84ce028
+updateitem, create data, key:0x3b7, malloc addr:0x19b744a0
+org malloc addr:0x84ce028
+updateitem, create data, key:0x3b8, malloc addr:0x19bbf4c8
+org malloc addr:0x84ce028
+updateitem, create data, key:0x3b9, malloc addr:0x19c0a4f0
+org malloc addr:0x84ce028
+updateitem, create data, key:0x3ba, malloc addr:0x19c55518
+org malloc addr:0x84ce028
+updateitem, create data, key:0x3bb, malloc addr:0x19ca0540
+org malloc addr:0x84ce028
+updateitem, create data, key:0x3bc, malloc addr:0x19ceb568
+org malloc addr:0x84ce028
+updateitem, create data, key:0x3bd, malloc addr:0x19d36590
+org malloc addr:0x84ce028
+updateitem, create data, key:0x3be, malloc addr:0x19d815b8
+org malloc addr:0x84ce028
+updateitem, create data, key:0x3bf, malloc addr:0x19dcc5e0
+org malloc addr:0x84ce028
+updateitem, create data, key:0x3c0, malloc addr:0x19e17608
+org malloc addr:0x84ce028
+updateitem, create data, key:0x3c1, malloc addr:0x19e62630
+org malloc addr:0x84ce028
+updateitem, create data, key:0x3c2, malloc addr:0x19ead658
+org malloc addr:0x84ce028
+updateitem, create data, key:0x3c3, malloc addr:0x19ef8680
+org malloc addr:0x84ce028
+updateitem, create data, key:0x3c4, malloc addr:0x19f436a8
+org malloc addr:0x84ce028
+updateitem, create data, key:0x3c5, malloc addr:0x19f8e6d0
+org malloc addr:0x84ce028
+updateitem, create data, key:0x3c6, malloc addr:0x19fd96f8
+org malloc addr:0x84ce028
+updateitem, create data, key:0x3c7, malloc addr:0x1a024720
+org malloc addr:0x84ce028
+updateitem, create data, key:0x3c8, malloc addr:0x1a06f748
+org malloc addr:0x84ce028
+updateitem, create data, key:0x3c9, malloc addr:0x1a0ba770
+org malloc addr:0x84ce028
+updateitem, create data, key:0x3ca, malloc addr:0x1a105798
+org malloc addr:0x84ce028
+updateitem, create data, key:0x3cb, malloc addr:0x1a1507c0
+org malloc addr:0x84ce028
+updateitem, create data, key:0x3cc, malloc addr:0x1a19b7e8
+org malloc addr:0x84ce028
+updateitem, create data, key:0x3cd, malloc addr:0x1a1e6810
+org malloc addr:0x84ce028
+updateitem, create data, key:0x3ce, malloc addr:0x1a231838
+org malloc addr:0x84ce028
+updateitem, create data, key:0x3cf, malloc addr:0x1a27c860
+org malloc addr:0x84ce028
+updateitem, create data, key:0x3d0, malloc addr:0x1a2c7888
+org malloc addr:0x84ce028
+updateitem, create data, key:0x3d1, malloc addr:0x1a3128b0
+org malloc addr:0x84ce028
+updateitem, create data, key:0x3d2, malloc addr:0x1a35d8d8
+org malloc addr:0x84ce028
+updateitem, create data, key:0x3d3, malloc addr:0x1a3a8900
+org malloc addr:0x84ce028
+updateitem, create data, key:0x3d4, malloc addr:0x1a3f3928
+org malloc addr:0x84ce028
+updateitem, create data, key:0x3d5, malloc addr:0x1a43e950
+org malloc addr:0x84ce028
+updateitem, create data, key:0x3d6, malloc addr:0x1a489978
+org malloc addr:0x84ce028
+updateitem, create data, key:0x3d7, malloc addr:0x1a4d49a0
+org malloc addr:0x84ce028
+updateitem, create data, key:0x3d8, malloc addr:0x1a51f9c8
+org malloc addr:0x84ce028
+updateitem, create data, key:0x3d9, malloc addr:0x1a56a9f0
+org malloc addr:0x84ce028
+updateitem, create data, key:0x3da, malloc addr:0x1a5b5a18
+org malloc addr:0x84ce028
+updateitem, create data, key:0x3db, malloc addr:0x1a600a40
+org malloc addr:0x84ce028
+updateitem, create data, key:0x3dc, malloc addr:0x1a64ba68
+org malloc addr:0x84ce028
+updateitem, create data, key:0x3dd, malloc addr:0x1a696a90
+org malloc addr:0x84ce028
+updateitem, create data, key:0x3de, malloc addr:0x1a6e1ab8
+org malloc addr:0x84ce028
+updateitem, create data, key:0x3df, malloc addr:0x1a72cae0
+org malloc addr:0x84ce028
+updateitem, create data, key:0x3e0, malloc addr:0x1a777b08
+org malloc addr:0x84ce028
+updateitem, create data, key:0x3e1, malloc addr:0x1a7c2b30
+org malloc addr:0x84ce028
+updateitem, create data, key:0x3e2, malloc addr:0x1a80db58
+org malloc addr:0x84ce028
+updateitem, create data, key:0x3e3, malloc addr:0x1a858b80
+org malloc addr:0x84ce028
+updateitem, create data, key:0x3e4, malloc addr:0x1a8a3ba8
+org malloc addr:0x84ce028
+updateitem, create data, key:0x3e5, malloc addr:0x1a8eebd0
+org malloc addr:0x84ce028
+updateitem, create data, key:0x3e6, malloc addr:0x1a939bf8
+org malloc addr:0x84ce028
+updateitem, create data, key:0x3e7, malloc addr:0x1a984c20
+printf info, key:0, valueaddr:0xb768a008
+printf info, key:0x1, valueaddr:0x8519030
+printf info, key:0x2, valueaddr:0x8564058
+printf info, key:0x3, valueaddr:0x85af080
+printf info, key:0x4, valueaddr:0x85fa0a8
+printf info, key:0x5, valueaddr:0x86450d0
+printf info, key:0x6, valueaddr:0x86900f8
+printf info, key:0x7, valueaddr:0x86db120
+printf info, key:0x8, valueaddr:0x8726148
+printf info, key:0x9, valueaddr:0x8771170
+printf info, key:0xa, valueaddr:0x87bc198
+printf info, key:0xb, valueaddr:0x88071c0
+printf info, key:0xc, valueaddr:0x88521e8
+printf info, key:0xd, valueaddr:0x889d210
+printf info, key:0xe, valueaddr:0x88e8238
+printf info, key:0xf, valueaddr:0x8933260
+printf info, key:0x10, valueaddr:0x897e288
+printf info, key:0x11, valueaddr:0x89c92b0
+printf info, key:0x12, valueaddr:0x8a142d8
+printf info, key:0x13, valueaddr:0x8a5f300
+printf info, key:0x14, valueaddr:0x8aaa328
+printf info, key:0x15, valueaddr:0x8af5350
+printf info, key:0x16, valueaddr:0x8b40378
+printf info, key:0x17, valueaddr:0x8b8b3a0
+printf info, key:0x18, valueaddr:0x8bd63c8
+printf info, key:0x19, valueaddr:0x8c213f0
+printf info, key:0x1a, valueaddr:0x8c6c418
+printf info, key:0x1b, valueaddr:0x8cb7440
+printf info, key:0x1c, valueaddr:0x8d02468
+printf info, key:0x1d, valueaddr:0x8d4d490
+printf info, key:0x1e, valueaddr:0x8d984b8
+printf info, key:0x1f, valueaddr:0x8de34e0
+printf info, key:0x20, valueaddr:0x8e2e508
+printf info, key:0x21, valueaddr:0x8e79530
+printf info, key:0x22, valueaddr:0x8ec4558
+printf info, key:0x23, valueaddr:0x8f0f580
+printf info, key:0x24, valueaddr:0x8f5a5a8
+printf info, key:0x25, valueaddr:0x8fa55d0
+printf info, key:0x26, valueaddr:0x8ff05f8
+printf info, key:0x27, valueaddr:0x903b620
+printf info, key:0x28, valueaddr:0x9086648
+printf info, key:0x29, valueaddr:0x90d1670
+printf info, key:0x2a, valueaddr:0x911c698
+printf info, key:0x2b, valueaddr:0x91676c0
+printf info, key:0x2c, valueaddr:0x91b26e8
+printf info, key:0x2d, valueaddr:0x91fd710
+printf info, key:0x2e, valueaddr:0x9248738
+printf info, key:0x2f, valueaddr:0x9293760
+printf info, key:0x30, valueaddr:0x92de788
+printf info, key:0x31, valueaddr:0x93297b0
+printf info, key:0x32, valueaddr:0x93747d8
+printf info, key:0x33, valueaddr:0x93bf800
+printf info, key:0x34, valueaddr:0x940a828
+printf info, key:0x35, valueaddr:0x9455850
+printf info, key:0x36, valueaddr:0x94a0878
+printf info, key:0x37, valueaddr:0x94eb8a0
+printf info, key:0x38, valueaddr:0x95368c8
+printf info, key:0x39, valueaddr:0x95818f0
+printf info, key:0x3a, valueaddr:0x95cc918
+printf info, key:0x3b, valueaddr:0x9617940
+printf info, key:0x3c, valueaddr:0x9662968
+printf info, key:0x3d, valueaddr:0x96ad990
+printf info, key:0x3e, valueaddr:0x96f89b8
+printf info, key:0x3f, valueaddr:0x97439e0
+printf info, key:0x40, valueaddr:0x978ea08
+printf info, key:0x41, valueaddr:0x97d9a30
+printf info, key:0x42, valueaddr:0x9824a58
+printf info, key:0x43, valueaddr:0x986fa80
+printf info, key:0x44, valueaddr:0x98baaa8
+printf info, key:0x45, valueaddr:0x9905ad0
+printf info, key:0x46, valueaddr:0x9950af8
+printf info, key:0x47, valueaddr:0x999bb20
+printf info, key:0x48, valueaddr:0x99e6b48
+printf info, key:0x49, valueaddr:0x9a31b70
+printf info, key:0x4a, valueaddr:0x9a7cb98
+printf info, key:0x4b, valueaddr:0x9ac7bc0
+printf info, key:0x4c, valueaddr:0x9b12be8
+printf info, key:0x4d, valueaddr:0x9b5dc10
+printf info, key:0x4e, valueaddr:0x9ba8c38
+printf info, key:0x4f, valueaddr:0x9bf3c60
+printf info, key:0x50, valueaddr:0x9c3ec88
+printf info, key:0x51, valueaddr:0x9c89cb0
+printf info, key:0x52, valueaddr:0x9cd4cd8
+printf info, key:0x53, valueaddr:0x9d1fd00
+printf info, key:0x54, valueaddr:0x9d6ad28
+printf info, key:0x55, valueaddr:0x9db5d50
+printf info, key:0x56, valueaddr:0x9e00d78
+printf info, key:0x57, valueaddr:0x9e4bda0
+printf info, key:0x58, valueaddr:0x9e96dc8
+printf info, key:0x59, valueaddr:0x9ee1df0
+printf info, key:0x5a, valueaddr:0x9f2ce18
+printf info, key:0x5b, valueaddr:0x9f77e40
+printf info, key:0x5c, valueaddr:0x9fc2e68
+printf info, key:0x5d, valueaddr:0xa00de90
+printf info, key:0x5e, valueaddr:0xa058eb8
+printf info, key:0x5f, valueaddr:0xa0a3ee0
+printf info, key:0x60, valueaddr:0xa0eef08
+printf info, key:0x61, valueaddr:0xa139f30
+printf info, key:0x62, valueaddr:0xa184f58
+printf info, key:0x63, valueaddr:0xa1cff80
+printf info, key:0x64, valueaddr:0xa21afa8
+printf info, key:0x65, valueaddr:0xa265fd0
+printf info, key:0x66, valueaddr:0xa2b0ff8
+printf info, key:0x67, valueaddr:0xa2fc020
+printf info, key:0x68, valueaddr:0xa347048
+printf info, key:0x69, valueaddr:0xa392070
+printf info, key:0x6a, valueaddr:0xa3dd098
+printf info, key:0x6b, valueaddr:0xa4280c0
+printf info, key:0x6c, valueaddr:0xa4730e8
+printf info, key:0x6d, valueaddr:0xa4be110
+printf info, key:0x6e, valueaddr:0xa509138
+printf info, key:0x6f, valueaddr:0xa554160
+printf info, key:0x70, valueaddr:0xa59f188
+printf info, key:0x71, valueaddr:0xa5ea1b0
+printf info, key:0x72, valueaddr:0xa6351d8
+printf info, key:0x73, valueaddr:0xa680200
+printf info, key:0x74, valueaddr:0xa6cb228
+printf info, key:0x75, valueaddr:0xa716250
+printf info, key:0x76, valueaddr:0xa761278
+printf info, key:0x77, valueaddr:0xa7ac2a0
+printf info, key:0x78, valueaddr:0xa7f72c8
+printf info, key:0x79, valueaddr:0xa8422f0
+printf info, key:0x7a, valueaddr:0xa88d318
+printf info, key:0x7b, valueaddr:0xa8d8340
+printf info, key:0x7c, valueaddr:0xa923368
+printf info, key:0x7d, valueaddr:0xa96e390
+printf info, key:0x7e, valueaddr:0xa9b93b8
+printf info, key:0x7f, valueaddr:0xaa043e0
+printf info, key:0x80, valueaddr:0xaa4f408
+printf info, key:0x81, valueaddr:0xaa9a430
+printf info, key:0x82, valueaddr:0xaae5458
+printf info, key:0x83, valueaddr:0xab30480
+printf info, key:0x84, valueaddr:0xab7b4a8
+printf info, key:0x85, valueaddr:0xabc64d0
+printf info, key:0x86, valueaddr:0xac114f8
+printf info, key:0x87, valueaddr:0xac5c520
+printf info, key:0x88, valueaddr:0xaca7548
+printf info, key:0x89, valueaddr:0xacf2570
+printf info, key:0x8a, valueaddr:0xad3d598
+printf info, key:0x8b, valueaddr:0xad885c0
+printf info, key:0x8c, valueaddr:0xadd35e8
+printf info, key:0x8d, valueaddr:0xae1e610
+printf info, key:0x8e, valueaddr:0xae69638
+printf info, key:0x8f, valueaddr:0xaeb4660
+printf info, key:0x90, valueaddr:0xaeff688
+printf info, key:0x91, valueaddr:0xaf4a6b0
+printf info, key:0x92, valueaddr:0xaf956d8
+printf info, key:0x93, valueaddr:0xafe0700
+printf info, key:0x94, valueaddr:0xb02b728
+printf info, key:0x95, valueaddr:0xb076750
+printf info, key:0x96, valueaddr:0xb0c1778
+printf info, key:0x97, valueaddr:0xb10c7a0
+printf info, key:0x98, valueaddr:0xb1577c8
+printf info, key:0x99, valueaddr:0xb1a27f0
+printf info, key:0x9a, valueaddr:0xb1ed818
+printf info, key:0x9b, valueaddr:0xb238840
+printf info, key:0x9c, valueaddr:0xb283868
+printf info, key:0x9d, valueaddr:0xb2ce890
+printf info, key:0x9e, valueaddr:0xb3198b8
+printf info, key:0x9f, valueaddr:0xb3648e0
+printf info, key:0xa0, valueaddr:0xb3af908
+printf info, key:0xa1, valueaddr:0xb3fa930
+printf info, key:0xa2, valueaddr:0xb445958
+printf info, key:0xa3, valueaddr:0xb490980
+printf info, key:0xa4, valueaddr:0xb4db9a8
+printf info, key:0xa5, valueaddr:0xb5269d0
+printf info, key:0xa6, valueaddr:0xb5719f8
+printf info, key:0xa7, valueaddr:0xb5bca20
+printf info, key:0xa8, valueaddr:0xb607a48
+printf info, key:0xa9, valueaddr:0xb652a70
+printf info, key:0xaa, valueaddr:0xb69da98
+printf info, key:0xab, valueaddr:0xb6e8ac0
+printf info, key:0xac, valueaddr:0xb733ae8
+printf info, key:0xad, valueaddr:0xb77eb10
+printf info, key:0xae, valueaddr:0xb7c9b38
+printf info, key:0xaf, valueaddr:0xb814b60
+printf info, key:0xb0, valueaddr:0xb85fb88
+printf info, key:0xb1, valueaddr:0xb8aabb0
+printf info, key:0xb2, valueaddr:0xb8f5bd8
+printf info, key:0xb3, valueaddr:0xb940c00
+printf info, key:0xb4, valueaddr:0xb98bc28
+printf info, key:0xb5, valueaddr:0xb9d6c50
+printf info, key:0xb6, valueaddr:0xba21c78
+printf info, key:0xb7, valueaddr:0xba6cca0
+printf info, key:0xb8, valueaddr:0xbab7cc8
+printf info, key:0xb9, valueaddr:0xbb02cf0
+printf info, key:0xba, valueaddr:0xbb4dd18
+printf info, key:0xbb, valueaddr:0xbb98d40
+printf info, key:0xbc, valueaddr:0xbbe3d68
+printf info, key:0xbd, valueaddr:0xbc2ed90
+printf info, key:0xbe, valueaddr:0xbc79db8
+printf info, key:0xbf, valueaddr:0xbcc4de0
+printf info, key:0xc0, valueaddr:0xbd0fe08
+printf info, key:0xc1, valueaddr:0xbd5ae30
+printf info, key:0xc2, valueaddr:0xbda5e58
+printf info, key:0xc3, valueaddr:0xbdf0e80
+printf info, key:0xc4, valueaddr:0xbe3bea8
+printf info, key:0xc5, valueaddr:0xbe86ed0
+printf info, key:0xc6, valueaddr:0xbed1ef8
+printf info, key:0xc7, valueaddr:0xbf1cf20
+printf info, key:0xc8, valueaddr:0xbf67f48
+printf info, key:0xc9, valueaddr:0xbfb2f70
+printf info, key:0xca, valueaddr:0xbffdf98
+printf info, key:0xcb, valueaddr:0xc048fc0
+printf info, key:0xcc, valueaddr:0xc093fe8
+printf info, key:0xcd, valueaddr:0xc0df010
+printf info, key:0xce, valueaddr:0xc12a038
+printf info, key:0xcf, valueaddr:0xc175060
+printf info, key:0xd0, valueaddr:0xc1c0088
+printf info, key:0xd1, valueaddr:0xc20b0b0
+printf info, key:0xd2, valueaddr:0xc2560d8
+printf info, key:0xd3, valueaddr:0xc2a1100
+printf info, key:0xd4, valueaddr:0xc2ec128
+printf info, key:0xd5, valueaddr:0xc337150
+printf info, key:0xd6, valueaddr:0xc382178
+printf info, key:0xd7, valueaddr:0xc3cd1a0
+printf info, key:0xd8, valueaddr:0xc4181c8
+printf info, key:0xd9, valueaddr:0xc4631f0
+printf info, key:0xda, valueaddr:0xc4ae218
+printf info, key:0xdb, valueaddr:0xc4f9240
+printf info, key:0xdc, valueaddr:0xc544268
+printf info, key:0xdd, valueaddr:0xc58f290
+printf info, key:0xde, valueaddr:0xc5da2b8
+printf info, key:0xdf, valueaddr:0xc6252e0
+printf info, key:0xe0, valueaddr:0xc670308
+printf info, key:0xe1, valueaddr:0xc6bb330
+printf info, key:0xe2, valueaddr:0xc706358
+printf info, key:0xe3, valueaddr:0xc751380
+printf info, key:0xe4, valueaddr:0xc79c3a8
+printf info, key:0xe5, valueaddr:0xc7e73d0
+printf info, key:0xe6, valueaddr:0xc8323f8
+printf info, key:0xe7, valueaddr:0xc87d420
+printf info, key:0xe8, valueaddr:0xc8c8448
+printf info, key:0xe9, valueaddr:0xc913470
+printf info, key:0xea, valueaddr:0xc95e498
+printf info, key:0xeb, valueaddr:0xc9a94c0
+printf info, key:0xec, valueaddr:0xc9f44e8
+printf info, key:0xed, valueaddr:0xca3f510
+printf info, key:0xee, valueaddr:0xca8a538
+printf info, key:0xef, valueaddr:0xcad5560
+printf info, key:0xf0, valueaddr:0xcb20588
+printf info, key:0xf1, valueaddr:0xcb6b5b0
+printf info, key:0xf2, valueaddr:0xcbb65d8
+printf info, key:0xf3, valueaddr:0xcc01600
+printf info, key:0xf4, valueaddr:0xcc4c628
+printf info, key:0xf5, valueaddr:0xcc97650
+printf info, key:0xf6, valueaddr:0xcce2678
+printf info, key:0xf7, valueaddr:0xcd2d6a0
+printf info, key:0xf8, valueaddr:0xcd786c8
+printf info, key:0xf9, valueaddr:0xcdc36f0
+printf info, key:0xfa, valueaddr:0xce0e718
+printf info, key:0xfb, valueaddr:0xce59740
+printf info, key:0xfc, valueaddr:0xcea4768
+printf info, key:0xfd, valueaddr:0xceef790
+printf info, key:0xfe, valueaddr:0xcf3a7b8
+printf info, key:0xff, valueaddr:0xcf857e0
+printf info, key:0x100, valueaddr:0xcfd0808
+printf info, key:0x101, valueaddr:0xd01b830
+printf info, key:0x102, valueaddr:0xd066858
+printf info, key:0x103, valueaddr:0xd0b1880
+printf info, key:0x104, valueaddr:0xd0fc8a8
+printf info, key:0x105, valueaddr:0xd1478d0
+printf info, key:0x106, valueaddr:0xd1928f8
+printf info, key:0x107, valueaddr:0xd1dd920
+printf info, key:0x108, valueaddr:0xd228948
+printf info, key:0x109, valueaddr:0xd273970
+printf info, key:0x10a, valueaddr:0xd2be998
+printf info, key:0x10b, valueaddr:0xd3099c0
+printf info, key:0x10c, valueaddr:0xd3549e8
+printf info, key:0x10d, valueaddr:0xd39fa10
+printf info, key:0x10e, valueaddr:0xd3eaa38
+printf info, key:0x10f, valueaddr:0xd435a60
+printf info, key:0x110, valueaddr:0xd480a88
+printf info, key:0x111, valueaddr:0xd4cbab0
+printf info, key:0x112, valueaddr:0xd516ad8
+printf info, key:0x113, valueaddr:0xd561b00
+printf info, key:0x114, valueaddr:0xd5acb28
+printf info, key:0x115, valueaddr:0xd5f7b50
+printf info, key:0x116, valueaddr:0xd642b78
+printf info, key:0x117, valueaddr:0xd68dba0
+printf info, key:0x118, valueaddr:0xd6d8bc8
+printf info, key:0x119, valueaddr:0xd723bf0
+printf info, key:0x11a, valueaddr:0xd76ec18
+printf info, key:0x11b, valueaddr:0xd7b9c40
+printf info, key:0x11c, valueaddr:0xd804c68
+printf info, key:0x11d, valueaddr:0xd84fc90
+printf info, key:0x11e, valueaddr:0xd89acb8
+printf info, key:0x11f, valueaddr:0xd8e5ce0
+printf info, key:0x120, valueaddr:0xd930d08
+printf info, key:0x121, valueaddr:0xd97bd30
+printf info, key:0x122, valueaddr:0xd9c6d58
+printf info, key:0x123, valueaddr:0xda11d80
+printf info, key:0x124, valueaddr:0xda5cda8
+printf info, key:0x125, valueaddr:0xdaa7dd0
+printf info, key:0x126, valueaddr:0xdaf2df8
+printf info, key:0x127, valueaddr:0xdb3de20
+printf info, key:0x128, valueaddr:0xdb88e48
+printf info, key:0x129, valueaddr:0xdbd3e70
+printf info, key:0x12a, valueaddr:0xdc1ee98
+printf info, key:0x12b, valueaddr:0xdc69ec0
+printf info, key:0x12c, valueaddr:0xdcb4ee8
+printf info, key:0x12d, valueaddr:0xdcfff10
+printf info, key:0x12e, valueaddr:0xdd4af38
+printf info, key:0x12f, valueaddr:0xdd95f60
+printf info, key:0x130, valueaddr:0xdde0f88
+printf info, key:0x131, valueaddr:0xde2bfb0
+printf info, key:0x132, valueaddr:0xde76fd8
+printf info, key:0x133, valueaddr:0xdec2000
+printf info, key:0x134, valueaddr:0xdf0d028
+printf info, key:0x135, valueaddr:0xdf58050
+printf info, key:0x136, valueaddr:0xdfa3078
+printf info, key:0x137, valueaddr:0xdfee0a0
+printf info, key:0x138, valueaddr:0xe0390c8
+printf info, key:0x139, valueaddr:0xe0840f0
+printf info, key:0x13a, valueaddr:0xe0cf118
+printf info, key:0x13b, valueaddr:0xe11a140
+printf info, key:0x13c, valueaddr:0xe165168
+printf info, key:0x13d, valueaddr:0xe1b0190
+printf info, key:0x13e, valueaddr:0xe1fb1b8
+printf info, key:0x13f, valueaddr:0xe2461e0
+printf info, key:0x140, valueaddr:0xe291208
+printf info, key:0x141, valueaddr:0xe2dc230
+printf info, key:0x142, valueaddr:0xe327258
+printf info, key:0x143, valueaddr:0xe372280
+printf info, key:0x144, valueaddr:0xe3bd2a8
+printf info, key:0x145, valueaddr:0xe4082d0
+printf info, key:0x146, valueaddr:0xe4532f8
+printf info, key:0x147, valueaddr:0xe49e320
+printf info, key:0x148, valueaddr:0xe4e9348
+printf info, key:0x149, valueaddr:0xe534370
+printf info, key:0x14a, valueaddr:0xe57f398
+printf info, key:0x14b, valueaddr:0xe5ca3c0
+printf info, key:0x14c, valueaddr:0xe6153e8
+printf info, key:0x14d, valueaddr:0xe660410
+printf info, key:0x14e, valueaddr:0xe6ab438
+printf info, key:0x14f, valueaddr:0xe6f6460
+printf info, key:0x150, valueaddr:0xe741488
+printf info, key:0x151, valueaddr:0xe78c4b0
+printf info, key:0x152, valueaddr:0xe7d74d8
+printf info, key:0x153, valueaddr:0xe822500
+printf info, key:0x154, valueaddr:0xe86d528
+printf info, key:0x155, valueaddr:0xe8b8550
+printf info, key:0x156, valueaddr:0xe903578
+printf info, key:0x157, valueaddr:0xe94e5a0
+printf info, key:0x158, valueaddr:0xe9995c8
+printf info, key:0x159, valueaddr:0xe9e45f0
+printf info, key:0x15a, valueaddr:0xea2f618
+printf info, key:0x15b, valueaddr:0xea7a640
+printf info, key:0x15c, valueaddr:0xeac5668
+printf info, key:0x15d, valueaddr:0xeb10690
+printf info, key:0x15e, valueaddr:0xeb5b6b8
+printf info, key:0x15f, valueaddr:0xeba66e0
+printf info, key:0x160, valueaddr:0xebf1708
+printf info, key:0x161, valueaddr:0xec3c730
+printf info, key:0x162, valueaddr:0xec87758
+printf info, key:0x163, valueaddr:0xecd2780
+printf info, key:0x164, valueaddr:0xed1d7a8
+printf info, key:0x165, valueaddr:0xed687d0
+printf info, key:0x166, valueaddr:0xedb37f8
+printf info, key:0x167, valueaddr:0xedfe820
+printf info, key:0x168, valueaddr:0xee49848
+printf info, key:0x169, valueaddr:0xee94870
+printf info, key:0x16a, valueaddr:0xeedf898
+printf info, key:0x16b, valueaddr:0xef2a8c0
+printf info, key:0x16c, valueaddr:0xef758e8
+printf info, key:0x16d, valueaddr:0xefc0910
+printf info, key:0x16e, valueaddr:0xf00b938
+printf info, key:0x16f, valueaddr:0xf056960
+printf info, key:0x170, valueaddr:0xf0a1988
+printf info, key:0x171, valueaddr:0xf0ec9b0
+printf info, key:0x172, valueaddr:0xf1379d8
+printf info, key:0x173, valueaddr:0xf182a00
+printf info, key:0x174, valueaddr:0xf1cda28
+printf info, key:0x175, valueaddr:0xf218a50
+printf info, key:0x176, valueaddr:0xf263a78
+printf info, key:0x177, valueaddr:0xf2aeaa0
+printf info, key:0x178, valueaddr:0xf2f9ac8
+printf info, key:0x179, valueaddr:0xf344af0
+printf info, key:0x17a, valueaddr:0xf38fb18
+printf info, key:0x17b, valueaddr:0xf3dab40
+printf info, key:0x17c, valueaddr:0xf425b68
+printf info, key:0x17d, valueaddr:0xf470b90
+printf info, key:0x17e, valueaddr:0xf4bbbb8
+printf info, key:0x17f, valueaddr:0xf506be0
+printf info, key:0x180, valueaddr:0xf551c08
+printf info, key:0x181, valueaddr:0xf59cc30
+printf info, key:0x182, valueaddr:0xf5e7c58
+printf info, key:0x183, valueaddr:0xf632c80
+printf info, key:0x184, valueaddr:0xf67dca8
+printf info, key:0x185, valueaddr:0xf6c8cd0
+printf info, key:0x186, valueaddr:0xf713cf8
+printf info, key:0x187, valueaddr:0xf75ed20
+printf info, key:0x188, valueaddr:0xf7a9d48
+printf info, key:0x189, valueaddr:0xf7f4d70
+printf info, key:0x18a, valueaddr:0xf83fd98
+printf info, key:0x18b, valueaddr:0xf88adc0
+printf info, key:0x18c, valueaddr:0xf8d5de8
+printf info, key:0x18d, valueaddr:0xf920e10
+printf info, key:0x18e, valueaddr:0xf96be38
+printf info, key:0x18f, valueaddr:0xf9b6e60
+printf info, key:0x190, valueaddr:0xfa01e88
+printf info, key:0x191, valueaddr:0xfa4ceb0
+printf info, key:0x192, valueaddr:0xfa97ed8
+printf info, key:0x193, valueaddr:0xfae2f00
+printf info, key:0x194, valueaddr:0xfb2df28
+printf info, key:0x195, valueaddr:0xfb78f50
+printf info, key:0x196, valueaddr:0xfbc3f78
+printf info, key:0x197, valueaddr:0xfc0efa0
+printf info, key:0x198, valueaddr:0xfc59fc8
+printf info, key:0x199, valueaddr:0xfca4ff0
+printf info, key:0x19a, valueaddr:0xfcf0018
+printf info, key:0x19b, valueaddr:0xfd3b040
+printf info, key:0x19c, valueaddr:0xfd86068
+printf info, key:0x19d, valueaddr:0xfdd1090
+printf info, key:0x19e, valueaddr:0xfe1c0b8
+printf info, key:0x19f, valueaddr:0xfe670e0
+printf info, key:0x1a0, valueaddr:0xfeb2108
+printf info, key:0x1a1, valueaddr:0xfefd130
+printf info, key:0x1a2, valueaddr:0xff48158
+printf info, key:0x1a3, valueaddr:0xff93180
+printf info, key:0x1a4, valueaddr:0xffde1a8
+printf info, key:0x1a5, valueaddr:0x100291d0
+printf info, key:0x1a6, valueaddr:0x100741f8
+printf info, key:0x1a7, valueaddr:0x100bf220
+printf info, key:0x1a8, valueaddr:0x1010a248
+printf info, key:0x1a9, valueaddr:0x10155270
+printf info, key:0x1aa, valueaddr:0x101a0298
+printf info, key:0x1ab, valueaddr:0x101eb2c0
+printf info, key:0x1ac, valueaddr:0x102362e8
+printf info, key:0x1ad, valueaddr:0x10281310
+printf info, key:0x1ae, valueaddr:0x102cc338
+printf info, key:0x1af, valueaddr:0x10317360
+printf info, key:0x1b0, valueaddr:0x10362388
+printf info, key:0x1b1, valueaddr:0x103ad3b0
+printf info, key:0x1b2, valueaddr:0x103f83d8
+printf info, key:0x1b3, valueaddr:0x10443400
+printf info, key:0x1b4, valueaddr:0x1048e428
+printf info, key:0x1b5, valueaddr:0x104d9450
+printf info, key:0x1b6, valueaddr:0x10524478
+printf info, key:0x1b7, valueaddr:0x1056f4a0
+printf info, key:0x1b8, valueaddr:0x105ba4c8
+printf info, key:0x1b9, valueaddr:0x106054f0
+printf info, key:0x1ba, valueaddr:0x10650518
+printf info, key:0x1bb, valueaddr:0x1069b540
+printf info, key:0x1bc, valueaddr:0x106e6568
+printf info, key:0x1bd, valueaddr:0x10731590
+printf info, key:0x1be, valueaddr:0x1077c5b8
+printf info, key:0x1bf, valueaddr:0x107c75e0
+printf info, key:0x1c0, valueaddr:0x10812608
+printf info, key:0x1c1, valueaddr:0x1085d630
+printf info, key:0x1c2, valueaddr:0x108a8658
+printf info, key:0x1c3, valueaddr:0x108f3680
+printf info, key:0x1c4, valueaddr:0x1093e6a8
+printf info, key:0x1c5, valueaddr:0x109896d0
+printf info, key:0x1c6, valueaddr:0x109d46f8
+printf info, key:0x1c7, valueaddr:0x10a1f720
+printf info, key:0x1c8, valueaddr:0x10a6a748
+printf info, key:0x1c9, valueaddr:0x10ab5770
+printf info, key:0x1ca, valueaddr:0x10b00798
+printf info, key:0x1cb, valueaddr:0x10b4b7c0
+printf info, key:0x1cc, valueaddr:0x10b967e8
+printf info, key:0x1cd, valueaddr:0x10be1810
+printf info, key:0x1ce, valueaddr:0x10c2c838
+printf info, key:0x1cf, valueaddr:0x10c77860
+printf info, key:0x1d0, valueaddr:0x10cc2888
+printf info, key:0x1d1, valueaddr:0x10d0d8b0
+printf info, key:0x1d2, valueaddr:0x10d588d8
+printf info, key:0x1d3, valueaddr:0x10da3900
+printf info, key:0x1d4, valueaddr:0x10dee928
+printf info, key:0x1d5, valueaddr:0x10e39950
+printf info, key:0x1d6, valueaddr:0x10e84978
+printf info, key:0x1d7, valueaddr:0x10ecf9a0
+printf info, key:0x1d8, valueaddr:0x10f1a9c8
+printf info, key:0x1d9, valueaddr:0x10f659f0
+printf info, key:0x1da, valueaddr:0x10fb0a18
+printf info, key:0x1db, valueaddr:0x10ffba40
+printf info, key:0x1dc, valueaddr:0x11046a68
+printf info, key:0x1dd, valueaddr:0x11091a90
+printf info, key:0x1de, valueaddr:0x110dcab8
+printf info, key:0x1df, valueaddr:0x11127ae0
+printf info, key:0x1e0, valueaddr:0x11172b08
+printf info, key:0x1e1, valueaddr:0x111bdb30
+printf info, key:0x1e2, valueaddr:0x11208b58
+printf info, key:0x1e3, valueaddr:0x11253b80
+printf info, key:0x1e4, valueaddr:0x1129eba8
+printf info, key:0x1e5, valueaddr:0x112e9bd0
+printf info, key:0x1e6, valueaddr:0x11334bf8
+printf info, key:0x1e7, valueaddr:0x1137fc20
+printf info, key:0x1e8, valueaddr:0x113cac48
+printf info, key:0x1e9, valueaddr:0x11415c70
+printf info, key:0x1ea, valueaddr:0x11460c98
+printf info, key:0x1eb, valueaddr:0x114abcc0
+printf info, key:0x1ec, valueaddr:0x114f6ce8
+printf info, key:0x1ed, valueaddr:0x11541d10
+printf info, key:0x1ee, valueaddr:0x1158cd38
+printf info, key:0x1ef, valueaddr:0x115d7d60
+printf info, key:0x1f0, valueaddr:0x11622d88
+printf info, key:0x1f1, valueaddr:0x1166ddb0
+printf info, key:0x1f2, valueaddr:0x116b8dd8
+printf info, key:0x1f3, valueaddr:0x11703e00
+printf info, key:0x1f4, valueaddr:0x1174ee28
+printf info, key:0x1f5, valueaddr:0x11799e50
+printf info, key:0x1f6, valueaddr:0x117e4e78
+printf info, key:0x1f7, valueaddr:0x1182fea0
+printf info, key:0x1f8, valueaddr:0x1187aec8
+printf info, key:0x1f9, valueaddr:0x118c5ef0
+printf info, key:0x1fa, valueaddr:0x11910f18
+printf info, key:0x1fb, valueaddr:0x1195bf40
+printf info, key:0x1fc, valueaddr:0x119a6f68
+printf info, key:0x1fd, valueaddr:0x119f1f90
+printf info, key:0x1fe, valueaddr:0x11a3cfb8
+printf info, key:0x1ff, valueaddr:0x11a87fe0
+printf info, key:0x200, valueaddr:0x11ad3008
+printf info, key:0x201, valueaddr:0x11b1e030
+printf info, key:0x202, valueaddr:0x11b69058
+printf info, key:0x203, valueaddr:0x11bb4080
+printf info, key:0x204, valueaddr:0x11bff0a8
+printf info, key:0x205, valueaddr:0x11c4a0d0
+printf info, key:0x206, valueaddr:0x11c950f8
+printf info, key:0x207, valueaddr:0x11ce0120
+printf info, key:0x208, valueaddr:0x11d2b148
+printf info, key:0x209, valueaddr:0x11d76170
+printf info, key:0x20a, valueaddr:0x11dc1198
+printf info, key:0x20b, valueaddr:0x11e0c1c0
+printf info, key:0x20c, valueaddr:0x11e571e8
+printf info, key:0x20d, valueaddr:0x11ea2210
+printf info, key:0x20e, valueaddr:0x11eed238
+printf info, key:0x20f, valueaddr:0x11f38260
+printf info, key:0x210, valueaddr:0x11f83288
+printf info, key:0x211, valueaddr:0x11fce2b0
+printf info, key:0x212, valueaddr:0x120192d8
+printf info, key:0x213, valueaddr:0x12064300
+printf info, key:0x214, valueaddr:0x120af328
+printf info, key:0x215, valueaddr:0x120fa350
+printf info, key:0x216, valueaddr:0x12145378
+printf info, key:0x217, valueaddr:0x121903a0
+printf info, key:0x218, valueaddr:0x121db3c8
+printf info, key:0x219, valueaddr:0x122263f0
+printf info, key:0x21a, valueaddr:0x12271418
+printf info, key:0x21b, valueaddr:0x122bc440
+printf info, key:0x21c, valueaddr:0x12307468
+printf info, key:0x21d, valueaddr:0x12352490
+printf info, key:0x21e, valueaddr:0x1239d4b8
+printf info, key:0x21f, valueaddr:0x123e84e0
+printf info, key:0x220, valueaddr:0x12433508
+printf info, key:0x221, valueaddr:0x1247e530
+printf info, key:0x222, valueaddr:0x124c9558
+printf info, key:0x223, valueaddr:0x12514580
+printf info, key:0x224, valueaddr:0x1255f5a8
+printf info, key:0x225, valueaddr:0x125aa5d0
+printf info, key:0x226, valueaddr:0x125f55f8
+printf info, key:0x227, valueaddr:0x12640620
+printf info, key:0x228, valueaddr:0x1268b648
+printf info, key:0x229, valueaddr:0x126d6670
+printf info, key:0x22a, valueaddr:0x12721698
+printf info, key:0x22b, valueaddr:0x1276c6c0
+printf info, key:0x22c, valueaddr:0x127b76e8
+printf info, key:0x22d, valueaddr:0x12802710
+printf info, key:0x22e, valueaddr:0x1284d738
+printf info, key:0x22f, valueaddr:0x12898760
+printf info, key:0x230, valueaddr:0x128e3788
+printf info, key:0x231, valueaddr:0x1292e7b0
+printf info, key:0x232, valueaddr:0x129797d8
+printf info, key:0x233, valueaddr:0x129c4800
+printf info, key:0x234, valueaddr:0x12a0f828
+printf info, key:0x235, valueaddr:0x12a5a850
+printf info, key:0x236, valueaddr:0x12aa5878
+printf info, key:0x237, valueaddr:0x12af08a0
+printf info, key:0x238, valueaddr:0x12b3b8c8
+printf info, key:0x239, valueaddr:0x12b868f0
+printf info, key:0x23a, valueaddr:0x12bd1918
+printf info, key:0x23b, valueaddr:0x12c1c940
+printf info, key:0x23c, valueaddr:0x12c67968
+printf info, key:0x23d, valueaddr:0x12cb2990
+printf info, key:0x23e, valueaddr:0x12cfd9b8
+printf info, key:0x23f, valueaddr:0x12d489e0
+printf info, key:0x240, valueaddr:0x12d93a08
+printf info, key:0x241, valueaddr:0x12ddea30
+printf info, key:0x242, valueaddr:0x12e29a58
+printf info, key:0x243, valueaddr:0x12e74a80
+printf info, key:0x244, valueaddr:0x12ebfaa8
+printf info, key:0x245, valueaddr:0x12f0aad0
+printf info, key:0x246, valueaddr:0x12f55af8
+printf info, key:0x247, valueaddr:0x12fa0b20
+printf info, key:0x248, valueaddr:0x12febb48
+printf info, key:0x249, valueaddr:0x13036b70
+printf info, key:0x24a, valueaddr:0x13081b98
+printf info, key:0x24b, valueaddr:0x130ccbc0
+printf info, key:0x24c, valueaddr:0x13117be8
+printf info, key:0x24d, valueaddr:0x13162c10
+printf info, key:0x24e, valueaddr:0x131adc38
+printf info, key:0x24f, valueaddr:0x131f8c60
+printf info, key:0x250, valueaddr:0x13243c88
+printf info, key:0x251, valueaddr:0x1328ecb0
+printf info, key:0x252, valueaddr:0x132d9cd8
+printf info, key:0x253, valueaddr:0x13324d00
+printf info, key:0x254, valueaddr:0x1336fd28
+printf info, key:0x255, valueaddr:0x133bad50
+printf info, key:0x256, valueaddr:0x13405d78
+printf info, key:0x257, valueaddr:0x13450da0
+printf info, key:0x258, valueaddr:0x1349bdc8
+printf info, key:0x259, valueaddr:0x134e6df0
+printf info, key:0x25a, valueaddr:0x13531e18
+printf info, key:0x25b, valueaddr:0x1357ce40
+printf info, key:0x25c, valueaddr:0x135c7e68
+printf info, key:0x25d, valueaddr:0x13612e90
+printf info, key:0x25e, valueaddr:0x1365deb8
+printf info, key:0x25f, valueaddr:0x136a8ee0
+printf info, key:0x260, valueaddr:0x136f3f08
+printf info, key:0x261, valueaddr:0x1373ef30
+printf info, key:0x262, valueaddr:0x13789f58
+printf info, key:0x263, valueaddr:0x137d4f80
+printf info, key:0x264, valueaddr:0x1381ffa8
+printf info, key:0x265, valueaddr:0x1386afd0
+printf info, key:0x266, valueaddr:0x138b5ff8
+printf info, key:0x267, valueaddr:0x13901020
+printf info, key:0x268, valueaddr:0x1394c048
+printf info, key:0x269, valueaddr:0x13997070
+printf info, key:0x26a, valueaddr:0x139e2098
+printf info, key:0x26b, valueaddr:0x13a2d0c0
+printf info, key:0x26c, valueaddr:0x13a780e8
+printf info, key:0x26d, valueaddr:0x13ac3110
+printf info, key:0x26e, valueaddr:0x13b0e138
+printf info, key:0x26f, valueaddr:0x13b59160
+printf info, key:0x270, valueaddr:0x13ba4188
+printf info, key:0x271, valueaddr:0x13bef1b0
+printf info, key:0x272, valueaddr:0x13c3a1d8
+printf info, key:0x273, valueaddr:0x13c85200
+printf info, key:0x274, valueaddr:0x13cd0228
+printf info, key:0x275, valueaddr:0x13d1b250
+printf info, key:0x276, valueaddr:0x13d66278
+printf info, key:0x277, valueaddr:0x13db12a0
+printf info, key:0x278, valueaddr:0x13dfc2c8
+printf info, key:0x279, valueaddr:0x13e472f0
+printf info, key:0x27a, valueaddr:0x13e92318
+printf info, key:0x27b, valueaddr:0x13edd340
+printf info, key:0x27c, valueaddr:0x13f28368
+printf info, key:0x27d, valueaddr:0x13f73390
+printf info, key:0x27e, valueaddr:0x13fbe3b8
+printf info, key:0x27f, valueaddr:0x140093e0
+printf info, key:0x280, valueaddr:0x14054408
+printf info, key:0x281, valueaddr:0x1409f430
+printf info, key:0x282, valueaddr:0x140ea458
+printf info, key:0x283, valueaddr:0x14135480
+printf info, key:0x284, valueaddr:0x141804a8
+printf info, key:0x285, valueaddr:0x141cb4d0
+printf info, key:0x286, valueaddr:0x142164f8
+printf info, key:0x287, valueaddr:0x14261520
+printf info, key:0x288, valueaddr:0x142ac548
+printf info, key:0x289, valueaddr:0x142f7570
+printf info, key:0x28a, valueaddr:0x14342598
+printf info, key:0x28b, valueaddr:0x1438d5c0
+printf info, key:0x28c, valueaddr:0x143d85e8
+printf info, key:0x28d, valueaddr:0x14423610
+printf info, key:0x28e, valueaddr:0x1446e638
+printf info, key:0x28f, valueaddr:0x144b9660
+printf info, key:0x290, valueaddr:0x14504688
+printf info, key:0x291, valueaddr:0x1454f6b0
+printf info, key:0x292, valueaddr:0x1459a6d8
+printf info, key:0x293, valueaddr:0x145e5700
+printf info, key:0x294, valueaddr:0x14630728
+printf info, key:0x295, valueaddr:0x1467b750
+printf info, key:0x296, valueaddr:0x146c6778
+printf info, key:0x297, valueaddr:0x147117a0
+printf info, key:0x298, valueaddr:0x1475c7c8
+printf info, key:0x299, valueaddr:0x147a77f0
+printf info, key:0x29a, valueaddr:0x147f2818
+printf info, key:0x29b, valueaddr:0x1483d840
+printf info, key:0x29c, valueaddr:0x14888868
+printf info, key:0x29d, valueaddr:0x148d3890
+printf info, key:0x29e, valueaddr:0x1491e8b8
+printf info, key:0x29f, valueaddr:0x149698e0
+printf info, key:0x2a0, valueaddr:0x149b4908
+printf info, key:0x2a1, valueaddr:0x149ff930
+printf info, key:0x2a2, valueaddr:0x14a4a958
+printf info, key:0x2a3, valueaddr:0x14a95980
+printf info, key:0x2a4, valueaddr:0x14ae09a8
+printf info, key:0x2a5, valueaddr:0x14b2b9d0
+printf info, key:0x2a6, valueaddr:0x14b769f8
+printf info, key:0x2a7, valueaddr:0x14bc1a20
+printf info, key:0x2a8, valueaddr:0x14c0ca48
+printf info, key:0x2a9, valueaddr:0x14c57a70
+printf info, key:0x2aa, valueaddr:0x14ca2a98
+printf info, key:0x2ab, valueaddr:0x14cedac0
+printf info, key:0x2ac, valueaddr:0x14d38ae8
+printf info, key:0x2ad, valueaddr:0x14d83b10
+printf info, key:0x2ae, valueaddr:0x14dceb38
+printf info, key:0x2af, valueaddr:0x14e19b60
+printf info, key:0x2b0, valueaddr:0x14e64b88
+printf info, key:0x2b1, valueaddr:0x14eafbb0
+printf info, key:0x2b2, valueaddr:0x14efabd8
+printf info, key:0x2b3, valueaddr:0x14f45c00
+printf info, key:0x2b4, valueaddr:0x14f90c28
+printf info, key:0x2b5, valueaddr:0x14fdbc50
+printf info, key:0x2b6, valueaddr:0x15026c78
+printf info, key:0x2b7, valueaddr:0x15071ca0
+printf info, key:0x2b8, valueaddr:0x150bccc8
+printf info, key:0x2b9, valueaddr:0x15107cf0
+printf info, key:0x2ba, valueaddr:0x15152d18
+printf info, key:0x2bb, valueaddr:0x1519dd40
+printf info, key:0x2bc, valueaddr:0x151e8d68
+printf info, key:0x2bd, valueaddr:0x15233d90
+printf info, key:0x2be, valueaddr:0x1527edb8
+printf info, key:0x2bf, valueaddr:0x152c9de0
+printf info, key:0x2c0, valueaddr:0x15314e08
+printf info, key:0x2c1, valueaddr:0x1535fe30
+printf info, key:0x2c2, valueaddr:0x153aae58
+printf info, key:0x2c3, valueaddr:0x153f5e80
+printf info, key:0x2c4, valueaddr:0x15440ea8
+printf info, key:0x2c5, valueaddr:0x1548bed0
+printf info, key:0x2c6, valueaddr:0x154d6ef8
+printf info, key:0x2c7, valueaddr:0x15521f20
+printf info, key:0x2c8, valueaddr:0x1556cf48
+printf info, key:0x2c9, valueaddr:0x155b7f70
+printf info, key:0x2ca, valueaddr:0x15602f98
+printf info, key:0x2cb, valueaddr:0x1564dfc0
+printf info, key:0x2cc, valueaddr:0x15698fe8
+printf info, key:0x2cd, valueaddr:0x156e4010
+printf info, key:0x2ce, valueaddr:0x1572f038
+printf info, key:0x2cf, valueaddr:0x1577a060
+printf info, key:0x2d0, valueaddr:0x157c5088
+printf info, key:0x2d1, valueaddr:0x158100b0
+printf info, key:0x2d2, valueaddr:0x1585b0d8
+printf info, key:0x2d3, valueaddr:0x158a6100
+printf info, key:0x2d4, valueaddr:0x158f1128
+printf info, key:0x2d5, valueaddr:0x1593c150
+printf info, key:0x2d6, valueaddr:0x15987178
+printf info, key:0x2d7, valueaddr:0x159d21a0
+printf info, key:0x2d8, valueaddr:0x15a1d1c8
+printf info, key:0x2d9, valueaddr:0x15a681f0
+printf info, key:0x2da, valueaddr:0x15ab3218
+printf info, key:0x2db, valueaddr:0x15afe240
+printf info, key:0x2dc, valueaddr:0x15b49268
+printf info, key:0x2dd, valueaddr:0x15b94290
+printf info, key:0x2de, valueaddr:0x15bdf2b8
+printf info, key:0x2df, valueaddr:0x15c2a2e0
+printf info, key:0x2e0, valueaddr:0x15c75308
+printf info, key:0x2e1, valueaddr:0x15cc0330
+printf info, key:0x2e2, valueaddr:0x15d0b358
+printf info, key:0x2e3, valueaddr:0x15d56380
+printf info, key:0x2e4, valueaddr:0x15da13a8
+printf info, key:0x2e5, valueaddr:0x15dec3d0
+printf info, key:0x2e6, valueaddr:0x15e373f8
+printf info, key:0x2e7, valueaddr:0x15e82420
+printf info, key:0x2e8, valueaddr:0x15ecd448
+printf info, key:0x2e9, valueaddr:0x15f18470
+printf info, key:0x2ea, valueaddr:0x15f63498
+printf info, key:0x2eb, valueaddr:0x15fae4c0
+printf info, key:0x2ec, valueaddr:0x15ff94e8
+printf info, key:0x2ed, valueaddr:0x16044510
+printf info, key:0x2ee, valueaddr:0x1608f538
+printf info, key:0x2ef, valueaddr:0x160da560
+printf info, key:0x2f0, valueaddr:0x16125588
+printf info, key:0x2f1, valueaddr:0x161705b0
+printf info, key:0x2f2, valueaddr:0x161bb5d8
+printf info, key:0x2f3, valueaddr:0x16206600
+printf info, key:0x2f4, valueaddr:0x16251628
+printf info, key:0x2f5, valueaddr:0x1629c650
+printf info, key:0x2f6, valueaddr:0x162e7678
+printf info, key:0x2f7, valueaddr:0x163326a0
+printf info, key:0x2f8, valueaddr:0x1637d6c8
+printf info, key:0x2f9, valueaddr:0x163c86f0
+printf info, key:0x2fa, valueaddr:0x16413718
+printf info, key:0x2fb, valueaddr:0x1645e740
+printf info, key:0x2fc, valueaddr:0x164a9768
+printf info, key:0x2fd, valueaddr:0x164f4790
+printf info, key:0x2fe, valueaddr:0x1653f7b8
+printf info, key:0x2ff, valueaddr:0x1658a7e0
+printf info, key:0x300, valueaddr:0x165d5808
+printf info, key:0x301, valueaddr:0x16620830
+printf info, key:0x302, valueaddr:0x1666b858
+printf info, key:0x303, valueaddr:0x166b6880
+printf info, key:0x304, valueaddr:0x167018a8
+printf info, key:0x305, valueaddr:0x1674c8d0
+printf info, key:0x306, valueaddr:0x167978f8
+printf info, key:0x307, valueaddr:0x167e2920
+printf info, key:0x308, valueaddr:0x1682d948
+printf info, key:0x309, valueaddr:0x16878970
+printf info, key:0x30a, valueaddr:0x168c3998
+printf info, key:0x30b, valueaddr:0x1690e9c0
+printf info, key:0x30c, valueaddr:0x169599e8
+printf info, key:0x30d, valueaddr:0x169a4a10
+printf info, key:0x30e, valueaddr:0x169efa38
+printf info, key:0x30f, valueaddr:0x16a3aa60
+printf info, key:0x310, valueaddr:0x16a85a88
+printf info, key:0x311, valueaddr:0x16ad0ab0
+printf info, key:0x312, valueaddr:0x16b1bad8
+printf info, key:0x313, valueaddr:0x16b66b00
+printf info, key:0x314, valueaddr:0x16bb1b28
+printf info, key:0x315, valueaddr:0x16bfcb50
+printf info, key:0x316, valueaddr:0x16c47b78
+printf info, key:0x317, valueaddr:0x16c92ba0
+printf info, key:0x318, valueaddr:0x16cddbc8
+printf info, key:0x319, valueaddr:0x16d28bf0
+printf info, key:0x31a, valueaddr:0x16d73c18
+printf info, key:0x31b, valueaddr:0x16dbec40
+printf info, key:0x31c, valueaddr:0x16e09c68
+printf info, key:0x31d, valueaddr:0x16e54c90
+printf info, key:0x31e, valueaddr:0x16e9fcb8
+printf info, key:0x31f, valueaddr:0x16eeace0
+printf info, key:0x320, valueaddr:0x16f35d08
+printf info, key:0x321, valueaddr:0x16f80d30
+printf info, key:0x322, valueaddr:0x16fcbd58
+printf info, key:0x323, valueaddr:0x17016d80
+printf info, key:0x324, valueaddr:0x17061da8
+printf info, key:0x325, valueaddr:0x170acdd0
+printf info, key:0x326, valueaddr:0x170f7df8
+printf info, key:0x327, valueaddr:0x17142e20
+printf info, key:0x328, valueaddr:0x1718de48
+printf info, key:0x329, valueaddr:0x171d8e70
+printf info, key:0x32a, valueaddr:0x17223e98
+printf info, key:0x32b, valueaddr:0x1726eec0
+printf info, key:0x32c, valueaddr:0x172b9ee8
+printf info, key:0x32d, valueaddr:0x17304f10
+printf info, key:0x32e, valueaddr:0x1734ff38
+printf info, key:0x32f, valueaddr:0x1739af60
+printf info, key:0x330, valueaddr:0x173e5f88
+printf info, key:0x331, valueaddr:0x17430fb0
+printf info, key:0x332, valueaddr:0x1747bfd8
+printf info, key:0x333, valueaddr:0x174c7000
+printf info, key:0x334, valueaddr:0x17512028
+printf info, key:0x335, valueaddr:0x1755d050
+printf info, key:0x336, valueaddr:0x175a8078
+printf info, key:0x337, valueaddr:0x175f30a0
+printf info, key:0x338, valueaddr:0x1763e0c8
+printf info, key:0x339, valueaddr:0x176890f0
+printf info, key:0x33a, valueaddr:0x176d4118
+printf info, key:0x33b, valueaddr:0x1771f140
+printf info, key:0x33c, valueaddr:0x1776a168
+printf info, key:0x33d, valueaddr:0x177b5190
+printf info, key:0x33e, valueaddr:0x178001b8
+printf info, key:0x33f, valueaddr:0x1784b1e0
+printf info, key:0x340, valueaddr:0x17896208
+printf info, key:0x341, valueaddr:0x178e1230
+printf info, key:0x342, valueaddr:0x1792c258
+printf info, key:0x343, valueaddr:0x17977280
+printf info, key:0x344, valueaddr:0x179c22a8
+printf info, key:0x345, valueaddr:0x17a0d2d0
+printf info, key:0x346, valueaddr:0x17a582f8
+printf info, key:0x347, valueaddr:0x17aa3320
+printf info, key:0x348, valueaddr:0x17aee348
+printf info, key:0x349, valueaddr:0x17b39370
+printf info, key:0x34a, valueaddr:0x17b84398
+printf info, key:0x34b, valueaddr:0x17bcf3c0
+printf info, key:0x34c, valueaddr:0x17c1a3e8
+printf info, key:0x34d, valueaddr:0x17c65410
+printf info, key:0x34e, valueaddr:0x17cb0438
+printf info, key:0x34f, valueaddr:0x17cfb460
+printf info, key:0x350, valueaddr:0x17d46488
+printf info, key:0x351, valueaddr:0x17d914b0
+printf info, key:0x352, valueaddr:0x17ddc4d8
+printf info, key:0x353, valueaddr:0x17e27500
+printf info, key:0x354, valueaddr:0x17e72528
+printf info, key:0x355, valueaddr:0x17ebd550
+printf info, key:0x356, valueaddr:0x17f08578
+printf info, key:0x357, valueaddr:0x17f535a0
+printf info, key:0x358, valueaddr:0x17f9e5c8
+printf info, key:0x359, valueaddr:0x17fe95f0
+printf info, key:0x35a, valueaddr:0x18034618
+printf info, key:0x35b, valueaddr:0x1807f640
+printf info, key:0x35c, valueaddr:0x180ca668
+printf info, key:0x35d, valueaddr:0x18115690
+printf info, key:0x35e, valueaddr:0x181606b8
+printf info, key:0x35f, valueaddr:0x181ab6e0
+printf info, key:0x360, valueaddr:0x181f6708
+printf info, key:0x361, valueaddr:0x18241730
+printf info, key:0x362, valueaddr:0x1828c758
+printf info, key:0x363, valueaddr:0x182d7780
+printf info, key:0x364, valueaddr:0x183227a8
+printf info, key:0x365, valueaddr:0x1836d7d0
+printf info, key:0x366, valueaddr:0x183b87f8
+printf info, key:0x367, valueaddr:0x18403820
+printf info, key:0x368, valueaddr:0x1844e848
+printf info, key:0x369, valueaddr:0x18499870
+printf info, key:0x36a, valueaddr:0x184e4898
+printf info, key:0x36b, valueaddr:0x1852f8c0
+printf info, key:0x36c, valueaddr:0x1857a8e8
+printf info, key:0x36d, valueaddr:0x185c5910
+printf info, key:0x36e, valueaddr:0x18610938
+printf info, key:0x36f, valueaddr:0x1865b960
+printf info, key:0x370, valueaddr:0x186a6988
+printf info, key:0x371, valueaddr:0x186f19b0
+printf info, key:0x372, valueaddr:0x1873c9d8
+printf info, key:0x373, valueaddr:0x18787a00
+printf info, key:0x374, valueaddr:0x187d2a28
+printf info, key:0x375, valueaddr:0x1881da50
+printf info, key:0x376, valueaddr:0x18868a78
+printf info, key:0x377, valueaddr:0x188b3aa0
+printf info, key:0x378, valueaddr:0x188feac8
+printf info, key:0x379, valueaddr:0x18949af0
+printf info, key:0x37a, valueaddr:0x18994b18
+printf info, key:0x37b, valueaddr:0x189dfb40
+printf info, key:0x37c, valueaddr:0x18a2ab68
+printf info, key:0x37d, valueaddr:0x18a75b90
+printf info, key:0x37e, valueaddr:0x18ac0bb8
+printf info, key:0x37f, valueaddr:0x18b0bbe0
+printf info, key:0x380, valueaddr:0x18b56c08
+printf info, key:0x381, valueaddr:0x18ba1c30
+printf info, key:0x382, valueaddr:0x18becc58
+printf info, key:0x383, valueaddr:0x18c37c80
+printf info, key:0x384, valueaddr:0x18c82ca8
+printf info, key:0x385, valueaddr:0x18ccdcd0
+printf info, key:0x386, valueaddr:0x18d18cf8
+printf info, key:0x387, valueaddr:0x18d63d20
+printf info, key:0x388, valueaddr:0x18daed48
+printf info, key:0x389, valueaddr:0x18df9d70
+printf info, key:0x38a, valueaddr:0x18e44d98
+printf info, key:0x38b, valueaddr:0x18e8fdc0
+printf info, key:0x38c, valueaddr:0x18edade8
+printf info, key:0x38d, valueaddr:0x18f25e10
+printf info, key:0x38e, valueaddr:0x18f70e38
+printf info, key:0x38f, valueaddr:0x18fbbe60
+printf info, key:0x390, valueaddr:0x19006e88
+printf info, key:0x391, valueaddr:0x19051eb0
+printf info, key:0x392, valueaddr:0x1909ced8
+printf info, key:0x393, valueaddr:0x190e7f00
+printf info, key:0x394, valueaddr:0x19132f28
+printf info, key:0x395, valueaddr:0x1917df50
+printf info, key:0x396, valueaddr:0x191c8f78
+printf info, key:0x397, valueaddr:0x19213fa0
+printf info, key:0x398, valueaddr:0x1925efc8
+printf info, key:0x399, valueaddr:0x192a9ff0
+printf info, key:0x39a, valueaddr:0x192f5018
+printf info, key:0x39b, valueaddr:0x19340040
+printf info, key:0x39c, valueaddr:0x1938b068
+printf info, key:0x39d, valueaddr:0x193d6090
+printf info, key:0x39e, valueaddr:0x194210b8
+printf info, key:0x39f, valueaddr:0x1946c0e0
+printf info, key:0x3a0, valueaddr:0x194b7108
+printf info, key:0x3a1, valueaddr:0x19502130
+printf info, key:0x3a2, valueaddr:0x1954d158
+printf info, key:0x3a3, valueaddr:0x19598180
+printf info, key:0x3a4, valueaddr:0x195e31a8
+printf info, key:0x3a5, valueaddr:0x1962e1d0
+printf info, key:0x3a6, valueaddr:0x196791f8
+printf info, key:0x3a7, valueaddr:0x196c4220
+printf info, key:0x3a8, valueaddr:0x1970f248
+printf info, key:0x3a9, valueaddr:0x1975a270
+printf info, key:0x3aa, valueaddr:0x197a5298
+printf info, key:0x3ab, valueaddr:0x197f02c0
+printf info, key:0x3ac, valueaddr:0x1983b2e8
+printf info, key:0x3ad, valueaddr:0x19886310
+printf info, key:0x3ae, valueaddr:0x198d1338
+printf info, key:0x3af, valueaddr:0x1991c360
+printf info, key:0x3b0, valueaddr:0x19967388
+printf info, key:0x3b1, valueaddr:0x199b23b0
+printf info, key:0x3b2, valueaddr:0x199fd3d8
+printf info, key:0x3b3, valueaddr:0x19a48400
+printf info, key:0x3b4, valueaddr:0x19a93428
+printf info, key:0x3b5, valueaddr:0x19ade450
+printf info, key:0x3b6, valueaddr:0x19b29478
+printf info, key:0x3b7, valueaddr:0x19b744a0
+printf info, key:0x3b8, valueaddr:0x19bbf4c8
+printf info, key:0x3b9, valueaddr:0x19c0a4f0
+printf info, key:0x3ba, valueaddr:0x19c55518
+printf info, key:0x3bb, valueaddr:0x19ca0540
+printf info, key:0x3bc, valueaddr:0x19ceb568
+printf info, key:0x3bd, valueaddr:0x19d36590
+printf info, key:0x3be, valueaddr:0x19d815b8
+printf info, key:0x3bf, valueaddr:0x19dcc5e0
+printf info, key:0x3c0, valueaddr:0x19e17608
+printf info, key:0x3c1, valueaddr:0x19e62630
+printf info, key:0x3c2, valueaddr:0x19ead658
+printf info, key:0x3c3, valueaddr:0x19ef8680
+printf info, key:0x3c4, valueaddr:0x19f436a8
+printf info, key:0x3c5, valueaddr:0x19f8e6d0
+printf info, key:0x3c6, valueaddr:0x19fd96f8
+printf info, key:0x3c7, valueaddr:0x1a024720
+printf info, key:0x3c8, valueaddr:0x1a06f748
+printf info, key:0x3c9, valueaddr:0x1a0ba770
+printf info, key:0x3ca, valueaddr:0x1a105798
+printf info, key:0x3cb, valueaddr:0x1a1507c0
+printf info, key:0x3cc, valueaddr:0x1a19b7e8
+printf info, key:0x3cd, valueaddr:0x1a1e6810
+printf info, key:0x3ce, valueaddr:0x1a231838
+printf info, key:0x3cf, valueaddr:0x1a27c860
+printf info, key:0x3d0, valueaddr:0x1a2c7888
+printf info, key:0x3d1, valueaddr:0x1a3128b0
+printf info, key:0x3d2, valueaddr:0x1a35d8d8
+printf info, key:0x3d3, valueaddr:0x1a3a8900
+printf info, key:0x3d4, valueaddr:0x1a3f3928
+printf info, key:0x3d5, valueaddr:0x1a43e950
+printf info, key:0x3d6, valueaddr:0x1a489978
+printf info, key:0x3d7, valueaddr:0x1a4d49a0
+printf info, key:0x3d8, valueaddr:0x1a51f9c8
+printf info, key:0x3d9, valueaddr:0x1a56a9f0
+printf info, key:0x3da, valueaddr:0x1a5b5a18
+printf info, key:0x3db, valueaddr:0x1a600a40
+printf info, key:0x3dc, valueaddr:0x1a64ba68
+printf info, key:0x3dd, valueaddr:0x1a696a90
+printf info, key:0x3de, valueaddr:0x1a6e1ab8
+printf info, key:0x3df, valueaddr:0x1a72cae0
+printf info, key:0x3e0, valueaddr:0x1a777b08
+printf info, key:0x3e1, valueaddr:0x1a7c2b30
+printf info, key:0x3e2, valueaddr:0x1a80db58
+printf info, key:0x3e3, valueaddr:0x1a858b80
+printf info, key:0x3e4, valueaddr:0x1a8a3ba8
+printf info, key:0x3e5, valueaddr:0x1a8eebd0
+printf info, key:0x3e6, valueaddr:0x1a939bf8
+printf info, key:0x3e7, valueaddr:0x1a984c20
+test malloc addr:0x84ce008
+
+[root@localhost mapaddr]# 
+[root@localhost mapaddr]# cat /proc/4329/maps 
+00655000-006b4000 r-xp 00000000 08:03 1311875    /usr/local/lib/libzmq.so.5.0.1
+006b4000-006b7000 rw-p 0005e000 08:03 1311875    /usr/local/lib/libzmq.so.5.0.1
+007fc000-007fd000 r-xp 00000000 00:00 0          [vdso]
+00b7e000-00b9c000 r-xp 00000000 08:03 13632480   /lib/ld-2.12.so
+00b9c000-00b9d000 r--p 0001e000 08:03 13632480   /lib/ld-2.12.so
+00b9d000-00b9e000 rw-p 0001f000 08:03 13632480   /lib/ld-2.12.so
+00ba0000-00d31000 r-xp 00000000 08:03 13632599   /lib/libc-2.12.so
+00d31000-00d32000 ---p 00191000 08:03 13632599   /lib/libc-2.12.so
+00d32000-00d34000 r--p 00191000 08:03 13632599   /lib/libc-2.12.so
+00d34000-00d35000 rw-p 00193000 08:03 13632599   /lib/libc-2.12.so
+00d35000-00d38000 rw-p 00000000 00:00 0 
+00d3a000-00d51000 r-xp 00000000 08:03 13632606   /lib/libpthread-2.12.so
+00d51000-00d52000 r--p 00016000 08:03 13632606   /lib/libpthread-2.12.so
+00d52000-00d53000 rw-p 00017000 08:03 13632606   /lib/libpthread-2.12.so
+00d53000-00d55000 rw-p 00000000 00:00 0 
+00d5e000-00d65000 r-xp 00000000 08:03 13632613   /lib/librt-2.12.so
+00d65000-00d66000 r--p 00006000 08:03 13632613   /lib/librt-2.12.so
+00d66000-00d67000 rw-p 00007000 08:03 13632613   /lib/librt-2.12.so
+00d69000-00d91000 r-xp 00000000 08:03 13632689   /lib/libm-2.12.so
+00d91000-00d92000 r--p 00027000 08:03 13632689   /lib/libm-2.12.so
+00d92000-00d93000 rw-p 00028000 08:03 13632689   /lib/libm-2.12.so
+06b1a000-06b37000 r-xp 00000000 08:03 13632691   /lib/libgcc_s-4.4.7-20120601.so.1
+06b37000-06b38000 rw-p 0001d000 08:03 13632691   /lib/libgcc_s-4.4.7-20120601.so.1
+06b41000-06c22000 r-xp 00000000 08:03 1319663    /usr/lib/libstdc++.so.6.0.13
+06c22000-06c26000 r--p 000e0000 08:03 1319663    /usr/lib/libstdc++.so.6.0.13
+06c26000-06c28000 rw-p 000e4000 08:03 1319663    /usr/lib/libstdc++.so.6.0.13
+06c28000-06c2e000 rw-p 00000000 00:00 0 
+08048000-0804b000 r-xp 00000000 08:03 27145390   /home/weilaidb/test/mapaddr/mapaddr
+0804b000-0804c000 rw-p 00002000 08:03 27145390   /home/weilaidb/test/mapaddr/mapaddr
+084ce000-084ef000 rw-p 00000000 00:00 0          [heap]
+b7722000-b7726000 rw-p 00000000 00:00 0 
+b7733000-b7735000 rw-p 00000000 00:00 0 
+bfea5000-bfeba000 rw-p 00000000 00:00 0          [stack]
+[root@localhost mapaddr]# 
+[root@localhost mapaddr]# 
+[root@localhost mapaddr]# 
+[root@localhost mapaddr]# make
+mkdir -p ./tmp
+ [CXX]   (tmp/./main.o)
+ g++ -w -fPIC -g -pipe   -pipe -O0 -g -Wall -W -D_REENTRANT   -Iinclude -Iinclude/freetype  -c main.cpp -o tmp/./main.o
+ [LD]    (mapaddr)
+now file is /home/weilaidb/test/mapaddr
+g++  -o mapaddr  ./tmp/./main.o -lpthread -lzmq   
+current path is mapaddr
+cp -f mapaddr ../exelibtest
+mkdir -p ../exelibtest
+[root@localhost mapaddr]# 
+[root@localhost mapaddr]# 
+[root@localhost mapaddr]# make
+mkdir -p ./tmp
+ [CXX]   (tmp/./main.o)
+ g++ -w -fPIC -g -pipe   -pipe -O0 -g -Wall -W -D_REENTRANT   -Iinclude -Iinclude/freetype  -c main.cpp -o tmp/./main.o
+ [LD]    (mapaddr)
+now file is /home/weilaidb/test/mapaddr
+g++  -o mapaddr  ./tmp/./main.o -lpthread -lzmq   
+current path is mapaddr
+cp -f mapaddr ../exelibtest
+mkdir -p ../exelibtest
+[root@localhost mapaddr]# 
+[root@localhost mapaddr]# 
+
+[END] 2017/4/30 5:27:23
