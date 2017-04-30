@@ -5,6 +5,7 @@
 #include <map>
 #include <vector>
 #include <string>
+#include <iostream>
 
 
 using namespace std;
@@ -143,7 +144,14 @@ void snmp_print_info()
 		pInfo = it->second;
 		printf("printf info, key:%#x, valueaddr:%p, ucBuf:%p, dwValue:%p, packet_sizes:%p\n", 
 				it->first, it->second, pInfo->ucBuf, &pInfo->dwValue, &pInfo->packet_sizes);
+		//¥Ú”°C++µÿ÷∑
+		cout<<"static_cast<void *>(pInfo)="<<static_cast<void*>(pInfo)<<endl;		
+		cout<<"static_cast<void *>(pInfo->ucBuf)="<<static_cast<void*>(pInfo->ucBuf)<<endl;		
+		cout<<"static_cast<void *>(&pInfo->dwValue)="<<static_cast<void*>(&pInfo->dwValue)<<endl;		
+		cout<<"static_cast<void *>(&pInfo->packet_sizes)="<<static_cast<void*>(&pInfo->packet_sizes)<<endl;		
 	}
+	
+	
 	
 	printf("printf snmp_maps addr:%p\n", snmp_maps);
 }
