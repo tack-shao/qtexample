@@ -31,6 +31,7 @@ typedef unsigned short DWORD;
 
 typedef struct T_SNMP_TEST{
     BYTE ucBuf[BUFFER_MAX];    /*  */
+	WORD32 dwValue;
 }T_SNMP_TEST, *P_SNMP_TEST;
 
 
@@ -135,9 +136,12 @@ void ClearItem(T1 &map)
 void snmp_print_info()
 {
 	SNMP_PERF_MAP_IT it;
+	P_SNMP_TEST pInfo = NULL;
 	for(it = snmp_maps.begin(); it != snmp_maps.end(); it++)
 	{
-		printf("printf info, key:%#x, valueaddr:%p\n", it->first, it->second);
+		pInfo = it->second;
+		printf("printf info, key:%#x, valueaddr:%p, ucBuf:%p, dwValue:%p\n", 
+				it->first, it->second, pInfo->ucBuf, &pInfo->dwValue);
 	}
 	
 	printf("printf snmp_maps addr:%p\n", snmp_maps);
