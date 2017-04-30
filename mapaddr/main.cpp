@@ -1,4 +1,4 @@
-//map address  test,原来malloc或realloc无法保证分配地址在堆上，有可能分配到栈，导致栈溢出异常。使用内存池分配吧。
+//map address  test,原来new无法保证分配地址在堆上，有可能分配到栈，导致栈溢出异常。使用内存池分配吧。
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -70,12 +70,12 @@ void UpdateItem(WORD32 dwAddr, T2 &map, T1 *pData)
 	it = map.find(dwAddr);
 	if(it == map.end())
 	{
-		pInfo = (T1 *)malloc(sizeof(*pInfo));
+		pInfo = new T1();
 		check_paranullpt(pInfo);
 		memset(pInfo, 0, sizeof(*pInfo));
 		memcpy(pInfo, pData, sizeof(*pInfo));
 		map.insert(make_pair(dwAddr, pInfo));
-		printf("updateitem, create data, key:%#x, malloc addr:%p\n", dwAddr, pInfo);
+		printf("updateitem, create data, key:%#x, new addr:%p\n", dwAddr, pInfo);
 	}
 	else
 	{
@@ -98,7 +98,7 @@ void RemoveItem(WORD32 dwAddr, T2 &map)
 	{
 		pInfo = it->second;
 		check_paranullpt(pInfo);
-		free(pInfo);
+		delete (pInfo);
 		map.erase(dwAddr);
 		printf("removeitem, remove ok, key:%#x\n", dwAddr);
 		return;
@@ -162,9 +162,9 @@ void snmp_test()
 	WORD32 dwLp  =  0;
 	for( dwLp  =  0 ; dwLp < 1000; dwLp++ )
 	{
-		pOrg = (P_SNMP_TEST)malloc(sizeof(*pOrg));
+		pOrg = new T_SNMP_TEST();
 		check_paranullpt(pOrg);
-		printf("org malloc addr:%p\n", pOrg);
+		printf("org char addr:%p\n", pOrg);
 		memset(pOrg, 0 + dwLp, sizeof(*pOrg));
 		
 		UpdateItem(dwLp, snmp_maps ,pOrg);
@@ -179,9 +179,9 @@ void snmp_test()
 void test_addr()
 {
 	P_SNMP_TEST pInfo = NULL;
-	pInfo = (P_SNMP_TEST)malloc(sizeof(*pInfo));
+	pInfo = new T_SNMP_TEST();
 	check_paranullpt(pInfo);
-	printf("test malloc addr:%p\n", pInfo);
+	printf("test new addr:%p\n", pInfo);
 	if(pInfo)
 		free(pInfo);
 }
