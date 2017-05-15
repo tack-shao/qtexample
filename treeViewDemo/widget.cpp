@@ -26,6 +26,7 @@ void Widget::initTree()
 {
     QStandardItemModel* model = new QStandardItemModel(ui->treeView);
     model->setHorizontalHeaderLabels(QStringList()<<QStringLiteral("项目名")<<QStringLiteral("信息"));
+
     QStandardItem* itemProject = new QStandardItem(m_publicIconMap[QStringLiteral("treeItem_Project")],QStringLiteral("项目"));
     model->appendRow(itemProject);
     model->setItem(model->indexFromItem(itemProject).row(),1,new QStandardItem(QStringLiteral("项目信息说明")));
