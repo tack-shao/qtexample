@@ -1,0 +1,5 @@
+show mlog keys, size:3
+[key]: error
+[key]: init
+[key]: sums
+show mlog keys, size:3, done!!
