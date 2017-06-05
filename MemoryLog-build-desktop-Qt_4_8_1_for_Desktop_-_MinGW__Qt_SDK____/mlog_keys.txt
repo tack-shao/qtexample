@@ -1,5 +1,6 @@
-show mlog keys, size:3
+show mlog keys, size:4
 [key]: error
 [key]: init
+[key]: msg
 [key]: sums
-show mlog keys, size:3, done!!
+show mlog keys, size:4, done!!

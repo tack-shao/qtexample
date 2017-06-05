@@ -50,14 +50,8 @@ MemoryLog * MemoryLog::GetInstance()
 * Author      :
 * Time        : 2017-06-05
 ============================================*/
-void MemoryLog::PushLog(const char *key, char *fmt, ...)
+void MemoryLog::PushLog(const char *key, char *buf)
 {
-    va_list ap;
-    char buf[1024];
-    va_start(ap, fmt);
-    vsprintf(buf, fmt, ap);
-    va_end(ap);
-
     MUTEX_P (mutex);
 
     MLOG_MAP_IT it = mlog.find(string(key));
@@ -369,6 +363,97 @@ void clearmlogall();
 
 
 /* func_implement */
+
+/*============================================
+* FuncName    : pushlogbyname
+* Description :
+* @key        :
+* @fmt        :
+* @--         :
+* Author      :
+* Time        : 2017-06-06
+============================================*/
+void pushlogbyname(const char *key, char *fmt, ...)
+{
+    va_list ap;
+    char buf[1024];
+    va_start(ap, fmt);
+    vsprintf(buf, fmt, ap);
+    va_end(ap);
+
+    MemoryLog *pInstance = MemoryLog::GetInstance();
+    pInstance->PushLog(key, buf);
+}
+
+/*============================================
+* FuncName    : pushmsgbyname
+* Description :
+* @key        :
+* @fmt        :
+* @--         :
+* Author      :
+* Time        : 2017-06-06
+============================================*/
+void pushmsgbyname(const char *key, void *msg, unsigned int msglen, char *fmt, ...)
+{
+    va_list ap;
+    char buf[1024];
+    char *pmsg = NULL;
+
+    va_start(ap, fmt);
+    vsprintf(buf, fmt, ap);
+    va_end(ap);
+
+    MemoryLog *pInstance = MemoryLog::GetInstance();
+    pInstance->PushLog(key, buf);
+    if(NULL != msg || 0!= msglen) // record msg
+    {
+        pmsg = (char *)malloc(msglen * 3 + (msglen/ 16) *4);
+        if(!pmsg)
+            return;
+        memset(pmsg, 0, msglen);
+        unsigned int i = 0;
+        unsigned int j = 0;
+        unsigned int tnum = 0;
+        unsigned int cpos = 0;
+        char *rmsg = (char *)msg;
+        sprintf(buf, "msg:%p, len:%u", msg, msglen);
+        pInstance->PushLog(key, buf);
+
+        tnum = sprintf(pmsg + cpos, "\n");
+        for(i = 0; i < msglen; i++)
+        {
+            j = i + 1;
+            if(0 == i)
+            {
+                tnum = sprintf(pmsg + cpos, "\n");
+                cpos += tnum;
+            }
+            if(0 == j % 8 && 0 != j % 16)
+                tnum = sprintf(pmsg + cpos, "%02X  ", (unsigned char)rmsg[i]);
+            else if( 0 == j % 16)
+                tnum = sprintf(pmsg + cpos, "%02X", (unsigned char)rmsg[i]);
+            else
+                tnum = sprintf(pmsg + cpos, "%02X ", (unsigned char)rmsg[i]);
+
+            cpos += tnum;
+            if( 0 == (j) % 16)
+            {
+                tnum = sprintf(pmsg + cpos, "\n");
+                cpos += tnum;
+            }
+        }
+        fprintf(stdout, "cpos :%u\n", cpos);
+        pInstance->PushLog(key, pmsg);
+        free(pmsg);
+    }
+
+
+}
+
+
+
+
 /*============================================
 * FuncName    : showmlogbyname
 * Description :

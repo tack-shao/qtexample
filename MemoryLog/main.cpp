@@ -26,6 +26,11 @@ void* thread_function(void* arg)
 int main()
 {
     cout << "Hello World!" << endl;
+    char buf[3180];
+    memset(buf, 0xFE, sizeof(buf));
+    pushmsgbyname("msg", buf, sizeof(buf), "test one buf memory log");
+    savemlog2fileall();
+    return 1;
 
     pushlogbyname("init", "haha");
     showmlogbyname("init");

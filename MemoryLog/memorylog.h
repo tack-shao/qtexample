@@ -4,6 +4,7 @@
 #include <iostream>
 #include <map>
 #include <vector>
+#include <string>
 #include <stdarg.h>
 #include <pthread.h>
 
@@ -13,7 +14,7 @@ class MemoryLog
 {
 public:
     MemoryLog();
-    void PushLog(const char *key, char *fmt, ...);
+    void PushLog(const char *key, char *buf);
     void ShowLogByName(const char *key, bool index);
     void ShowLogAll();
     void ClearLogByName(const char *key, bool tips);
@@ -44,20 +45,13 @@ public:
 };
 
 
-#define pushlogbyname(key, fmt, ...)\
-do{\
-    MemoryLog *pInstance = MemoryLog::GetInstance();\
-    pInstance->PushLog(key, fmt, ##__VA_ARGS__);\
-}while(0)
-
-
-
-
 #ifdef __cplusplus
 extern "C" {
 #endif
 
 /* func_declare_begin */
+void pushmsgbyname(const char *key, void *msg, unsigned int msglen, char *fmt, ...);
+void pushlogbyname(const char *key, char *fmt, ...);
 void showmlogbyname( const char *key);
 void showmlogall();
 void clearmlogbyname( const char *key);
