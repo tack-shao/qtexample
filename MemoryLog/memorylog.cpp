@@ -573,7 +573,7 @@ void savemlog2filekeys()
 
 
 /* variable declare begin */
-unsigned int mlogmaxsize = 1000;
+unsigned int mlogmaxsize = 100;
 /* variable declare end */
 /*
 Set and Get for mlogmaxsize
@@ -600,6 +600,25 @@ void set_mlogmaxsize(unsigned int _mlogmaxsize)
 unsigned int get_mlogmaxsize(void)
 {
     return mlogmaxsize;
+}
+
+void mloghelp()
+{
+    const char *usage = "memory log help:\n"
+    "push log by name     --   pushlogbyname(const char *key, char *fmt, ...)\n"
+    "push msg by name     --   pushmsgbyname(const char *key, *msg, unsigned int msglen, char *fmt, ...)\n"
+    "show log by name     --   showmlogbyname( const char *key)\n"
+    "show log of all      --   showmlogall()\n"
+    "clear log by name    --   clearmlogbyname( const char *key)\n"
+    "clear log of all     --   clearmlogall()\n"
+    "show mlog keys       --   showmlogkeys()\n"
+    "save log 2file by name      --   savemlog2filebyname(const char *key)\n"
+    "save log 2file of all       --   savemlog2fileall(const char *filewithpath)\n"
+    "save log 2file of keys      --   savemlog2filekeys()\n"
+    "set mlog store max size     --   set_mlogmaxsize(unsigned int _mlogmaxsize)\n"
+    "get mlog store max size     --   get_mlogmaxsize(void)\n"
+    ;
+    printf(usage);
 }
 
 

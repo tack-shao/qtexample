@@ -63,6 +63,7 @@ void savemlog2filekeys();
 /* func_declare_end */
 void set_mlogmaxsize(unsigned int _mlogmaxsize);
 unsigned int get_mlogmaxsize(void);
+void mloghelp();
 
 
 #ifdef __cplusplus

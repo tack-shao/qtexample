@@ -29,6 +29,7 @@ void* thread_function(void* arg)
 
 int main()
 {
+    mloghelp();
     cout << "Hello World!" << endl;
     char buf[4];
     memset(buf, 0xFE, sizeof(buf));
