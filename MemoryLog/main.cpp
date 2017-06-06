@@ -34,17 +34,32 @@ int main()
     char buf[4];
     memset(buf, 0xFE, sizeof(buf));
     pushmsgbyname("msg", buf, sizeof(buf), "test one buf memory log");
+    pushmsgbyname("msgsdfdfdsfdsfdfd", buf, sizeof(buf), "test one buf memory log");
     char buf2[5];
     pushmsgbyname("msg2", buf2, sizeof(buf2), "test one buf memory log2");
     char buf3[6];
-    pushmsgbyname("msg3", buf3, sizeof(buf3), "test one buf memory log2");
+    pushmsgbyname("msg3", buf3, sizeof(buf3), "test one buf memory log3");
     char buf4[7];
-    pushmsgbyname("msg4", buf4, sizeof(buf4), "test one buf memory log2");
+    pushmsgbyname("msg4", buf4, sizeof(buf4), "test one buf memory log4");
     char buf5[8];
-    pushmsgbyname("msg5", buf5, sizeof(buf5), "test one buf memory log2");
+    pushmsgbyname("msg5", buf5, sizeof(buf5), "test one buf memory log5");
     char buf6[9];
-    pushmsgbyname("msg6", buf6, sizeof(buf6), "test one buf memory log2");
+    pushmsgbyname("msg6", buf6, sizeof(buf6), "test one buf memory log6");
+    char buf7[90];
+    pushmsgbyname("msg7", buf7, sizeof(buf7), "test one buf memory log7");
+    char buf8[900];
+    pushmsgbyname("msg8", buf8, sizeof(buf8), "test one buf memory log8");
+    char buf9[9000];
+    pushmsgbyname("msg9", buf9, sizeof(buf9), "test one buf memory log9");
+    char buf10[90000];
+    pushmsgbyname("msg10", buf10, sizeof(buf10), "test one buf memory log10");
+    char buf11[900000];
+    pushmsgbyname("msg11", buf11, sizeof(buf11), "test one buf memory log11");
+    char buf12[9000000];
+    pushmsgbyname("msg12", buf12, sizeof(buf12), "test one buf memory log12");
     savemlog2fileall("agent.mlog");
+    savemlog2fileall("/tmp/agent.mlog");
+    savemlog2filebyname("msg5", "/tmp/msg5.mlog");
     showmlogkeys();
 
     return 1;
@@ -70,7 +85,7 @@ int main()
 
     showmlogall();
     showmlogkeys();
-    savemlog2filebyname("error");
+    savemlog2filebyname("error", "/tmp/error.mlog");
     savemlog2fileall("errorinfo.mlog");
     savemlog2filekeys();
 

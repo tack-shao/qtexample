@@ -4,6 +4,7 @@
 #include <string.h>
 #include <time.h>
 #include <sys/time.h>
+#include <errno.h>
 
 #define MUTEX_P(mutex) pthread_mutex_lock   (&mutex)
 #define MUTEX_V(mutex) pthread_mutex_unlock (&mutex)
@@ -39,6 +40,36 @@ MemoryLog * MemoryLog::GetInstance()
     }
     return pInstance;
 }
+
+
+/*============================================
+* FuncName    : timeval_diff
+* Description : caculate time diff
+* @tvbegin    : begin time
+* @tvend      : end time
+* Author      :
+* Time        : 2017-06-07
+============================================*/
+unsigned int timeval_diff(struct timeval *tvbegin, struct timeval *tvend)
+{
+    unsigned int diff = 0;
+    if(tvbegin->tv_sec > tvend->tv_sec)
+    {
+        diff = (tvbegin->tv_sec - tvend->tv_sec) * 1000 + (tvbegin->tv_usec - tvend->tv_usec)/1000;
+    }
+    else if(tvbegin->tv_sec ==  tvend->tv_sec)
+    {
+        diff = (tvbegin->tv_usec > tvend->tv_usec) ? (tvbegin->tv_usec - tvend->tv_usec)/1000 :
+                                                     (tvend->tv_usec - tvbegin->tv_usec)/1000;
+    }
+    else
+    {
+        diff = (tvend->tv_sec - tvbegin->tv_sec) * 1000 + (tvend->tv_usec - tvbegin->tv_usec)/1000;
+    }
+
+    return diff;
+}
+
 
 
 /*============================================
@@ -147,12 +178,12 @@ void MemoryLog::ShowLogKeys()
     fprintf(stdout, "show mlog keys, size:%u\n", mlog.size());
     if(mlog.size())
     {
-        fprintf(stdout,"[key_____] [count]\n");
+        fprintf(stdout,"[key            ] [count]\n");
     }
 
     for(MLOG_MAP_IT it  = mlog.begin(); it != mlog.end(); ++it)
     {
-        fprintf(stdout,"%-010s %-07u \n" ,
+        fprintf(stdout,"%-020s %-07u \n" ,
                 it->first.c_str(),
                 it->second.size() );
     }
@@ -221,16 +252,16 @@ void MemoryLog::ClearLogAll()
 * Author      :
 * Time        : 2017-06-05
 ============================================*/
-void MemoryLog::SaveLog2FileByName(const char *key, bool tips = true, FILE *fother = NULL)
+void MemoryLog::SaveLog2FileByName(const char *key, const char *filewithpath = "/tmp/aaa.mlog",  bool tips = true, FILE *fother = NULL)
 {
-    string name(key);
+    string name(filewithpath);
     FILE *fp = NULL;
     if(NULL == fother)
     {
         fp = fopen(name.c_str(), "w");
         if(!fp)
         {
-            fprintf(stderr, "open file err![%s]\n", name);
+            fprintf(stderr, "open file err![%-10s] %s\n", name.c_str(), strerror(errno));
             return;
         }
     }
@@ -243,10 +274,16 @@ void MemoryLog::SaveLog2FileByName(const char *key, bool tips = true, FILE *foth
     gettimeofday(&now, NULL);
 
     MUTEX_P (mutex);
-    if(tips){
+    if(tips && name != ""){
         fprintf(fp, "time:s-us:%u-%u\n", now.tv_sec, now.tv_usec);
-        fprintf(stdout, "save mlog to file[%s], ", key);
-        fprintf(fp, "save mlog to file[%s], ", key);
+        fprintf(stdout, "save mlog to file[%-10s], ", name.c_str());
+        fprintf(fp, "save mlog to file[%-10s], ", name.c_str());
+    }
+    else if(tips)
+    {
+        fprintf(fp, "time:s-us:%u-%u\n", now.tv_sec, now.tv_usec);
+        fprintf(stdout, "save mlog key[%-10s], ", key);
+        fprintf(fp, "save mlog key[%-10s], ", key);
     }
     MLOG_MAP_IT it = mlog.find(string(key));
     if(it != mlog.end())
@@ -258,8 +295,8 @@ void MemoryLog::SaveLog2FileByName(const char *key, bool tips = true, FILE *foth
             fprintf(fp, "==>%s\n", (*vit).c_str());
         }
         if(tips){
-            fprintf(stdout, "done!!\n\n", key);
-            fprintf(fp, "done!!\n\n", key);
+            fprintf(stdout, "done!!\n\n");
+            fprintf(fp, "done!!\n\n");
         }
     }
     else
@@ -299,21 +336,21 @@ void MemoryLog::SaveLog2FileAll(const char *filewithpath = NULL)
     FILE *fp = fopen(name, "w");
     if(!fp)
     {
-        fprintf(stderr, "open file err![%s]\n", name);
+        fprintf(stderr, "open file err![%-10s] %s\n", name, strerror(errno));
         return;
     }
 
     SaveLog2FileKeys(fp);
 
-    fprintf(stdout, "save mlog to file, size:%u\n", mlog.size());
+    fprintf(stdout, "save mlog to file[%-10s], map size:%u\n",name,  mlog.size());
     fprintf(fp, "save mlog to file, size:%u\n", mlog.size());
     for(MLOG_MAP_IT it  = mlog.begin(); it != mlog.end(); ++it)
     {
-        SaveLog2FileByName(it->first.c_str(), true, fp);
+        SaveLog2FileByName(it->first.c_str(), "",  true, fp);
     }
 
-    fprintf(fp, "save mlog to file, size:%u, done!!\n", mlog.size());
-    fprintf(stdout, "save mlog to file, size:%u, done!!\n", mlog.size());
+    fprintf(fp, "save mlog to file[%-10s], size:%u, done!!\n",name, mlog.size());
+    fprintf(stdout, "save mlog to file[%-10s], size:%u, done!!\n",name, mlog.size());
 
     fclose(fp);
 }
@@ -327,7 +364,7 @@ void MemoryLog::SaveLog2FileKeys(FILE *felse = NULL)
         fp = fopen(name, "w");
         if(!fp)
         {
-            fprintf(stderr, "open file err![%s]\n", name);
+            fprintf(stderr, "open file err![%-10s] %s\n", name, strerror(errno));
             return;
         }
     }
@@ -428,7 +465,11 @@ void pushmsgbyname(const char *key, void *msg, unsigned int msglen, char *fmt, .
         unsigned int tnum = 0;
         unsigned int cpos = 0;
         char *rmsg = (char *)msg;
-        sprintf(buf, "msg:%p, len:%u", msg, msglen);
+        timeval now;
+        timeval end;
+        gettimeofday(&now, NULL);
+        sprintf(buf, "msg:%p, len:%u;time:s-us:%u-%u",
+                msg, msglen,now.tv_sec, now.tv_usec);
         pInstance->PushLog(key, buf);
 
         tnum = sprintf(pmsg + cpos, "\n");
@@ -457,6 +498,10 @@ void pushmsgbyname(const char *key, void *msg, unsigned int msglen, char *fmt, .
 //        fprintf(stdout, "cpos :%u\n", cpos);
         pInstance->PushLog(key, pmsg);
         free(pmsg);
+        gettimeofday(&end, NULL);
+        sprintf(buf, "msg:%p, len:%-10u;elpse time::%-10u ms",
+                msg, msglen,timeval_diff(&end, &now));
+        pInstance->PushLog(key, buf);
     }
 
 
@@ -537,10 +582,10 @@ void showmlogkeys()
 * Author      :
 * Time        : 2017-06-05
 ============================================*/
-void savemlog2filebyname(const char *key)
+void savemlog2filebyname(const char *key, const char *filewithpath)
 {
     MemoryLog *pInstance = MemoryLog::GetInstance();
-    pInstance->SaveLog2FileByName(key);
+    pInstance->SaveLog2FileByName(key, filewithpath, true, NULL);
 }
 
 /*============================================

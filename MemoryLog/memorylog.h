@@ -20,7 +20,7 @@ public:
     void ClearLogByName(const char *key, bool tips);
     void ClearLogAll();
     void ShowLogKeys();
-    void SaveLog2FileByName(const char *key, bool tips, FILE *fother);
+    void SaveLog2FileByName(const char *key, const char *filewithpath, bool tips, FILE *fother);
     void SaveLog2FileAll(const char *filewithpath);
     void SaveLog2FileKeys(FILE *felse);
 
@@ -57,7 +57,7 @@ void showmlogall();
 void clearmlogbyname( const char *key);
 void clearmlogall();
 void showmlogkeys();
-void savemlog2filebyname(const char *key);
+void savemlog2filebyname(const char *key, const char *filewithpath);
 void savemlog2fileall(const char *filewithpath);
 void savemlog2filekeys();
 /* func_declare_end */
