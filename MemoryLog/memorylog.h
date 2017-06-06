@@ -15,6 +15,7 @@ class MemoryLog
 public:
     MemoryLog();
     void PushLog(const char *key, char *buf);
+    bool CheckPushLog(const char *key);
     void ShowLogByName(const char *key, bool index);
     void ShowLogAll();
     void ClearLogByName(const char *key, bool tips);

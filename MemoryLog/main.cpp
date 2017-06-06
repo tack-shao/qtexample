@@ -55,11 +55,20 @@ int main()
     pushmsgbyname("msg10", buf10, sizeof(buf10), "test one buf memory log10");
     char buf11[900000];
     pushmsgbyname("msg11", buf11, sizeof(buf11), "test one buf memory log11");
-    char buf12[9000000];
-    pushmsgbyname("msg12", buf12, sizeof(buf12), "test one buf memory log12");
+    char *buf12 = new char[9000000];
+    pushmsgbyname("msg12", buf12, 9000000, "test one buf memory log12");
+    pushmsgbyname("msg12", buf12, 9000000, "test one buf memory log12");
+    pushmsgbyname("msg12", buf12, 9000000, "test one buf memory log12");
+    pushmsgbyname("msg12", buf12, 9000000, "test one buf memory log12");
+    delete [] buf12;
     savemlog2fileall("agent.mlog");
+#ifdef __WIN32__
+    savemlog2fileall("./tmp/agent.mlog");
+    savemlog2filebyname("msg5", "./tmp/msg5.mlog");
+#else
     savemlog2fileall("/tmp/agent.mlog");
     savemlog2filebyname("msg5", "/tmp/msg5.mlog");
+#endif
     showmlogkeys();
 
     return 1;

@@ -71,6 +71,33 @@ unsigned int timeval_diff(struct timeval *tvbegin, struct timeval *tvend)
 }
 
 
+/*============================================
+* FuncName    : MemoryLog::CheckPushLog
+* Description : 
+* @key        : 
+* Author      : 
+* Time        : 2017-06-07
+============================================*/
+bool MemoryLog::CheckPushLog(const char *key)
+{
+    MLOG_MAP_IT it = mlog.find(string(key));
+    if(it != mlog.end())
+    {
+        MLOG_VEC &vec = it->second;
+        if(vec.size() >= get_mlogmaxsize())
+        {
+            return false;
+        }
+        else
+        {
+            return true;
+        }
+    }
+
+    return true;
+}
+
+
 
 /*============================================
 * FuncName    : MemoryLog::PushLog
@@ -423,13 +450,16 @@ void clearmlogall();
 ============================================*/
 void pushlogbyname(const char *key, char *fmt, ...)
 {
+    MemoryLog *pInstance = MemoryLog::GetInstance();
+    if(!pInstance->CheckPushLog(key))
+        return;
+
     va_list ap;
     char buf[1024];
     va_start(ap, fmt);
     vsprintf(buf, fmt, ap);
     va_end(ap);
 
-    MemoryLog *pInstance = MemoryLog::GetInstance();
     pInstance->PushLog(key, buf);
 }
 
@@ -444,6 +474,10 @@ void pushlogbyname(const char *key, char *fmt, ...)
 ============================================*/
 void pushmsgbyname(const char *key, void *msg, unsigned int msglen, char *fmt, ...)
 {
+    MemoryLog *pInstance = MemoryLog::GetInstance();
+    if(!pInstance->CheckPushLog(key))
+        return;
+
     va_list ap;
     char buf[1024];
     char *pmsg = NULL;
@@ -452,8 +486,11 @@ void pushmsgbyname(const char *key, void *msg, unsigned int msglen, char *fmt, .
     vsprintf(buf, fmt, ap);
     va_end(ap);
 
-    MemoryLog *pInstance = MemoryLog::GetInstance();
     pInstance->PushLog(key, buf);
+
+    if(!pInstance->CheckPushLog(key))
+        return;
+
     if(NULL != msg || 0!= msglen) // record msg
     {
         pmsg = (char *)malloc(msglen * 3 + (msglen < 16 ? 1 : msglen /16) *4);
@@ -471,6 +508,8 @@ void pushmsgbyname(const char *key, void *msg, unsigned int msglen, char *fmt, .
         sprintf(buf, "msg:%p, len:%u;time:s-us:%u-%u",
                 msg, msglen,now.tv_sec, now.tv_usec);
         pInstance->PushLog(key, buf);
+        if(!pInstance->CheckPushLog(key))
+            return;
 
         tnum = sprintf(pmsg + cpos, "\n");
         for(i = 0; i < msglen; i++)
@@ -498,6 +537,9 @@ void pushmsgbyname(const char *key, void *msg, unsigned int msglen, char *fmt, .
 //        fprintf(stdout, "cpos :%u\n", cpos);
         pInstance->PushLog(key, pmsg);
         free(pmsg);
+
+        if(!pInstance->CheckPushLog(key))
+            return;
         gettimeofday(&end, NULL);
         sprintf(buf, "msg:%p, len:%-10u;elpse time::%-10u ms",
                 msg, msglen,timeval_diff(&end, &now));
