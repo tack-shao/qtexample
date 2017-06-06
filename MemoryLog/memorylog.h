@@ -21,7 +21,7 @@ public:
     void ClearLogAll();
     void ShowLogKeys();
     void SaveLog2FileByName(const char *key, bool tips, FILE *fother);
-    void SaveLog2FileAll();
+    void SaveLog2FileAll(const char *filewithpath);
     void SaveLog2FileKeys(FILE *felse);
 
 public:
@@ -58,7 +58,7 @@ void clearmlogbyname( const char *key);
 void clearmlogall();
 void showmlogkeys();
 void savemlog2filebyname(const char *key);
-void savemlog2fileall();
+void savemlog2fileall(const char *filewithpath);
 void savemlog2filekeys();
 /* func_declare_end */
 void set_mlogmaxsize(unsigned int _mlogmaxsize);

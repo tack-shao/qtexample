@@ -258,8 +258,8 @@ void MemoryLog::SaveLog2FileByName(const char *key, bool tips = true, FILE *foth
             fprintf(fp, "==>%s\n", (*vit).c_str());
         }
         if(tips){
-            fprintf(stdout, "save mlog to file[%s] done!!\n\n", key);
-            fprintf(fp, "save mlog to file[%s] done!!\n\n", key);
+            fprintf(stdout, "done!!\n\n", key);
+            fprintf(fp, "done!!\n\n", key);
         }
     }
     else
@@ -282,7 +282,7 @@ void MemoryLog::SaveLog2FileByName(const char *key, bool tips = true, FILE *foth
 * Author      :
 * Time        : 2017-06-05
 ============================================*/
-void MemoryLog::SaveLog2FileAll()
+void MemoryLog::SaveLog2FileAll(const char *filewithpath = NULL)
 {
 
     if(!mlog.size() )
@@ -291,7 +291,11 @@ void MemoryLog::SaveLog2FileAll()
         return;
     }
 
-    const char *name = "./savemlogs.txt";
+    const char *name = "./savemlogs.mlog";
+    if(NULL != filewithpath)
+    {
+        name = filewithpath;
+    }
     FILE *fp = fopen(name, "w");
     if(!fp)
     {
@@ -333,20 +337,20 @@ void MemoryLog::SaveLog2FileKeys(FILE *felse = NULL)
     }
     if(!mlog.size() )
     {
-        fprintf(stdout, "show mlog keys, no data!!\n");
-        fprintf(fp, "show mlog keys, no data!!\n");
+        fprintf(stdout, "save mlog keys, no data!!\n");
+        fprintf(fp, "save mlog keys, no data!!\n");
         return;
     }
-    fprintf(stdout, "show mlog keys, size:%u\n", mlog.size());
-    fprintf(fp, "show mlog keys, size:%u\n", mlog.size());
+    fprintf(stdout, "save mlog keys, size:%u\n", mlog.size());
+    fprintf(fp, "save mlog keys, size:%u\n", mlog.size());
     for(MLOG_MAP_IT it  = mlog.begin(); it != mlog.end(); ++it)
     {
         fprintf(stdout, "[key]: %s\n", it->first.c_str());
         fprintf(fp, "[key]: %s\n", it->first.c_str());
     }
 
-    fprintf(stdout, "show mlog keys, size:%u, done!!\n", mlog.size());
-    fprintf(fp, "show mlog keys, size:%u, done!!\n", mlog.size());
+    fprintf(stdout, "save mlog keys, size:%u, done!!\n", mlog.size());
+    fprintf(fp, "save mlog keys, size:%u, done!!\n", mlog.size());
 
     if(NULL == felse)
     {
@@ -415,7 +419,7 @@ void pushmsgbyname(const char *key, void *msg, unsigned int msglen, char *fmt, .
     pInstance->PushLog(key, buf);
     if(NULL != msg || 0!= msglen) // record msg
     {
-        pmsg = (char *)malloc(msglen * 3 + (msglen/ 16) *4);
+        pmsg = (char *)malloc(msglen * 3 + (msglen < 16 ? 1 : msglen /16) *4);
         if(!pmsg)
             return;
         memset(pmsg, 0, msglen);
@@ -450,7 +454,7 @@ void pushmsgbyname(const char *key, void *msg, unsigned int msglen, char *fmt, .
                 cpos += tnum;
             }
         }
-        fprintf(stdout, "cpos :%u\n", cpos);
+//        fprintf(stdout, "cpos :%u\n", cpos);
         pInstance->PushLog(key, pmsg);
         free(pmsg);
     }
@@ -546,10 +550,10 @@ void savemlog2filebyname(const char *key)
 * Author      :
 * Time        : 2017-06-05
 ============================================*/
-void savemlog2fileall()
+void savemlog2fileall(const char *filewithpath)
 {
     MemoryLog *pInstance = MemoryLog::GetInstance();
-    pInstance->SaveLog2FileAll();
+    pInstance->SaveLog2FileAll(filewithpath);
 }
 
 /*============================================

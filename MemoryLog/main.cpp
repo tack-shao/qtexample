@@ -16,7 +16,11 @@ void* thread_function(void* arg)
     int i = 0;
     while(1){
         pushlogbyname(name, "i am comming!!:%d", i++);
+#ifdef __WIN32_
         Sleep(2000);
+#else
+
+#endif
         showmlogbyname(name);
     }
     return NULL;
@@ -26,14 +30,20 @@ void* thread_function(void* arg)
 int main()
 {
     cout << "Hello World!" << endl;
-    char buf[3180];
+    char buf[4];
     memset(buf, 0xFE, sizeof(buf));
     pushmsgbyname("msg", buf, sizeof(buf), "test one buf memory log");
-    pushmsgbyname("msg2", buf, sizeof(buf), "test one buf memory log2");
-    pushmsgbyname("msg3", buf, sizeof(buf), "test one buf memory log2");
-    pushmsgbyname("msg4", buf, sizeof(buf), "test one buf memory log2");
-    pushmsgbyname("msg5", buf, sizeof(buf), "test one buf memory log2");
-    savemlog2fileall();
+    char buf2[5];
+    pushmsgbyname("msg2", buf2, sizeof(buf2), "test one buf memory log2");
+    char buf3[6];
+    pushmsgbyname("msg3", buf3, sizeof(buf3), "test one buf memory log2");
+    char buf4[7];
+    pushmsgbyname("msg4", buf4, sizeof(buf4), "test one buf memory log2");
+    char buf5[8];
+    pushmsgbyname("msg5", buf5, sizeof(buf5), "test one buf memory log2");
+    char buf6[9];
+    pushmsgbyname("msg6", buf6, sizeof(buf6), "test one buf memory log2");
+    savemlog2fileall("agent.mlog");
     showmlogkeys();
 
     return 1;
@@ -60,7 +70,7 @@ int main()
     showmlogall();
     showmlogkeys();
     savemlog2filebyname("error");
-    savemlog2fileall();
+    savemlog2fileall("errorinfo.mlog");
     savemlog2filekeys();
 
     showmlogall();
@@ -87,8 +97,14 @@ int main()
     pthread_attr_destroy(&attr);
     pthread_attr_destroy(&attr2);
 
-    while(1)
+    while(1){
+
+	#ifdef __WIN32__
         Sleep(1000);
+	#else
+
+	#endif
+	}
 
     return 0;
 }

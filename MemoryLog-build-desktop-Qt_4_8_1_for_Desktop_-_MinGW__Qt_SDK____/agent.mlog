@@ -1,0 +1,58 @@
+save mlog keys, size:6
+[key]: msg
+[key]: msg2
+[key]: msg3
+[key]: msg4
+[key]: msg5
+[key]: msg6
+save mlog keys, size:6, done!!
+save mlog to file, size:6
+time:s-us:1496763172-457724
+save mlog to file[msg], [msg] size:3
+==>test one buf memory log
+==>msg:0028FF38, len:4
+==>
+FE FE FE FE 
+done!!
+
+time:s-us:1496763172-457724
+save mlog to file[msg2], [msg2] size:3
+==>test one buf memory log2
+==>msg:0028FF33, len:5
+==>
+75 80 6B 40 00 
+done!!
+
+time:s-us:1496763172-457724
+save mlog to file[msg3], [msg3] size:3
+==>test one buf memory log2
+==>msg:0028FF2D, len:6
+==>
+58 84 75 9E 6A 84 
+done!!
+
+time:s-us:1496763172-457724
+save mlog to file[msg4], [msg4] size:3
+==>test one buf memory log2
+==>msg:0028FF26, len:7
+==>
+FC BB FE FF FF FF 6A 
+done!!
+
+time:s-us:1496763172-457724
+save mlog to file[msg5], [msg5] size:3
+==>test one buf memory log2
+==>msg:0028FF1E, len:8
+==>
+28 00 CD B2 85 75 22 4C  
+done!!
+
+time:s-us:1496763172-457724
+save mlog to file[msg6], [msg6] size:3
+==>test one buf memory log2
+==>msg:0028FF15, len:9
+==>
+FF 28 00 38 FF 28 00 CC  FF 
+done!!
+
+save mlog to file, size:6, done!!
