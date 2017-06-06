@@ -145,9 +145,16 @@ void MemoryLog::ShowLogKeys()
         return;
     }
     fprintf(stdout, "show mlog keys, size:%u\n", mlog.size());
+    if(mlog.size())
+    {
+        fprintf(stdout,"[key_____] [count]\n");
+    }
+
     for(MLOG_MAP_IT it  = mlog.begin(); it != mlog.end(); ++it)
     {
-        fprintf(stdout, "[key]: %s\n", it->first.c_str());
+        fprintf(stdout,"%-010s %-07u \n" ,
+                it->first.c_str(),
+                it->second.size() );
     }
 
     fprintf(stdout, "show mlog keys, size:%u, done!!\n", mlog.size());

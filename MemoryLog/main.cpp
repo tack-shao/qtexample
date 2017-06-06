@@ -29,7 +29,13 @@ int main()
     char buf[3180];
     memset(buf, 0xFE, sizeof(buf));
     pushmsgbyname("msg", buf, sizeof(buf), "test one buf memory log");
+    pushmsgbyname("msg2", buf, sizeof(buf), "test one buf memory log2");
+    pushmsgbyname("msg3", buf, sizeof(buf), "test one buf memory log2");
+    pushmsgbyname("msg4", buf, sizeof(buf), "test one buf memory log2");
+    pushmsgbyname("msg5", buf, sizeof(buf), "test one buf memory log2");
     savemlog2fileall();
+    showmlogkeys();
+
     return 1;
 
     pushlogbyname("init", "haha");
