@@ -10,6 +10,8 @@
 
 using namespace std;
 
+#define MLOG_VERSION ("1.8")
+
 class MemoryLog
 {
 public:
@@ -24,6 +26,7 @@ public:
     void SaveLog2FileByName(const char *key, const char *filewithpath, bool tips, FILE *fother);
     void SaveLog2FileAll(const char *filewithpath);
     void SaveLog2FileKeys(FILE *felse);
+
 
 public:
     typedef std::vector<std::string> MLOG_VEC;
@@ -42,6 +45,7 @@ private:
 
 public:
     static MemoryLog * GetInstance();
+    static const char *Version();
 
 };
 
@@ -61,10 +65,12 @@ void showmlogkeys();
 void savemlog2filebyname(const char *key, const char *filewithpath);
 void savemlog2fileall(const char *filewithpath);
 void savemlog2filekeys();
-/* func_declare_end */
 void set_mlogmaxsize(unsigned int _mlogmaxsize);
 unsigned int get_mlogmaxsize(void);
+void set_mlogformat(int _mlogformat);
+int get_mlogformat(void);
 void mloghelp();
+/* func_declare_end */
 
 
 #ifdef __cplusplus

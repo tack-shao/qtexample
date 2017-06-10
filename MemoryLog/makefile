@@ -6,6 +6,7 @@
 #v1.2
 ###############################################################################
 #$(shell basename $(COMPILE_DIR))文件名
+.PHONY:aaa helpinfo  aaa&
 COMPILE_DIR = $(shell pwd)
 TARGET  = aaa_$(shell basename $(COMPILE_DIR))
 

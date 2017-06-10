@@ -33,6 +33,30 @@ int main()
     cout << "Hello World!" << endl;
     char buf[4];
     memset(buf, 0xFE, sizeof(buf));
+	
+	int loops  =  0;
+    for( loops  =  0 ; loops < 50000; loops++ )
+	{
+
+		pushmsgbyname("testfull", buf, sizeof(buf), "No:%u", loops);
+	}
+
+	showmlogbyname("testfull");
+
+	
+	
+	return 0;
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
     pushmsgbyname("msg", buf, sizeof(buf), "test one buf memory log");
     pushmsgbyname("msgsdfdfdsfdsfdfd", buf, sizeof(buf), "test one buf memory log");
     char buf2[5];

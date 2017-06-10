@@ -41,6 +41,19 @@ MemoryLog * MemoryLog::GetInstance()
     return pInstance;
 }
 
+/*============================================
+* FuncName    : MemoryLog::Version
+* Description :
+* @           :
+* Author      :
+* Time        : 2017-06-10
+============================================*/
+const char* MemoryLog::Version()
+{
+    return MLOG_VERSION;
+}
+
+
 
 /*============================================
 * FuncName    : timeval_diff
@@ -84,6 +97,13 @@ bool MemoryLog::CheckPushLog(const char *key)
     if(it != mlog.end())
     {
         MLOG_VEC &vec = it->second;
+
+        if(get_mlogformat() && vec.size() >= get_mlogmaxsize())
+        {
+            vec.erase(vec.begin() + 0, vec.begin() + 1);//erase the first data
+            return true;
+        }
+
         if(vec.size() >= get_mlogmaxsize())
         {
             return false;
@@ -534,7 +554,6 @@ void pushmsgbyname(const char *key, void *msg, unsigned int msglen, char *fmt, .
                 cpos += tnum;
             }
         }
-//        fprintf(stdout, "cpos :%u\n", cpos);
         pInstance->PushLog(key, pmsg);
         free(pmsg);
 
@@ -660,7 +679,7 @@ void savemlog2filekeys()
 
 
 /* variable declare begin */
-unsigned int mlogmaxsize = 100;
+unsigned int mlogmaxsize = 200;
 /* variable declare end */
 /*
 Set and Get for mlogmaxsize
@@ -689,6 +708,48 @@ unsigned int get_mlogmaxsize(void)
     return mlogmaxsize;
 }
 
+
+/* variable declare begin */
+static int mlogformat = 1;
+/* variable declare end */
+/*
+Set and Get for mlogformat
+*/
+/*============================================
+* FuncName    : set_mlogformat
+* Description :
+* @_mlogformat  : the data format : erase the first data when full or keep the full
+*                0 - keep the full
+*                1 - erase the first data (default)
+* Author      :
+* Time        : 2017-06-10
+============================================*/
+void set_mlogformat(int _mlogformat)
+{
+    mlogformat = _mlogformat;
+}
+
+/*============================================
+* FuncName    : get_mlogformat
+* Description :
+* @--         :
+* Author      :
+* Time        : 2017-06-10
+============================================*/
+int get_mlogformat(void)
+{
+    return mlogformat;
+}
+
+
+
+/*============================================
+* FuncName    : mloghelp
+* Description :
+* @           :
+* Author      :
+* Time        : 2017-06-10
+============================================*/
 void mloghelp()
 {
     const char *usage = "memory log help:\n"
@@ -706,7 +767,12 @@ void mloghelp()
     "get mlog store max size     --   get_mlogmaxsize(void)\n"
     ;
     printf(usage);
+    printf("mlog max size     :%u\n", get_mlogmaxsize());
+    printf("mlog record format:%u\n", get_mlogformat());
+    printf("    0 - no overwrite, 1 - overwrite\n");
+    printf("mlog version      :%s\n", MemoryLog::GetInstance()->Version());
 }
+
 
 
 
