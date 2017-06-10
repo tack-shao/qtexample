@@ -34,7 +34,7 @@ int main()
     char buf[4];
     memset(buf, 0xFE, sizeof(buf));
 	
-	int loops  =  0;
+    unsigned int  loops  =  0;
     for( loops  =  0 ; loops < 50000; loops++ )
 	{
 
@@ -43,19 +43,12 @@ int main()
 
 	showmlogbyname("testfull");
 
+    clearmlogall();
+    showmlogkeys();
 	
-	
-	return 0;
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
+
+
 	
     pushmsgbyname("msg", buf, sizeof(buf), "test one buf memory log");
     pushmsgbyname("msgsdfdfdsfdsfdfd", buf, sizeof(buf), "test one buf memory log");
@@ -67,23 +60,33 @@ int main()
     pushmsgbyname("msg4", buf4, sizeof(buf4), "test one buf memory log4");
     char buf5[8];
     pushmsgbyname("msg5", buf5, sizeof(buf5), "test one buf memory log5");
-    char buf6[9];
-    pushmsgbyname("msg6", buf6, sizeof(buf6), "test one buf memory log6");
-    char buf7[90];
-    pushmsgbyname("msg7", buf7, sizeof(buf7), "test one buf memory log7");
-    char buf8[900];
-    pushmsgbyname("msg8", buf8, sizeof(buf8), "test one buf memory log8");
-    char buf9[9000];
-    pushmsgbyname("msg9", buf9, sizeof(buf9), "test one buf memory log9");
-    char buf10[90000];
-    pushmsgbyname("msg10", buf10, sizeof(buf10), "test one buf memory log10");
-    char buf11[900000];
-    pushmsgbyname("msg11", buf11, sizeof(buf11), "test one buf memory log11");
-    char *buf12 = new char[9000000];
-    pushmsgbyname("msg12", buf12, 9000000, "test one buf memory log12");
-    pushmsgbyname("msg12", buf12, 9000000, "test one buf memory log12");
-    pushmsgbyname("msg12", buf12, 9000000, "test one buf memory log12");
-    pushmsgbyname("msg12", buf12, 9000000, "test one buf memory log12");
+//    char buf6[9];
+//    pushmsgbyname("msg6", buf6, sizeof(buf6), "test one buf memory log6");
+//    char buf7[90];
+//    pushmsgbyname("msg7", buf7, sizeof(buf7), "test one buf memory log7");
+//    char buf8[900];
+//    pushmsgbyname("msg8", buf8, sizeof(buf8), "test one buf memory log8");
+//    char buf9[9000];
+//    pushmsgbyname("msg9", buf9, sizeof(buf9), "test one buf memory log9");
+//    char buf10[90000];
+//    pushmsgbyname("msg10", buf10, sizeof(buf10), "test one buf memory log10");
+//    char buf11[900000];
+//    pushmsgbyname("msg11", buf11, sizeof(buf11), "test one buf memory log11");
+    char *buf12 = new char[20000];
+    for( loops  =  0 ; loops < 5000000; loops++ )
+    {
+
+//        6660000/20000 =
+        pushmsgbyname("another", buf12, (20000), "No:%u", loops);
+    }
+    printf("save msg done\n");
+    printf("save msg done\n");
+    printf("save msg done\n\n");
+
+//    pushmsgbyname("msg12", buf12, 9000000, "test one buf memory log12");
+//    pushmsgbyname("msg13", buf12, 9000000, "test one buf memory log13");
+//    pushmsgbyname("msg12", buf12, 9000000, "test one buf memory log12");
+//    pushmsgbyname("msg12", buf12, 9000000, "test one buf memory log12");
     delete [] buf12;
     savemlog2fileall("agent.mlog");
 #ifdef __WIN32__
@@ -94,6 +97,8 @@ int main()
     savemlog2filebyname("msg5", "/tmp/msg5.mlog");
 #endif
     showmlogkeys();
+
+    clearmlogall();
 
     return 1;
 

@@ -10,31 +10,47 @@
 
 using namespace std;
 
-#define MLOG_VERSION ("1.8")
+#define MLOG_VERSION ("1.9")
+
+
+
+/*
+** the memory log store info
+*/
+typedef struct T_MLOG{
+    void *msgaddr          ;    /* store the address of msgs */
+    unsigned int msglen    ;    /* the message len           */
+    char tipsinfo[128]     ;    /* tips info                 */
+}T_MLOG, *P_MLOG;
+
+
+
+
 
 class MemoryLog
 {
 public:
     MemoryLog();
-    void PushLog(const char *key, char *buf);
+    void PushLog(const char *key, T_MLOG &tlog);
     bool CheckPushLog(const char *key);
     void ShowLogByName(const char *key, bool index);
+    void ParseMsgBody(T_MLOG &tlog, FILE *fp);
     void ShowLogAll();
     void ClearLogByName(const char *key, bool tips);
     void ClearLogAll();
-    void ShowLogKeys();
+    void ShowLogKeys(FILE *fp);
     void SaveLog2FileByName(const char *key, const char *filewithpath, bool tips, FILE *fother);
     void SaveLog2FileAll(const char *filewithpath);
     void SaveLog2FileKeys(FILE *felse);
 
 
 public:
-    typedef std::vector<std::string> MLOG_VEC;
-    typedef std::vector<std::string>::iterator MLOG_VEC_IT;
-    typedef std::map<std::string, std::vector<std::string> > MLOG_MAP;
-    typedef std::map<std::string, std::vector<std::string> >::iterator MLOG_MAP_IT;
-    typedef std::pair<std::string, std::vector<std::string> > MLOG_MAP_PAIR;
-    typedef std::pair<std::map<std::string, std::vector<std::string> >, bool > MLOG_MAP_RET;
+    typedef std::vector<T_MLOG> MLOG_VEC;
+    typedef std::vector<T_MLOG>::iterator MLOG_VEC_IT;
+    typedef std::map<std::string, std::vector<T_MLOG> > MLOG_MAP;
+    typedef std::map<std::string, std::vector<T_MLOG> >::iterator MLOG_MAP_IT;
+    typedef std::pair<std::string, std::vector<T_MLOG> > MLOG_MAP_PAIR;
+    typedef std::pair<std::map<std::string, std::vector<T_MLOG> >, bool > MLOG_MAP_RET;
 
 private:
     MLOG_MAP mlog;
