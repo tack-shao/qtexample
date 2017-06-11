@@ -4,8 +4,10 @@ CONFIG -= qt
 
 LIBS += -lpthread
 SOURCES += main.cpp \
-    memorylog.cpp
+    memorylog.cpp \
+    mlog_init.cpp
 
 HEADERS += \
-    memorylog.h
+    memorylog.h \
+    mlog_init.h
 

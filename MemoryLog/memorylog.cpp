@@ -246,7 +246,7 @@ void MemoryLog::ShowLogByName(const char *key, bool index = true)
             ParseMsgBody(*vit,stdout);
         }
         if(index)
-            fprintf(stdout, "show mlog key[%s] done!!\n\n", key);
+            fprintf(stdout, "show mlog key[%s] size:%u done!!\n\n", key, vec.size());
     }
     else
     {
@@ -405,13 +405,13 @@ void MemoryLog::SaveLog2FileByName(const char *key, const char *filewithpath = "
 
     MUTEX_P (mutex);
     if(tips && name != ""){
-        fprintf(fp, "time:s-us: %u-%u\n", now.tv_sec, now.tv_usec);
+//        fprintf(fp, "time:s-us: %u-%u\n", now.tv_sec, now.tv_usec);
         fprintf(stdout, "save mlog to file[%-10s], ", name.c_str());
         fprintf(fp, "save mlog to file[%-10s], ", name.c_str());
     }
     else if(tips)
     {
-        fprintf(fp, "time:s-us: %u-%u\n", now.tv_sec, now.tv_usec);
+//        fprintf(fp, "time:s-us: %u-%u\n", now.tv_sec, now.tv_usec);
         fprintf(stdout, "save mlog key[%-10s], ", key);
         fprintf(fp, "save mlog key[%-10s], ", key);
     }
@@ -596,13 +596,14 @@ void pushmsgbyname(const char *key, void *msg, unsigned int msglen, char *fmt, .
     MemoryLog *pInstance = MemoryLog::GetInstance();
     if(!pInstance->CheckPushLog(key))
         return;
-    va_list ap;
+    T_MLOG tLog = {0};
     char buf[1024];
+
+    va_list ap;
     char *pmsg = NULL;
     va_start(ap, fmt);
     vsprintf(buf, fmt, ap);
     va_end(ap);
-    T_MLOG tLog = {0};
     memset(&tLog, 0 ,sizeof(tLog));
     snprintf(tLog.tipsinfo, sizeof(tLog.tipsinfo), "%s", buf);
     pInstance->PushLog(key, tLog);
