@@ -35,7 +35,7 @@ void testeplasetime()
 
 
 
-   mlog_msgbyfuncdefault;
+   mlogfunction;
 //     mlog_msgbyfunc(NULL, 0, "abc");
 
 
@@ -66,7 +66,7 @@ void* thread_function(void* arg)
 
 int main()
 {
-    mlog_msgbyfuncdefault;
+    mlogfunction;
     mloghelp();
     cout << "Hello World!" << endl;
 
@@ -109,8 +109,9 @@ int main()
 
 
 
-//    clearmlogall();
-//    showmlogkeys();
+    clearmlogall();
+    showmlogkeys();
+    mlogfunction;
 	
 
 
@@ -156,7 +157,7 @@ int main()
 
 
 
-    mlog_msgbyfuncdefault;
+    mlogfunction;
     showmlogbyname("func_main");
 //    printf("save msg done\n");
 //    printf("save msg done\n");
@@ -177,7 +178,7 @@ int main()
 //#endif
 //    showmlogkeys();
 
-//    clearmlogall();
+    clearmlogall();
 
 //    return 1;
 

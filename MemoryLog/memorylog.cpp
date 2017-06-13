@@ -323,9 +323,10 @@ void MemoryLog::ShowLogKeys(FILE *fp)
 * Author      :
 * Time        : 2017-06-05
 ============================================*/
-void MemoryLog::ClearLogByName(const char *key, bool tips = true)
+void MemoryLog::ClearLogByName(const char *key, bool tips = true, bool lock = true)
 {
-    MUTEX_P (mutex);
+    if(lock)
+        MUTEX_P (mutex);
     if(tips)
         fprintf(stdout, "clear mlog key[%s], ", key);
     MLOG_MAP_IT it = mlog.find(string(key));
@@ -347,7 +348,8 @@ void MemoryLog::ClearLogByName(const char *key, bool tips = true)
         if(tips)
             fprintf(stdout, "no data!!\n");
     }
-    MUTEX_V (mutex);
+    if(lock)
+        MUTEX_V (mutex);
 }
 
 /*============================================
@@ -359,19 +361,29 @@ void MemoryLog::ClearLogByName(const char *key, bool tips = true)
 ============================================*/
 void MemoryLog::ClearLogAll()
 {
+    MUTEX_P (mutex);
     if(!mlog.size() )
     {
         fprintf(stdout, "no data!!\n");
+        MUTEX_V (mutex);
         return;
     }
     fprintf(stdout, "clear all mlog, size:%u\n", mlog.size());
+    vector<string> keys;
+    vector<string>::iterator it;
+    keys.clear();
     for(MLOG_MAP_IT it  = mlog.begin(); it != mlog.end(); ++it)
     {
-        ClearLogByName(it->first.c_str(),false);
+        keys.push_back(it->first);
     }
+
+    for(it = keys.begin(); it != keys.end(); it++)
+        ClearLogByName((*it).c_str(),false, false);
     mlog.clear();
+    keys.clear();
 
     fprintf(stdout, "clear all mlog, size:%u, done!!\n", mlog.size());
+    MUTEX_V (mutex);
 }
 
 /*============================================
