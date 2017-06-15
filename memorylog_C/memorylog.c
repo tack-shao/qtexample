@@ -4,12 +4,15 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <time.h>
-#include <sys/time.h>
 #include <errno.h>
 #include <pthread.h>
 #include "cvector.h"
 #include <stdarg.h>
+#include <time.h>
+#include <sys/time.h>
+#ifdef __WIN32__
+#include <windows.h>
+#endif
 
 #define MUTEX_P(mutex) \
 do{\
@@ -114,6 +117,8 @@ void mlog_free(struct mlognode *node)
         node = NULL;
     }
 }
+
+
 
 /*============================================
 * FuncName    : MemoryLogInit
@@ -575,9 +580,11 @@ void ClearLogByName(const char *key, int tips, int lock)
         unsigned int loop  =  0;
         for( loop  =  0 ; loop < vecsize; loop++ )
         {
-            free(VectorGet(data->cvec, loop).msgaddr);
+            T_MLOG tlog = VectorGet(data->cvec, loop);
+            free(tlog.msgaddr);
         }
         VectorDelete(data->cvec);
+        rb_erase(data, &mlogtree);
         mlog_free(data);
         if(tips)
             fprintf(stdout, "\nclear mlog key[%s] done!!\n", key);
@@ -603,12 +610,17 @@ void ClearLogAll()
     unsigned int mlogsize = GetMLogSize();
     if(!mlogsize )
     {
-        fprintf(stdout, "no data!!\n");
+        fprintf(stdout, "clear all mlog, no data!!\n");
         MUTEX_V (mutex);
         return;
     }
     fprintf(stdout, "clear all mlog, size:%u\n", mlogsize);
-    char *keys = (char *)malloc(mlogsize * sizeof(char *));
+    char **keys = (char **)malloc(mlogsize * sizeof(char *));
+    if(!keys)
+    {
+        MUTEX_V (mutex);
+        return;
+    }
     memset(keys, 0, (mlogsize * sizeof(char *)));
     unsigned int cnt = 0;
 
@@ -616,15 +628,28 @@ void ClearLogAll()
     struct rb_node *node;
     unsigned int size = 0;
     for (node = rb_first(&mlogtree); node; node = rb_next(node))
-        keys[cnt++] = rb_entry(node, struct mlognode, node)->string;
+    {
+        keys[cnt] = (char *)malloc(128);
+        if(!keys[cnt])
+        {
+            MUTEX_V (mutex);
+            return;
+        }
+        memset(keys[cnt], 0 , 128);
+        snprintf(keys[cnt],128, "%s", rb_entry(node, struct mlognode, node)->string);
+        cnt++;
+    }
 
     unsigned int loop  =  0;
     for( loop  =  0 ; loop < mlogsize; loop++ )
     {
-        ClearLogByName(keys[loop], 0, 1);
+        ClearLogByName(keys[loop], 1, 0);
     }
 
-    mlog_free(&mlogtree);
+    for( loop  =  0 ; loop < cnt; loop++ )
+    {
+        free(keys[loop]);
+    }
     free(keys);
 
     fprintf(stdout, "clear all mlog, size:%u, done!!\n", mlogsize);
@@ -640,145 +665,157 @@ void ClearLogAll()
   ============================================*/
 void SaveLog2FileByName(const char *key, const char *filewithpath,  int tips, FILE *fother)
 {
-    //    const char * name = (filewithpath);
-    //    FILE *fp = NULL;
-    //    if(NULL == fother)
-    //    {
-    //        fp = fopen(name, "w");
-    //        if(!fp)
-    //        {
-    //            fprintf(stderr, "open file err![%-10s] %s\n", name, strerror(errno));
-    //            return;
-    //        }
-    //    }
-    //    else
-    //    {
-    //        fp = fother;
-    //    }
-    //    timeval now;
-    //    gettimeofday(&now, NULL);
-    //    MUTEX_P (mutex);
-    //    if(tips && name != ""){
-    //        //        fprintf(fp, "time:s-us: %u-%u\n", now.tv_sec, now.tv_usec);
-    //        fprintf(stdout, "save mlog to file[%-10s], ", name);
-    //        fprintf(fp, "save mlog to file[%-10s], ", name);
-    //    }
-    //    else if(tips)
-    //    {
-    //        //        fprintf(fp, "time:s-us: %u-%u\n", now.tv_sec, now.tv_usec);
-    //        fprintf(stdout, "save mlog key[%-10s], ", key);
-    //        fprintf(fp, "save mlog key[%-10s], ", key);
-    //    }
-    //    MLOG_MAP_IT it = mlog.find(string(key));
-    //    if(it != mlog.end())
-    //    {
-    //        MLOG_VEC &vec = it->second;
-    //        fprintf(fp, "[%s] size:%u\n", key, vec.size());
-    //        for(MLOG_VEC_IT vit = vec.begin(); vit != vec.end(); ++vit)
-    //        {
-    //            ParseMsgBody(*vit,fp);
-    //        }
-    //        if(tips){
-    //            fprintf(stdout, "save mlog key[%-10s], done!!\n\n", key);
-    //            fprintf(fp, "save mlog key[%-10s], done!!\n\n", key);
-    //        }
-    //    }
-    //    else
-    //    {
-    //        if(tips)
-    //            fprintf(fp, "no data!!\n\n");
-    //    }
-    //    fflush(fp);
-    //    if(NULL == fother)
-    //    {
-    //        fclose(fp);
-    //    }
+    const char * name = (filewithpath);
+    FILE *fp = NULL;
+    if(NULL == fother)
+    {
+        fp = fopen(name, "w");
+        if(!fp)
+        {
+            fprintf(stderr, "open file err![%-10s] %s\n", name, strerror(errno));
+            return;
+        }
+    }
+    else
+    {
+        fp = fother;
+    }
+    struct timeval now;
+    gettimeofday(&now, NULL);
+    MUTEX_P (mutex);
+    if(tips && name != ""){
+        //        fprintf(fp, "time:s-us: %u-%u\n", now.tv_sec, now.tv_usec);
+        fprintf(stdout, "save mlog to file[%-10s], ", name);
+        fprintf(fp, "save mlog to file[%-10s], ", name);
+    }
+    else if(tips)
+    {
+        //        fprintf(fp, "time:s-us: %u-%u\n", now.tv_sec, now.tv_usec);
+        fprintf(stdout, "save mlog key[%-10s], ", key);
+        fprintf(fp, "save mlog key[%-10s], ", key);
+    }
+    struct mlognode *data = mlog_search(&mlogtree, key);
+    if(data)
+    {
+        T_MLOG tlog = VectorGet(data->cvec, 0);
+        unsigned int vectorsize = VectorSize(data->cvec);
+        fprintf(fp, "[%s] size:%u\n", key, vectorsize);
+        unsigned loop  =  0;
+        for( loop  =  0 ; loop < vectorsize; loop++ )
+        {
+            ParseMsgBody(VectorGet(data->cvec, loop ),fp);
+        }
+        if(tips){
+            fprintf(stdout, "save mlog key[%-10s], done!!\n\n", key);
+            fprintf(fp, "save mlog key[%-10s], done!!\n\n", key);
+        }
+    }
+    else
+    {
+        if(tips)
+            fprintf(fp, "no data!!\n\n");
+    }
+    fflush(fp);
+    if(NULL == fother)
+    {
+        fclose(fp);
+    }
     MUTEX_V (mutex);
 }
-//  /*============================================
-//  * FuncName    : MemoryLog::SaveLog2FileAll
-//  * Description :
-//  * @           :
-//  * Author      :
-//  * Time        : 2017-06-05
-//  ============================================*/
-//  void SaveLog2FileAll(const char *filewithpath = NULL)
-//  {
-//      if(!mlogsize )
-//      {
-//          fprintf(stdout, "save mlog to file, no data!!\n");
-//          return;
-//      }
-//      const char *name = "./savemlogs.mlog";
-//      if(NULL != filewithpath)
-//      {
-//          name = filewithpath;
-//      }
-//      FILE *fp = fopen(name, "w");
-//      if(!fp)
-//      {
-//          fprintf(stderr, "open file err![%-10s] %s\n", name, strerror(errno));
-//          return;
-//      }
-//      SaveLog2FileKeys(fp);
-//      fprintf(stdout, "save mlog to file[%-10s], map size:%u\n",name,  mlogsize);
-//      fprintf(fp, "save mlog to file, size:%u\n", mlogsize);
-//      for(MLOG_MAP_IT it  = mlog.begin(); it != mlog.end(); ++it)
-//      {
-//          SaveLog2FileByName(it->first, "",  true, fp);
-//      }
-//      fprintf(fp, "save mlog to file[%-10s], size:%u, done!!\n",name, mlogsize);
-//      fprintf(stdout, "save mlog to file[%-10s], size:%u, done!!\n",name, mlogsize);
-//      fclose(fp);
-//  }
-//  void SaveLog2FileKeys(FILE *felse = NULL)
-//  {/*
-//      FILE *fp = NULL;
-//      if(NULL == felse)
-//      {
-//          const char *name = "./mlog_keys.txt";
-//          fp = fopen(name, "w");
-//          if(!fp)
-//          {
-//              fprintf(stderr, "open file err![%-10s] %s\n", name, strerror(errno));
-//              return;
-//          }
-//      }
-//      else
-//      {
-//          fp = felse;
-//      }
-//      if(!mlogsize )
-//      {
-//          fprintf(stdout, "save mlog keys, no data!!\n");
-//          fprintf(fp, "save mlog keys, no data!!\n");
-//          return;
-//      }
-//      fprintf(stdout, "save mlog keys, size:%u, done!!\n", mlogsize);
-//      fprintf(fp, "save mlog keys, size:%u, done!!\n", mlogsize);
-//      if(mlogsize)
-//      {
-//          fprintf(fp,"[key            ] [count]   [msglen]\n");
-//      }
-//      for(MLOG_MAP_IT it  = mlog.begin(); it != mlog.end(); ++it)
-//      {
-//          MLOG_VEC &vec = it->second;
-//          unsigned long long msglen = 0;
-//          for(MLOG_VEC_IT vit = vec.begin(); vit != vec.end(); ++vit)
-//          {
-//              msglen += (*vit).msglen;
-//          }
-//          fprintf(fp,"%-020s %-07u %-08llu\n" ,
-//                  it->first.c_str(),
-//                  it->second.size(),
-//                  msglen);
-//      }
-//      fprintf(fp, "show mlog keys, size:%u, done!!\n", mlogsize);
-//      if(NULL == felse)
-//      {
-//          fclose(fp);
-//      }*/
-//  }
+/*============================================
+  * FuncName    : MemoryLog::SaveLog2FileAll
+  * Description :
+  * @           :
+  * Author      :
+  * Time        : 2017-06-05
+  ============================================*/
+void SaveLog2FileAll(const char *filewithpath)
+{
+    unsigned int mlogsize = GetMLogSize();
+    if(!mlogsize )
+    {
+        fprintf(stdout, "save mlog to file, no data!!\n");
+        return;
+    }
+    const char *name = "./savemlogs.mlog";
+    if(NULL != filewithpath)
+    {
+        name = filewithpath;
+    }
+    FILE *fp = fopen(name, "w");
+    if(!fp)
+    {
+        fprintf(stderr, "open file err![%-10s] %s\n", name, strerror(errno));
+        return;
+    }
+    SaveLog2FileKeys(fp);
+    fprintf(stdout, "save mlog to file[%-10s], map size:%u\n",name,  mlogsize);
+    fprintf(fp, "save mlog to file, size:%u\n", mlogsize);
+    /* *search */
+    struct rb_node *node;
+    printf("search all nodes: \n");
+    for (node = rb_first(&mlogtree); node; node = rb_next(node))
+        SaveLog2FileByName(rb_entry(node, struct mlognode, node)->string, name,
+                               0, fp);
+
+    fprintf(fp, "save mlog to file[%-10s], size:%u, done!!\n",name, mlogsize);
+    fprintf(stdout, "save mlog to file[%-10s], size:%u, done!!\n",name, mlogsize);
+    fclose(fp);
+}
+void SaveLog2FileKeys(FILE *felse)
+{
+    unsigned int mlogsize = GetMLogSize();
+    FILE *fp = NULL;
+    if(NULL == felse)
+    {
+        const char *name = "./mlog_keys.txt";
+        fp = fopen(name, "w");
+        if(!fp)
+        {
+            fprintf(stderr, "open file err![%-10s] %s\n", name, strerror(errno));
+            return;
+        }
+    }
+    else
+    {
+        fp = felse;
+    }
+    if(!mlogsize )
+    {
+        fprintf(stdout, "save mlog keys, no data!!\n");
+        fprintf(fp, "save mlog keys, no data!!\n");
+        return;
+    }
+    fprintf(stdout, "save mlog keys, size:%u, done!!\n", mlogsize);
+    fprintf(fp, "save mlog keys, size:%u, done!!\n", mlogsize);
+    if(mlogsize)
+    {
+        fprintf(fp,"[key            ] [count]   [msglen]\n");
+    }
+    struct rb_node *node;
+    for (node = rb_first(&mlogtree); node; node = rb_next(node))
+    {
+
+        unsigned int vecsize = VectorSize(rb_entry(node, struct mlognode, node)->cvec);
+        unsigned int msglen = 0;
+        unsigned int loop  =  0;
+        for( loop  =  0 ; loop < vecsize; loop++ )
+        {
+            msglen += VectorGet(rb_entry(node, struct mlognode, node)->cvec, loop ).msglen;
+        }
+
+        fprintf(fp,"%-020s %-07u %-08u\n" ,
+                rb_entry(node, struct mlognode, node)->string,
+                vecsize,
+                msglen);
+    }
+
+    fprintf(fp, "show mlog keys, size:%u, done!!\n", mlogsize);
+    if(NULL == felse)
+    {
+        fclose(fp);
+    }
+}
 //  #ifdef __cplusplus
 //  extern "C" {
 //  #endif
@@ -811,59 +848,58 @@ void pushlogbyname(const char *key, char *fmt, ...)
     snprintf(tLog.tipsinfo, sizeof(tLog.tipsinfo), "%s", buf);
     PushLog(key, &tLog);
 }
-//  /*============================================
-//  * FuncName    : pushmsgbyname
-//  * Description :
-//  * @key        :
-//  * @fmt        :
-//  * @--         :
-//  * Author      :
-//  * Time        : 2017-06-06
-//  ============================================*/
-//  void pushmsgbyname(const char *key, void *msg, unsigned int msglen, char *fmt, ...)
-//  {
-//      MemoryLog *pInstance = MemoryLog::GetInstance();
-//      if(!pInstance->CheckPushLog(key))
-//          return;
-//      T_MLOG tLog = {0};
-//      char buf[1024];
-//      va_list ap;
-//      char *pmsg = NULL;
-//      va_start(ap, fmt);
-//      vsprintf(buf, fmt, ap);
-//      va_end(ap);
-//      memset(&tLog, 0 ,sizeof(tLog));
-//      snprintf(tLog.tipsinfo, sizeof(tLog.tipsinfo), "%s", buf);
-//      pInstance->PushLog(key, tLog);
-//      if(NULL != msg || 0!= msglen) // record msg
-//      {
-//          if(!pInstance->CheckPushLog(key))
-//              return;
-//          pmsg = (char *)malloc(msglen);
-//          if(!pmsg)
-//              return;
-//          memset(pmsg, 0, msglen);
-//          memcpy(pmsg, msg, msglen);
-//          timeval now;
-//          timeval end;
-//          gettimeofday(&now, NULL);
-//          sprintf(buf, "msg:%p, len:%u;bf time: s-us: %u-%u",
-//                  msg, msglen,now.tv_sec, now.tv_usec);
-//          memset(&tLog, 0 ,sizeof(tLog));
-//          snprintf(tLog.tipsinfo, sizeof(tLog.tipsinfo), "%s", buf);
-//          tLog.msgaddr = pmsg;
-//          tLog.msglen = msglen;
-//          pInstance->PushLog(key, tLog);
-//          if(!pInstance->CheckPushLog(key))
-//              return;
-//          gettimeofday(&end, NULL);
-//          sprintf(buf, "msg:%p, len:%u;af time: s-us: %u-%u ;elpse time::%-3u ms",
-//                  msg, msglen,end.tv_sec, end.tv_usec,timeval_diff(&end, &now));
-//          memset(&tLog, 0 ,sizeof(tLog));
-//          snprintf(tLog.tipsinfo, sizeof(tLog.tipsinfo), "%s", buf);
-//          pInstance->PushLog(key, tLog);
-//      }
-//  }
+/*============================================
+  * FuncName    : pushmsgbyname
+  * Description :
+  * @key        :
+  * @fmt        :
+  * @--         :
+  * Author      :
+  * Time        : 2017-06-06
+  ============================================*/
+void pushmsgbyname(const char *key, void *msg, unsigned int msglen, char *fmt, ...)
+{
+    if(!CheckPushLog(key))
+        return;
+    T_MLOG tLog = {0};
+    char buf[1024];
+    va_list ap;
+    char *pmsg = NULL;
+    va_start(ap, fmt);
+    vsprintf(buf, fmt, ap);
+    va_end(ap);
+    memset(&tLog, 0 ,sizeof(tLog));
+    snprintf(tLog.tipsinfo, sizeof(tLog.tipsinfo), "%s", buf);
+    PushLog(key, &tLog);
+    if(NULL != msg || 0!= msglen) // record msg
+    {
+        if(!CheckPushLog(key))
+            return;
+        pmsg = (char *)malloc(msglen);
+        if(!pmsg)
+            return;
+        memset(pmsg, 0, msglen);
+        memcpy(pmsg, msg, msglen);
+        struct timeval now;
+        struct timeval end;
+        gettimeofday(&now, NULL);
+        sprintf(buf, "msg:%p, dmsg:%p, len:%u;bf time: s-us: %u-%u",
+                msg, pmsg, msglen,now.tv_sec, now.tv_usec);
+        memset(&tLog, 0 ,sizeof(tLog));
+        snprintf(tLog.tipsinfo, sizeof(tLog.tipsinfo), "%s", buf);
+        tLog.msgaddr = pmsg;
+        tLog.msglen = msglen;
+        PushLog(key, &tLog);
+        if(!CheckPushLog(key))
+            return;
+        gettimeofday(&end, NULL);
+        sprintf(buf, "msg:%p, dmsg:%p,  len:%u;af time: s-us: %u-%u ;elpse time::%-3u ms",
+                msg, pmsg, msglen,end.tv_sec, end.tv_usec,timeval_diff(&end, &now));
+        memset(&tLog, 0 ,sizeof(tLog));
+        snprintf(tLog.tipsinfo, sizeof(tLog.tipsinfo), "%s", buf);
+        PushLog(key, &tLog);
+    }
+}
 /*============================================
   * FuncName    : showmlogbyname
   * Description :
@@ -875,18 +911,17 @@ void showmlogbyname( const char *key)
 {
     ShowLogByName(key, 1);
 }
-//  /*============================================
-//  * FuncName    : showmlogall
-//  * Description :
-//  * @           :
-//  * Author      :
-//  * Time        : 2017-06-05
-//  ============================================*/
-//  void showmlogall()
-//  {
-//      MemoryLog *pInstance = MemoryLog::GetInstance();
-//      pInstance->ShowLogAll();
-//  }
+/*============================================
+  * FuncName    : showmlogall
+  * Description :
+  * @           :
+  * Author      :
+  * Time        : 2017-06-05
+  ============================================*/
+void showmlogall()
+{
+   ShowLogAll();
+}
 /*============================================
   * FuncName    : clearmlogbyname
   * Description :
@@ -898,66 +933,61 @@ void clearmlogbyname( const char *key)
 {
     ClearLogByName(key, 1, 1);
 }
-//  /*============================================
-//  * FuncName    : clearmlogall
-//  * Description :
-//  * @           :
-//  * Author      :
-//  * Time        : 2017-06-05
-//  ============================================*/
-//  void clearmlogall()
-//  {
-//      MemoryLog *pInstance = MemoryLog::GetInstance();
-//      pInstance->ClearLogAll();
-//  }
-//  /*============================================
-//  * FuncName    : showmlogkeys
-//  * Description :
-//  * @           :
-//  * Author      :
-//  * Time        : 2017-06-05
-//  ============================================*/
-//  void showmlogkeys()
-//  {
-//      MemoryLog *pInstance = MemoryLog::GetInstance();
-//      pInstance->ShowLogKeys(stdout);
-//  }
-//  /*============================================
-//  * FuncName    : savemlog2filebyname
-//  * Description :
-//  * @key        :
-//  * Author      :
-//  * Time        : 2017-06-05
-//  ============================================*/
-//  void savemlog2filebyname(const char *key, const char *filewithpath)
-//  {
-//      MemoryLog *pInstance = MemoryLog::GetInstance();
-//      pInstance->SaveLog2FileByName(key, filewithpath, true, NULL);
-//  }
-//  /*============================================
-//  * FuncName    : savemlog2fileall
-//  * Description :
-//  * @           :
-//  * Author      :
-//  * Time        : 2017-06-05
-//  ============================================*/
-//  void savemlog2fileall(const char *filewithpath)
-//  {
-//      MemoryLog *pInstance = MemoryLog::GetInstance();
-//      pInstance->SaveLog2FileAll(filewithpath);
-//  }
-//  /*============================================
-//  * FuncName    : savemlog2filekeys
-//  * Description :
-//  * @           :
-//  * Author      :
-//  * Time        : 2017-06-05
-//  ============================================*/
-//  void savemlog2filekeys()
-//  {
-//      MemoryLog *pInstance = MemoryLog::GetInstance();
-//      pInstance->SaveLog2FileKeys();
-//  }
+/*============================================
+  * FuncName    : clearmlogall
+  * Description :
+  * @           :
+  * Author      :
+  * Time        : 2017-06-05
+  ============================================*/
+void clearmlogall()
+{
+    ClearLogAll();
+}
+/*============================================
+  * FuncName    : showmlogkeys
+  * Description :
+  * @           :
+  * Author      :
+  * Time        : 2017-06-05
+  ============================================*/
+void showmlogkeys()
+{
+    ShowLogKeys(stdout);
+}
+/*============================================
+  * FuncName    : savemlog2filebyname
+  * Description :
+  * @key        :
+  * Author      :
+  * Time        : 2017-06-05
+  ============================================*/
+void savemlog2filebyname(const char *key, const char *filewithpath)
+{
+    SaveLog2FileByName(key, filewithpath, 1, NULL);
+}
+/*============================================
+  * FuncName    : savemlog2fileall
+  * Description :
+  * @           :
+  * Author      :
+  * Time        : 2017-06-05
+  ============================================*/
+void savemlog2fileall(const char *filewithpath)
+{
+    SaveLog2FileAll(filewithpath);
+}
+/*============================================
+  * FuncName    : savemlog2filekeys
+  * Description :
+  * @           :
+  * Author      :
+  * Time        : 2017-06-05
+  ============================================*/
+void savemlog2filekeys()
+{
+    SaveLog2FileKeys(NULL);
+}
 
 
 
@@ -1036,6 +1066,46 @@ void test_pushlog()
     showmlogbyname("nihao");
     clearmlogbyname("nihao2");
     showmlogbyname("nihao2");
+    showmlogbyname("nihao");
+    clearmlogall();
+
+}
+
+
+void test_pushpkg()
+{
+    char buf[104];
+    memset(buf, 1, sizeof(buf));
+
+    pushmsgbyname("onetest", buf, sizeof(buf), "one test");
+    pushmsgbyname("onetest23", buf, sizeof(buf), "one tes23t");
+    pushmsgbyname("onetest2343", buf, sizeof(buf), "one onetest2343");
+    pushmsgbyname("onetest2343", buf, sizeof(buf), "one onetest2343");
+    pushmsgbyname("onetest2343", buf, sizeof(buf), "one onetest2343");
+    pushmsgbyname("onetest2343", buf, sizeof(buf), "one onetest2343");
+    pushmsgbyname("onetest2343", buf, sizeof(buf), "one onetest2343");
+    pushmsgbyname("onetest2343", buf, sizeof(buf), "one onetest2343");
+    showmlogbyname("onetest");
+    showmlogall();
+    showmlogkeys();
+    clearmlogall();
+
+}
+
+void test_savefile()
+{
+    char buf[104];
+    memset(buf, 2, sizeof(buf));
+    pushmsgbyname("onetest2343", buf, sizeof(buf), "one onetest2343");
+    memset(buf, 3, sizeof(buf));
+    pushmsgbyname("onetest1", buf, sizeof(buf), "one onetest1");
+    memset(buf, 4, sizeof(buf));
+    pushmsgbyname("onetest1", buf, sizeof(buf), "one onetest11");
+    showmlogbyname("onetest");
+
+    savemlog2filebyname("onetest2343", "onetest2343.txt");
+    savemlog2fileall("./mlog.all.txt");
+    clearmlogall();
 }
 
 

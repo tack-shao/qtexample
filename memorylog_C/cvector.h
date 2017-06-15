@@ -4,6 +4,8 @@
 
 #include <stdlib.h>
 #include <assert.h>
+#include <string.h>
+#include <stdio.h>
 
 /////////结点存放自己的数据结构//////////
 //typedef struct
@@ -19,13 +21,13 @@ typedef T_MLOG node;
 
 
 
-
+#pragma pack(1)
 typedef struct VectorSt {
     int size;
     int maxSize;
     node *data;
 } *Vector;
-
+#pragma pack()
 
 
 Vector VectorNew(void);

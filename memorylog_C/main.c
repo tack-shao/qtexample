@@ -29,7 +29,12 @@ int main()
 {
 
 //    test_cvector();
+    test_pushpkg();
     test_pushlog();
+    test_pushlog();
+    test_pushlog();
+    test_pushlog();
+    test_savefile();
 
     return 0;
 

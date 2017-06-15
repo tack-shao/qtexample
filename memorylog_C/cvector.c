@@ -1,5 +1,6 @@
 ////////////cvector.c////////////////////////////////
 #include "cvector.h"
+#include <assert.h>
 
 /*============================================
 * FuncName    : VectorNew
@@ -10,12 +11,13 @@
 ============================================*/
 Vector VectorNew(void)
 {
-Vector v = (Vector)
-        malloc(sizeof(struct VectorSt));
+    Vector v = (Vector)malloc(sizeof(struct VectorSt));
     assert(v != NULL);
+//    assert(0);//false会断住，1不会
     v->size = 0;
     v->maxSize = 32;
-    v->data = (node *)malloc(sizeof(node)* v->maxSize);
+    v->data = (node *)malloc(sizeof(node) * v->maxSize);
+//    v->data = (node *)malloc(sizeof(node)* v->maxSize);
     assert(v->data != NULL);
     return v;
 }

@@ -5,6 +5,7 @@
 
 #define MLOG_VERSION ("1.0")
 
+#pragma pack(1)
 /*
 ** the memory log store info
 */
@@ -13,7 +14,7 @@ typedef struct T_MLOG{
     unsigned int msglen    ;    /* the message len           */
     char tipsinfo[128]     ;    /* tips info                 */
 }T_MLOG, *P_MLOG;
-
+#pragma pack()
 
 
 
@@ -36,8 +37,8 @@ void ShowLogByName(const char *key, int index);
 
 
 void test_pushlog();
-
-
+void test_pushpkg();
+void test_savefile();
 
 
 
