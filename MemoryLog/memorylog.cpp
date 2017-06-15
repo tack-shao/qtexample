@@ -317,6 +317,55 @@ void MemoryLog::ShowLogKeys(FILE *fp)
 }
 
 /*============================================
+* FuncName    : MemoryLog::FindLogKeys
+* Description : find memory log keys by name
+* @fp         :
+* @name       : the key words to find
+* Author      :
+* Time        : 2017-06-15
+============================================*/
+void MemoryLog::FindLogKeys(FILE *fp, const char *name)
+{
+    if(!mlog.size() )
+    {
+        fprintf(fp, "find mlog keys by \"%s\", no data!!\n", name);
+        return;
+    }
+    fprintf(fp, "find mlog keys by \"%s\", mlog size:%u\n", name, mlog.size());
+    if(mlog.size())
+    {
+        fprintf(fp,"[key            ] [count]   [msglen]\n");
+    }
+
+    unsigned int findsize = 0;
+    for(MLOG_MAP_IT it  = mlog.begin(); it != mlog.end(); ++it)
+    {
+        string findstr = it->first;
+        if(!strstr(findstr.c_str(), name))
+        {
+            continue;
+        }
+        findsize++;
+        MLOG_VEC &vec = it->second;
+        unsigned int msglen = 0;
+        for(MLOG_VEC_IT vit = vec.begin(); vit != vec.end(); ++vit)
+        {
+            msglen += (*vit).msglen;
+        }
+        fprintf(fp,"%-020s %-07u %-08u\n" ,
+                it->first.c_str(),
+                it->second.size(),
+                msglen);
+    }
+
+    fprintf(fp, "find mlog keys by \"%s\", mlog size:%u, find size:%u done!!\n",
+            name ,
+            mlog.size(), findsize);
+}
+
+
+
+/*============================================
 * FuncName    : MemoryLog::ClearLogByName
 * Description :
 * @key        :
@@ -725,6 +774,20 @@ void showmlogkeys()
 }
 
 /*============================================
+* FuncName    : findmlogkeys
+* Description :
+* @           :
+* Author      :
+* Time        : 2017-06-05
+============================================*/
+void findmlogkeys(const char *name)
+{
+    MemoryLog *pInstance = MemoryLog::GetInstance();
+    pInstance->FindLogKeys(stdout, name);
+}
+
+
+/*============================================
 * FuncName    : savemlog2filebyname
 * Description :
 * @key        :
@@ -848,6 +911,7 @@ void mloghelp()
     "clear log by name    --   clearmlogbyname( const char *key)\n"
     "clear log of all     --   clearmlogall()\n"
     "show mlog keys       --   showmlogkeys()\n"
+    "find mlog keys by name      --   findmlogkeys(const char *name)\n"
     "save log 2file by name      --   savemlog2filebyname(const char *key)\n"
     "save log 2file of all       --   savemlog2fileall(const char *filewithpath)\n"
     "save log 2file of keys      --   savemlog2filekeys()\n"

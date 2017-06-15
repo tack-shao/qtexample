@@ -71,12 +71,16 @@ int main()
     cout << "Hello World!" << endl;
 
 
-    mlog_nomsgcommon("haha", "i am here %u", 100000);
-    mlog_nomsgcommon("haha", "i am here %u", 100000);
-    mlog_nomsgcommon("haha", "i am here %u", 100000);
+    mlog_nomsgcommon("haha1", "i am here %u", 100000);
+    mlog_nomsgcommon("haha2", "i am here %u", 100000);
+    mlog_nomsgcommon("haha3", "i am here %u", 100000);
 
-    showmlogbyname("haha");
+    showmlogbyname("haha1");
+    findmlogkeys("haha");
+    clearmlogall();
+    findmlogkeys("haha");
 
+    return 0;
 
 
 

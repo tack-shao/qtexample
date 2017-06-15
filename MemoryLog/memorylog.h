@@ -10,7 +10,7 @@
 
 using namespace std;
 
-#define MLOG_VERSION ("2.1")
+#define MLOG_VERSION ("2.2")
 
 
 
@@ -39,6 +39,7 @@ public:
     void ClearLogByName(const char *key, bool tips, bool lock);
     void ClearLogAll();
     void ShowLogKeys(FILE *fp);
+    void FindLogKeys(FILE *fp, const char *name);
     void SaveLog2FileByName(const char *key, const char *filewithpath, bool tips, FILE *fother);
     void SaveLog2FileAll(const char *filewithpath);
     void SaveLog2FileKeys(FILE *felse);
@@ -78,6 +79,7 @@ void showmlogall();
 void clearmlogbyname( const char *key);
 void clearmlogall();
 void showmlogkeys();
+void findmlogkeys(const char *name);
 void savemlog2filebyname(const char *key, const char *filewithpath);
 void savemlog2fileall(const char *filewithpath);
 void savemlog2filekeys();
