@@ -159,7 +159,8 @@ void PushLog(const char *key, T_MLOG *plog)
             return;
         }
 
-        VectorPushBack(data->cvec, *plog);
+        if(data->cvec)
+            VectorPushBack(data->cvec, *plog);
     }
     else
     {
@@ -170,7 +171,8 @@ void PushLog(const char *key, T_MLOG *plog)
         memcpy(firstdata->string, key, strlen(key));
         firstdata->string[strlen(key) + 1] = '\0';
         firstdata->cvec = VectorNew();
-        VectorPushBack(firstdata->cvec, *plog);
+        if(firstdata->cvec)
+            VectorPushBack(firstdata->cvec, *plog);
         mlog_insert(&mlogtree, firstdata);
     }
 
@@ -261,25 +263,6 @@ void ShowLogByName(const char *key, int index)
 
 
 
-
-
-
-
-///*============================================
-//* FuncName    : MemoryLog::GetInstance
-//* Description :
-//* @           :
-//* Author      :
-//* Time        : 2017-06-05
-//============================================*/
-//MemoryLog * MemoryLog::GetInstance()
-//{
-//    if(pInstance == NULL)
-//    {
-//        pInstance = new MemoryLog();
-//    }
-//    return pInstance;
-//}
 
 /*============================================
 * FuncName    : MemoryLog::Version
@@ -560,6 +543,60 @@ void ShowLogKeys(FILE *fp)
     }
     fprintf(fp, "show mlog keys, size:%u, done!!\n", mlogsize);
 }
+
+/*============================================
+* FuncName    : MemoryLog::FindLogKeys
+* Description : find memory log keys by name
+* @fp         :
+* @name       : the key words to find
+* Author      :
+* Time        : 2017-06-15
+============================================*/
+void FindLogKeys(FILE *fp, const char *name)
+{
+    unsigned int mlogsize = GetMLogSize();
+    if(!mlogsize )
+    {
+        fprintf(fp, "find mlog keys by \"%s\", no data!!\n", name);
+        return;
+    }
+    fprintf(fp, "find mlog keys by \"%s\", mlog size:%u\n", name, mlogsize);
+    if(mlogsize)
+    {
+        fprintf(fp,"[key            ] [count]   [msglen]\n");
+    }
+
+    unsigned int findsize = 0;
+    struct rb_node *node;
+    for (node = rb_first(&mlogtree); node; node = rb_next(node))
+    {
+        const char * findstr = rb_entry(node, struct mlognode, node)->string;
+        if(!strstr(findstr, name))
+        {
+            continue;
+        }
+        findsize++;
+
+        unsigned int vecsize = VectorSize(rb_entry(node, struct mlognode, node)->cvec);
+        unsigned int msglen = 0;
+        unsigned int loop  =  0;
+        for( loop  =  0 ; loop < vecsize; loop++ )
+        {
+            msglen += VectorGet(rb_entry(node, struct mlognode, node)->cvec, loop ).msglen;
+        }
+
+        fprintf(fp,"%-020s %-07u %-08u\n" ,
+                findstr,
+                vecsize,
+                msglen);
+    }
+
+    fprintf(fp, "find mlog keys by \"%s\", mlog size:%u, find size:%u done!!\n",
+            name ,
+            mlogsize, findsize);
+}
+
+
 /*============================================
   * FuncName    : ClearLogByName
   * Description :
@@ -955,6 +992,19 @@ void showmlogkeys()
 {
     ShowLogKeys(stdout);
 }
+
+/*============================================
+* FuncName    : findmlogkeys
+* Description :
+* @           :
+* Author      :
+* Time        : 2017-06-05
+============================================*/
+void findmlogkeys(const char *name)
+{
+    FindLogKeys(stdout, name);
+}
+
 /*============================================
   * FuncName    : savemlog2filebyname
   * Description :
@@ -1105,6 +1155,7 @@ void test_savefile()
 
     savemlog2filebyname("onetest2343", "onetest2343.txt");
     savemlog2fileall("./mlog.all.txt");
+    findmlogkeys("one");
     clearmlogall();
 }
 
