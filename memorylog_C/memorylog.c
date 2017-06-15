@@ -8,14 +8,26 @@
 #include <sys/time.h>
 #include <errno.h>
 #include <pthread.h>
+#include "cvector.h"
+#include <stdarg.h>
 
-#define MUTEX_P(mutex) pthread_mutex_lock   (&mutex)
-#define MUTEX_V(mutex) pthread_mutex_unlock (&mutex)
+#define MUTEX_P(mutex) \
+do{\
+    MemoryLogInit();\
+    pthread_mutex_lock   (&mutex);\
+}while(0)
+
+#define MUTEX_V(mutex)\
+do{\
+    MemoryLogInit();\
+    pthread_mutex_unlock   (&mutex);\
+}while(0)
 
 
 struct mlognode {
     struct rb_node node;
     char *string;
+    Vector *cvec;
 };
 
 struct rb_root mlogtree = RB_ROOT;
@@ -103,11 +115,25 @@ void mlog_free(struct mlognode *node)
     }
 }
 
-
-
+/*============================================
+* FuncName    : MemoryLogInit
+* Description :
+* @           :
+* Author      :
+* Time        : 2017-06-05
+============================================*/
+void MemoryLogInit()
+{
+    static int flag = 0;
+    if(flag)
+        return;
+    //    mlog.clear();
+    pthread_mutex_init (&mutex,NULL);
+    flag = 1;
+}
 
 /*============================================
-* FuncName    : MemoryLog::PushLog
+* FuncName    : PushLog
 * Description : 推入数据流到内存
 * @key        : 索引字
 * @fmt        : 字符串格式
@@ -122,31 +148,27 @@ void PushLog(const char *key, T_MLOG *plog)
     struct mlognode *data = mlog_search(&mlogtree, key);
     if (data)
     {
-        data->node;
+        if(VectorSize(data->cvec) >= get_mlogmaxsize())
+        {
+            MUTEX_V(mutex);
+            return;
+        }
+
+        VectorPushBack(data->cvec, *plog);
     }
     else
     {
-        mlog_insert(&mlogtree, data);
+        struct mlognode *firstdata = (char *)malloc(sizeof(struct mlognode));
+        memset(firstdata, 0, sizeof(*firstdata));
+        firstdata->string = (char *)malloc(strlen(key) + 1);
+        memset(firstdata->string, 0 , strlen(key) + 1);
+        memcpy(firstdata->string, key, strlen(key));
+        firstdata->string[strlen(key) + 1] = '\0';
+        firstdata->cvec = VectorNew();
+        VectorPushBack(firstdata->cvec, *plog);
+        mlog_insert(&mlogtree, firstdata);
     }
 
-
-    //    MLOG_MAP_IT it = mlog_search(string(key));
-    //    if(it != mlog.end())
-    //    {
-    //        MLOG_VEC &vec = it->second;
-    //        if(vec.size() >= get_mlogmaxsize())
-    //        {
-    //            MUTEX_V(mutex);
-    //            return;
-    //        }
-    //        vec.push_back(tlog);
-    //    }
-    //    else
-    //    {
-    //        MLOG_VEC vec;
-    //        vec.push_back(tlog);
-    //        mlog.insert(MLOG_MAP_PAIR(string(key), vec));
-    //    }
     MUTEX_V(mutex);
 }
 
@@ -154,86 +176,89 @@ void PushLog(const char *key, T_MLOG *plog)
 
 
 
-
-
-
-
-
-
-
-
-
-
-#define NUM_NODES 32
-
-
-int test_mlog()
+/*============================================
+* FuncName    : CheckPushLog
+* Description :
+* @key        :
+* Author      :
+* Time        : 2017-06-07
+============================================*/
+int CheckPushLog(const char *key)
 {
+    MUTEX_P (mutex);
+    struct mlognode *data = mlog_search(&mlogtree, key);
+    if(data)
+    {
+        if(get_mlogformat() && VectorSize(data->cvec) >= get_mlogmaxsize())
+        {
+            T_MLOG tlog = VectorGet(data->cvec, 0);
+            free(tlog.msgaddr);
+            VectorRm(data->cvec, 0); //erase the first data
+            MUTEX_V(mutex);
+            return 1;
+        }
 
-    struct mlognode *mn[NUM_NODES];
-
-    /* *insert */
-    int i = 0;
-    printf("insert node from 1 to NUM_NODES(32): \n");
-    for (; i < NUM_NODES; i++) {
-        mn[i] = (struct mlognode *)malloc(sizeof(struct mlognode));
-        mn[i]->string = (char *)malloc(sizeof(char) * 4);
-        sprintf(mn[i]->string, "%d", i);
-        mlog_insert(&mlogtree, mn[i]);
+        if(VectorSize(data->cvec) >= get_mlogmaxsize())
+        {
+            MUTEX_V(mutex);
+            return 0;
+        }
+        else
+        {
+            MUTEX_V(mutex);
+            return 1;
+        }
     }
+    MUTEX_V (mutex);
 
-    /* *search */
-    struct rb_node *node;
-    printf("search all nodes: \n");
-    for (node = rb_first(&mlogtree); node; node = rb_next(node))
-        printf("key = %s\n", rb_entry(node, struct mlognode, node)->string);
-
-    /* *delete */
-    printf("delete node 20: \n");
-    struct mlognode *data = mlog_search(&mlogtree, "20");
-    if (data) {
-        rb_erase(&data->node, &mlogtree);
-        mlog_free(data);
-    }
-
-    /* *delete again*/
-    printf("delete node 10: \n");
-    data = mlog_search(&mlogtree, "10");
-    if (data) {
-        rb_erase(&data->node, &mlogtree);
-        mlog_free(data);
-    }
-
-    /* *delete once again*/
-    printf("delete node 15: \n");
-    data = mlog_search(&mlogtree, "15");
-    if (data) {
-        rb_erase(&data->node, &mlogtree);
-        mlog_free(data);
-    }
-
-    /* *search again*/
-    printf("search again:\n");
-    for (node = rb_first(&mlogtree); node; node = rb_next(node))
-        printf("key = %s\n", rb_entry(node, struct mlognode, node)->string);
-    return 0;
+    return 1;
 }
-
 
 
 
 /*============================================
-* FuncName    : MemoryLog::MemoryLog
-* Description :
-* @           :
+* FuncName    : ShowLogByName
+* Description : show key's memory log
+* @key        :
+* @index      : show tips or not
 * Author      :
 * Time        : 2017-06-05
 ============================================*/
-void MemoryLog()
+void ShowLogByName(const char *key, int index)
 {
-    //    mlog.clear();
-    pthread_mutex_init (&mutex,NULL);
+    MUTEX_P (mutex);
+    if(index)
+        fprintf(stdout, "show mlog key[%-10s], ", key);
+    struct mlognode *data = mlog_search(&mlogtree, key);
+    if(data)
+    {
+        T_MLOG tlog = VectorGet(data->cvec, 0);
+        unsigned int vectorsize = VectorSize(data->cvec);
+        fprintf(stdout, "[%s] size:%u\n", key, vectorsize);
+        unsigned loop  =  0;
+        for( loop  =  0 ; loop < vectorsize; loop++ )
+        {
+            ParseMsgBody(VectorGet(data->cvec, loop ),stdout);
+        }
+        if(index)
+            fprintf(stdout, "show mlog key[%s] size:%u done!!\n\n", key, vectorsize);
+    }
+    else
+    {
+        if(index)
+            fprintf(stdout, "no data!!\n\n");
+    }
+    MUTEX_V (mutex);
 }
+
+
+
+
+
+
+
+
+
 
 ///*============================================
 //* FuncName    : MemoryLog::GetInstance
@@ -298,7 +323,7 @@ unsigned int timeval_diff(struct timeval *tvbegin, struct timeval *tvend)
 
 
 /* variable declare begin */
-unsigned int mlogmaxsize = 1000;
+unsigned int mlogmaxsize = 100;
 /* variable declare end */
 /*
 Set and Get for mlogmaxsize
@@ -394,335 +419,282 @@ void mloghelp()
 
 
 
+/*============================================
+  * FuncName    : MemoryLog::ParseMsgBody
+  * Description : parse msg body , the format of msg show;print or save msg body
+  * @tlog       :
+  * @fp         :stdout or files pointer
+  * Author      :
+  * Time        : 2017-06-10
+  ============================================*/
+void ParseMsgBody(T_MLOG tlog, FILE *fp)
+{
+    if(0 == tlog.msglen && NULL == tlog.msgaddr)
+        fprintf(fp, "==>%s\n", tlog.tipsinfo);
+    else
+    {
+        char *pmsg = NULL;
+        unsigned int msglen = tlog.msglen;
+        fprintf(fp, "==>%s\n", tlog.tipsinfo);
+        pmsg = (char *)malloc(msglen * 3 + (msglen < 16 ? 1 : msglen /16) *4);
+        if(!pmsg)
+        {
+            return;
+        }
+        memset(pmsg, 0, msglen);
+        unsigned int i = 0;
+        unsigned int j = 0;
+        unsigned int tnum = 0;
+        unsigned int cpos = 0;
+        char *rmsg = (char *)tlog.msgaddr;
+        tnum = sprintf(pmsg + cpos, "\n");
+        for(i = 0; i < msglen; i++)
+        {
+            j = i + 1;
+            if(0 == i)
+            {
+                tnum = sprintf(pmsg + cpos, "\n");
+                cpos += tnum;
+            }
+            if(0 == j % 8 && 0 != j % 16)
+                tnum = sprintf(pmsg + cpos, "%02X  ", (unsigned char)rmsg[i]);
+            else if( 0 == j % 16)
+                tnum = sprintf(pmsg + cpos, "%02X", (unsigned char)rmsg[i]);
+            else
+                tnum = sprintf(pmsg + cpos, "%02X ", (unsigned char)rmsg[i]);
+            cpos += tnum;
+            if( 0 == (j) % 16)
+            {
+                tnum = sprintf(pmsg + cpos, "\n");
+                cpos += tnum;
+            }
+        }
+        fprintf(fp, "==>%s\n", pmsg);
+        free(pmsg);
+    }
+}
 
-//  /*============================================
-//  * FuncName    : MemoryLog::CheckPushLog
-//  * Description :
-//  * @key        :
-//  * Author      :
-//  * Time        : 2017-06-07
-//  ============================================*/
-//  bool CheckPushLog(const char *key)
-//  {
-//      MUTEX_P(mutex);
-//  //    MLOG_MAP_IT it = mlog.find(string(key));
-//  //    if(it != mlog.end())
-//  //    {
-//  //        MLOG_VEC &vec = it->second;
-//  //        if(get_mlogformat() && vec.size() >= get_mlogmaxsize())
-//  //        {
-//  //            T_MLOG tlog = *(vec.begin());
-//  //            free(tlog.msgaddr);
-//  //            vec.erase(vec.begin() + 0, vec.begin() + 1);//erase the first data
-//  //            MUTEX_V(mutex);
-//  //            return true;
-//  //        }
-//  //        if(vec.size() >= get_mlogmaxsize())
-//  //        {
-//  //            MUTEX_V(mutex);
-//  //            return false;
-//  //        }
-//  //        else
-//  //        {
-//  //            MUTEX_V(mutex);
-//  //            return true;
-//  //        }
-//  //    }
-//  //     MUTEX_V(mutex);
-//      return true;
-//  }
-//  /*============================================
-//  * FuncName    : MemoryLog::PushLog
-//  * Description : 推入数据流到内存
-//  * @key        : 索引字
-//  * @fmt        : 字符串格式
-//  * @--         : 变长
-//  * Author      :
-//  * Time        : 2017-06-05
-//  ============================================*/
-//  void PushLog(const char *key, T_MLOG &tlog)
-//  {
-//      MUTEX_P (mutex);
-//  //    MLOG_MAP_IT it = mlog.find(string(key));
-//  //    if(it != mlog.end())
-//  //    {
-//  //        MLOG_VEC &vec = it->second;
-//  //        if(vec.size() >= get_mlogmaxsize())
-//  //        {
-//  //            MUTEX_V(mutex);
-//  //            return;
-//  //        }
-//  //        vec.push_back(tlog);
-//  //    }
-//  //    else
-//  //    {
-//  //        MLOG_VEC vec;
-//  //        vec.push_back(tlog);
-//  //        mlog.insert(MLOG_MAP_PAIR(string(key), vec));
-//  //    }
-//      MUTEX_V(mutex);
-//  }
-//  /*============================================
-//  * FuncName    : MemoryLog::ParseMsgBody
-//  * Description : parse msg body , the format of msg show;print or save msg body
-//  * @tlog       :
-//  * @fp         :stdout or files pointer
-//  * Author      :
-//  * Time        : 2017-06-10
-//  ============================================*/
-//  void ParseMsgBody(T_MLOG &tlog, FILE *fp)
-//  {
-//      if(0 == tlog.msglen && NULL == tlog.msgaddr)
-//          fprintf(fp, "==>%s\n", tlog.tipsinfo);
-//      else
-//      {
-//          char *pmsg = NULL;
-//          unsigned int msglen = tlog.msglen;
-//          fprintf(fp, "==>%s\n", tlog.tipsinfo);
-//          pmsg = (char *)malloc(msglen * 3 + (msglen < 16 ? 1 : msglen /16) *4);
-//          if(!pmsg)
-//          {
-//              return;
-//          }
-//          memset(pmsg, 0, msglen);
-//          unsigned int i = 0;
-//          unsigned int j = 0;
-//          unsigned int tnum = 0;
-//          unsigned int cpos = 0;
-//          char *rmsg = (char *)tlog.msgaddr;
-//          tnum = sprintf(pmsg + cpos, "\n");
-//          for(i = 0; i < msglen; i++)
-//          {
-//              j = i + 1;
-//              if(0 == i)
-//              {
-//                  tnum = sprintf(pmsg + cpos, "\n");
-//                  cpos += tnum;
-//              }
-//              if(0 == j % 8 && 0 != j % 16)
-//                  tnum = sprintf(pmsg + cpos, "%02X  ", (unsigned char)rmsg[i]);
-//              else if( 0 == j % 16)
-//                  tnum = sprintf(pmsg + cpos, "%02X", (unsigned char)rmsg[i]);
-//              else
-//                  tnum = sprintf(pmsg + cpos, "%02X ", (unsigned char)rmsg[i]);
-//              cpos += tnum;
-//              if( 0 == (j) % 16)
-//              {
-//                  tnum = sprintf(pmsg + cpos, "\n");
-//                  cpos += tnum;
-//              }
-//          }
-//          fprintf(fp, "==>%s\n", pmsg);
-//          free(pmsg);
-//      }
-//  }
-//  /*============================================
-//  * FuncName    : MemoryLog::ShowLogByName
-//  * Description : show key's memory log
-//  * @key        :
-//  * @index      : show tips or not
-//  * Author      :
-//  * Time        : 2017-06-05
-//  ============================================*/
-//  void MemoryLog::ShowLogByName(const char *key, bool index = true)
-//  {
-//      MUTEX_P (mutex);
-//      if(index)
-//          fprintf(stdout, "show mlog key[%-10s], ", key);
-//      MLOG_MAP_IT it = mlog.find(string(key));
-//      if(it != mlog.end())
-//      {
-//          MLOG_VEC &vec = it->second;
-//          fprintf(stdout, "[%s] size:%u\n", key, vec.size());
-//          for(MLOG_VEC_IT vit = vec.begin(); vit != vec.end(); ++vit)
-//          {
-//              ParseMsgBody(*vit,stdout);
-//          }
-//          if(index)
-//              fprintf(stdout, "show mlog key[%s] size:%u done!!\n\n", key, vec.size());
-//      }
-//      else
-//      {
-//          if(index)
-//              fprintf(stdout, "no data!!\n\n");
-//      }
-//      MUTEX_V (mutex);
-//  }
-//  /*============================================
-//  * FuncName    : MemoryLog::ShowLogAll
-//  * Description : show all key's memory log
-//  * @           :
-//  * Author      :
-//  * Time        : 2017-06-05
-//  ============================================*/
-//  void MemoryLog::ShowLogAll()
-//  {
-//      if(!mlog.size() )
-//      {
-//          fprintf(stdout, "show mlog, no data!!\n");
-//          return;
-//      }
-//      fprintf(stdout, "show all mlog data, size:%u\n", mlog.size());
-//      for(MLOG_MAP_IT it  = mlog.begin(); it != mlog.end(); ++it)
-//      {
-//          ShowLogByName(it->first.c_str(), false);
-//      }
-//      fprintf(stdout, "show all mlog data, size:%u, done!!\n", mlog.size());
-//  }
-//  /*============================================
-//  * FuncName    : MemoryLog::ShowLogKeys
-//  * Description : show memory log's keys
-//  * @           :
-//  * Author      :
-//  * Time        : 2017-06-05
-//  ============================================*/
-//  void MemoryLog::ShowLogKeys(FILE *fp)
-//  {
-//      if(!mlog.size() )
-//      {
-//          fprintf(fp, "show mlog keys, no data!!\n");
-//          return;
-//      }
-//      fprintf(fp, "show mlog keys, size:%u\n", mlog.size());
-//      if(mlog.size())
-//      {
-//          fprintf(fp,"[key            ] [count]   [msglen]\n");
-//      }
-//      for(MLOG_MAP_IT it  = mlog.begin(); it != mlog.end(); ++it)
-//      {
-//          MLOG_VEC &vec = it->second;
-//          unsigned int msglen = 0;
-//          for(MLOG_VEC_IT vit = vec.begin(); vit != vec.end(); ++vit)
-//          {
-//              msglen += (*vit).msglen;
-//          }
-//          fprintf(fp,"%-020s %-07u %-08u\n" ,
-//                  it->first.c_str(),
-//                  it->second.size(),
-//                  msglen);
-//      }
-//      fprintf(fp, "show mlog keys, size:%u, done!!\n", mlog.size());
-//  }
-//  /*============================================
-//  * FuncName    : MemoryLog::ClearLogByName
-//  * Description :
-//  * @key        :
-//  * Author      :
-//  * Time        : 2017-06-05
-//  ============================================*/
-//  void MemoryLog::ClearLogByName(const char *key, bool tips = true)
-//  {
-//      MUTEX_P (mutex);
-//      if(tips)
-//          fprintf(stdout, "clear mlog key[%s], ", key);
-//      MLOG_MAP_IT it = mlog.find(string(key));
-//      if(it != mlog.end())
-//      {
-//          MLOG_VEC &vec = it->second;
-//          for(MLOG_VEC_IT vit = vec.begin(); vit != vec.end(); ++vit)
-//          {
-//              T_MLOG tlog = (*vit);
-//              free(tlog.msgaddr);
-//          }
-//          vec.clear();
-//          mlog.erase(it);
-//          if(tips)
-//              fprintf(stdout, "\nclear mlog key[%s] done!!\n", key);
-//      }
-//      else
-//      {
-//          if(tips)
-//              fprintf(stdout, "no data!!\n");
-//      }
-//      MUTEX_V (mutex);
-//  }
-//  /*============================================
-//  * FuncName    : MemoryLog::ClearLogAll
-//  * Description :
-//  * @           :
-//  * Author      :
-//  * Time        : 2017-06-05
-//  ============================================*/
-//  void MemoryLog::ClearLogAll()
-//  {
-//      if(!mlog.size() )
-//      {
-//          fprintf(stdout, "no data!!\n");
-//          return;
-//      }
-//      fprintf(stdout, "clear all mlog, size:%u\n", mlog.size());
-//      for(MLOG_MAP_IT it  = mlog.begin(); it != mlog.end(); ++it)
-//      {
-//          ClearLogByName(it->first.c_str(),false);
-//      }
-//      mlog.clear();
-//      fprintf(stdout, "clear all mlog, size:%u, done!!\n", mlog.size());
-//  }
-//  /*============================================
-//  * FuncName    : MemoryLog::SaveLog2FileByName
-//  * Description :
-//  * @key        :
-//  * @tips       :
-//  * Author      :
-//  * Time        : 2017-06-05
-//  ============================================*/
-//  void MemoryLog::SaveLog2FileByName(const char *key, const char *filewithpath = "/tmp/aaa.mlog",  bool tips = true, FILE *fother = NULL)
-//  {
-//      string name(filewithpath);
-//      FILE *fp = NULL;
-//      if(NULL == fother)
-//      {
-//          fp = fopen(name.c_str(), "w");
-//          if(!fp)
-//          {
-//              fprintf(stderr, "open file err![%-10s] %s\n", name.c_str(), strerror(errno));
-//              return;
-//          }
-//      }
-//      else
-//      {
-//          fp = fother;
-//      }
-//      timeval now;
-//      gettimeofday(&now, NULL);
-//      MUTEX_P (mutex);
-//      if(tips && name != ""){
-//  //        fprintf(fp, "time:s-us: %u-%u\n", now.tv_sec, now.tv_usec);
-//          fprintf(stdout, "save mlog to file[%-10s], ", name.c_str());
-//          fprintf(fp, "save mlog to file[%-10s], ", name.c_str());
-//      }
-//      else if(tips)
-//      {
-//  //        fprintf(fp, "time:s-us: %u-%u\n", now.tv_sec, now.tv_usec);
-//          fprintf(stdout, "save mlog key[%-10s], ", key);
-//          fprintf(fp, "save mlog key[%-10s], ", key);
-//      }
-//      MLOG_MAP_IT it = mlog.find(string(key));
-//      if(it != mlog.end())
-//      {
-//          MLOG_VEC &vec = it->second;
-//          fprintf(fp, "[%s] size:%u\n", key, vec.size());
-//          for(MLOG_VEC_IT vit = vec.begin(); vit != vec.end(); ++vit)
-//          {
-//              ParseMsgBody(*vit,fp);
-//          }
-//          if(tips){
-//              fprintf(stdout, "save mlog key[%-10s], done!!\n\n", key);
-//              fprintf(fp, "save mlog key[%-10s], done!!\n\n", key);
-//          }
-//      }
-//      else
-//      {
-//          if(tips)
-//              fprintf(fp, "no data!!\n\n");
-//      }
-//      fflush(fp);
-//      if(NULL == fother)
-//      {
-//          fclose(fp);
-//      }
-//      MUTEX_V (mutex);
-//  }
+/*============================================
+* FuncName    : GetMLogSize
+* Description : memory log size
+* @           :
+* Author      :
+* Time        : 2017-06-13
+============================================*/
+unsigned int GetMLogSize()
+{
+    struct rb_node *node;
+    unsigned int size = 0;
+    for (node = rb_first(&mlogtree); node; node = rb_next(node))
+        size++;
+
+    return size;
+}
+
+
+/*============================================
+  * FuncName    : ShowLogAll
+  * Description : show all key's memory log
+  * @           :
+  * Author      :
+  * Time        : 2017-06-05
+  ============================================*/
+void ShowLogAll()
+{
+    unsigned int mlogsize = GetMLogSize();
+    if( !mlogsize )
+    {
+        fprintf(stdout, "show mlog, no data!!\n");
+        return;
+    }
+    fprintf(stdout, "show all mlog data, size:%u\n", mlogsize);
+    /* *search */
+    struct rb_node *node;
+    printf("search all nodes: \n");
+    for (node = rb_first(&mlogtree); node; node = rb_next(node))
+        ShowLogByName(rb_entry(node, struct mlognode, node)->string, 0);
+
+    fprintf(stdout, "show all mlog data, size:%u, done!!\n", mlogsize);
+}
+/*============================================
+  * FuncName    : ShowLogKeys
+  * Description : show memory log's keys
+  * @           :
+  * Author      :
+  * Time        : 2017-06-05
+  ============================================*/
+void ShowLogKeys(FILE *fp)
+{
+    unsigned int mlogsize = GetMLogSize();
+    if(!mlogsize )
+    {
+        fprintf(fp, "show mlog keys, no data!!\n");
+        return;
+    }
+    fprintf(fp, "show mlog keys, size:%u\n", mlogsize);
+    if(mlogsize)
+    {
+        fprintf(fp,"[key            ] [count]   [msglen]\n");
+    }
+    struct rb_node *node;
+    for (node = rb_first(&mlogtree); node; node = rb_next(node))
+    {
+
+        unsigned int vecsize = VectorSize(rb_entry(node, struct mlognode, node)->cvec);
+        unsigned int msglen = 0;
+        unsigned int loop  =  0;
+        for( loop  =  0 ; loop < vecsize; loop++ )
+        {
+            msglen += VectorGet(rb_entry(node, struct mlognode, node)->cvec, loop ).msglen;
+        }
+
+        fprintf(fp,"%-020s %-07u %-08u\n" ,
+                rb_entry(node, struct mlognode, node)->string,
+                vecsize,
+                msglen);
+    }
+    fprintf(fp, "show mlog keys, size:%u, done!!\n", mlogsize);
+}
+/*============================================
+  * FuncName    : ClearLogByName
+  * Description :
+  * @key        :
+  * Author      :
+  * Time        : 2017-06-05
+  ============================================*/
+void ClearLogByName(const char *key, int tips, int lock)
+{
+    if(lock)
+        MUTEX_P (mutex);
+    if(tips)
+        fprintf(stdout, "clear mlog key[%s], ", key);
+    struct mlognode *data = mlog_search(&mlogtree, key);
+    if(data)
+    {
+        unsigned int vecsize = VectorSize(data->cvec);
+        unsigned int loop  =  0;
+        for( loop  =  0 ; loop < vecsize; loop++ )
+        {
+            free(VectorGet(data->cvec, loop).msgaddr);
+        }
+        VectorDelete(data->cvec);
+        mlog_free(data);
+        if(tips)
+            fprintf(stdout, "\nclear mlog key[%s] done!!\n", key);
+    }
+    else
+    {
+        if(tips)
+            fprintf(stdout, "no data!!\n");
+    }
+    if(lock)
+        MUTEX_V (mutex);
+}
+/*============================================
+* FuncName    : ClearLogAll
+* Description :
+* @           :
+* Author      :
+* Time        : 2017-06-05
+============================================*/
+void ClearLogAll()
+{
+    MUTEX_P (mutex);
+    unsigned int mlogsize = GetMLogSize();
+    if(!mlogsize )
+    {
+        fprintf(stdout, "no data!!\n");
+        MUTEX_V (mutex);
+        return;
+    }
+    fprintf(stdout, "clear all mlog, size:%u\n", mlogsize);
+    char *keys = (char *)malloc(mlogsize * sizeof(char *));
+    memset(keys, 0, (mlogsize * sizeof(char *)));
+    unsigned int cnt = 0;
+
+
+    struct rb_node *node;
+    unsigned int size = 0;
+    for (node = rb_first(&mlogtree); node; node = rb_next(node))
+        keys[cnt++] = rb_entry(node, struct mlognode, node)->string;
+
+    unsigned int loop  =  0;
+    for( loop  =  0 ; loop < mlogsize; loop++ )
+    {
+        ClearLogByName(keys[loop], 0, 1);
+    }
+
+    mlog_free(&mlogtree);
+    free(keys);
+
+    fprintf(stdout, "clear all mlog, size:%u, done!!\n", mlogsize);
+    MUTEX_V (mutex);
+}
+/*============================================
+  * FuncName    : SaveLog2FileByName
+  * Description :
+  * @key        :
+  * @tips       :
+  * Author      :
+  * Time        : 2017-06-05
+  ============================================*/
+void SaveLog2FileByName(const char *key, const char *filewithpath,  int tips, FILE *fother)
+{
+    //    const char * name = (filewithpath);
+    //    FILE *fp = NULL;
+    //    if(NULL == fother)
+    //    {
+    //        fp = fopen(name, "w");
+    //        if(!fp)
+    //        {
+    //            fprintf(stderr, "open file err![%-10s] %s\n", name, strerror(errno));
+    //            return;
+    //        }
+    //    }
+    //    else
+    //    {
+    //        fp = fother;
+    //    }
+    //    timeval now;
+    //    gettimeofday(&now, NULL);
+    //    MUTEX_P (mutex);
+    //    if(tips && name != ""){
+    //        //        fprintf(fp, "time:s-us: %u-%u\n", now.tv_sec, now.tv_usec);
+    //        fprintf(stdout, "save mlog to file[%-10s], ", name);
+    //        fprintf(fp, "save mlog to file[%-10s], ", name);
+    //    }
+    //    else if(tips)
+    //    {
+    //        //        fprintf(fp, "time:s-us: %u-%u\n", now.tv_sec, now.tv_usec);
+    //        fprintf(stdout, "save mlog key[%-10s], ", key);
+    //        fprintf(fp, "save mlog key[%-10s], ", key);
+    //    }
+    //    MLOG_MAP_IT it = mlog.find(string(key));
+    //    if(it != mlog.end())
+    //    {
+    //        MLOG_VEC &vec = it->second;
+    //        fprintf(fp, "[%s] size:%u\n", key, vec.size());
+    //        for(MLOG_VEC_IT vit = vec.begin(); vit != vec.end(); ++vit)
+    //        {
+    //            ParseMsgBody(*vit,fp);
+    //        }
+    //        if(tips){
+    //            fprintf(stdout, "save mlog key[%-10s], done!!\n\n", key);
+    //            fprintf(fp, "save mlog key[%-10s], done!!\n\n", key);
+    //        }
+    //    }
+    //    else
+    //    {
+    //        if(tips)
+    //            fprintf(fp, "no data!!\n\n");
+    //    }
+    //    fflush(fp);
+    //    if(NULL == fother)
+    //    {
+    //        fclose(fp);
+    //    }
+    MUTEX_V (mutex);
+}
 //  /*============================================
 //  * FuncName    : MemoryLog::SaveLog2FileAll
 //  * Description :
@@ -732,7 +704,7 @@ void mloghelp()
 //  ============================================*/
 //  void SaveLog2FileAll(const char *filewithpath = NULL)
 //  {
-//      if(!mlog.size() )
+//      if(!mlogsize )
 //      {
 //          fprintf(stdout, "save mlog to file, no data!!\n");
 //          return;
@@ -749,14 +721,14 @@ void mloghelp()
 //          return;
 //      }
 //      SaveLog2FileKeys(fp);
-//      fprintf(stdout, "save mlog to file[%-10s], map size:%u\n",name,  mlog.size());
-//      fprintf(fp, "save mlog to file, size:%u\n", mlog.size());
+//      fprintf(stdout, "save mlog to file[%-10s], map size:%u\n",name,  mlogsize);
+//      fprintf(fp, "save mlog to file, size:%u\n", mlogsize);
 //      for(MLOG_MAP_IT it  = mlog.begin(); it != mlog.end(); ++it)
 //      {
-//          SaveLog2FileByName(it->first.c_str(), "",  true, fp);
+//          SaveLog2FileByName(it->first, "",  true, fp);
 //      }
-//      fprintf(fp, "save mlog to file[%-10s], size:%u, done!!\n",name, mlog.size());
-//      fprintf(stdout, "save mlog to file[%-10s], size:%u, done!!\n",name, mlog.size());
+//      fprintf(fp, "save mlog to file[%-10s], size:%u, done!!\n",name, mlogsize);
+//      fprintf(stdout, "save mlog to file[%-10s], size:%u, done!!\n",name, mlogsize);
 //      fclose(fp);
 //  }
 //  void SaveLog2FileKeys(FILE *felse = NULL)
@@ -776,15 +748,15 @@ void mloghelp()
 //      {
 //          fp = felse;
 //      }
-//      if(!mlog.size() )
+//      if(!mlogsize )
 //      {
 //          fprintf(stdout, "save mlog keys, no data!!\n");
 //          fprintf(fp, "save mlog keys, no data!!\n");
 //          return;
 //      }
-//      fprintf(stdout, "save mlog keys, size:%u, done!!\n", mlog.size());
-//      fprintf(fp, "save mlog keys, size:%u, done!!\n", mlog.size());
-//      if(mlog.size())
+//      fprintf(stdout, "save mlog keys, size:%u, done!!\n", mlogsize);
+//      fprintf(fp, "save mlog keys, size:%u, done!!\n", mlogsize);
+//      if(mlogsize)
 //      {
 //          fprintf(fp,"[key            ] [count]   [msglen]\n");
 //      }
@@ -801,7 +773,7 @@ void mloghelp()
 //                  it->second.size(),
 //                  msglen);
 //      }
-//      fprintf(fp, "show mlog keys, size:%u, done!!\n", mlog.size());
+//      fprintf(fp, "show mlog keys, size:%u, done!!\n", mlogsize);
 //      if(NULL == felse)
 //      {
 //          fclose(fp);
@@ -817,29 +789,28 @@ void mloghelp()
 //  void clearmlogall();
 //  /* func_declare_end */
 //  /* func_implement */
-//  /*============================================
-//  * FuncName    : pushlogbyname
-//  * Description :
-//  * @key        :
-//  * @fmt        :
-//  * @--         :
-//  * Author      :
-//  * Time        : 2017-06-06
-//  ============================================*/
-//  void pushlogbyname(const char *key, char *fmt, ...)
-//  {
-//  //    MemoryLog *pInstance = MemoryLog::GetInstance();
-//  //    if(!pInstance->CheckPushLog(key))
-//  //        return;
-//  //    va_list ap;
-//  //    char buf[1024];
-//  //    va_start(ap, fmt);
-//  //    vsprintf(buf, fmt, ap);
-//  //    va_end(ap);
-//  //    T_MLOG tLog = {0};
-//  //    snprintf(tLog.tipsinfo, sizeof(tLog.tipsinfo), "%s", buf);
-//  //    pInstance->PushLog(key, tLog);
-//  }
+/*============================================
+  * FuncName    : pushlogbyname
+  * Description :
+  * @key        :
+  * @fmt        :
+  * @--         :
+  * Author      :
+  * Time        : 2017-06-06
+  ============================================*/
+void pushlogbyname(const char *key, char *fmt, ...)
+{
+    if(!CheckPushLog(key))
+        return;
+    va_list ap;
+    char buf[1024];
+    va_start(ap, fmt);
+    vsprintf(buf, fmt, ap);
+    va_end(ap);
+    T_MLOG tLog = {0};
+    snprintf(tLog.tipsinfo, sizeof(tLog.tipsinfo), "%s", buf);
+    PushLog(key, &tLog);
+}
 //  /*============================================
 //  * FuncName    : pushmsgbyname
 //  * Description :
@@ -893,18 +864,17 @@ void mloghelp()
 //          pInstance->PushLog(key, tLog);
 //      }
 //  }
-//  /*============================================
-//  * FuncName    : showmlogbyname
-//  * Description :
-//  * @key        :
-//  * Author      :
-//  * Time        : 2017-06-05
-//  ============================================*/
-//  void showmlogbyname( const char *key)
-//  {
-//      MemoryLog *pInstance = MemoryLog::GetInstance();
-//      pInstance->ShowLogByName(key);
-//  }
+/*============================================
+  * FuncName    : showmlogbyname
+  * Description :
+  * @key        :
+  * Author      :
+  * Time        : 2017-06-05
+  ============================================*/
+void showmlogbyname( const char *key)
+{
+    ShowLogByName(key, 1);
+}
 //  /*============================================
 //  * FuncName    : showmlogall
 //  * Description :
@@ -917,18 +887,17 @@ void mloghelp()
 //      MemoryLog *pInstance = MemoryLog::GetInstance();
 //      pInstance->ShowLogAll();
 //  }
-//  /*============================================
-//  * FuncName    : clearmlogbyname
-//  * Description :
-//  * @key        :
-//  * Author      :
-//  * Time        : 2017-06-05
-//  ============================================*/
-//  void clearmlogbyname( const char *key)
-//  {
-//      MemoryLog *pInstance = MemoryLog::GetInstance();
-//      pInstance->ClearLogByName(key);
-//  }
+/*============================================
+  * FuncName    : clearmlogbyname
+  * Description :
+  * @key        :
+  * Author      :
+  * Time        : 2017-06-05
+  ============================================*/
+void clearmlogbyname( const char *key)
+{
+    ClearLogByName(key, 1, 1);
+}
 //  /*============================================
 //  * FuncName    : clearmlogall
 //  * Description :
@@ -989,6 +958,86 @@ void mloghelp()
 //      MemoryLog *pInstance = MemoryLog::GetInstance();
 //      pInstance->SaveLog2FileKeys();
 //  }
+
+
+
+
+
+
+#define NUM_NODES 32
+
+
+int test_mlog()
+{
+
+    struct mlognode *mn[NUM_NODES];
+
+    /* *insert */
+    int i = 0;
+    printf("insert node from 1 to NUM_NODES(32): \n");
+    for (; i < NUM_NODES; i++) {
+        mn[i] = (struct mlognode *)malloc(sizeof(struct mlognode));
+        mn[i]->string = (char *)malloc(sizeof(char) * 4);
+        sprintf(mn[i]->string, "%d", i);
+        mlog_insert(&mlogtree, mn[i]);
+    }
+
+    /* *search */
+    struct rb_node *node;
+    printf("search all nodes: \n");
+    for (node = rb_first(&mlogtree); node; node = rb_next(node))
+        printf("key = %s\n", rb_entry(node, struct mlognode, node)->string);
+
+    /* *delete */
+    printf("delete node 20: \n");
+    struct mlognode *data = mlog_search(&mlogtree, "20");
+    if (data) {
+        rb_erase(&data->node, &mlogtree);
+        mlog_free(data);
+    }
+
+    /* *delete again*/
+    printf("delete node 10: \n");
+    data = mlog_search(&mlogtree, "10");
+    if (data) {
+        rb_erase(&data->node, &mlogtree);
+        mlog_free(data);
+    }
+
+    /* *delete once again*/
+    printf("delete node 15: \n");
+    data = mlog_search(&mlogtree, "15");
+    if (data) {
+        rb_erase(&data->node, &mlogtree);
+        mlog_free(data);
+    }
+
+    /* *search again*/
+    printf("search again:\n");
+    for (node = rb_first(&mlogtree); node; node = rb_next(node))
+        printf("key = %s\n", rb_entry(node, struct mlognode, node)->string);
+    return 0;
+}
+
+
+void test_pushlog()
+{
+    mloghelp();
+    unsigned int loop  =  0;
+    for( loop  =  0 ; loop < 40; loop++ )
+    {
+
+        pushlogbyname("nihao", "goodthings%u", loop);
+    }
+
+
+    pushlogbyname("nihao2", "goodthings2");
+    printf("mlog size:%u\n", GetMLogSize());
+    showmlogbyname("nihao");
+    clearmlogbyname("nihao2");
+    showmlogbyname("nihao2");
+}
+
 
 
 

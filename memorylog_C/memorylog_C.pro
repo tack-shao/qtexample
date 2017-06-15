@@ -5,9 +5,11 @@ CONFIG -= qt
 LIBS += -lpthread
 SOURCES += main.c \
     rbtree.c \
-    memorylog.c
+    memorylog.c \
+    cvector.c
 
 HEADERS += \
     rbtree.h \
-    memorylog.h
+    memorylog.h \
+    cvector.h
 
