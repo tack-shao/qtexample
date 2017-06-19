@@ -3,7 +3,7 @@
 
 
 
-#define MLOG_VERSION ("1.0")
+#define MLOG_VERSION ("1.1")
 
 #pragma pack(1)
 /*
@@ -34,6 +34,23 @@ int get_mlogformat(void);
 void mloghelp();
 
 void ShowLogByName(const char *key, int index);
+
+
+
+void pushlogbyname(const char *key, char *fmt, ...);
+void pushmsgbyname(const char *key, void *msg, unsigned int msglen, char *fmt, ...);
+void showmlogbyname( const char *key);
+void showmlogall();
+void clearmlogbyname( const char *key);
+void clearmlogall();
+void showmlogkeys();
+void findmlogkeys(const char *name);
+void savemlog2filebyname(const char *key, const char *filewithpath);
+void savemlog2fileall(const char *filewithpath);
+void savemlog2filekeys();
+
+
+
 
 
 void test_pushlog();
