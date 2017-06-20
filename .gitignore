@@ -3,3 +3,8 @@
 /sharememory/widget_F-build-desktop-Qt_4_8_1_for_Desktop_-_MinGW__Qt_SDK____/debug/*.o
 /treeViewDemo/debug/*.o
 /MemoryLog-build-desktop-Qt_4_8_1_for_Desktop_-_MinGW__Qt_SDK____/debug/*.o
+/memorylog_C-build-desktop-Qt_4_8_1_for_Desktop_-_MinGW__Qt_SDK____/debug/*.o
+/sqlite_linux/tmp/sqlite-autoconf/*.o
+/sqlite_linux/*.db
+/sqlite_linux/KTV.sqlite
+/sqlite_linux/aaa_sqlite_linux
