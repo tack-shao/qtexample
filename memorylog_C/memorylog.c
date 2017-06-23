@@ -241,7 +241,7 @@ void ShowLogByName(const char *key, int index)
     {
         T_MLOG tlog = VectorGet(data->cvec, 0);
         unsigned int vectorsize = VectorSize(data->cvec);
-        fprintf(stdout, "[%s] size:%u\n", key, vectorsize);
+        fprintf(stdout, "\033[7m[%s]\033[0m size:%u\n", key, vectorsize);
         unsigned loop  =  0;
         for( loop  =  0 ; loop < vectorsize; loop++ )
         {
@@ -418,12 +418,12 @@ void mloghelp()
 void ParseMsgBody(T_MLOG tlog, FILE *fp)
 {
     if(0 == tlog.msglen && NULL == tlog.msgaddr)
-        fprintf(fp, "==>%s\n", tlog.tipsinfo);
+        fprintf(fp, "%s\n", tlog.tipsinfo);
     else
     {
         char *pmsg = NULL;
         unsigned int msglen = tlog.msglen;
-        fprintf(fp, "==>%s\n", tlog.tipsinfo);
+        fprintf(fp, "%s\n", tlog.tipsinfo);
         pmsg = (char *)malloc(msglen * 3 + (msglen < 16 ? 1 : msglen /16) *4);
         if(!pmsg)
         {
@@ -457,7 +457,7 @@ void ParseMsgBody(T_MLOG tlog, FILE *fp)
                 cpos += tnum;
             }
         }
-        fprintf(fp, "==>%s\n", pmsg);
+        fprintf(fp, "%s\n", pmsg);
         free(pmsg);
     }
 }
@@ -906,7 +906,7 @@ void pushmsgbyname(const char *key, void *msg, unsigned int msglen, char *fmt, .
     vsprintf(buf, fmt, ap);
     va_end(ap);
     memset(&tLog, 0 ,sizeof(tLog));
-    snprintf(tLog.tipsinfo, sizeof(tLog.tipsinfo), "%s", buf);
+    snprintf(tLog.tipsinfo, sizeof(tLog.tipsinfo), "\033[4m%s\033[0m", buf);
     PushLog(key, &tLog);
     if(NULL != msg || 0!= msglen) // record msg
     {
@@ -920,8 +920,8 @@ void pushmsgbyname(const char *key, void *msg, unsigned int msglen, char *fmt, .
         struct timeval now;
         struct timeval end;
         gettimeofday(&now, NULL);
-        sprintf(buf, "msg:%p, dmsg:%p, len:%u;bf time: s-us: %u-%u",
-                msg, pmsg, msglen,now.tv_sec, now.tv_usec);
+        sprintf(buf, "smsg:%p,len:%u",
+                msg, msglen);
         memset(&tLog, 0 ,sizeof(tLog));
         snprintf(tLog.tipsinfo, sizeof(tLog.tipsinfo), "%s", buf);
         tLog.msgaddr = pmsg;
@@ -930,8 +930,8 @@ void pushmsgbyname(const char *key, void *msg, unsigned int msglen, char *fmt, .
         if(!CheckPushLog(key))
             return;
         gettimeofday(&end, NULL);
-        sprintf(buf, "msg:%p, dmsg:%p,  len:%u;af time: s-us: %u-%u ;elpse time::%-3u ms",
-                msg, pmsg, msglen,end.tv_sec, end.tv_usec,timeval_diff(&end, &now));
+        sprintf(buf, "smsg:%p,len:%u;elptime::%-3ums",
+                msg, msglen,timeval_diff(&end, &now));
         memset(&tLog, 0 ,sizeof(tLog));
         snprintf(tLog.tipsinfo, sizeof(tLog.tipsinfo), "%s", buf);
         PushLog(key, &tLog);

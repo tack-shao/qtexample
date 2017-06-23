@@ -25,6 +25,17 @@ do{\
     pushlogbyname(key,fmt,##args);\
 }while(0)
 
+//按function保存报文
+#define mlog_msgbyfunc(msg, msglen, fmt,args...)\
+do{\
+    char key[32];\
+    snprintf(key, sizeof(key), "%s", __FUNCTION__);\
+    pushmsgbyname(key,msg, msglen,fmt,##args);\
+}while(0)
+
+	
+	
+	
 
 //按function显示数据
 #define showmlog_byfunc \

@@ -35,6 +35,7 @@ int main()
     test_pushlog();
     test_pushlog();
     test_savefile();
+    showmlogall();
 
     return 0;
 
