@@ -11,7 +11,7 @@ void SecondFirer::onTimeout()
         unsigned int id = (unsigned int)QThread::currentThreadId();
         emit secondLeft(m_nSeconds, id);
         --m_nSeconds;
-        qDebug() << "fire secondLeft signal";
+        qDebug() << "fire secondLeft signal, timer currentid:" << id;
     }
     else
     {
@@ -32,7 +32,7 @@ void CountThread::run()
 {
     qDebug() << "CountThread id - " << (unsigned int)QThread::currentThreadId();
     QTimer timer;
-    SecondFirer firer(10);
+    SecondFirer firer(10 * 2);
     connect(&timer, SIGNAL(timeout()), &firer, SLOT(onTimeout()));
     timer.start(1000);
 
@@ -56,6 +56,7 @@ Widget::Widget(QWidget *parent)
     CountThread * t = new CountThread(this);
     connect(t, SIGNAL(finished()), t, SLOT(deleteLater()));
     t->start();
+    qDebug() << "MainThread id - " << (unsigned int)QThread::currentThreadId();
 }
 
 Widget::~Widget()
