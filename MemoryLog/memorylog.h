@@ -10,7 +10,7 @@
 
 using namespace std;
 
-#define MLOG_VERSION ("2.2")
+#define MLOG_VERSION ("2.3")
 
 
 
@@ -34,8 +34,10 @@ public:
     void PushLog(const char *key, T_MLOG &tlog);
     bool CheckPushLog(const char *key);
     void ShowLogByName(const char *key, bool index);
+    void ShowLogByNameLastCnt(const char *key, unsigned int count);
     void ParseMsgBody(T_MLOG &tlog, FILE *fp);
     void ShowLogAll();
+    void ShowLogLast(unsigned int count);
     void ClearLogByName(const char *key, bool tips, bool lock);
     void ClearLogAll();
     void ShowLogKeys(FILE *fp);
@@ -48,6 +50,7 @@ public:
 public:
     typedef std::vector<T_MLOG> MLOG_VEC;
     typedef std::vector<T_MLOG>::iterator MLOG_VEC_IT;
+    typedef std::vector<T_MLOG>::reverse_iterator MLOG_VEC_RIT;
     typedef std::map<std::string, std::vector<T_MLOG> > MLOG_MAP;
     typedef std::map<std::string, std::vector<T_MLOG> >::iterator MLOG_MAP_IT;
     typedef std::pair<std::string, std::vector<T_MLOG> > MLOG_MAP_PAIR;
@@ -75,6 +78,7 @@ extern "C" {
 void pushmsgbyname(const char *key, void *msg, unsigned int msglen, char *fmt, ...);
 void pushlogbyname(const char *key, char *fmt, ...);
 void showmlogbyname( const char *key);
+void showmlogbynamelast( const char *key, unsigned int count);
 void showmlogall();
 void clearmlogbyname( const char *key);
 void clearmlogall();

@@ -80,35 +80,41 @@ int main()
     clearmlogall();
     findmlogkeys("haha");
 
-    return 0;
+//    return 0;
 
 
 
 
 
-    char buf[4];
+    char buf[10];
     memset(buf, 0xFE, sizeof(buf));
     set_mlogmaxsize(100);
 
     unsigned int  loops  =  0;
-    for( loops  =  0 ; loops < 200; loops++ )
+    for( loops  =  0 ; loops <= 200; loops++ )
     {
-
+        memset(buf, 0, sizeof(buf));
+        sprintf(buf, "%d", loops);
         pushmsgbyname("testfull", buf, sizeof(buf), "No:%u", loops);
     }
 
 
-    set_mlogmaxsize(30);
-    for( loops  =  101 ; loops < 300; loops++ )
-    {
+//    set_mlogmaxsize(30);
+//    for( loops  =  101 ; loops < 300; loops++ )
+//    {
 
-        pushmsgbyname("testfull", buf, sizeof(buf), "No:%u", loops);
-    }
-    pushmsgbyname("testfull", buf, sizeof(buf), "No:%u", loops++);
-    pushmsgbyname("testfull", buf, sizeof(buf), "No:%u", loops++);
-    pushmsgbyname("testfull", buf, sizeof(buf), "No:%u", loops++);
-    pushmsgbyname("testfull", buf, sizeof(buf), "No:%u", loops++);
+//        pushmsgbyname("testfull", buf, sizeof(buf), "No:%u", loops);
+//    }
+//    pushmsgbyname("testfull", buf, sizeof(buf), "No:%u", loops++);
+//    pushmsgbyname("testfull", buf, sizeof(buf), "No:%u", loops++);
+//    pushmsgbyname("testfull", buf, sizeof(buf), "No:%u", loops++);
+//    pushmsgbyname("testfull", buf, sizeof(buf), "No:%u", loops++);
+    showmlogkeys();
     showmlogbyname("testfull");
+
+    showmlogbynamelast("testfull", 6);
+
+    return 0;
 
 
 

@@ -257,6 +257,47 @@ void MemoryLog::ShowLogByName(const char *key, bool index = true)
 }
 
 /*============================================
+* FuncName    : MemoryLog::ShowLogByNameLastCnt
+* Description : show key's memory log from last print count's info
+* @key        :
+* @index      : show tips or not
+* Author      :
+* Time        : 2017-06-05
+============================================*/
+void MemoryLog::ShowLogByNameLastCnt(const char *key, unsigned int count)
+{
+    MUTEX_P (mutex);
+
+    MLOG_MAP_IT it = mlog.find(string(key));
+    if(it != mlog.end())
+    {
+        unsigned int loopnum = 0;
+        unsigned int curnum = 0;
+        MLOG_VEC &vec = it->second;
+        fprintf(stdout, "[%s] size:%u, last cnt:%u\n", key, vec.size(), count);
+        loopnum = count >= vec.size() ? 0 : (vec.size() - count);
+
+        for(MLOG_VEC_IT vit = vec.begin(); vit != vec.end(); ++vit)
+        {
+            if(curnum++ < loopnum )
+            {
+//                fprintf(stdout, "curnum:%u, loopnum:%u\n",curnum, loopnum);
+                continue;
+            }
+//            fprintf(stdout, "else curnum:%u, loopnum:%u\n",curnum, loopnum);
+            ParseMsgBody(*vit,stdout);
+        }
+
+    }
+    else
+    {
+        if(count)
+            fprintf(stdout, "no data!!\n\n");
+    }
+    MUTEX_V (mutex);
+}
+
+/*============================================
 * FuncName    : MemoryLog::ShowLogAll
 * Description : show all key's memory log
 * @           :
@@ -278,6 +319,7 @@ void MemoryLog::ShowLogAll()
 
     fprintf(stdout, "show all mlog data, size:%u, done!!\n", mlog.size());
 }
+
 
 /*============================================
 * FuncName    : MemoryLog::ShowLogKeys
@@ -719,6 +761,20 @@ void showmlogbyname( const char *key)
 {
     MemoryLog *pInstance = MemoryLog::GetInstance();
     pInstance->ShowLogByName(key);
+
+}
+
+/*============================================
+* FuncName    : showmlogbynamelast
+* Description :
+* @key        :
+* Author      :
+* Time        : 2017-06-05
+============================================*/
+void showmlogbynamelast( const char *key, unsigned int count)
+{
+    MemoryLog *pInstance = MemoryLog::GetInstance();
+    pInstance->ShowLogByNameLastCnt(key, count);
 
 }
 
