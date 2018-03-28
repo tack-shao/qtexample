@@ -1,0 +1,8 @@
+save mlog to file[./tmp/msg5.mlog], [msg5] size:3
+==>test one buf memory log5
+==>msg:0028FF16, len:8;bf time: s-us: 1497145940-169771
+==>
+28 00 38 FF 28 00 CC FF  
+==>msg:0028FF16, len:8;af time: s-us: 1497145940-169771 ;elpse time::0   ms
+save mlog key[msg5      ], done!!
+

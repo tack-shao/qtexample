@@ -10,7 +10,7 @@
 
 using namespace std;
 
-#define MLOG_VERSION ("2.3")
+#define MLOG_VERSION ("2.4")
 
 
 
@@ -66,6 +66,9 @@ private:
 public:
     static MemoryLog * GetInstance();
     static const char *Version();
+    static unsigned int mlogswitch;
+    static int mlogformat;
+    static unsigned int mlogmaxsize;
 
 };
 
@@ -92,6 +95,8 @@ unsigned int get_mlogmaxsize(void);
 void set_mlogformat(int _mlogformat);
 int get_mlogformat(void);
 void mloghelp();
+void set_mlogswitch(unsigned int _mlogswitch);
+unsigned int get_mlogswitch(void);
 /* func_declare_end */
 
 

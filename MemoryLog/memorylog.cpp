@@ -16,7 +16,9 @@
 
 
 MemoryLog *MemoryLog::pInstance = NULL;
-
+unsigned int MemoryLog::mlogswitch = 0;
+int MemoryLog::mlogformat = 1;
+unsigned int MemoryLog::mlogmaxsize = 1000;
 /*============================================
 * FuncName    : MemoryLog::MemoryLog
 * Description :
@@ -162,6 +164,11 @@ void MemoryLog::PushLog(const char *key, T_MLOG &tlog)
         mlog.insert(MLOG_MAP_PAIR(string(key), vec));
     }
     MUTEX_V(mutex);
+
+    if(mlogswitch)
+    {
+        ShowLogByName(key, true);
+    }
 }
 
 
@@ -705,7 +712,8 @@ void pushmsgbyname(const char *key, void *msg, unsigned int msglen, char *fmt, .
     va_list ap;
     char *pmsg = NULL;
     va_start(ap, fmt);
-    vsprintf(buf, fmt, ap);
+//    vsprintf(buf, fmt, ap);
+    vsnprintf(buf, sizeof(buf), fmt, ap);
     va_end(ap);
     memset(&tLog, 0 ,sizeof(tLog));
     snprintf(tLog.tipsinfo, sizeof(tLog.tipsinfo), "%s", buf);
@@ -882,12 +890,6 @@ void savemlog2filekeys()
     pInstance->SaveLog2FileKeys();
 }
 
-
-
-
-/* variable declare begin */
-unsigned int mlogmaxsize = 1000;
-/* variable declare end */
 /*
 Set and Get for mlogmaxsize
 */
@@ -900,7 +902,7 @@ Set and Get for mlogmaxsize
 ============================================*/
 void set_mlogmaxsize(unsigned int _mlogmaxsize)
 {
-    mlogmaxsize = _mlogmaxsize;
+    MemoryLog::mlogmaxsize = _mlogmaxsize;
 }
 
 /*============================================
@@ -912,13 +914,35 @@ void set_mlogmaxsize(unsigned int _mlogmaxsize)
 ============================================*/
 unsigned int get_mlogmaxsize(void)
 {
-    return mlogmaxsize;
+    return MemoryLog::mlogmaxsize;
+}
+/*
+Set and Get for mlogswitch
+*/
+/*============================================
+* FuncName    : set_mlogswitch
+* Description :
+* @_mlogswitch  :
+* Author      :
+* Time        : 2017-06-05
+============================================*/
+void set_mlogswitch(unsigned int _mlogswitch)
+{
+    MemoryLog::mlogswitch = _mlogswitch;
 }
 
+/*============================================
+* FuncName    : get_mlogswitch
+* Description :
+* @--         :
+* Author      :
+* Time        : 2017-06-05
+============================================*/
+unsigned int get_mlogswitch(void)
+{
+    return MemoryLog::mlogswitch;
+}
 
-/* variable declare begin */
-static int mlogformat = 1;
-/* variable declare end */
 /*
 Set and Get for mlogformat
 */
@@ -933,7 +957,7 @@ Set and Get for mlogformat
 ============================================*/
 void set_mlogformat(int _mlogformat)
 {
-    mlogformat = _mlogformat;
+    MemoryLog::mlogformat = _mlogformat;
 }
 
 /*============================================
@@ -945,7 +969,7 @@ void set_mlogformat(int _mlogformat)
 ============================================*/
 int get_mlogformat(void)
 {
-    return mlogformat;
+    return MemoryLog::mlogformat;
 }
 
 
@@ -973,6 +997,8 @@ void mloghelp()
     "save log 2file of keys      --   savemlog2filekeys()\n"
     "set mlog store max size     --   set_mlogmaxsize(unsigned int _mlogmaxsize)\n"
     "get mlog store max size     --   get_mlogmaxsize(void)\n"
+    "set mlog switch             --   set_mlogswitch(unsigned int _mlogswitch)\n"
+    "get mlog switch             --   get_mlogswitch()\n"
     ;
     printf(usage);
     printf("mlog max size     :%u\n", get_mlogmaxsize());

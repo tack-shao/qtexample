@@ -67,20 +67,23 @@ void* thread_function(void* arg)
 int main()
 {
     mlogfunction;
-    mloghelp();
+//    mloghelp();
     cout << "Hello World!" << endl;
 
+
+    set_mlogswitch(1);
 
     mlog_nomsgcommon("haha1", "i am here %u", 100000);
     mlog_nomsgcommon("haha2", "i am here %u", 100000);
     mlog_nomsgcommon("haha3", "i am here %u", 100000);
 
+    savemlog2fileall("./test.log");
     showmlogbyname("haha1");
     findmlogkeys("haha");
     clearmlogall();
     findmlogkeys("haha");
 
-//    return 0;
+    return 0;
 
 
 
