@@ -683,7 +683,7 @@ void pushlogbyname(const char *key, char *fmt, ...)
     va_list ap;
     char buf[1024];
     va_start(ap, fmt);
-    vsprintf(buf, fmt, ap);
+    vsnprintf(buf, sizeof(buf), fmt, ap);
     va_end(ap);
 
     T_MLOG tLog = {0};
