@@ -10,7 +10,7 @@
 
 using namespace std;
 
-#define MLOG_VERSION ("2.8")
+#define MLOG_VERSION ("2.9")
 
 
 
@@ -24,7 +24,10 @@ typedef struct T_MLOG{
 }T_MLOG, *P_MLOG;
 
 
-
+/**
+** declare function call,print more stdout info 2 file
+**/
+typedef void (*fn_printmore)(void);
 
 
 class MemoryLog
@@ -45,6 +48,8 @@ public:
     void SaveLog2FileByName(const char *key, const char *filewithpath, bool tips, FILE *fother);
     void SaveLog2FileAll(const char *filewithpath);
     void SaveLog2FileKeys(FILE *felse);
+    void SetPrintFn(fn_printmore fn);
+    fn_printmore GetPrintFn(void);
 
 
 public:
@@ -69,6 +74,7 @@ public:
     static unsigned int mlogswitch;
     static int mlogformat;
     static unsigned int mlogmaxsize;
+    static fn_printmore m_printfn;
 
 };
 
@@ -97,6 +103,8 @@ int get_mlogformat(void);
 void mloghelp();
 void set_mlogswitch(unsigned int _mlogswitch);
 unsigned int get_mlogswitch(void);
+void set_mlogprintfn(fn_printmore p_fn);
+fn_printmore get_mlogprintfn(void);
 /* func_declare_end */
 
 

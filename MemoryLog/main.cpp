@@ -63,6 +63,28 @@ void* thread_function(void* arg)
     return NULL;
 }
 
+void printextendmore()
+{
+
+    fprintf(stdout, "abdfdsffffffffffff\n");
+    fprintf(stdout, "abdfdsffffffffffff\n");
+    fprintf(stdout, "abdfdsffffffffffff\n");
+    fprintf(stdout, "abdfdsffffffffffff\n");
+    fprintf(stdout, "abdfdsffffffffffff\n");
+    fprintf(stdout, "abdfdsffffffffffff\n");
+    fprintf(stdout, "abdfdsffffffffffff\n");
+    fprintf(stdout, "abdfdsffffffffffff\n");
+
+    unsigned int loop = 0;
+    unsigned int maxsize = 10000;
+    for(loop = 0; loop < maxsize;loop++)
+    {
+        fprintf(stdout, "cnt:%d\n", loop + 1);
+    }
+
+
+}
+
 
 int main()
 {
@@ -72,6 +94,7 @@ int main()
 
 
     set_mlogswitch(1);
+    set_mlogprintfn(printextendmore);
 
     mlog_nomsgcommon("haha1", "i am here %u", 100000);
     mlog_nomsgcommon("haha2", "i am here %u", 100000);

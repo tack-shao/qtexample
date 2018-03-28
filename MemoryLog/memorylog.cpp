@@ -5,6 +5,9 @@
 #include <time.h>
 #include <sys/time.h>
 #include <errno.h>
+#include <sys/fcntl.h>
+#include <unistd.h>
+
 
 #define MUTEX_P(mutex) pthread_mutex_lock   (&mutex)
 #define MUTEX_V(mutex) pthread_mutex_unlock (&mutex)
@@ -19,6 +22,7 @@ MemoryLog *MemoryLog::pInstance = NULL;
 unsigned int MemoryLog::mlogswitch = 0;
 int MemoryLog::mlogformat = 1;
 unsigned int MemoryLog::mlogmaxsize = 1000;
+fn_printmore MemoryLog::m_printfn = NULL;
 /*============================================
 * FuncName    : MemoryLog::MemoryLog
 * Description :
@@ -30,6 +34,7 @@ MemoryLog::MemoryLog()
 {
     mlog.clear();
     pthread_mutex_init (&mutex,NULL);
+
 }
 
 /*============================================
@@ -591,6 +596,46 @@ void MemoryLog::SaveLog2FileAll(const char *filewithpath = NULL)
 
     fprintf(fp, "save mlog to file[%-10s], size:%u, done!!\n",name, mlog.size());
     fprintf(stdout, "save mlog to file[%-10s], size:%u, done!!\n",name, mlog.size());
+    fflush( stdout );
+
+    /** 保存标准输出信息到文件中 **/
+    int old;
+    FILE *fd = fp;
+    old = dup( 1 );   // 取标准输出句柄
+    if( old == -1 )
+    {
+        puts( "dup( 1 ) failure\n" );
+        return;
+    }
+    char tips[] = "\n\n==========[print extend]============\n"
+                     "==========[print extend]============\n"
+                     "==========[print extend]============\n\n"
+            ;
+
+//    if( ( fd = fopen( "data", "w" ) ) == NULL )
+//    {
+//        puts( "Can't open file 'data'\n" );
+//        dup2( old, 1 ); // 恢复
+//        return;
+//    }
+    if( -1 == dup2( fileno( fd ), 1 ) )//把文件的描述符给到1,1就不代表stdout了
+    {
+        puts( "Can't dup2 stdout\n" );
+        dup2( old, 1 ); // 恢复
+        fclose( fd );
+        return;
+    }
+    fwrite(tips, strlen(tips), 1, stdout);
+    fflush( stdout );
+
+    if(m_printfn)
+    {
+        m_printfn();
+    }
+
+    fflush( stdout );
+    dup2( old, 1 ); // 恢复
+
 
     fclose(fp);
 }
@@ -648,6 +693,21 @@ void MemoryLog::SaveLog2FileKeys(FILE *felse = NULL)
     }
 }
 
+/**
+**热打印回调接口
+**/
+void MemoryLog::SetPrintFn(fn_printmore fn)
+{
+    m_printfn = fn;
+}
+
+/**
+**热打印回调接口
+**/
+fn_printmore MemoryLog::GetPrintFn(void)
+{
+    return m_printfn;
+}
 
 
 
@@ -972,6 +1032,35 @@ int get_mlogformat(void)
     return MemoryLog::mlogformat;
 }
 
+/*
+Set and Get for mlogformat
+*/
+/*============================================
+* FuncName    : set_mlogformat
+* Description :
+* @_mlogformat  : the data format : erase the first data when full or keep the full
+*                0 - keep the full
+*                1 - erase the first data (default)
+* Author      :
+* Time        : 2017-06-10
+============================================*/
+void set_mlogprintfn(fn_printmore p_fn)
+{
+    MemoryLog::m_printfn = p_fn;
+}
+
+/*============================================
+* FuncName    : get_mlogformat
+* Description :
+* @--         :
+* Author      :
+* Time        : 2017-06-10
+============================================*/
+fn_printmore get_mlogprintfn(void)
+{
+    return MemoryLog::m_printfn;
+}
+
 
 
 /*============================================
@@ -999,6 +1088,8 @@ void mloghelp()
     "get mlog store max size     --   get_mlogmaxsize(void)\n"
     "set mlog switch             --   set_mlogswitch(unsigned int _mlogswitch)\n"
     "get mlog switch             --   get_mlogswitch()\n"
+    "set mlog print fun          --   set_mlogprintfn(fn_printmore p_fn)\n"
+    "get mlog print fun          --   get_mlogprintfn()\n"
     ;
     printf(usage);
     printf("mlog max size     :%u\n", get_mlogmaxsize());
