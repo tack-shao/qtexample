@@ -10,7 +10,7 @@
 
 using namespace std;
 
-#define MLOG_VERSION ("2.9")
+#define MLOG_VERSION ("3.0")
 
 
 
@@ -37,6 +37,7 @@ public:
     void PushLog(const char *key, T_MLOG &tlog);
     bool CheckPushLog(const char *key);
     void ShowLogByName(const char *key, bool index);
+    void ShowLogLastItemByName(const char *key, bool index);
     void ShowLogByNameLastCnt(const char *key, unsigned int count);
     void ParseMsgBody(T_MLOG &tlog, FILE *fp);
     void ShowLogAll();

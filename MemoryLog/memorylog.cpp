@@ -172,7 +172,7 @@ void MemoryLog::PushLog(const char *key, T_MLOG &tlog)
 
     if(mlogswitch)
     {
-        ShowLogByName(key, true);
+        ShowLogLastItemByName(key, false);
     }
 }
 
@@ -267,6 +267,41 @@ void MemoryLog::ShowLogByName(const char *key, bool index = true)
     }
     MUTEX_V (mutex);
 }
+
+/*============================================
+* FuncName    : MemoryLog::ShowLogLastItemByName
+* Description : show key's memory log last item(one)
+* @key        :
+* @index      : show tips or not
+* Author      :
+* Time        : 2017-06-05
+============================================*/
+void MemoryLog::ShowLogLastItemByName(const char *key, bool index = true)
+{
+    MUTEX_P (mutex);
+    if(index)
+        fprintf(stdout, "show mlog key[%-10s], ", key);
+    MLOG_MAP_IT it = mlog.find(string(key));
+    if(it != mlog.end())
+    {
+        MLOG_VEC &vec = it->second;
+        fprintf(stdout, "key[%s] size:%u\n", key, vec.size());
+        for(MLOG_VEC_RIT rvit = vec.rbegin(); rvit != vec.rend(); ++rvit)
+        {
+            ParseMsgBody(*rvit,stdout);
+            break;
+        }
+        if(index)
+            fprintf(stdout, "show mlog key[%s] size:%u done!!\n\n", key, vec.size());
+    }
+    else
+    {
+        if(index)
+            fprintf(stdout, "no data!!\n\n");
+    }
+    MUTEX_V (mutex);
+}
+
 
 /*============================================
 * FuncName    : MemoryLog::ShowLogByNameLastCnt

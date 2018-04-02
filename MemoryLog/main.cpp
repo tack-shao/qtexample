@@ -97,6 +97,8 @@ int main()
     set_mlogprintfn(printextendmore);
 
     mlog_nomsgcommon("haha1", "i am here %u", 100000);
+    mlog_nomsgcommon("haha1", "i am here %u", 200000);
+    mlog_nomsgcommon("haha1", "i am here %u", 300000);
     mlog_nomsgcommon("haha2", "i am here %u", 100000);
     mlog_nomsgcommon("haha3", "i am here %u", 100000);
 

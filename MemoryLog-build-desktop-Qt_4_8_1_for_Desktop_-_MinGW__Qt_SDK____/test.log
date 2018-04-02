@@ -1,17 +1,19 @@
 save mlog keys, size:4, done!!
 [key            ] [count]   [msglen]
 func_main            1       0       
-haha1                1       0       
+haha1                3       0       
 haha2                1       0       
 haha3                1       0       
 show mlog keys, size:4, done!!
 save mlog to file, size:4
 save mlog key[func_main ], [func_main] size:1
-==>T:s-us:1522252475-745010, F:main      ,L:91      
+==>T:s-us:1522669623-425916, F:main      ,L:91      
 save mlog key[func_main ], done!!
 
-save mlog key[haha1     ], [haha1] size:1
+save mlog key[haha1     ], [haha1] size:3
 ==>i am here 100000
+==>i am here 200000
+==>i am here 300000
 save mlog key[haha1     ], done!!
 
 save mlog key[haha2     ], [haha2] size:1
