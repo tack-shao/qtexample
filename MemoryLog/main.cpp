@@ -108,13 +108,12 @@ int main()
     clearmlogall();
     findmlogkeys("haha");
 
-    return 0;
 
 
 
 
 
-    char buf[10];
+    char buf[128];
     memset(buf, 0xFE, sizeof(buf));
     set_mlogmaxsize(100);
 
@@ -126,6 +125,7 @@ int main()
         pushmsgbyname("testfull", buf, sizeof(buf), "No:%u", loops);
     }
 
+    return 0;
 
 //    set_mlogmaxsize(30);
 //    for( loops  =  101 ; loops < 300; loops++ )

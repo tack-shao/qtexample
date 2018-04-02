@@ -38,6 +38,7 @@ public:
     bool CheckPushLog(const char *key);
     void ShowLogByName(const char *key, bool index);
     void ShowLogLastItemByName(const char *key, bool index);
+    void PrintPushLog(const char *key, T_MLOG &tlog);
     void ShowLogByNameLastCnt(const char *key, unsigned int count);
     void ParseMsgBody(T_MLOG &tlog, FILE *fp);
     void ShowLogAll();

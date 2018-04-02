@@ -161,21 +161,55 @@ void MemoryLog::PushLog(const char *key, T_MLOG &tlog)
             return;
         }
         vec.push_back(tlog);
+        PrintPushLog(key, tlog);
     }
     else
     {
         MLOG_VEC vec;
         vec.push_back(tlog);
         mlog.insert(MLOG_MAP_PAIR(string(key), vec));
+        PrintPushLog(key, tlog);
     }
     MUTEX_V(mutex);
 
-    if(mlogswitch)
-    {
-        ShowLogLastItemByName(key, false);
-    }
+//    if(mlogswitch)
+//    {
+//        ShowLogLastItemByName(key, false);
+//    }
 }
 
+/*============================================
+* FuncName    : MemoryLog::PrintPushLog
+* Description : print mlog record
+* @tlog       :
+* @fp         :stdout or files pointer
+* Author      :
+* Time        : 2017-06-10
+============================================*/
+void MemoryLog::PrintPushLog(const char *key, T_MLOG &tlog)
+{
+    if(!mlogswitch)
+        return;
+    if(tlog.msglen == 0 )
+    {
+        fprintf(stdout, "key[%s]-nomsg, %s\n", key, tlog.tipsinfo);        return;
+    }
+    fprintf(stdout, "key[%s]-msg,%s\n", key, tlog.tipsinfo);
+
+    unsigned int len = tlog.msglen;
+    unsigned int loop = 0;
+    for(loop = 0; loop < len;loop++)
+    {
+        if(((loop + 1) % 8 == 0) && ((loop + 1) % 16 != 0))
+            fprintf(stdout, "%02X  ", *((BYTE *)tlog.msgaddr+loop));
+        else
+            fprintf(stdout, "%02X ", *((BYTE *)tlog.msgaddr+loop));
+        if((loop + 1) % 16 == 0)
+            fprintf(stdout, "\n");
+    }
+    fprintf(stdout, "\n");
+
+}
 
 /*============================================
 * FuncName    : MemoryLog::ParseMsgBody
