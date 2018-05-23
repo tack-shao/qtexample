@@ -160,15 +160,29 @@ void MemoryLog::PushLog(const char *key, T_MLOG &tlog)
             MUTEX_V(mutex);
             return;
         }
-        vec.push_back(tlog);
-        PrintPushLog(key, tlog);
+        try {
+            vec.push_back(tlog);
+            PrintPushLog(key, tlog);
+        }
+        catch (exception& e)
+        {
+//            cout << e.what() << endl;
+            printf("get mem failed!!!\n");
+        }
     }
     else
     {
-        MLOG_VEC vec;
-        vec.push_back(tlog);
-        mlog.insert(MLOG_MAP_PAIR(string(key), vec));
-        PrintPushLog(key, tlog);
+        try {
+            MLOG_VEC vec;
+            vec.push_back(tlog);
+            mlog.insert(MLOG_MAP_PAIR(string(key), vec));
+            PrintPushLog(key, tlog);
+        }
+        catch (exception& e)
+        {
+//            cout << e.what() << endl;
+            printf("get mem failed!!!\n");
+        }
     }
     MUTEX_V(mutex);
 
@@ -855,7 +869,10 @@ void pushmsgbyname(const char *key, void *msg, unsigned int msglen, char *fmt, .
             return;
         pmsg = (char *)malloc(msglen);
         if(!pmsg)
+        {
+//            printf("malloc failed\n");
             return;
+        }
         memset(pmsg, 0, msglen);
         memcpy(pmsg, msg, msglen);
         timeval now;

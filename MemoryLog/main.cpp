@@ -6,6 +6,7 @@
 #include <sys/time.h>
 #include <stdarg.h>
 #include "mlog_init.h"
+#include "pub_defines.h"
 
 using namespace std;
 
@@ -85,15 +86,31 @@ void printextendmore()
 
 }
 
+void test_abc()
+{
+    char *ptest = NULL;
+    RETURN_IFNULL(ptest,;);
+}
+
 
 int main()
 {
+    struct timeval tpstart,tpend;
+    float timeuse;
+
+    gettimeofday(&tpstart,NULL); //记录开始时间戳
+//    function();
+
+
     mlogfunction;
 //    mloghelp();
     cout << "Hello World!" << endl;
 
+//    char *ptest = NULL;
+//    RETURNRVAL_IFNULL(ptest,;,0);
 
-    set_mlogswitch(1);
+
+//    set_mlogswitch(1);
     set_mlogprintfn(printextendmore);
 
     mlog_nomsgcommon("haha1", "i am here %u", 100000);
@@ -108,22 +125,56 @@ int main()
     clearmlogall();
     findmlogkeys("haha");
 
-
+    test_abc();
 
 
 
 
     char buf[128];
     memset(buf, 0xFE, sizeof(buf));
-    set_mlogmaxsize(100);
+    set_mlogmaxsize(1000);
 
-    unsigned int  loops  =  0;
-    for( loops  =  0 ; loops <= 200; loops++ )
+    unsigned long long  loops  =  0;
+    unsigned long long  js  =  0;
+    const unsigned long long testlen = 20000;
+    for( loops  =  0 ; loops <= testlen; loops++ )
     {
         memset(buf, 0, sizeof(buf));
         sprintf(buf, "%d", loops);
         pushmsgbyname("testfull", buf, sizeof(buf), "No:%u", loops);
     }
+
+    unsigned int memlen = 102400000;
+    char *p = (char *)malloc(memlen);
+    if(!p)
+        return 0;
+    for( loops  =  0 ; loops <= 50; loops++ )
+    {
+
+        sprintf(p, "memorytest%d", loops);
+        pushmsgbyname(p, p, memlen, "No:%u", loops);
+    }
+
+    for( loops  =  0 ; loops <= testlen; loops++ )
+    {
+        for( js  =  0 ; js <= 100; js++ )
+        {
+            memset(buf, 0, sizeof(buf));
+            sprintf(buf, "%d", loops);
+            sprintf(p, "memorytest%d", loops);
+            pushmsgbyname(p, buf, sizeof(buf), "No:%u", loops);
+        }
+    }
+    showmlogkeys();
+    clearmlogall();
+
+
+    gettimeofday(&tpend,NULL); //记录结束时间戳
+    timeuse = 1000000*(tpend.tv_sec-tpstart.tv_sec)+
+            tpend.tv_usec-tpstart.tv_usec; //计算差值
+    timeuse /= 1000000;
+    printf("Load:%llu,Used Time:%fs\n",testlen,timeuse);
+
 
     return 0;
 

@@ -10,7 +10,7 @@
 
 using namespace std;
 
-#define MLOG_VERSION ("3.0")
+#define MLOG_VERSION ("3.1")
 
 
 

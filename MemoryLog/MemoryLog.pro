@@ -9,5 +9,6 @@ SOURCES += main.cpp \
 
 HEADERS += \
     memorylog.h \
-    mlog_init.h
+    mlog_init.h \
+    pub_defines.h
 
